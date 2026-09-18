@@ -90,7 +90,9 @@ def _load_json_file(file_path: str) -> Any:
     try:
         return json.loads(content)
     except Exception:
-        logger.exception("Failed to parse JSON file '%s'. Raw file content:\n%s", file_path, content)
+        logger.exception(
+            "Failed to parse JSON file '%s'. Raw file content:\n%s", file_path, content
+        )
         raise
 
 
@@ -127,7 +129,10 @@ class TestSuiteDescriptorLoader:
 
         return {
             descriptor.suite_name: descriptor
-            for descriptor in [TestSuiteDescriptor.from_obj(item) for item in registry.get("test_suites", [])]
+            for descriptor in [
+                TestSuiteDescriptor.from_obj(item)
+                for item in registry.get("test_suites", [])
+            ]
         }
 
 
@@ -222,7 +227,9 @@ def _index_source_images(results_dir: str) -> dict[SourceTestIdentifier, str]:
         return image_map
 
     for root, _dirnames, filenames in os.walk(results_dir):
-        pngs = [f for f in filenames if f.endswith(".png") and not f.endswith("-diff.png")]
+        pngs = [
+            f for f in filenames if f.endswith(".png") and not f.endswith("-diff.png")
+        ]
         if not pngs:
             continue
         suite_name = os.path.basename(root)
@@ -263,11 +270,15 @@ class ComparisonScanner:
         self.output_dir = output_dir
         self.base_url = base_url
         self.results_dir = results_dir
-        self.golden_results_dir = golden_results_dir if golden_results_dir else results_dir
+        self.golden_results_dir = (
+            golden_results_dir if golden_results_dir else results_dir
+        )
         self.hw_golden_base_url = hw_golden_base_url
         self.test_suite_descriptors = test_suite_descriptors
         self.source_image_index = (
-            source_image_index if source_image_index is not None else _index_source_images(results_dir)
+            source_image_index
+            if source_image_index is not None
+            else _index_source_images(results_dir)
         )
 
     def _process_test_case_artifacts(
@@ -299,7 +310,9 @@ class ComparisonScanner:
         golden_base_path = (
             ""
             if run_info["golden_identifier"] == HW_GOLDEN_IDENTIFIER
-            else os.path.join(self.golden_results_dir, run_info["golden_identifier"].replace(":", "/"))
+            else os.path.join(
+                self.golden_results_dir, run_info["golden_identifier"].replace(":", "/")
+            )
         )
 
         ret: list[TestCaseComparisonInfo] = []
@@ -320,9 +333,17 @@ class ComparisonScanner:
             if rel_src:
                 source_image_url = f"{self.base_url}/{rel_src.replace(os.sep, '/')}"
             else:
-                source_image_url = "/".join([self.base_url, results_base_path, *original_image_subpath]) + ".png"
+                source_image_url = (
+                    "/".join(
+                        [self.base_url, results_base_path, *original_image_subpath]
+                    )
+                    + ".png"
+                )
 
-            golden_image_url = "/".join([golden_base_url, golden_base_path, *original_image_subpath]) + ".png"
+            golden_image_url = (
+                "/".join([golden_base_url, golden_base_path, *original_image_subpath])
+                + ".png"
+            )
 
             ret.append(
                 TestCaseComparisonInfo(
@@ -330,25 +351,35 @@ class ComparisonScanner:
                     source_image_url=source_image_url,
                     golden_image_url=golden_image_url,
                     diff_image_url=f"{self.base_url}/{image_file}",
-                    diff_distance=run_info["tests_with_differences"].get(fq_name, math.inf),
+                    diff_distance=run_info["tests_with_differences"].get(
+                        fq_name, math.inf
+                    ),
                 )
             )
 
         return ret
 
-    def _process_test_suite(self, test_suite_dir: str, run_info: dict[str, Any]) -> TestSuiteComparisonInfo | None:
+    def _process_test_suite(
+        self, test_suite_dir: str, run_info: dict[str, Any]
+    ) -> TestSuiteComparisonInfo | None:
         golden_base_url = (
-            self.hw_golden_base_url if run_info["golden_identifier"] == HW_GOLDEN_IDENTIFIER else self.base_url
+            self.hw_golden_base_url
+            if run_info["golden_identifier"] == HW_GOLDEN_IDENTIFIER
+            else self.base_url
         )
 
         suite_name = os.path.basename(test_suite_dir)
 
-        test_artifacts = self._process_test_case_artifacts(test_suite_dir, suite_name, run_info, golden_base_url)
+        test_artifacts = self._process_test_case_artifacts(
+            test_suite_dir, suite_name, run_info, golden_base_url
+        )
         if test_artifacts:
             return TestSuiteComparisonInfo(
                 suite_name=suite_name,
                 test_cases=tuple(test_artifacts),
-                descriptor=_fuzzy_lookup_suite_descriptor(self.test_suite_descriptors, suite_name),
+                descriptor=_fuzzy_lookup_suite_descriptor(
+                    self.test_suite_descriptors, suite_name
+                ),
             )
         return None
 
@@ -357,7 +388,9 @@ class ComparisonScanner:
     ) -> list[ComparisonInfo]:
         """Processes the results for each comparison between pairs of results."""
 
-        run_identifier_to_suits: dict[str, list[TestSuiteComparisonInfo]] = defaultdict(list)
+        run_identifier_to_suits: dict[str, list[TestSuiteComparisonInfo]] = defaultdict(
+            list
+        )
         for run_root, run_info in run_identifier_to_summary.items():
             for item in os.listdir(run_root):
                 suite_path = os.path.join(run_root, item)
@@ -375,14 +408,21 @@ class ComparisonScanner:
 
     def _process_summaries(self) -> dict[str, dict[str, Any]]:
         """Discovers summary.json files, loads them, and returns a map of directory path to their content."""
-        summary_files = glob.glob("**/summary.json", root_dir=self.comparison_dir, recursive=True)
+        summary_files = glob.glob(
+            "**/summary.json", root_dir=self.comparison_dir, recursive=True
+        )
 
         def load_summary(subpath: str) -> tuple[str, dict[str, Any]]:
             full_path = os.path.join(self.comparison_dir, subpath)
             logger.debug("Load summary from '%s'", full_path)
             return os.path.dirname(full_path), _load_json_file(full_path)
 
-        return {key: value for key, value in [load_summary(summary_file) for summary_file in summary_files]}
+        return {
+            key: value
+            for key, value in [
+                load_summary(summary_file) for summary_file in summary_files
+            ]
+        }
 
     def process(
         self,
@@ -508,14 +548,20 @@ class ResultsScanner:
     def _process_suite(
         self, artifacts_path: str, suite_name: str, results_summary: ResultsSummary
     ) -> SuiteResults | None:
-        test_artifacts = self._process_test_case_artifacts(artifacts_path, suite_name, results_summary)
+        test_artifacts = self._process_test_case_artifacts(
+            artifacts_path, suite_name, results_summary
+        )
         if test_artifacts:
             fq_prefix = f"{suite_name}::"
             flaky_tests = {
-                key: value for key, value in results_summary.get("flaky", {}).items() if key.startswith(fq_prefix)
+                key: value
+                for key, value in results_summary.get("flaky", {}).items()
+                if key.startswith(fq_prefix)
             }
             failed_tests = {
-                key: value for key, value in results_summary.get("failed", {}).items() if key.startswith(fq_prefix)
+                key: value
+                for key, value in results_summary.get("failed", {}).items()
+                if key.startswith(fq_prefix)
             }
 
             return SuiteResults(
@@ -527,7 +573,9 @@ class ResultsScanner:
             )
         return None
 
-    def _process_results(self, run_id: str, machine_info: MachineInfo, results_summary: ResultsSummary) -> ResultsInfo:
+    def _process_results(
+        self, run_id: str, machine_info: MachineInfo, results_summary: ResultsSummary
+    ) -> ResultsInfo:
         suite_results: dict[str, SuiteResults] = {}
 
         for root, dirnames, filenames in os.walk(run_id):
@@ -556,7 +604,9 @@ class ResultsScanner:
 
         run_identifier = RunIdentifier.parse(run_id)
 
-        comparisons = self.run_identifier_to_comparison_results.get(run_identifier.minimal_identifier(), [])
+        comparisons = self.run_identifier_to_comparison_results.get(
+            run_identifier.minimal_identifier(), []
+        )
         if not comparisons:
             # Fallback lookup: match on xemu_version + platform_info + gl prefix
             for comp_id, comp_list in self.run_identifier_to_comparison_results.items():
@@ -571,7 +621,10 @@ class ResultsScanner:
                         break
 
         if not comparisons:
-            logger.warning("Failed to lookup HW comparisons for %s", run_identifier.minimal_identifier())
+            logger.warning(
+                "Failed to lookup HW comparisons for %s",
+                run_identifier.minimal_identifier(),
+            )
         return ResultsInfo(
             identifier=run_identifier,
             machine_info=machine_info,
@@ -583,14 +636,17 @@ class ResultsScanner:
 
     def _process_summaries(self) -> dict[str, tuple[MachineInfo, ResultsSummary]]:
         """Discovers results.json and machine_info.txt files and returns a map of directory path to their contents."""
-        results_files = glob.glob("**/results.json", root_dir=self.results_dir, recursive=True)
+        results_files = glob.glob(
+            "**/results.json", root_dir=self.results_dir, recursive=True
+        )
 
         def load_results(subpath: str) -> tuple[str, ResultsSummary]:
             full_path = os.path.join(self.results_dir, subpath)
             return os.path.dirname(full_path), _load_json_file(full_path)
 
         run_id_to_results: dict[str, ResultsSummary] = {
-            key: value for key, value in [load_results(filename) for filename in results_files]
+            key: value
+            for key, value in [load_results(filename) for filename in results_files]
         }
 
         for run_id, results_summary in run_id_to_results.items():
@@ -606,7 +662,9 @@ class ResultsScanner:
             else:
                 results_summary["runner_info"] = {"iso": "UNKNOWN"}
 
-        machine_info_files = glob.glob("**/machine_info.txt", root_dir=self.results_dir, recursive=True)
+        machine_info_files = glob.glob(
+            "**/machine_info.txt", root_dir=self.results_dir, recursive=True
+        )
 
         def load_machine_info(subpath: str) -> tuple[str, MachineInfo]:
             full_path = os.path.join(self.results_dir, subpath)
@@ -615,7 +673,10 @@ class ResultsScanner:
                 return os.path.dirname(full_path), content.split("\n")
 
         run_id_to_machine_info: dict[str, MachineInfo] = {
-            key: value for key, value in [load_machine_info(filename) for filename in machine_info_files]
+            key: value
+            for key, value in [
+                load_machine_info(filename) for filename in machine_info_files
+            ]
         }
 
         ret: dict[str, tuple[MachineInfo, ResultsSummary]] = {}
@@ -660,7 +721,9 @@ class PrettyMachineInfo(NamedTuple):
         gl_vendor = machine_info_dict.get("GL_VENDOR", "").replace("/", "-")
         gl_renderer = machine_info_dict.get("GL_RENDERER", "").replace("/", "-")
         gl_version = machine_info_dict.get("GL_VERSION", "").replace("/", "-")
-        glsl_version = machine_info_dict.get("GL_SHADING_LANGUAGE_VERSION", "").replace("/", "-")
+        glsl_version = machine_info_dict.get("GL_SHADING_LANGUAGE_VERSION", "").replace(
+            "/", "-"
+        )
 
         run_identifier = results_info.identifier
         platform = f"{os} - {cpu}" if cpu and os else run_identifier.platform_info
@@ -702,8 +765,14 @@ class PagesWriter:
         self.source_image_index = source_image_index or {}
 
     @staticmethod
-    def _comparison_suite_url(comparison: ComparisonInfo, suite_result: TestSuiteComparisonInfo) -> str:
-        return os.path.join(COMPARE_SUBDIR, comparison.identifier.minimal_path, f"{suite_result.suite_name}.html")
+    def _comparison_suite_url(
+        comparison: ComparisonInfo, suite_result: TestSuiteComparisonInfo
+    ) -> str:
+        return os.path.join(
+            COMPARE_SUBDIR,
+            comparison.identifier.minimal_path,
+            f"{suite_result.suite_name}.html",
+        )
 
     def _home_url(self, output_dir: str) -> str:
         return f"{os.path.relpath(self.output_dir, output_dir)}/index.html"
@@ -720,10 +789,14 @@ class PagesWriter:
     ) -> None:
         """Generates a page that renders all diffs between a result set and golden for a particular test suite."""
         index_template = self.env.get_template("suite_comparison_result.html.j2")
-        output_dir = os.path.join(self.output_dir, COMPARE_SUBDIR, comparison.identifier.minimal_path)
+        output_dir = os.path.join(
+            self.output_dir, COMPARE_SUBDIR, comparison.identifier.minimal_path
+        )
         os.makedirs(output_dir, exist_ok=True)
 
-        with open(os.path.join(output_dir, f"{suite_result.suite_name}.html"), "w") as outfile:
+        with open(
+            os.path.join(output_dir, f"{suite_result.suite_name}.html"), "w"
+        ) as outfile:
             outfile.write(
                 index_template.render(
                     source_identifier=comparison.summary["result_identifier"],
@@ -741,9 +814,13 @@ class PagesWriter:
 
     @staticmethod
     def _comparison_url(comparison: ComparisonInfo) -> str:
-        return os.path.join(COMPARE_SUBDIR, comparison.identifier.minimal_path, "index.html")
+        return os.path.join(
+            COMPARE_SUBDIR, comparison.identifier.minimal_path, "index.html"
+        )
 
-    def _write_comparisons_page(self, comparison: ComparisonInfo, golden_base_url: str) -> None:
+    def _write_comparisons_page(
+        self, comparison: ComparisonInfo, golden_base_url: str
+    ) -> None:
         """Generates a page that renders all diffs between a pair of results, with links to per-suite diff pages."""
 
         index_template = self.env.get_template("comparison_result.html.j2")
@@ -755,7 +832,10 @@ class PagesWriter:
 
         suite_to_results: dict[str, list[TestCaseComparisonInfo]] = defaultdict(
             list,
-            {result.suite_name: list(result.test_cases) for result in comparison.results},
+            {
+                result.suite_name: list(result.test_cases)
+                for result in comparison.results
+            },
         )
 
         for fqname in comparison.summary.get("goldens_without_results", []):
@@ -773,7 +853,9 @@ class PagesWriter:
             suite_name, test_name = self.split_fq_name(fqname)
             info = TestCaseComparisonInfo(
                 test_name=test_name,
-                source_image_url=self.results_url_for_fqtest(comparison.identifier, fqname),
+                source_image_url=self.results_url_for_fqtest(
+                    comparison.identifier, fqname
+                ),
                 golden_image_url="",
                 diff_image_url="",
                 diff_distance=math.inf,
@@ -805,7 +887,10 @@ class PagesWriter:
 
         for suite_results in comparison.results:
             self._write_comparison_suite_page(
-                comparison, suite_results, suite_to_results[suite_results.suite_name], navigate_up_url
+                comparison,
+                suite_results,
+                suite_to_results[suite_results.suite_name],
+                navigate_up_url,
             )
 
     @staticmethod
@@ -815,11 +900,17 @@ class PagesWriter:
         return split[0], split[1]
 
     @staticmethod
-    def golden_url_for_fqtest(fully_qualified_test_name: str, golden_base_url: str) -> str:
-        path = "/".join([golden_base_url, *PagesWriter.split_fq_name(fully_qualified_test_name)])
+    def golden_url_for_fqtest(
+        fully_qualified_test_name: str, golden_base_url: str
+    ) -> str:
+        path = "/".join(
+            [golden_base_url, *PagesWriter.split_fq_name(fully_qualified_test_name)]
+        )
         return f"{path}.png"
 
-    def results_url_for_fqtest(self, run: RunIdentifier, fully_qualified_test_name: str) -> str:
+    def results_url_for_fqtest(
+        self, run: RunIdentifier, fully_qualified_test_name: str
+    ) -> str:
         suite, test_case = self.split_fq_name(fully_qualified_test_name)
         ident = SourceTestIdentifier(
             xemu_version=run.xemu_version,
@@ -855,7 +946,9 @@ class PagesWriter:
 
     @staticmethod
     def _suite_result_url(run: ResultsInfo, suite: SuiteResults) -> str:
-        return os.path.join(RESULTS_SUBDIR, run.identifier.minimal_path, suite.name, "index.html")
+        return os.path.join(
+            RESULTS_SUBDIR, run.identifier.minimal_path, suite.name, "index.html"
+        )
 
     def _suite_source_url(self, source_file_path: str, source_line: int) -> str:
         if self.test_source_base_url and source_file_path:
@@ -864,20 +957,28 @@ class PagesWriter:
             return f"{self.test_source_base_url}/{source_file_path}"
         return ""
 
-    def _pack_descriptor(self, descriptor: TestSuiteDescriptor | None) -> dict[str, Any] | None:
+    def _pack_descriptor(
+        self, descriptor: TestSuiteDescriptor | None
+    ) -> dict[str, Any] | None:
         if not descriptor:
             return None
         return {
             "description": descriptor.description,
             "source_file": descriptor.source_file,
-            "source_url": self._suite_source_url(descriptor.source_file, descriptor.source_file_line),
+            "source_url": self._suite_source_url(
+                descriptor.source_file, descriptor.source_file_line
+            ),
             "test_descriptions": descriptor.test_descriptions,
         }
 
-    def _write_test_suite_results_page(self, run: ResultsInfo, suite: SuiteResults) -> None:
+    def _write_test_suite_results_page(
+        self, run: ResultsInfo, suite: SuiteResults
+    ) -> None:
         """Generates a page for all of the test case results within a single test suite."""
         index_template = self.env.get_template("test_suite_results.html.j2")
-        output_subdir = os.path.join(RESULTS_SUBDIR, run.identifier.minimal_path, suite.name)
+        output_subdir = os.path.join(
+            RESULTS_SUBDIR, run.identifier.minimal_path, suite.name
+        )
         output_dir = os.path.join(self.output_dir, output_subdir)
         os.makedirs(output_dir, exist_ok=True)
 
@@ -914,7 +1015,10 @@ class PagesWriter:
         os.makedirs(output_dir, exist_ok=True)
 
         result_urls = {
-            suite.name: os.path.relpath(self._suite_result_url(run, suite), output_subdir) for suite in run.results
+            suite.name: os.path.relpath(
+                self._suite_result_url(run, suite), output_subdir
+            )
+            for suite in run.results
         }
 
         all_failed_tests: dict[str, list[str]] = {}
@@ -935,16 +1039,22 @@ class PagesWriter:
             )
 
             missing_tests: dict[str, str] = {
-                fqname.replace(":", " :: "): self.golden_url_for_fqtest(fqname, golden_base_url)
+                fqname.replace(":", " :: "): self.golden_url_for_fqtest(
+                    fqname, golden_base_url
+                )
                 for fqname in comparison.summary.get("goldens_without_results", [])
             }
             extra_tests: dict[str, str] = {
-                fqname.replace(":", " "): self.results_url_for_fqtest(run.identifier, fqname)
+                fqname.replace(":", " "): self.results_url_for_fqtest(
+                    run.identifier, fqname
+                )
                 for fqname in comparison.summary.get("tests_without_goldens", [])
             }
 
             comparisons[comparison.golden_identifier] = {
-                "comparison_page": os.path.relpath(self._comparison_url(comparison), output_subdir),
+                "comparison_page": os.path.relpath(
+                    self._comparison_url(comparison), output_subdir
+                ),
                 "results": {
                     suite_result.suite_name: os.path.relpath(
                         self._comparison_suite_url(comparison, suite_result),
@@ -952,7 +1062,9 @@ class PagesWriter:
                     )
                     for suite_result in comparison.results
                 },
-                "difference_count": len(comparison.summary.get("tests_with_differences", {})),
+                "difference_count": len(
+                    comparison.summary.get("tests_with_differences", {})
+                ),
                 "missing_tests": missing_tests,
                 "extra_tests": extra_tests,
                 "golden_identifier": comparison.golden_identifier,
@@ -981,13 +1093,17 @@ class PagesWriter:
             )
 
     def _write_top_level_index(self) -> None:
-        run_identifier_keyed_results = {run.identifier: run for run in self.results.values()}
+        run_identifier_keyed_results = {
+            run.identifier: run for run in self.results.values()
+        }
 
         index_template = self.env.get_template("index.html.j2")
         output_dir = self.output_dir
 
         with open(os.path.join(output_dir, "index.html"), "w") as outfile:
-            emulator_grouped_pages = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
+            emulator_grouped_pages = defaultdict(
+                lambda: defaultdict(lambda: defaultdict(list))
+            )
             for run_identifier, run in run_identifier_keyed_results.items():
                 if (
                     not run_identifier.xemu_version
@@ -996,9 +1112,9 @@ class PagesWriter:
                 ):
                     continue
                 pretty_machine_info = PrettyMachineInfo.parse(run)
-                emulator_grouped_pages[run_identifier.xemu_version][pretty_machine_info.platform][
-                    pretty_machine_info.renderer
-                ].append(
+                emulator_grouped_pages[run_identifier.xemu_version][
+                    pretty_machine_info.platform
+                ][pretty_machine_info.renderer].append(
                     {
                         "results_url": f"{RESULTS_SUBDIR}/{run_identifier.minimal_path}/index.html",
                         "machine_info": pretty_machine_info,
@@ -1042,13 +1158,20 @@ class PagesWriter:
 VERSION_STRING_RE = re.compile(r"xemu-(\d+)\.(\d+)\.(\d+)-.+")
 
 
-def _xemu_version_sort_filter(data_dict: dict[str, Any], *, reverse: bool = True) -> list[tuple[str, Any]]:
+def _xemu_version_sort_filter(
+    data_dict: dict[str, Any], *, reverse: bool = True
+) -> list[tuple[str, Any]]:
     def get_version_key(dict_entry):
         match = VERSION_STRING_RE.match(dict_entry[0])
         if not match:
             return 0, 0, 0, dict_entry[0]
 
-        return int(match.group(1)), int(match.group(2)), int(match.group(3)), dict_entry[0]
+        return (
+            int(match.group(1)),
+            int(match.group(2)),
+            int(match.group(3)),
+            dict_entry[0],
+        )
 
     return sorted(data_dict.items(), key=get_version_key, reverse=reverse)
 
@@ -1072,7 +1195,7 @@ def main():
     parser.add_argument(
         "--base-url",
         "-u",
-        default="https://raw.githubusercontent.com/abaire/xemu-nxdk_pgraph_tests_results/main",
+        default="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main",
         help="Base URL at which the contents of the repository may be publicly accessed",
     )
     parser.add_argument(

@@ -3,7 +3,7 @@ xemu-nxdk_pgraph_tests_results
 
 Output of abaire/nxdk_pgraph_tests on various versions of [xemu](xemu.app)
 
-[Browsable on GitHub pages](https://abaire.github.io/xemu-nxdk_pgraph_tests_results/)
+[Browsable on GitHub pages](https://xemu-project.github.io/xemu-nxdk_pgraph_tests_results/)
 
 *Note*: web-display of output may not always match the visible output from the
 tests.
@@ -20,7 +20,7 @@ This repository requires long path support on Windows.
 
 # Updating
 
-1. Download the latest UserScripts release from https://github.com/abaire/xemu-nxdk_pgraph_tests_results/releases
+1. Download the latest UserScripts release from https://github.com/xemu-project/xemu-nxdk_pgraph_tests_results/releases
 2. Run the "run.bat" or "run.sh" script with the appropriate arguments below
 
 ## Running tests for a new xemu (or nxdk_pgraph_tests) release
@@ -71,7 +71,7 @@ git push origin my_new_results
 (Updating the commit -m message as appropriate for your test machine)
 
 Then create a new pull request
-on [the GitHub project page](https://github.com/abaire/xemu-nxdk_pgraph_tests_results)
+on [the GitHub project page](https://github.com/xemu-project/xemu-nxdk_pgraph_tests_results)
 
 
 # Advanced
@@ -100,5 +100,5 @@ comparison on new results after they are merged to the `main` branch.
 
 The `dev_scripts/generate_local_site_for_custom_xemu_build.sh` script may be used to
 generate a local variant of
-the [deployed pages](https://abaire.github.io/xemu-nxdk_pgraph_tests_results/)
-that compares a developer build of xemu to the newest checked in results. 
+the [deployed pages](https://xemu-project.github.io/xemu-nxdk_pgraph_tests_results/)
+that compares a developer build of xemu to the newest checked in results.
