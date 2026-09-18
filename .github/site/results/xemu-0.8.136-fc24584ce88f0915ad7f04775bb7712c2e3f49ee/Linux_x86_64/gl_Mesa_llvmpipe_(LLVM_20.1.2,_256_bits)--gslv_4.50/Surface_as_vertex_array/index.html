@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee: Ubuntu 24.04.4 LTS - AMD EPYC 9V74 80-Core Processor, GL: Mesa - llvmpipe (LLVM 20.1.2, 256 bits) - 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.2, Shader: 4.50 - Surface_as_vertex_array</title>
+    <link rel="stylesheet" href="../../../../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../../../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    
+      <a href="../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Arrow_chevron_up_in_sharp_solid_style.svg" width="32" alt="Navigate up one level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Surface_as_vertex_array</h1>
+
+<div class="label-value-grid">
+    <div class="label"><a href="https://xemu.app">xemu</a> version</div>
+    <div class="value">xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee</div>
+
+    <div class="label">Platform</div>
+    <div class="value">Ubuntu 24.04.4 LTS - AMD EPYC 9V74 80-Core Processor</div>
+
+    <div class="label">Renderer</div>
+    <div class="value">OpenGL</div>
+
+    <div class="label">GL info</div>
+    <div class="value">Mesa - llvmpipe (LLVM 20.1.2, 256 bits) - 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.2</div>
+
+    <div class="label">GLSL version</div>
+    <div class="value">4.50</div>
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Tests rendering to GPU surfaces (render targets) and subsequently binding the rendered surface memory as a vertex attribute array (vertex stream).</div>
+    
+        <div class="test-description-line">This pattern takes advantage of Xbox UMA (Unified Memory Architecture) to perform GPU-driven vertex generation or displacement mapping without hardware vertex texture fetch.</div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/surface_as_vertex_array_tests.h#L23">src/tests/surface_as_vertex_array_tests.h</a></div>
+</div>
+
+<h2 id="DynamicUpdateLoop">DynamicUpdateLoop</h2>
+        <div class="test-case-description">
+        <p>Sequentially renders a single color into a surface and immediately draws the corresponding quad in four successive passes within a single frame to verify surface update synchronization between draw passes. Expect to see four quads on a dark background: top-left Red, top-right Green, bottom-left Blue, bottom-right Yellow.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits)/gslv_4.50/Surface_as_vertex_array/DynamicUpdateLoop.png" alt="Test result for Surface_as_vertex_array::DynamicUpdateLoop" class="inline-image">
+</div>
+    
+<h2 id="LinearDiffuseArray">LinearDiffuseArray</h2>
+        <div class="test-case-description">
+        <p>Renders four solid color strips (Red, Green, Blue, Yellow) into the first row of a linear A8R8G8B8 surface. The surface memory is then bound as NV2A_VERTEX_ATTR_DIFFUSE with TYPE_UB_D3D format and drawn via DRAW_ARRAYS. Expect to see four quads on a dark background: top-left Red, top-right Green, bottom-left Blue, bottom-right Yellow.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits)/gslv_4.50/Surface_as_vertex_array/LinearDiffuseArray.png" alt="Test result for Surface_as_vertex_array::LinearDiffuseArray" class="inline-image">
+</div>
+    
+<h2 id="MultiStream">MultiStream</h2>
+        <div class="test-case-description">
+        <p>Tests multiple simultaneous surface vertex streams. Surface A is rendered with Cyan and Black pixels and bound to NV2A_VERTEX_ATTR_DIFFUSE; Surface B is rendered with Black and Magenta pixels and bound to NV2A_VERTEX_ATTR_SPECULAR. A register combiner adds Diffuse and Specular colors. Expect to see two wide quads on a dark background: left Cyan (Cyan + Black) and right Magenta (Black + Magenta).</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits)/gslv_4.50/Surface_as_vertex_array/MultiStream.png" alt="Test result for Surface_as_vertex_array::MultiStream" class="inline-image">
+</div>
+    
+<h2 id="RenderScalePattern">RenderScalePattern</h2>
+        <div class="test-case-description">
+        <p>Renders carrier triangle vertex indices and barycentric weights across swizzled surfaces A and B. The surfaces are bound as Diffuse and Specular vertex streams with a vertex shader that blends three carrier positions via address-register palette lookups (arl a0.x / c[A0+112]) to reconstruct a 3D mesh. Expect to see a clean, contiguous 3D mesh at 1x render scale. When emulator render scale &gt; 1.0 downsamples/filters the surface with interpolation errors across diagonal seams, shifts in index values cause address-register lookups to select incorrect palette slots, visibly tearing the mesh into spikes (reproducing the behavior in the XDK DisplacementMap sample and xemu PR #2984). </p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits)/gslv_4.50/Surface_as_vertex_array/RenderScalePattern.png" alt="Test result for Surface_as_vertex_array::RenderScalePattern" class="inline-image">
+</div>
+    
+<h2 id="SwizzledDiffuseArray">SwizzledDiffuseArray</h2>
+        <div class="test-case-description">
+        <p>Renders four 2x2 color blocks into a swizzled A8R8G8B8 surface (paired with matching 32-bit depth buffer). Due to Morton order swizzling, the 2x2 blocks occupy contiguous 4-pixel chunks in memory. The surface is then bound as NV2A_VERTEX_ATTR_DIFFUSE. Expect to see four quads on a dark background: top-left Red, top-right Green, bottom-left Blue, bottom-right Yellow.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits)/gslv_4.50/Surface_as_vertex_array/SwizzledDiffuseArray.png" alt="Test result for Surface_as_vertex_array::SwizzledDiffuseArray" class="inline-image">
+</div>
+    
+</div>
+
+    <script src="../../../../../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Surface_as_vertex_array : xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee:Linux_x86_64:gl_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits):gslv_4.50 vs Xbox_Hardware</title>
+    <link rel="stylesheet" href="../../../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    
+      <a href="../../../../results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits)--gslv_4.50/index.html#Xbox_Hardware"><img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Arrow_chevron_up_in_sharp_solid_style.svg" width="32" alt="Navigate up one level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Surface_as_vertex_array : xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee:Linux_x86_64:gl_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits):gslv_4.50 vs Xbox_Hardware</h1>
+
+<div class="label-value-grid">
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Tests rendering to GPU surfaces (render targets) and subsequently binding the rendered surface memory as a vertex attribute array (vertex stream).</div>
+    
+        <div class="test-description-line">This pattern takes advantage of Xbox UMA (Unified Memory Architecture) to perform GPU-driven vertex generation or displacement mapping without hardware vertex texture fetch.</div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/surface_as_vertex_array_tests.h#L23">src/tests/surface_as_vertex_array_tests.h</a></div>
+    <div class="label">Golden results</div>
+    <div class="value"><a href="https://abaire.github.io/nxdk_pgraph_tests_golden_results/results/Surface_as_vertex_array/index.html">https://abaire.github.io/nxdk_pgraph_tests_golden_results/results/Surface_as_vertex_array/index.html</a></div>
+</div>
+
+
+
+    <h3 id="DynamicUpdateLoop">DynamicUpdateLoop</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">128000.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Sequentially renders a single color into a surface and immediately draws the corresponding quad in four successive passes within a single frame to verify surface update synchronization between draw passes. Expect to see four quads on a dark background: top-left Red, top-right Green, bottom-left Blue, bottom-right Yellow.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits)/gslv_4.50/Xbox__Xbox__DirectX__nv2a/Surface_as_vertex_array/DynamicUpdateLoop-diff.png" alt="Diff result for Surface_as_vertex_array::DynamicUpdateLoop" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits)/gslv_4.50/Surface_as_vertex_array/DynamicUpdateLoop.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results//Surface_as_vertex_array/DynamicUpdateLoop.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits)/gslv_4.50/Surface_as_vertex_array/DynamicUpdateLoop.png" alt="Source image for Surface_as_vertex_array::DynamicUpdateLoop" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results//Surface_as_vertex_array/DynamicUpdateLoop.png" alt="Golden image for Surface_as_vertex_array::DynamicUpdateLoop" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="LinearDiffuseArray">LinearDiffuseArray</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">128000.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders four solid color strips (Red, Green, Blue, Yellow) into the first row of a linear A8R8G8B8 surface. The surface memory is then bound as NV2A_VERTEX_ATTR_DIFFUSE with TYPE_UB_D3D format and drawn via DRAW_ARRAYS. Expect to see four quads on a dark background: top-left Red, top-right Green, bottom-left Blue, bottom-right Yellow.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits)/gslv_4.50/Xbox__Xbox__DirectX__nv2a/Surface_as_vertex_array/LinearDiffuseArray-diff.png" alt="Diff result for Surface_as_vertex_array::LinearDiffuseArray" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits)/gslv_4.50/Surface_as_vertex_array/LinearDiffuseArray.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results//Surface_as_vertex_array/LinearDiffuseArray.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits)/gslv_4.50/Surface_as_vertex_array/LinearDiffuseArray.png" alt="Source image for Surface_as_vertex_array::LinearDiffuseArray" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results//Surface_as_vertex_array/LinearDiffuseArray.png" alt="Golden image for Surface_as_vertex_array::LinearDiffuseArray" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="MultiStream">MultiStream</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">140800.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Tests multiple simultaneous surface vertex streams. Surface A is rendered with Cyan and Black pixels and bound to NV2A_VERTEX_ATTR_DIFFUSE; Surface B is rendered with Black and Magenta pixels and bound to NV2A_VERTEX_ATTR_SPECULAR. A register combiner adds Diffuse and Specular colors. Expect to see two wide quads on a dark background: left Cyan (Cyan + Black) and right Magenta (Black + Magenta).</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits)/gslv_4.50/Xbox__Xbox__DirectX__nv2a/Surface_as_vertex_array/MultiStream-diff.png" alt="Diff result for Surface_as_vertex_array::MultiStream" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits)/gslv_4.50/Surface_as_vertex_array/MultiStream.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results//Surface_as_vertex_array/MultiStream.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits)/gslv_4.50/Surface_as_vertex_array/MultiStream.png" alt="Source image for Surface_as_vertex_array::MultiStream" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results//Surface_as_vertex_array/MultiStream.png" alt="Golden image for Surface_as_vertex_array::MultiStream" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="RenderScalePattern">RenderScalePattern</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">116002.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders carrier triangle vertex indices and barycentric weights across swizzled surfaces A and B. The surfaces are bound as Diffuse and Specular vertex streams with a vertex shader that blends three carrier positions via address-register palette lookups (arl a0.x / c[A0+112]) to reconstruct a 3D mesh. Expect to see a clean, contiguous 3D mesh at 1x render scale. When emulator render scale &gt; 1.0 downsamples/filters the surface with interpolation errors across diagonal seams, shifts in index values cause address-register lookups to select incorrect palette slots, visibly tearing the mesh into spikes (reproducing the behavior in the XDK DisplacementMap sample and xemu PR #2984). </p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits)/gslv_4.50/Xbox__Xbox__DirectX__nv2a/Surface_as_vertex_array/RenderScalePattern-diff.png" alt="Diff result for Surface_as_vertex_array::RenderScalePattern" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits)/gslv_4.50/Surface_as_vertex_array/RenderScalePattern.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results//Surface_as_vertex_array/RenderScalePattern.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits)/gslv_4.50/Surface_as_vertex_array/RenderScalePattern.png" alt="Source image for Surface_as_vertex_array::RenderScalePattern" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results//Surface_as_vertex_array/RenderScalePattern.png" alt="Golden image for Surface_as_vertex_array::RenderScalePattern" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="SwizzledDiffuseArray">SwizzledDiffuseArray</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">128000.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders four 2x2 color blocks into a swizzled A8R8G8B8 surface (paired with matching 32-bit depth buffer). Due to Morton order swizzling, the 2x2 blocks occupy contiguous 4-pixel chunks in memory. The surface is then bound as NV2A_VERTEX_ATTR_DIFFUSE. Expect to see four quads on a dark background: top-left Red, top-right Green, bottom-left Blue, bottom-right Yellow.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits)/gslv_4.50/Xbox__Xbox__DirectX__nv2a/Surface_as_vertex_array/SwizzledDiffuseArray-diff.png" alt="Diff result for Surface_as_vertex_array::SwizzledDiffuseArray" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits)/gslv_4.50/Surface_as_vertex_array/SwizzledDiffuseArray.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results//Surface_as_vertex_array/SwizzledDiffuseArray.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits)/gslv_4.50/Surface_as_vertex_array/SwizzledDiffuseArray.png" alt="Source image for Surface_as_vertex_array::SwizzledDiffuseArray" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results//Surface_as_vertex_array/SwizzledDiffuseArray.png" alt="Golden image for Surface_as_vertex_array::SwizzledDiffuseArray" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div></div>
+
+    <script src="../../../../script.js"></script>
+</body>
+</html>
