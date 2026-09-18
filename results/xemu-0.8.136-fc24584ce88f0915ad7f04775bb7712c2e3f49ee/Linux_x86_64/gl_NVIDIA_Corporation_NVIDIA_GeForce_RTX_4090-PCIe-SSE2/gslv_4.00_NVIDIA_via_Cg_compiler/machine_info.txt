@@ -1,0 +1,11 @@
+xemu_version: 0.8.136
+xemu_commit: fc24584ce88f0915ad7f04775bb7712c2e3f49ee
+xemu_date: Mon Jun  8 05:42:46 UTC 2026
+xemu_settings_set_path: config path: /tmp/tmpzwdwmbmn/shard_0/inputs/xemu.toml
+CPU: 
+OS_Version: Ubuntu 24.04.4 LTS
+GL_VENDOR: NVIDIA Corporation
+GL_RENDERER: NVIDIA GeForce RTX 4090/PCIe/SSE2
+GL_VERSION: 4.0.0 NVIDIA 580.178.04
+GL_SHADING_LANGUAGE_VERSION: 4.00 NVIDIA via Cg compiler
+GL geometry shader winding: 0, 0, 0, 0
