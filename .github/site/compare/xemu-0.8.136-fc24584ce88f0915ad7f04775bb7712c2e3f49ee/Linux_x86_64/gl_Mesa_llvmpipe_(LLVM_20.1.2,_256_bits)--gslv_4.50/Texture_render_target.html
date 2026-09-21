@@ -23,10 +23,45 @@
 
 
 
+    <h3 id="RenderTextureClearLoop">RenderTextureClearLoop</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">19580.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Exercises the xemu texture cache invalidation defect (xemu #2036) triggered by rendering into a swizzled surface, sampling it as a texture (which causes xemu to blit the GPU surface into the GL texture via surf_to_tex while retaining the pre-render RAM hash in binding-&gt;data_hash), then clearing that surface as a linear surface back to black. Displays three quads side-by-side:</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits)/gslv_4.50/Xbox__Xbox__DirectX__nv2a/Texture_render_target/RenderTextureClearLoop-diff.png" alt="Diff result for Texture_render_target::RenderTextureClearLoop" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits)/gslv_4.50/Texture_render_target/RenderTextureClearLoop.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results//Texture_render_target/RenderTextureClearLoop.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits)/gslv_4.50/Texture_render_target/RenderTextureClearLoop.png" alt="Source image for Texture_render_target::RenderTextureClearLoop" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results//Texture_render_target/RenderTextureClearLoop.png" alt="Golden image for Texture_render_target::RenderTextureClearLoop" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
     <h3 id="TexFmt_A1R5G5B5">TexFmt_A1R5G5B5</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">81225.0</div></div>
+        <div class="value">81225.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a gradient pattern to a surface with A1R5G5B5 swizzled texture format and samples it onto a screen quad.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -51,7 +86,12 @@
     <h3 id="TexFmt_A1R5G5B5_L">TexFmt_A1R5G5B5_L</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">81225.0</div></div>
+        <div class="value">81225.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a gradient pattern to a surface with A1R5G5B5 linear texture format and samples it onto a screen quad.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -76,7 +116,12 @@
     <h3 id="TexFmt_A4R4G4B4">TexFmt_A4R4G4B4</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">81225.0</div></div>
+        <div class="value">81225.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a gradient pattern to a surface with A4R4G4B4 swizzled texture format and samples it onto a screen quad.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -101,7 +146,12 @@
     <h3 id="TexFmt_A4R4G4B4_L">TexFmt_A4R4G4B4_L</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">81225.0</div></div>
+        <div class="value">81225.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a gradient pattern to a surface with A4R4G4B4 linear texture format and samples it onto a screen quad.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -176,7 +226,12 @@
     <h3 id="TexFmt_A8B8G8R8">TexFmt_A8B8G8R8</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">81225.0</div></div>
+        <div class="value">81225.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a gradient pattern to a surface with A8B8G8R8 swizzled texture format and samples it onto a screen quad.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -201,7 +256,12 @@
     <h3 id="TexFmt_A8B8G8R8_L">TexFmt_A8B8G8R8_L</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">81225.0</div></div>
+        <div class="value">81225.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a gradient pattern to a surface with A8B8G8R8 linear texture format and samples it onto a screen quad.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -226,7 +286,12 @@
     <h3 id="TexFmt_A8R8G8B8">TexFmt_A8R8G8B8</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">81225.0</div></div>
+        <div class="value">81225.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a gradient pattern to a surface with A8R8G8B8 swizzled texture format and samples it onto a screen quad.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -251,7 +316,12 @@
     <h3 id="TexFmt_A8R8G8B8_L">TexFmt_A8R8G8B8_L</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">81225.0</div></div>
+        <div class="value">81225.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a gradient pattern to a surface with A8R8G8B8 linear texture format and samples it onto a screen quad.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -351,7 +421,12 @@
     <h3 id="TexFmt_B8G8R8A8">TexFmt_B8G8R8A8</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">81225.0</div></div>
+        <div class="value">81225.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a gradient pattern to a surface with B8G8R8A8 swizzled texture format and samples it onto a screen quad.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -376,7 +451,12 @@
     <h3 id="TexFmt_B8G8R8A8_L">TexFmt_B8G8R8A8_L</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">81225.0</div></div>
+        <div class="value">81225.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a gradient pattern to a surface with B8G8R8A8 linear texture format and samples it onto a screen quad.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -451,7 +531,12 @@
     <h3 id="TexFmt_G8B8_L">TexFmt_G8B8_L</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">80571.0</div></div>
+        <div class="value">80571.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a gradient pattern to a surface with G8B8 linear texture format and samples it onto a screen quad.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -476,7 +561,12 @@
     <h3 id="TexFmt_R16B16">TexFmt_R16B16</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">81225.0</div></div>
+        <div class="value">81225.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a gradient pattern to a surface with R16B16 swizzled texture format and samples it onto a screen quad.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -501,7 +591,12 @@
     <h3 id="TexFmt_R16B16_L">TexFmt_R16B16_L</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">81225.0</div></div>
+        <div class="value">81225.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a gradient pattern to a surface with R16B16 linear texture format and samples it onto a screen quad.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -526,7 +621,12 @@
     <h3 id="TexFmt_R5G6B5">TexFmt_R5G6B5</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">81225.0</div></div>
+        <div class="value">81225.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a gradient pattern to a surface with R5G6B5 swizzled texture format and samples it onto a screen quad.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -551,7 +651,12 @@
     <h3 id="TexFmt_R5G6B5_L">TexFmt_R5G6B5_L</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">81225.0</div></div>
+        <div class="value">81225.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a gradient pattern to a surface with R5G6B5 linear texture format and samples it onto a screen quad.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -626,7 +731,12 @@
     <h3 id="TexFmt_R8G8B8A8">TexFmt_R8G8B8A8</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">81225.0</div></div>
+        <div class="value">81225.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a gradient pattern to a surface with R8G8B8A8 swizzled texture format and samples it onto a screen quad.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -651,7 +761,12 @@
     <h3 id="TexFmt_R8G8B8A8_L">TexFmt_R8G8B8A8_L</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">81225.0</div></div>
+        <div class="value">81225.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a gradient pattern to a surface with R8G8B8A8 linear texture format and samples it onto a screen quad.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -776,7 +891,12 @@
     <h3 id="TexFmt_UYVY_L">TexFmt_UYVY_L</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">81225.0</div></div>
+        <div class="value">81225.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a gradient pattern to a surface with UYVY linear texture format and samples it onto a screen quad.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -801,7 +921,12 @@
     <h3 id="TexFmt_X1R5G5B5">TexFmt_X1R5G5B5</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">81225.0</div></div>
+        <div class="value">81225.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a gradient pattern to a surface with X1R5G5B5 swizzled texture format and samples it onto a screen quad.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -826,7 +951,12 @@
     <h3 id="TexFmt_X1R5G5B5_L">TexFmt_X1R5G5B5_L</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">81225.0</div></div>
+        <div class="value">81225.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a gradient pattern to a surface with X1R5G5B5 linear texture format and samples it onto a screen quad.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -851,7 +981,12 @@
     <h3 id="TexFmt_X8R8G8B8">TexFmt_X8R8G8B8</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">81225.0</div></div>
+        <div class="value">81225.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a gradient pattern to a surface with X8R8G8B8 swizzled texture format and samples it onto a screen quad.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -876,7 +1011,12 @@
     <h3 id="TexFmt_X8R8G8B8_L">TexFmt_X8R8G8B8_L</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">81225.0</div></div>
+        <div class="value">81225.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a gradient pattern to a surface with X8R8G8B8 linear texture format and samples it onto a screen quad.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -901,7 +1041,12 @@
     <h3 id="TexFmt_Y16">TexFmt_Y16</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">81225.0</div></div>
+        <div class="value">81225.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a gradient pattern to a surface with Y16 swizzled texture format and samples it onto a screen quad.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -926,7 +1071,12 @@
     <h3 id="TexFmt_Y16_L">TexFmt_Y16_L</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">81225.0</div></div>
+        <div class="value">81225.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a gradient pattern to a surface with Y16 linear texture format and samples it onto a screen quad.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -1001,7 +1151,12 @@
     <h3 id="TexFmt_YUY2_L">TexFmt_YUY2_L</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">81225.0</div></div>
+        <div class="value">81225.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a gradient pattern to a surface with YUY2 linear texture format and samples it onto a screen quad.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
