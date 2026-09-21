@@ -1,0 +1,12 @@
+xemu_version: 0.8.136
+xemu_commit: fc24584ce88f0915ad7f04775bb7712c2e3f49ee
+xemu_date: Mon Jun  8 05:41:59 UTC 2026
+xemu_settings_set_path: config path: /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpwd7c7lxk/shard_0/inputs/xemu.toml
+2026-08-20 13:42:00.682 xemu[3628:68896870] ApplePersistenceIgnoreState: Existing state will not be touched. New state will be written to /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/xemu.app.0.savedState
+CPU: 
+OS_Version: Version 26.3.1 (Build 25D2128)
+GL_VENDOR: Apple
+GL_RENDERER: Apple M5 Max
+GL_VERSION: 4.1 Metal - 90.5
+GL_SHADING_LANGUAGE_VERSION: 4.10
+GL geometry shader winding: 0, 0, 0, 0
