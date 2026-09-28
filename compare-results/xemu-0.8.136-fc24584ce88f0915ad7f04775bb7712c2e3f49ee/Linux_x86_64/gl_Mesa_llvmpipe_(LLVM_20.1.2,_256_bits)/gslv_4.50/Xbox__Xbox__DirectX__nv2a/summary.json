@@ -1994,6 +1994,10 @@
     "Texture_cubemap:DotSTRCube_0to1",
     "Texture_cubemap:DotSTRCube_HiLoHemi",
     "Texture_cubemap:DotSTRCube_HiLo_1",
+    "Texture_format:DepthFmt_D_X8Y24_FIXED_L",
+    "Texture_format:DepthFmt_D_Y16_FIXED",
+    "Texture_format:DepthFmt_D_Y16_FIXED_L",
+    "Texture_format:DepthFmt_D_Y16_FLOAT_L",
     "Texture_format:TexFmt_A1R5G5B5",
     "Texture_format:TexFmt_A1R5G5B5_L",
     "Texture_format:TexFmt_A4R4G4B4",
@@ -3347,7 +3351,8 @@
     "ZPass_pixel_count:ZPassPointSizeVS-0x01FF_ZB",
     "ZPass_pixel_count:ZPass_ZB",
     "Zero_stride:DrawArrays",
-    "Zero_stride:InlineElements"
+    "Zero_stride:InlineElements",
+    "xemu_enhancement:XemuScaledSurfaceUploadFilter"
   ],
   "tests_with_differences": {
     "2D_Lines:2DLine-15-C000003E0-400_200-400_400": 200.0,
@@ -4328,6 +4333,9 @@
     "Texture_cubemap:DotSTR3D_HiLoHemi": 56909.0,
     "Texture_cubemap:DotSTR3D_HiLo_1": 56909.0,
     "Texture_cubemap:DotSTRCube_HiLoHemi": 37843.0,
+    "Texture_format:DepthFmt_D_X8Y24_FIXED_L": 235.0,
+    "Texture_format:DepthFmt_D_Y16_FIXED_L": 235.0,
+    "Texture_format:DepthFmt_D_Y16_FLOAT_L": 25766.0,
     "Texture_format:TexFmt_DXT1": 19162.0,
     "Texture_format:TexFmt_R6G5B5": 127623.0,
     "Texture_format:TexFmt_UYVY_L": 88582.0,

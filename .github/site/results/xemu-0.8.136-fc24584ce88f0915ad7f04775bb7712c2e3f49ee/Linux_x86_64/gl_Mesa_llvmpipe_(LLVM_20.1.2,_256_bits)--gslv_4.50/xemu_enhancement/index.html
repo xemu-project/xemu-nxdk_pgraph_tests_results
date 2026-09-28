@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee: Ubuntu 24.04.4 LTS - AMD EPYC 9V74 80-Core Processor, GL: Mesa - llvmpipe (LLVM 20.1.2, 256 bits) - 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.2, Shader: 4.50 - xemu_enhancement</title>
+    <link rel="stylesheet" href="../../../../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../../../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    
+      <a href="../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Arrow_chevron_up_in_sharp_solid_style.svg" width="32" alt="Navigate up one level" /></a>
+    </div>
+
+    <div class="page-content"><h1>xemu_enhancement</h1>
+
+<div class="label-value-grid">
+    <div class="label"><a href="https://xemu.app">xemu</a> version</div>
+    <div class="value">xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee</div>
+
+    <div class="label">Platform</div>
+    <div class="value">Ubuntu 24.04.4 LTS - AMD EPYC 9V74 80-Core Processor</div>
+
+    <div class="label">Renderer</div>
+    <div class="value">OpenGL</div>
+
+    <div class="label">GL info</div>
+    <div class="value">Mesa - llvmpipe (LLVM 20.1.2, 256 bits) - 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.2</div>
+
+    <div class="label">GLSL version</div>
+    <div class="value">4.50</div>
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Tests various enhancements (changes that intentionally depart from hardware) specific to the xemu emulator (</div>
+    
+        <div class="test-description-line">https://xemu.app</div>
+    
+        <div class="test-description-line">).</div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/xemu_enhancement_tests.h#L10">src/tests/xemu_enhancement_tests.h</a></div>
+</div>
+
+<h2 id="XemuScaledSurfaceUploadFilter">XemuScaledSurfaceUploadFilter</h2>
+        <div class="test-case-description">
+        <p>Writes 1-pixel-wide alternating R/B vertical stripes to the framebuffer via CPU, then issues a GPU draw to trigger xemu&#39;s internal surface upload (pgraph_vk_upload_surface_data). After GPU completion the framebuffer is read back via CPU, which triggers xemu&#39;s download path. At scale &gt; 1x the NEAREST+NEAREST round-trip preserves exact R/B values, while any other filtering produces blended intermediate values that fail the channel-purity check. At scale == 1x no upscale occurs and the test passes trivially. </p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/xemu_enhancement/XemuScaledSurfaceUploadFilter.png" alt="Test result for xemu_enhancement::XemuScaledSurfaceUploadFilter" class="inline-image">
+</div>
+    
+</div>
+
+    <script src="../../../../../script.js"></script>
+</body>
+</html>
