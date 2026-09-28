@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# ruff: noqa: S607, BLE001, FBT001, FBT002, TRY300, TRY400
+# ruff: noqa: BLE001
 """Restores raw test result images for a specific xemu version from git archive branches."""
 
 from __future__ import annotations
@@ -22,7 +22,13 @@ def git(*args: str, cwd: str | None = None) -> str:
 def fetch_archive_branches(cwd: str | None = None) -> list[str]:
     """Fetches all archive branches from remote origin."""
     try:
-        git("fetch", "--force", "origin", "refs/heads/archive/*:refs/remotes/origin/archive/*", cwd=cwd)
+        git(
+            "fetch",
+            "--force",
+            "origin",
+            "refs/heads/archive/*:refs/remotes/origin/archive/*",
+            cwd=cwd,
+        )
     except Exception as e:
         logger.warning("Could not fetch remote archive branches: %s", e)
 
@@ -79,7 +85,9 @@ def restore_version(
             logger.error("Failed to untar results for %s", version)
             return False
 
-        logger.info("Successfully extracted results for %s into %s", version, target_dir)
+        logger.info(
+            "Successfully extracted results for %s into %s", version, target_dir
+        )
 
         if force:
             comp_dirs = [
@@ -99,7 +107,9 @@ def restore_version(
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Restores archived result images from archive/<version> git branches.")
+    parser = argparse.ArgumentParser(
+        description="Restores archived result images from archive/<version> git branches."
+    )
     parser.add_argument(
         "--version",
         help="Target xemu version or pattern (e.g. 0.8.135, xemu-0.8.135-..., or 'all')",
@@ -140,7 +150,9 @@ def main() -> int:
         elif os.path.isdir(".git"):
             repo_dir = "."
         else:
-            repo_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+            repo_dir = os.path.dirname(
+                os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            )
 
     available_branches = fetch_archive_branches(cwd=repo_dir)
 

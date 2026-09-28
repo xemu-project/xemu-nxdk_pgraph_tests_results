@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# ruff: noqa: S607 Starting a process with a partial executable path
+
 # ruff: noqa: BLE001 Do not catch blind exception
 """Stages modified and added files, and records deleted files for artifact upload."""
 
@@ -42,7 +42,11 @@ def main() -> int:
         legacy_dir = os.path.join(source_dir, "compare-results", "results")
         if os.path.isdir(legacy_dir):
             print("Cleaning up legacy compare-results/results directory...")
-            subprocess.run(["git", "rm", "-r", "--cached", "compare-results/results"], cwd=source_dir, check=False)
+            subprocess.run(
+                ["git", "rm", "-r", "--cached", "compare-results/results"],
+                cwd=source_dir,
+                check=False,
+            )
             shutil.rmtree(legacy_dir, ignore_errors=True)
 
         # Add target directories to git index so untracked and modified files are indexed
@@ -58,7 +62,9 @@ def main() -> int:
 
     if not diff_out.strip():
         print("No changes detected.")
-        with open(os.path.join(staging_dir, "KEEP_ARTIFACT"), "w", encoding="utf-8") as f:
+        with open(
+            os.path.join(staging_dir, "KEEP_ARTIFACT"), "w", encoding="utf-8"
+        ) as f:
             f.write("")
         return 0
 
@@ -77,12 +83,16 @@ def main() -> int:
             deleted_files.append(rel_path)
 
     if deleted_files:
-        with open(os.path.join(staging_dir, ".deleted_files.txt"), "w", encoding="utf-8") as f:
+        with open(
+            os.path.join(staging_dir, ".deleted_files.txt"), "w", encoding="utf-8"
+        ) as f:
             f.write("\n".join(deleted_files) + "\n")
         print(f"Recorded {len(deleted_files)} deleted file(s).")
 
     if staged_count == 0 and not deleted_files:
-        with open(os.path.join(staging_dir, "KEEP_ARTIFACT"), "w", encoding="utf-8") as f:
+        with open(
+            os.path.join(staging_dir, "KEEP_ARTIFACT"), "w", encoding="utf-8"
+        ) as f:
             f.write("")
         print("No file changes to copy. Created KEEP_ARTIFACT.")
     else:

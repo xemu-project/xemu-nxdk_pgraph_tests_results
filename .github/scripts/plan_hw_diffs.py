@@ -14,14 +14,30 @@ logger = logging.getLogger(__name__)
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Plan HW diff matrix for GitHub Actions.")
-    parser.add_argument("--results-dir", default="results", help="Directory containing test outputs")
-    parser.add_argument("--output-dir", default="compare-results", help="Directory containing diff results")
-    parser.add_argument("--golden-dir", default=None, help="Directory containing golden HW results")
-    parser.add_argument("--cache-path", default="cache", help="Directory for caching downloaded goldens")
-    parser.add_argument("--max-shards", type=int, default=32, help="Maximum number of parallel shards")
+    parser = argparse.ArgumentParser(
+        description="Plan HW diff matrix for GitHub Actions."
+    )
     parser.add_argument(
-        "--output-plan-file", default="diff_tasks.json", help="File to write the planned tasks JSON array"
+        "--results-dir", default="results", help="Directory containing test outputs"
+    )
+    parser.add_argument(
+        "--output-dir",
+        default="compare-results",
+        help="Directory containing diff results",
+    )
+    parser.add_argument(
+        "--golden-dir", default=None, help="Directory containing golden HW results"
+    )
+    parser.add_argument(
+        "--cache-path", default="cache", help="Directory for caching downloaded goldens"
+    )
+    parser.add_argument(
+        "--max-shards", type=int, default=32, help="Maximum number of parallel shards"
+    )
+    parser.add_argument(
+        "--output-plan-file",
+        default="diff_tasks.json",
+        help="File to write the planned tasks JSON array",
     )
 
     args = parser.parse_args()
@@ -42,7 +58,9 @@ def main() -> int:
     logger.info("Planned %d diff task(s) across %d shard(s)", diff_count, shard_count)
 
     if args.output_plan_file:
-        os.makedirs(os.path.dirname(os.path.abspath(args.output_plan_file)), exist_ok=True)
+        os.makedirs(
+            os.path.dirname(os.path.abspath(args.output_plan_file)), exist_ok=True
+        )
         with open(args.output_plan_file, "w", encoding="utf-8") as f:
             json.dump([t.to_dict() for t in tasks], f, indent=2)
         logger.info("Saved plan to %s", args.output_plan_file)

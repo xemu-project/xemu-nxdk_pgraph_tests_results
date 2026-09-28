@@ -31,179 +31,315 @@
     <div class="value">4.10</div>
     <div class="label">Description</div>
     <div class="value">
-        <div class="test-description-line">Tests sampling of NV2A texture formats, verifying color conversion, swizzling, and alpha channel handling.</div>
+        <div class="test-description-line">Exercises rendering a textured quad using various NV2A hardware texture formats. A color gradient is generated and converted to the target format (applying swizzling if swizzled), then sampled via the projective 2D shader stage with the final combiner set to output the sampled texture color. Also tests 8-bit palettized textures across various palette sizes and verifies alpha channel behavior for formats containing dummy "X" alpha components.</div>
     </div>
     
     <div class="label">Suite class def</div>
-    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/texture_format_tests.h#L17">src/tests/texture_format_tests.h</a></div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/texture_format_tests.h#L23">src/tests/texture_format_tests.h</a></div>
 </div>
 
 <h2 id="TexFmt_A1R5G5B5">TexFmt_A1R5G5B5</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in A1R5G5B5 swizzled format.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_A1R5G5B5.png" alt="Test result for Texture_format::TexFmt_A1R5G5B5" class="inline-image">
 </div>
     
 <h2 id="TexFmt_A1R5G5B5_L">TexFmt_A1R5G5B5_L</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in A1R5G5B5 linear format.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_A1R5G5B5_L.png" alt="Test result for Texture_format::TexFmt_A1R5G5B5_L" class="inline-image">
 </div>
     
 <h2 id="TexFmt_A4R4G4B4">TexFmt_A4R4G4B4</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in A4R4G4B4 swizzled format.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_A4R4G4B4.png" alt="Test result for Texture_format::TexFmt_A4R4G4B4" class="inline-image">
 </div>
     
 <h2 id="TexFmt_A4R4G4B4_L">TexFmt_A4R4G4B4_L</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in A4R4G4B4 linear format.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_A4R4G4B4_L.png" alt="Test result for Texture_format::TexFmt_A4R4G4B4_L" class="inline-image">
 </div>
     
 <h2 id="TexFmt_A8B8G8R8">TexFmt_A8B8G8R8</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in A8B8G8R8 swizzled format.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_A8B8G8R8.png" alt="Test result for Texture_format::TexFmt_A8B8G8R8" class="inline-image">
 </div>
     
 <h2 id="TexFmt_A8B8G8R8_L">TexFmt_A8B8G8R8_L</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in A8B8G8R8 linear format.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_A8B8G8R8_L.png" alt="Test result for Texture_format::TexFmt_A8B8G8R8_L" class="inline-image">
 </div>
     
 <h2 id="TexFmt_A8R8G8B8">TexFmt_A8R8G8B8</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in A8R8G8B8 swizzled format.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_A8R8G8B8.png" alt="Test result for Texture_format::TexFmt_A8R8G8B8" class="inline-image">
 </div>
     
 <h2 id="TexFmt_A8R8G8B8_L">TexFmt_A8R8G8B8_L</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in A8R8G8B8 linear format.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_A8R8G8B8_L.png" alt="Test result for Texture_format::TexFmt_A8R8G8B8_L" class="inline-image">
 </div>
     
 <h2 id="TexFmt_A8Y8">TexFmt_A8Y8</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in A8Y8 swizzled format.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_A8Y8.png" alt="Test result for Texture_format::TexFmt_A8Y8" class="inline-image">
 </div>
     
 <h2 id="TexFmt_AY8">TexFmt_AY8</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in AY8 swizzled format.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_AY8.png" alt="Test result for Texture_format::TexFmt_AY8" class="inline-image">
 </div>
     
 <h2 id="TexFmt_AY8_L">TexFmt_AY8_L</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in AY8 linear format.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_AY8_L.png" alt="Test result for Texture_format::TexFmt_AY8_L" class="inline-image">
 </div>
     
 <h2 id="TexFmt_B8G8R8A8">TexFmt_B8G8R8A8</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in B8G8R8A8 swizzled format.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_B8G8R8A8.png" alt="Test result for Texture_format::TexFmt_B8G8R8A8" class="inline-image">
 </div>
     
 <h2 id="TexFmt_B8G8R8A8_L">TexFmt_B8G8R8A8_L</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in B8G8R8A8 linear format.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_B8G8R8A8_L.png" alt="Test result for Texture_format::TexFmt_B8G8R8A8_L" class="inline-image">
 </div>
     
 <h2 id="TexFmt_DXT1">TexFmt_DXT1</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in DXT1 compressed format.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_DXT1.png" alt="Test result for Texture_format::TexFmt_DXT1" class="inline-image">
 </div>
     
 <h2 id="TexFmt_G8B8">TexFmt_G8B8</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in G8B8 swizzled format.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_G8B8.png" alt="Test result for Texture_format::TexFmt_G8B8" class="inline-image">
 </div>
     
 <h2 id="TexFmt_G8B8_L">TexFmt_G8B8_L</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in G8B8 linear format.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_G8B8_L.png" alt="Test result for Texture_format::TexFmt_G8B8_L" class="inline-image">
 </div>
     
 <h2 id="TexFmt_R5G6B5">TexFmt_R5G6B5</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in R5G6B5 swizzled format.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_R5G6B5.png" alt="Test result for Texture_format::TexFmt_R5G6B5" class="inline-image">
 </div>
     
 <h2 id="TexFmt_R5G6B5_L">TexFmt_R5G6B5_L</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in R5G6B5 linear format.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_R5G6B5_L.png" alt="Test result for Texture_format::TexFmt_R5G6B5_L" class="inline-image">
 </div>
     
 <h2 id="TexFmt_R8B8">TexFmt_R8B8</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in R8B8 swizzled format.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_R8B8.png" alt="Test result for Texture_format::TexFmt_R8B8" class="inline-image">
 </div>
     
 <h2 id="TexFmt_R8G8B8A8">TexFmt_R8G8B8A8</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in R8G8B8A8 swizzled format.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_R8G8B8A8.png" alt="Test result for Texture_format::TexFmt_R8G8B8A8" class="inline-image">
 </div>
     
 <h2 id="TexFmt_R8G8B8A8_L">TexFmt_R8G8B8A8_L</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in R8G8B8A8 linear format.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_R8G8B8A8_L.png" alt="Test result for Texture_format::TexFmt_R8G8B8A8_L" class="inline-image">
 </div>
     
 <h2 id="TexFmt_SZ_Index8_p128">TexFmt_SZ_Index8_p128</h2>
+        <div class="test-case-description">
+        <p>Samples an 8-bit palettized texture (SZ_I8_A8R8G8B8) configured with a 128-entry color palette.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_SZ_Index8_p128.png" alt="Test result for Texture_format::TexFmt_SZ_Index8_p128" class="inline-image">
 </div>
     
 <h2 id="TexFmt_SZ_Index8_p256">TexFmt_SZ_Index8_p256</h2>
+        <div class="test-case-description">
+        <p>Samples an 8-bit palettized texture (SZ_I8_A8R8G8B8) configured with a 256-entry color palette.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_SZ_Index8_p256.png" alt="Test result for Texture_format::TexFmt_SZ_Index8_p256" class="inline-image">
 </div>
     
 <h2 id="TexFmt_SZ_Index8_p32">TexFmt_SZ_Index8_p32</h2>
+        <div class="test-case-description">
+        <p>Samples an 8-bit palettized texture (SZ_I8_A8R8G8B8) configured with a 32-entry color palette.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_SZ_Index8_p32.png" alt="Test result for Texture_format::TexFmt_SZ_Index8_p32" class="inline-image">
 </div>
     
 <h2 id="TexFmt_SZ_Index8_p64">TexFmt_SZ_Index8_p64</h2>
+        <div class="test-case-description">
+        <p>Samples an 8-bit palettized texture (SZ_I8_A8R8G8B8) configured with a 64-entry color palette.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_SZ_Index8_p64.png" alt="Test result for Texture_format::TexFmt_SZ_Index8_p64" class="inline-image">
 </div>
     
 <h2 id="TexFmt_UYVY_L">TexFmt_UYVY_L</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in UYVY (LC_IMAGE_YB8CR8YA8CB8) linear YUV format.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_UYVY_L.png" alt="Test result for Texture_format::TexFmt_UYVY_L" class="inline-image">
 </div>
     
 <h2 id="TexFmt_X1R5G5B5">TexFmt_X1R5G5B5</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in X1R5G5B5 swizzled format.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_X1R5G5B5.png" alt="Test result for Texture_format::TexFmt_X1R5G5B5" class="inline-image">
 </div>
     
 <h2 id="TexFmt_X1R5G5B5_L">TexFmt_X1R5G5B5_L</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in X1R5G5B5 linear format.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_X1R5G5B5_L.png" alt="Test result for Texture_format::TexFmt_X1R5G5B5_L" class="inline-image">
 </div>
     
 <h2 id="TexFmt_X8R8G8B8">TexFmt_X8R8G8B8</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in X8R8G8B8 swizzled format.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_X8R8G8B8.png" alt="Test result for Texture_format::TexFmt_X8R8G8B8" class="inline-image">
 </div>
     
 <h2 id="TexFmt_X8R8G8B8_L">TexFmt_X8R8G8B8_L</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in X8R8G8B8 linear format.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_X8R8G8B8_L.png" alt="Test result for Texture_format::TexFmt_X8R8G8B8_L" class="inline-image">
 </div>
     
 <h2 id="TexFmt_Y16_L">TexFmt_Y16_L</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in Y16 linear format (NV097_SET_TEXTURE_FORMAT_COLOR_LU_IMAGE_Y16, format 0x35).</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_Y16_L.png" alt="Test result for Texture_format::TexFmt_Y16_L" class="inline-image">
 </div>
     
 <h2 id="TexFmt_Y8">TexFmt_Y8</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in Y8 swizzled format.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_Y8.png" alt="Test result for Texture_format::TexFmt_Y8" class="inline-image">
 </div>
     
 <h2 id="TexFmt_Y8_L">TexFmt_Y8_L</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in Y8 linear format.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_Y8_L.png" alt="Test result for Texture_format::TexFmt_Y8_L" class="inline-image">
 </div>
     
 <h2 id="TexFmt_YUY2_L">TexFmt_YUY2_L</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in YUY2 (LC_IMAGE_CR8YB8CB8YA8) linear YUV format.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_format/TexFmt_YUY2_L.png" alt="Test result for Texture_format::TexFmt_YUY2_L" class="inline-image">
 </div>

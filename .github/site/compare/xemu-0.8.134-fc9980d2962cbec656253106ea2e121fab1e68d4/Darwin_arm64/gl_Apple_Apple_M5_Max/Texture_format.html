@@ -17,11 +17,11 @@
 <div class="label-value-grid">
     <div class="label">Description</div>
     <div class="value">
-        <div class="test-description-line">Tests sampling of NV2A texture formats, verifying color conversion, swizzling, and alpha channel handling.</div>
+        <div class="test-description-line">Exercises rendering a textured quad using various NV2A hardware texture formats. A color gradient is generated and converted to the target format (applying swizzling if swizzled), then sampled via the projective 2D shader stage with the final combiner set to output the sampled texture color. Also tests 8-bit palettized textures across various palette sizes and verifies alpha channel behavior for formats containing dummy "X" alpha components.</div>
     </div>
     
     <div class="label">Suite class def</div>
-    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/texture_format_tests.h#L17">src/tests/texture_format_tests.h</a></div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/texture_format_tests.h#L23">src/tests/texture_format_tests.h</a></div>
     <div class="label">Golden results</div>
     <div class="value"><a href="https://abaire.github.io/nxdk_pgraph_tests_golden_results/results/Texture_format/index.html">https://abaire.github.io/nxdk_pgraph_tests_golden_results/results/Texture_format/index.html</a></div>
 </div>
@@ -31,7 +31,12 @@
     <h3 id="TexFmt_DXT1">TexFmt_DXT1</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">19162.0</div></div>
+        <div class="value">19162.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Samples a 2D color gradient texture in DXT1 compressed format.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -45,10 +50,10 @@
     <div class="image-pair">
         <div class="image-pair-title-bar">
             <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.134-fc9980d2962cbec656253106ea2e121fab1e68d4/Darwin_arm64/gl_Apple_Apple_M5_Max/gslv_4.10/Texture_format/TexFmt_DXT1.png">Source</a></div>
-            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results//Texture_format/TexFmt_DXT1.png">Golden</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_DXT1.png">Golden</a></div>
         </div>
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.134-fc9980d2962cbec656253106ea2e121fab1e68d4/Darwin_arm64/gl_Apple_Apple_M5_Max/gslv_4.10/Texture_format/TexFmt_DXT1.png" alt="Source image for Texture_format::TexFmt_DXT1" class="image-comparison" data-state="source">
-        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results//Texture_format/TexFmt_DXT1.png" alt="Golden image for Texture_format::TexFmt_DXT1" class="image-comparison" data-state="golden" style="display: none;">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_DXT1.png" alt="Golden image for Texture_format::TexFmt_DXT1" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
 
@@ -56,7 +61,12 @@
     <h3 id="TexFmt_R6G5B5">TexFmt_R6G5B5</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">127623.0</div></div>
+        <div class="value">127623.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Samples a 2D color gradient texture in R6G5B5 swizzled format.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -70,10 +80,10 @@
     <div class="image-pair">
         <div class="image-pair-title-bar">
             <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.134-fc9980d2962cbec656253106ea2e121fab1e68d4/Darwin_arm64/gl_Apple_Apple_M5_Max/gslv_4.10/Texture_format/TexFmt_R6G5B5.png">Source</a></div>
-            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results//Texture_format/TexFmt_R6G5B5.png">Golden</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_R6G5B5.png">Golden</a></div>
         </div>
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.134-fc9980d2962cbec656253106ea2e121fab1e68d4/Darwin_arm64/gl_Apple_Apple_M5_Max/gslv_4.10/Texture_format/TexFmt_R6G5B5.png" alt="Source image for Texture_format::TexFmt_R6G5B5" class="image-comparison" data-state="source">
-        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results//Texture_format/TexFmt_R6G5B5.png" alt="Golden image for Texture_format::TexFmt_R6G5B5" class="image-comparison" data-state="golden" style="display: none;">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_R6G5B5.png" alt="Golden image for Texture_format::TexFmt_R6G5B5" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
 
@@ -81,7 +91,12 @@
     <h3 id="TexFmt_UYVY_L">TexFmt_UYVY_L</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">88582.0</div></div>
+        <div class="value">88582.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Samples a 2D color gradient texture in UYVY (LC_IMAGE_YB8CR8YA8CB8) linear YUV format.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -95,10 +110,10 @@
     <div class="image-pair">
         <div class="image-pair-title-bar">
             <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.134-fc9980d2962cbec656253106ea2e121fab1e68d4/Darwin_arm64/gl_Apple_Apple_M5_Max/gslv_4.10/Texture_format/TexFmt_UYVY_L.png">Source</a></div>
-            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results//Texture_format/TexFmt_UYVY_L.png">Golden</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_UYVY_L.png">Golden</a></div>
         </div>
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.134-fc9980d2962cbec656253106ea2e121fab1e68d4/Darwin_arm64/gl_Apple_Apple_M5_Max/gslv_4.10/Texture_format/TexFmt_UYVY_L.png" alt="Source image for Texture_format::TexFmt_UYVY_L" class="image-comparison" data-state="source">
-        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results//Texture_format/TexFmt_UYVY_L.png" alt="Golden image for Texture_format::TexFmt_UYVY_L" class="image-comparison" data-state="golden" style="display: none;">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_UYVY_L.png" alt="Golden image for Texture_format::TexFmt_UYVY_L" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
 
@@ -106,7 +121,12 @@
     <h3 id="TexFmt_X1R5G5B5">TexFmt_X1R5G5B5</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">12915.0</div></div>
+        <div class="value">12915.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Samples a 2D color gradient texture in X1R5G5B5 swizzled format.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -120,10 +140,10 @@
     <div class="image-pair">
         <div class="image-pair-title-bar">
             <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.134-fc9980d2962cbec656253106ea2e121fab1e68d4/Darwin_arm64/gl_Apple_Apple_M5_Max/gslv_4.10/Texture_format/TexFmt_X1R5G5B5.png">Source</a></div>
-            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results//Texture_format/TexFmt_X1R5G5B5.png">Golden</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_X1R5G5B5.png">Golden</a></div>
         </div>
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.134-fc9980d2962cbec656253106ea2e121fab1e68d4/Darwin_arm64/gl_Apple_Apple_M5_Max/gslv_4.10/Texture_format/TexFmt_X1R5G5B5.png" alt="Source image for Texture_format::TexFmt_X1R5G5B5" class="image-comparison" data-state="source">
-        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results//Texture_format/TexFmt_X1R5G5B5.png" alt="Golden image for Texture_format::TexFmt_X1R5G5B5" class="image-comparison" data-state="golden" style="display: none;">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_X1R5G5B5.png" alt="Golden image for Texture_format::TexFmt_X1R5G5B5" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
 
@@ -131,7 +151,12 @@
     <h3 id="TexFmt_X1R5G5B5_L">TexFmt_X1R5G5B5_L</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">12915.0</div></div>
+        <div class="value">12915.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Samples a 2D color gradient texture in X1R5G5B5 linear format.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -145,10 +170,10 @@
     <div class="image-pair">
         <div class="image-pair-title-bar">
             <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.134-fc9980d2962cbec656253106ea2e121fab1e68d4/Darwin_arm64/gl_Apple_Apple_M5_Max/gslv_4.10/Texture_format/TexFmt_X1R5G5B5_L.png">Source</a></div>
-            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results//Texture_format/TexFmt_X1R5G5B5_L.png">Golden</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_X1R5G5B5_L.png">Golden</a></div>
         </div>
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.134-fc9980d2962cbec656253106ea2e121fab1e68d4/Darwin_arm64/gl_Apple_Apple_M5_Max/gslv_4.10/Texture_format/TexFmt_X1R5G5B5_L.png" alt="Source image for Texture_format::TexFmt_X1R5G5B5_L" class="image-comparison" data-state="source">
-        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results//Texture_format/TexFmt_X1R5G5B5_L.png" alt="Golden image for Texture_format::TexFmt_X1R5G5B5_L" class="image-comparison" data-state="golden" style="display: none;">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_X1R5G5B5_L.png" alt="Golden image for Texture_format::TexFmt_X1R5G5B5_L" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
 
@@ -156,7 +181,12 @@
     <h3 id="TexFmt_Y16_L">TexFmt_Y16_L</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">136213.0</div></div>
+        <div class="value">136213.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Samples a 2D color gradient texture in Y16 linear format (NV097_SET_TEXTURE_FORMAT_COLOR_LU_IMAGE_Y16, format 0x35).</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -170,10 +200,10 @@
     <div class="image-pair">
         <div class="image-pair-title-bar">
             <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.134-fc9980d2962cbec656253106ea2e121fab1e68d4/Darwin_arm64/gl_Apple_Apple_M5_Max/gslv_4.10/Texture_format/TexFmt_Y16_L.png">Source</a></div>
-            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results//Texture_format/TexFmt_Y16_L.png">Golden</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_Y16_L.png">Golden</a></div>
         </div>
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.134-fc9980d2962cbec656253106ea2e121fab1e68d4/Darwin_arm64/gl_Apple_Apple_M5_Max/gslv_4.10/Texture_format/TexFmt_Y16_L.png" alt="Source image for Texture_format::TexFmt_Y16_L" class="image-comparison" data-state="source">
-        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results//Texture_format/TexFmt_Y16_L.png" alt="Golden image for Texture_format::TexFmt_Y16_L" class="image-comparison" data-state="golden" style="display: none;">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_Y16_L.png" alt="Golden image for Texture_format::TexFmt_Y16_L" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
 
@@ -181,7 +211,12 @@
     <h3 id="TexFmt_YUY2_L">TexFmt_YUY2_L</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">88582.0</div></div>
+        <div class="value">88582.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Samples a 2D color gradient texture in YUY2 (LC_IMAGE_CR8YB8CB8YA8) linear YUV format.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -195,10 +230,10 @@
     <div class="image-pair">
         <div class="image-pair-title-bar">
             <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.134-fc9980d2962cbec656253106ea2e121fab1e68d4/Darwin_arm64/gl_Apple_Apple_M5_Max/gslv_4.10/Texture_format/TexFmt_YUY2_L.png">Source</a></div>
-            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results//Texture_format/TexFmt_YUY2_L.png">Golden</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_YUY2_L.png">Golden</a></div>
         </div>
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.134-fc9980d2962cbec656253106ea2e121fab1e68d4/Darwin_arm64/gl_Apple_Apple_M5_Max/gslv_4.10/Texture_format/TexFmt_YUY2_L.png" alt="Source image for Texture_format::TexFmt_YUY2_L" class="image-comparison" data-state="source">
-        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results//Texture_format/TexFmt_YUY2_L.png" alt="Golden image for Texture_format::TexFmt_YUY2_L" class="image-comparison" data-state="golden" style="display: none;">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_YUY2_L.png" alt="Golden image for Texture_format::TexFmt_YUY2_L" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
 

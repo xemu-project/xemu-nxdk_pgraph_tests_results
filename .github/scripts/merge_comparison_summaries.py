@@ -12,7 +12,9 @@ logger = logging.getLogger(__name__)
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Merge shard summary files into unified summary.json files.")
+    parser = argparse.ArgumentParser(
+        description="Merge shard summary files into unified summary.json files."
+    )
     parser.add_argument(
         "--comparison-dir",
         default="compare-results",

@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 
-# ruff: noqa: C416 Unnecessary dict comprehension
+
 # ruff: noqa: C414 Unnecessary list call
-# ruff: noqa: PLR2004 Magic value used in comparison
-# ruff: noqa: S701 By default, jinja2 sets `autoescape` to `False`. Consider using `autoescape=True` or the `select_autoescape` function to mitigate XSS vulnerabilities.
+
 
 from __future__ import annotations
 
@@ -18,6 +17,7 @@ import sys
 from collections import defaultdict
 from dataclasses import dataclass
 from typing import Any, NamedTuple
+from urllib.parse import quote
 
 import requests
 from frozendict import deepfreeze, frozendict
@@ -155,7 +155,7 @@ class TestSuiteComparisonInfo(NamedTuple):
 
 
 class ComparisonInfo(NamedTuple):
-    """"""
+    """Encapsulates information about a particular run and associated golden results."""
 
     identifier: RunIdentifier
     golden_identifier_component: str
@@ -268,12 +268,12 @@ class ComparisonScanner:
     ) -> None:
         self.comparison_dir = comparison_dir
         self.output_dir = output_dir
-        self.base_url = base_url
+        self.base_url = base_url.rstrip("/")
         self.results_dir = results_dir
         self.golden_results_dir = (
             golden_results_dir if golden_results_dir else results_dir
         )
-        self.hw_golden_base_url = hw_golden_base_url
+        self.hw_golden_base_url = hw_golden_base_url.rstrip("/")
         self.test_suite_descriptors = test_suite_descriptors
         self.source_image_index = (
             source_image_index
@@ -331,26 +331,40 @@ class ComparisonScanner:
             )
             rel_src = self.source_image_index.get(ident)
             if rel_src:
-                source_image_url = f"{self.base_url}/{rel_src.replace(os.sep, '/')}"
-            else:
                 source_image_url = (
+                    f"{self.base_url}/{quote(rel_src.replace(os.sep, '/'))}"
+                )
+            else:
+                source_subpath = (
                     "/".join(
-                        [self.base_url, results_base_path, *original_image_subpath]
+                        [
+                            p.replace(os.sep, "/")
+                            for p in [results_base_path, *original_image_subpath]
+                            if p
+                        ]
                     )
                     + ".png"
                 )
+                source_image_url = f"{self.base_url}/{quote(source_subpath)}"
 
-            golden_image_url = (
-                "/".join([golden_base_url, golden_base_path, *original_image_subpath])
+            golden_subpath = (
+                "/".join(
+                    [
+                        p.replace(os.sep, "/")
+                        for p in [golden_base_path, *original_image_subpath]
+                        if p
+                    ]
+                )
                 + ".png"
             )
+            golden_image_url = f"{golden_base_url.rstrip('/')}/{quote(golden_subpath)}"
 
             ret.append(
                 TestCaseComparisonInfo(
                     test_name=test_name,
                     source_image_url=source_image_url,
                     golden_image_url=golden_image_url,
-                    diff_image_url=f"{self.base_url}/{image_file}",
+                    diff_image_url=f"{self.base_url}/{quote(image_file.replace(os.sep, '/'))}",
                     diff_distance=run_info["tests_with_differences"].get(
                         fq_name, math.inf
                     ),
@@ -509,7 +523,7 @@ class ResultsScanner:
     ) -> None:
         self.results_dir = results_dir
         self.output_dir = output_dir
-        self.base_url = base_url
+        self.base_url = base_url.rstrip("/")
         self.run_identifier_to_comparison_results = run_identifier_to_comparison_results
         self.test_suite_descriptors = test_suite_descriptors
 
@@ -535,7 +549,7 @@ class ResultsScanner:
             ret.append(
                 TestResult(
                     name=test_name,
-                    artifact_url=f"{self.base_url}/{image_file}",
+                    artifact_url=f"{self.base_url}/{quote(image_file.replace(os.sep, '/'))}",
                     info=deepfreeze(test_info),
                 )
             )
@@ -778,7 +792,7 @@ class PagesWriter:
         return f"{os.path.relpath(self.output_dir, output_dir)}/index.html"
 
     def _golden_suite_url(self, suite_name: str) -> str:
-        return f"{self.hw_golden_browser_base_url}/{suite_name}/index.html"
+        return f"{self.hw_golden_browser_base_url}/{quote(suite_name)}/index.html"
 
     def _write_comparison_suite_page(
         self,
@@ -903,10 +917,9 @@ class PagesWriter:
     def golden_url_for_fqtest(
         fully_qualified_test_name: str, golden_base_url: str
     ) -> str:
-        path = "/".join(
-            [golden_base_url, *PagesWriter.split_fq_name(fully_qualified_test_name)]
-        )
-        return f"{path}.png"
+        suite, test_case = PagesWriter.split_fq_name(fully_qualified_test_name)
+        quoted_path = quote(f"{suite}/{test_case}.png")
+        return f"{golden_base_url.rstrip('/')}/{quoted_path}"
 
     def results_url_for_fqtest(
         self, run: RunIdentifier, fully_qualified_test_name: str
@@ -920,7 +933,7 @@ class PagesWriter:
         )
         rel_src = self.source_image_index.get(ident)
         if rel_src:
-            return f"{self.images_base_url}/{rel_src.replace(os.sep, '/')}"
+            return f"{self.images_base_url}/{quote(rel_src.replace(os.sep, '/'))}"
 
         for results_info in self.results.values():
             if (
@@ -933,16 +946,17 @@ class PagesWriter:
                             if tr.name == test_case and tr.artifact_url:
                                 return tr.artifact_url
 
-        path = "/".join(
-            [
-                self.images_base_url,
-                RESULTS_SUBDIR,
-                run.minimal_path.replace(":", "/"),
-                suite,
-                test_case,
-            ]
+        path = quote(
+            "/".join(
+                [
+                    RESULTS_SUBDIR,
+                    run.minimal_path.replace(":", "/"),
+                    suite,
+                    f"{test_case}.png",
+                ]
+            )
         )
-        return f"{path}.png"
+        return f"{self.images_base_url}/{path}"
 
     @staticmethod
     def _suite_result_url(run: ResultsInfo, suite: SuiteResults) -> str:
@@ -952,9 +966,10 @@ class PagesWriter:
 
     def _suite_source_url(self, source_file_path: str, source_line: int) -> str:
         if self.test_source_base_url and source_file_path:
+            quoted_source_file_path = quote(source_file_path)
             if source_line >= 0:
-                return f"{self.test_source_base_url}/{source_file_path}#L{source_line}"
-            return f"{self.test_source_base_url}/{source_file_path}"
+                return f"{self.test_source_base_url}/{quoted_source_file_path}#L{source_line}"
+            return f"{self.test_source_base_url}/{quoted_source_file_path}"
         return ""
 
     def _pack_descriptor(
