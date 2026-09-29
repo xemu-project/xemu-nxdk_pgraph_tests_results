@@ -14,15 +14,14 @@
 
     <div class="page-content"><h1>xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee</h1>
 <h2>Darwin_arm64 - OpenGL</h2>
-        <h3>Differences from Xbox_Hardware: 0</h3>
+        <h3>Differences from Xbox_Hardware: 9</h3>
 
 <h1>Machine info</h1>
 <div class="code-snippet">
 xemu_version: 0.8.136
 xemu_commit: fc24584ce88f0915ad7f04775bb7712c2e3f49ee
 xemu_date: Mon Jun  8 05:41:59 UTC 2026
-xemu_settings_set_path: config path: /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpwd7c7lxk/shard_0/inputs/xemu.toml
-2026-08-20 13:42:00.682 xemu[3628:68896870] ApplePersistenceIgnoreState: Existing state will not be touched. New state will be written to /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/xemu.app.0.savedState
+2026-09-28 12:42:09.810 xemu[85495:25399743] ApplePersistenceIgnoreState: Existing state will not be touched. New state will be written to /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/xemu.app.0.savedState
 CPU: 
 OS_Version: Version 26.3.1 (Build 25D2128)
 GL_VENDOR: Apple
@@ -109,6 +108,8 @@ GL geometry shader winding: 0, 0, 0, 0
         
             <li><a href="Fog_param/index.html">Fog_param</a></li>
         
+            <li><a href="Fog_planar_vsh/index.html">Fog_planar_vsh</a></li>
+        
             <li><a href="Fog_vsh/index.html">Fog_vsh</a></li>
         
             <li><a href="Front_face/index.html">Front_face</a></li>
@@ -169,6 +170,8 @@ GL geometry shader winding: 0, 0, 0, 0
         
             <li><a href="Surface%20format/index.html">Surface format</a></li>
         
+            <li><a href="Surface_as_vertex_array/index.html">Surface_as_vertex_array</a></li>
+        
             <li><a href="Surface_clip/index.html">Surface_clip</a></li>
         
             <li><a href="Surface_format/index.html">Surface_format</a></li>
@@ -186,6 +189,8 @@ GL geometry shader winding: 0, 0, 0, 0
             <li><a href="Texture%20BRDF/index.html">Texture BRDF</a></li>
         
             <li><a href="Texture%20format/index.html">Texture format</a></li>
+        
+            <li><a href="Texture%20render%20target/index.html">Texture render target</a></li>
         
             <li><a href="Texture_2D_as_cubemap/index.html">Texture_2D_as_cubemap</a></li>
         
@@ -247,6 +252,8 @@ GL geometry shader winding: 0, 0, 0, 0
         
             <li><a href="Window_clip/index.html">Window_clip</a></li>
         
+            <li><a href="xemu_enhancement/index.html">xemu_enhancement</a></li>
+        
             <li><a href="Zero_stride/index.html">Zero_stride</a></li>
         
             <li><a href="ZMinMaxControl/index.html">ZMinMaxControl</a></li>
@@ -255,234 +262,257 @@ GL geometry shader winding: 0, 0, 0, 0
         
     </ul>
 
-<h1>Failed tests (13)</h1>
+<h1>Failed tests (14)</h1>
 
     <h2>Blend surface::1-DstAlpha_XA_O1A7RGB8</h2>
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 nv2a: unimplemented color surface format 0x7
-
     </div>
 
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 nv2a: unimplemented color surface format 0x7
-
     </div>
 
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 nv2a: unimplemented color surface format 0x7
-
     </div>
 
 
     <h2>Bump env lum::BumpEnvLum_R16B16</h2>
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 nv2a: unimplemented texture color format 0x33
-
     </div>
 
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 nv2a: unimplemented texture color format 0x33
-
     </div>
 
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 nv2a: unimplemented texture color format 0x33
-
     </div>
 
 
     <h2>Bump map::BumpMap_R16B16</h2>
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 nv2a: unimplemented texture color format 0x33
-
     </div>
 
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 nv2a: unimplemented texture color format 0x33
-
     </div>
 
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 nv2a: unimplemented texture color format 0x33
-
     </div>
 
 
     <h2>Clear::SCF_X1A7R8G8B8_O1A7R8G8B8</h2>
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 Assertion failed: (!"CLEAR_SURFACE handling for LE_X1A7R8G8B8_Z1A7R8G8B8 and LE_X1A7R8G8B8_O1A7R8G8B8 is untested"), function pgraph_get_clear_color, file pgraph.c, line 3093.
-
     </div>
 
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 Assertion failed: (!"CLEAR_SURFACE handling for LE_X1A7R8G8B8_Z1A7R8G8B8 and LE_X1A7R8G8B8_O1A7R8G8B8 is untested"), function pgraph_get_clear_color, file pgraph.c, line 3093.
-
     </div>
 
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 Assertion failed: (!"CLEAR_SURFACE handling for LE_X1A7R8G8B8_Z1A7R8G8B8 and LE_X1A7R8G8B8_O1A7R8G8B8 is untested"), function pgraph_get_clear_color, file pgraph.c, line 3093.
-
     </div>
 
 
     <h2>Clear::SCF_X1A7R8G8B8_Z1A7R8G8B8</h2>
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 Assertion failed: (!"CLEAR_SURFACE handling for LE_X1A7R8G8B8_Z1A7R8G8B8 and LE_X1A7R8G8B8_O1A7R8G8B8 is untested"), function pgraph_get_clear_color, file pgraph.c, line 3093.
-
     </div>
 
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 Assertion failed: (!"CLEAR_SURFACE handling for LE_X1A7R8G8B8_Z1A7R8G8B8 and LE_X1A7R8G8B8_O1A7R8G8B8 is untested"), function pgraph_get_clear_color, file pgraph.c, line 3093.
-
     </div>
 
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 Assertion failed: (!"CLEAR_SURFACE handling for LE_X1A7R8G8B8_Z1A7R8G8B8 and LE_X1A7R8G8B8_O1A7R8G8B8 is untested"), function pgraph_get_clear_color, file pgraph.c, line 3093.
-
     </div>
 
 
     <h2>Clear::SCF_X1R5G5B5_O1R5G5B5</h2>
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 nv2a: unimplemented color surface format 0x2
-
     </div>
 
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 nv2a: unimplemented color surface format 0x2
-
     </div>
 
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 nv2a: unimplemented color surface format 0x2
-
     </div>
 
 
     <h2>Clear::SCF_X8R8G8B8_O8R8G8B8</h2>
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 nv2a: unimplemented color surface format 0x5
-
     </div>
 
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 nv2a: unimplemented color surface format 0x5
-
     </div>
 
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 nv2a: unimplemented color surface format 0x5
-
     </div>
 
 
     <h2>Color zeta overlap::AdjacentWithAA</h2>
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 Assertion failed: (d->pgraph.surface_color.buffer_dirty), function pgraph_gl_surface_invalidate, file surface.c, line 574.
-
     </div>
 
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 Assertion failed: (d->pgraph.surface_color.buffer_dirty), function pgraph_gl_surface_invalidate, file surface.c, line 574.
-
     </div>
 
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 Assertion failed: (d->pgraph.surface_color.buffer_dirty), function pgraph_gl_surface_invalidate, file surface.c, line 574.
-
     </div>
 
 
     <h2>Surface format::Fmt_X1A7R8G8B8_O1A7R8G8B8</h2>
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 nv2a: unimplemented color surface format 0x7
-
     </div>
 
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 nv2a: unimplemented color surface format 0x7
-
     </div>
 
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 nv2a: unimplemented color surface format 0x7
-
     </div>
 
 
     <h2>Texgen with texture matrix::SphereMap_Arbitrary</h2>
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 Assertion failed: (channel < 2), function kelvin_map_texgen, file pgraph.c, line 1669.
-
     </div>
 
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 Assertion failed: (channel < 2), function kelvin_map_texgen, file pgraph.c, line 1669.
-
     </div>
 
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 Assertion failed: (channel < 2), function kelvin_map_texgen, file pgraph.c, line 1669.
-
     </div>
 
 
     <h2>Texture BRDF::BRDF_e0_l0</h2>
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 nv2a: unimplemented texture color format 0x33
-
     </div>
 
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 nv2a: unimplemented texture color format 0x33
-
     </div>
 
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 nv2a: unimplemented texture color format 0x33
-
     </div>
 
 
-    <h2>Texture format::TexFmt_R16B16</h2>
+    <h2>Texture format::DepthFmt_D_X8Y24_FIXED</h2>
     <div class="code-snippet">
-nv2a: unimplemented texture color format 0x33
-
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+nv2a: unimplemented texture color format 0x2a
     </div>
 
     <div class="code-snippet">
-nv2a: unimplemented texture color format 0x33
-
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
+nv2a: unimplemented texture color format 0x2a
     </div>
 
     <div class="code-snippet">
-nv2a: unimplemented texture color format 0x33
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
+nv2a: unimplemented texture color format 0x2a
+    </div>
 
+
+    <h2>Texture render target::TexFmt_R16B16</h2>
+    <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
+nv2a: unimplemented texture color format 0x33
+    </div>
+
+    <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
+nv2a: unimplemented texture color format 0x33
+    </div>
+
+    <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
+nv2a: unimplemented texture color format 0x33
     </div>
 
 
     <h2>Volume texture::R16B16</h2>
     <div class="code-snippet">
-UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 nv2a: unimplemented texture color format 0x33
-
     </div>
 
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 nv2a: unimplemented texture color format 0x33
-
     </div>
 
     <div class="code-snippet">
+Created QEMU launch parameters: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.136/xemu.app/Contents/MacOS/xemu -machine xbox,bootrom=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/mcpx.bin,short-animation=on,kernel-irqchip=off,avpack=hdtv -device smbus-storage,file=/Users/abaire/Library/Application Support/xemu/xemu/eeprom.bin -bios /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/bios.bin -m 64 -drive index=0,media=disk,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/inputs/test_runner_hdd.qcow2,locked=on -drive index=1,media=cdrom,file=/var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/tmpuyp8evvs/data/updated_pgraph_tester_iso.iso -display xemu -device usb-hub,port=1,ports=4 
 nv2a: unimplemented texture color format 0x33
-
     </div>
 
 <h1>Comparisons</h1>
     <h2 id="Xbox_Hardware"><a href="../../../../compare/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Darwin_arm64/gl_Apple_Apple_M5_Max--gslv_4.10/index.html">Xbox_Hardware</a></h2>
 
     <h3>Test suites with differences</h3>
-    <ul></ul>
+    <ul>
+        <li><a href="../../../../compare/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Darwin_arm64/gl_Apple_Apple_M5_Max--gslv_4.10/Surface_as_vertex_array.html">Surface_as_vertex_array</a></li>
+    
+        <li><a href="../../../../compare/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Darwin_arm64/gl_Apple_Apple_M5_Max--gslv_4.10/Texture_format.html">Texture_format</a></li>
+    
+        <li><a href="../../../../compare/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Darwin_arm64/gl_Apple_Apple_M5_Max--gslv_4.10/Texture_render_target.html">Texture_render_target</a></li>
+    </ul>
         <h3>Tests without goldens</h3>
         <ul>
             <div class="titled-image-container">

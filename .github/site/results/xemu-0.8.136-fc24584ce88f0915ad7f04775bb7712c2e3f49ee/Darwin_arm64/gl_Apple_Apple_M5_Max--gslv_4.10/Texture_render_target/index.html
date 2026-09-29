@@ -33,6 +33,15 @@
     <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/texture_render_target_tests.h#L17">src/tests/texture_render_target_tests.h</a></div>
 </div>
 
+<h2 id="RenderTextureClearLoop">RenderTextureClearLoop</h2>
+        <div class="test-case-description">
+        <p>Exercises the xemu texture cache invalidation defect (xemu #2036) triggered by rendering into a swizzled surface, sampling it as a texture (which causes xemu to blit the GPU surface into the GL texture via surf_to_tex while retaining the pre-render RAM hash in binding-&gt;data_hash), then clearing that surface as a linear surface back to black. Displays three quads side-by-side:</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Darwin_arm64/gl_Apple_Apple_M5_Max/gslv_4.10/Texture_render_target/RenderTextureClearLoop.png" alt="Test result for Texture_render_target::RenderTextureClearLoop" class="inline-image">
+</div>
+    
 <h2 id="RenderTextureLoop">RenderTextureLoop</h2>
         <div class="test-case-description">
         <p>Renders Blue, Green, and Red into a surface sequentially, texturing separate screen quads to verify render-to-texture loop updates.</p>
