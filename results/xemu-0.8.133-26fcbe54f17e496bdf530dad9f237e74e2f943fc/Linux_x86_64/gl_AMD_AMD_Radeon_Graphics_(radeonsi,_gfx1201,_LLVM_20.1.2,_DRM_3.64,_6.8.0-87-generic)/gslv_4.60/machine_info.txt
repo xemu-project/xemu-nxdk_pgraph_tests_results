@@ -1,0 +1,9 @@
+xemu_version: 0.8.133
+xemu_commit: 26fcbe54f17e496bdf530dad9f237e74e2f943fc
+xemu_date: Tue Jan 20 07:24:41 UTC 2026
+CPU: Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz
+OS_Version: Ubuntu 24.04.3 LTS
+GL_VENDOR: AMD
+GL_RENDERER: AMD Radeon Graphics (radeonsi, gfx1201, LLVM 20.1.2, DRM 3.64, 6.8.0-87-generic)
+GL_VERSION: 4.6 (Core Profile) Mesa 25.0.7-0ubuntu0.24.04.2
+GL_SHADING_LANGUAGE_VERSION: 4.60

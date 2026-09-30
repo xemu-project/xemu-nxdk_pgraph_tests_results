@@ -1,0 +1,30 @@
+xemu_version: 0.8.133
+xemu_commit: 26fcbe54f17e496bdf530dad9f237e74e2f943fc
+xemu_date: Tue Jan 20 07:24:41 UTC 2026
+CPU: Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz
+OS_Version: Ubuntu 24.04.3 LTS
+GL_VENDOR: AMD
+GL_RENDERER: AMD Radeon Graphics (radeonsi, gfx1201, LLVM 20.1.2, DRM 3.64, 6.8.0-90-generic)
+GL_VERSION: 4.6 (Core Profile) Mesa 25.0.7-0ubuntu0.24.04.2
+GL_SHADING_LANGUAGE_VERSION: 4.60
+GL geometry shader winding: 0, 0, 0, 0
+Enabled instance extensions:
+- VK_KHR_surface
+- VK_KHR_xlib_surface
+- VK_KHR_get_physical_device_properties2
+- VK_KHR_external_semaphore_capabilities
+- VK_KHR_external_memory_capabilities
+WARNING: radv is not a conformant Vulkan implementation, testing use only.
+Available physical devices:
+- AMD Radeon Graphics (RADV GFX1201)
+- llvmpipe (LLVM 20.1.2, 256 bits)
+Selected physical device: AMD Radeon Graphics (RADV GFX1201)
+- Vendor: 1002, Device: 7550
+- Driver Version: 25.0.7
+Enabled device extensions:
+- VK_KHR_external_semaphore
+- VK_KHR_external_memory
+- VK_KHR_external_memory_fd
+- VK_KHR_external_semaphore_fd
+- VK_EXT_custom_border_color
+- VK_EXT_memory_budget

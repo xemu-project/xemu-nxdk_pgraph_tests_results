@@ -1,0 +1,29 @@
+xemu_version: 0.8.133
+xemu_commit: 26fcbe54f17e496bdf530dad9f237e74e2f943fc
+xemu_date: Tue Jan 20 07:24:41 UTC 2026
+CPU: 
+OS_Version: Ubuntu 24.04.3 LTS
+GL_VENDOR: NVIDIA Corporation
+GL_RENDERER: NVIDIA GeForce RTX 4090/PCIe/SSE2
+GL_VERSION: 4.0.0 NVIDIA 590.48.01
+GL_SHADING_LANGUAGE_VERSION: 4.00 NVIDIA via Cg compiler
+GL geometry shader winding: 0, 0, 0, 0
+Enabled instance extensions:
+- VK_KHR_surface
+- VK_KHR_xlib_surface
+- VK_KHR_get_physical_device_properties2
+- VK_KHR_external_semaphore_capabilities
+- VK_KHR_external_memory_capabilities
+Available physical devices:
+- NVIDIA GeForce RTX 4090
+- llvmpipe (LLVM 20.1.2, 256 bits)
+Selected physical device: NVIDIA GeForce RTX 4090
+- Vendor: 10de, Device: 2684
+- Driver Version: 590.192.64
+Enabled device extensions:
+- VK_KHR_external_semaphore
+- VK_KHR_external_memory
+- VK_KHR_external_memory_fd
+- VK_KHR_external_semaphore_fd
+- VK_EXT_custom_border_color
+- VK_EXT_memory_budget
