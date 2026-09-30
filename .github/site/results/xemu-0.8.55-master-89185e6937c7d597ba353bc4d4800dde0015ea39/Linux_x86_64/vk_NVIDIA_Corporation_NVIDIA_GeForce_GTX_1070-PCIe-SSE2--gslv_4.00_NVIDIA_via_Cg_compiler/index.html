@@ -76,8 +76,6 @@ Enabled device extensions:
         
             <li><a href="Clear/index.html">Clear</a></li>
         
-            <li><a href="Color%20zeta%20overlap/index.html">Color zeta overlap</a></li>
-        
             <li><a href="Color_key/index.html">Color_key</a></li>
         
             <li><a href="Color_mask_blend/index.html">Color_mask_blend</a></li>
@@ -162,8 +160,6 @@ Enabled device extensions:
         
             <li><a href="Stipple_tests/index.html">Stipple_tests</a></li>
         
-            <li><a href="Surface%20format/index.html">Surface format</a></li>
-        
             <li><a href="Surface_clip/index.html">Surface_clip</a></li>
         
             <li><a href="Surface_format/index.html">Surface_format</a></li>
@@ -175,8 +171,6 @@ Enabled device extensions:
             <li><a href="Texgen/index.html">Texgen</a></li>
         
             <li><a href="Texgen_with_texture_matrix/index.html">Texgen_with_texture_matrix</a></li>
-        
-            <li><a href="Texture%20border/index.html">Texture border</a></li>
         
             <li><a href="Texture_border/index.html">Texture_border</a></li>
         
@@ -224,9 +218,9 @@ Enabled device extensions:
         
     </ul>
 
-<h1>Failed tests (3)</h1>
+<h1>Failed tests (16)</h1>
 
-    <h2>Color zeta overlap::AdjacentWithAA</h2>
+    <h2>Color_zeta_overlap::AdjacentWithAA</h2>
     <div class="code-snippet">
 xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/surface.c:616: invalidate_surface: Assertion `d->pgraph.surface_color.buffer_dirty' failed.
 
@@ -243,7 +237,7 @@ xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/surface.c:616: invalidat
     </div>
 
 
-    <h2>Surface format::Fmt_X1A7R8G8B8_O1A7R8G8B8</h2>
+    <h2>Surface_format::Fmt_X1A7R8G8B8_O1A7R8G8B8</h2>
     <div class="code-snippet">
 nv2a: unimplemented color surface format 0x7
 
@@ -260,7 +254,258 @@ nv2a: unimplemented color surface format 0x7
     </div>
 
 
-    <h2>Texture border::2D</h2>
+    <h2>Surface_format::Fmt_X1A7R8G8B8_Z1A7R8G8B8</h2>
+    <div class="code-snippet">
+nv2a: unimplemented color surface format 0x6
+
+    </div>
+
+    <div class="code-snippet">
+nv2a: unimplemented color surface format 0x6
+
+    </div>
+
+    <div class="code-snippet">
+nv2a: unimplemented color surface format 0x6
+
+    </div>
+
+
+    <h2>Surface_format::Fmt_X1R5G5B5_O1R5G5B5</h2>
+    <div class="code-snippet">
+nv2a: unimplemented color surface format 0x2
+
+    </div>
+
+    <div class="code-snippet">
+nv2a: unimplemented color surface format 0x2
+
+    </div>
+
+    <div class="code-snippet">
+nv2a: unimplemented color surface format 0x2
+
+    </div>
+
+
+    <h2>Surface_format::Fmt_X8R8G8B8_O8R8G8B8</h2>
+    <div class="code-snippet">
+nv2a: unimplemented color surface format 0x5
+
+    </div>
+
+    <div class="code-snippet">
+nv2a: unimplemented color surface format 0x5
+
+    </div>
+
+    <div class="code-snippet">
+nv2a: unimplemented color surface format 0x5
+
+    </div>
+
+
+    <h2>Texture_border::2D</h2>
+    <div class="code-snippet">
+vk_result = -4
+xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/command.c:104: pgraph_vk_end_single_time_commands: Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/command.c:104: pgraph_vk_end_single_time_commands: Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/command.c:104: pgraph_vk_end_single_time_commands: Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+
+    </div>
+
+
+    <h2>Texture_border::2D_BorderTex_SZ</h2>
+    <div class="code-snippet">
+vk_result = -4
+xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/command.c:104: pgraph_vk_end_single_time_commands: Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/command.c:104: pgraph_vk_end_single_time_commands: Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/command.c:104: pgraph_vk_end_single_time_commands: Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+
+    </div>
+
+
+    <h2>Texture_border::3D_BorderTex_SZ_16x1</h2>
+    <div class="code-snippet">
+vk_result = -4
+xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/command.c:104: pgraph_vk_end_single_time_commands: Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/command.c:104: pgraph_vk_end_single_time_commands: Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/command.c:104: pgraph_vk_end_single_time_commands: Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+
+    </div>
+
+
+    <h2>Texture_border::3D_BorderTex_SZ_16x16</h2>
+    <div class="code-snippet">
+vk_result = -4
+xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/command.c:104: pgraph_vk_end_single_time_commands: Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/command.c:104: pgraph_vk_end_single_time_commands: Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/command.c:104: pgraph_vk_end_single_time_commands: Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+
+    </div>
+
+
+    <h2>Texture_border::3D_BorderTex_SZ_1x1</h2>
+    <div class="code-snippet">
+vk_result = -4
+xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/command.c:104: pgraph_vk_end_single_time_commands: Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/command.c:104: pgraph_vk_end_single_time_commands: Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/command.c:104: pgraph_vk_end_single_time_commands: Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+
+    </div>
+
+
+    <h2>Texture_border::3D_BorderTex_SZ_2x2</h2>
+    <div class="code-snippet">
+vk_result = -4
+xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/command.c:104: pgraph_vk_end_single_time_commands: Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/command.c:104: pgraph_vk_end_single_time_commands: Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/command.c:104: pgraph_vk_end_single_time_commands: Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+
+    </div>
+
+
+    <h2>Texture_border::3D_BorderTex_SZ_32x32</h2>
+    <div class="code-snippet">
+vk_result = -4
+xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/command.c:104: pgraph_vk_end_single_time_commands: Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/command.c:104: pgraph_vk_end_single_time_commands: Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/command.c:104: pgraph_vk_end_single_time_commands: Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+
+    </div>
+
+
+    <h2>Texture_border::3D_BorderTex_SZ_4x4</h2>
+    <div class="code-snippet">
+vk_result = -4
+xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/command.c:104: pgraph_vk_end_single_time_commands: Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/command.c:104: pgraph_vk_end_single_time_commands: Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/command.c:104: pgraph_vk_end_single_time_commands: Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+
+    </div>
+
+
+    <h2>Texture_border::3D_BorderTex_SZ_4x8</h2>
+    <div class="code-snippet">
+vk_result = -4
+xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/command.c:104: pgraph_vk_end_single_time_commands: Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/command.c:104: pgraph_vk_end_single_time_commands: Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/command.c:104: pgraph_vk_end_single_time_commands: Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+
+    </div>
+
+
+    <h2>Texture_border::3D_BorderTex_SZ_8x2</h2>
+    <div class="code-snippet">
+vk_result = -4
+xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/command.c:104: pgraph_vk_end_single_time_commands: Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/command.c:104: pgraph_vk_end_single_time_commands: Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/command.c:104: pgraph_vk_end_single_time_commands: Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+
+    </div>
+
+
+    <h2>Texture_border::3D_BorderTex_SZ_8x8</h2>
     <div class="code-snippet">
 vk_result = -4
 xemu-v0.8.55-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/command.c:104: pgraph_vk_end_single_time_commands: Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.

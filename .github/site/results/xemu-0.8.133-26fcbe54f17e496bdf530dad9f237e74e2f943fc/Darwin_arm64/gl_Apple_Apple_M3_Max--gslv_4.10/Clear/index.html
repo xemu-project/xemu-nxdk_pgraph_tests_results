@@ -260,19 +260,6 @@
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.133-26fcbe54f17e496bdf530dad9f237e74e2f943fc/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Clear/C01010101_Depth_y_ZB.png" alt="Test result for Clear::C01010101_Depth_y_ZB" class="inline-image">
 </div>
     
-<h2 id="Clear">Clear</h2><h3>Failures</h3>
-        
-        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
-nv2a: unimplemented color surface format 0x5
-</div>
-        
-        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
-</div>
-        
-        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
-nv2a: unimplemented color surface format 0x5
-</div>
-        
 <h2 id="SCF_R5G6B5">SCF_R5G6B5</h2>
         <div class="test-case-description">
         <p>Tests the effect of clear color on LE_R5G6B5 surface format. (Note that the surface is rendered as an ARGB8 texture)</p>
@@ -282,6 +269,73 @@ nv2a: unimplemented color surface format 0x5
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.133-26fcbe54f17e496bdf530dad9f237e74e2f943fc/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Clear/SCF_R5G6B5.png" alt="Test result for Clear::SCF_R5G6B5" class="inline-image">
 </div>
     
+<h2 id="SCF_X1A7R8G8B8_O1A7R8G8B8">SCF_X1A7R8G8B8_O1A7R8G8B8</h2>
+        <div class="test-case-description">
+        <p>Tests the effect of clear color on LE_X1A7R8G8B8_O1A7R8G8B8 surface format. The cleared surface will have its most significant bit set to 1. </p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+Assertion failed: (!"CLEAR_SURFACE handling for LE_X1A7R8G8B8_Z1A7R8G8B8 and LE_X1A7R8G8B8_O1A7R8G8B8 is untested"), function pgraph_get_clear_color, file pgraph.c, line 3093.
+</div>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+Assertion failed: (!"CLEAR_SURFACE handling for LE_X1A7R8G8B8_Z1A7R8G8B8 and LE_X1A7R8G8B8_O1A7R8G8B8 is untested"), function pgraph_get_clear_color, file pgraph.c, line 3093.
+</div>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+Assertion failed: (!"CLEAR_SURFACE handling for LE_X1A7R8G8B8_Z1A7R8G8B8 and LE_X1A7R8G8B8_O1A7R8G8B8 is untested"), function pgraph_get_clear_color, file pgraph.c, line 3093.
+</div>
+        
+<h2 id="SCF_X1A7R8G8B8_Z1A7R8G8B8">SCF_X1A7R8G8B8_Z1A7R8G8B8</h2>
+        <div class="test-case-description">
+        <p>Tests the effect of clear color on LE_X1A7R8G8B8_Z1A7R8G8B8 surface format. The cleared surface will have its most significant bit set to 0.</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+Assertion failed: (!"CLEAR_SURFACE handling for LE_X1A7R8G8B8_Z1A7R8G8B8 and LE_X1A7R8G8B8_O1A7R8G8B8 is untested"), function pgraph_get_clear_color, file pgraph.c, line 3093.
+</div>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+Assertion failed: (!"CLEAR_SURFACE handling for LE_X1A7R8G8B8_Z1A7R8G8B8 and LE_X1A7R8G8B8_O1A7R8G8B8 is untested"), function pgraph_get_clear_color, file pgraph.c, line 3093.
+</div>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+Assertion failed: (!"CLEAR_SURFACE handling for LE_X1A7R8G8B8_Z1A7R8G8B8 and LE_X1A7R8G8B8_O1A7R8G8B8 is untested"), function pgraph_get_clear_color, file pgraph.c, line 3093.
+</div>
+        
+<h2 id="SCF_X1R5G5B5_O1R5G5B5">SCF_X1R5G5B5_O1R5G5B5</h2><h3>Failures</h3>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+nv2a: unimplemented color surface format 0x2
+</div>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+nv2a: unimplemented color surface format 0x2
+</div>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+nv2a: unimplemented color surface format 0x2
+</div>
+        
+<h2 id="SCF_X8R8G8B8_O8R8G8B8">SCF_X8R8G8B8_O8R8G8B8</h2>
+        <div class="test-case-description">
+        <p>Tests the effect of clear color on LE_X8R8G8B8_O8R8G8B8 surface format. The cleared surface will have its most significant byte set to 1.</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+nv2a: unimplemented color surface format 0x5
+</div>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+</div>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+nv2a: unimplemented color surface format 0x5
+</div>
+        
 <h2 id="SCF_X8R8G8B8_Z8R8G8B8">SCF_X8R8G8B8_Z8R8G8B8</h2>
         <div class="test-case-description">
         <p>Tests the effect of clear color on LE_X8R8G8B8_Z8R8G8B8 surface format. The cleared surface will have its most significant byte set to 0.</p>

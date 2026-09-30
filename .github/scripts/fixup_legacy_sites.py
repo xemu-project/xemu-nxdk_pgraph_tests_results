@@ -526,6 +526,8 @@ def fixup_github_pages(
         if os.path.isfile(gen_script) and (mod_count > 0 or site_output_dir):
             logger.info("Regenerating site with generate_results_site.py...")
             site_target = os.path.join(worktree_dir, ".github", "site")
+            if os.path.isdir(site_target):
+                shutil.rmtree(site_target)
             # Note: pass relative "results" and "compare-results" with cwd=worktree_dir
             # to avoid prepending worktree dir into generated GitHub image URLs.
             subprocess.run(
@@ -577,6 +579,8 @@ def fixup_github_pages(
                     "Copying generated site to %s for deployment...",
                     site_output_dir,
                 )
+                if os.path.exists(dst_site):
+                    shutil.rmtree(dst_site)
                 os.makedirs(dst_site, exist_ok=True)
                 shutil.copytree(src_site, dst_site, dirs_exist_ok=True)
 

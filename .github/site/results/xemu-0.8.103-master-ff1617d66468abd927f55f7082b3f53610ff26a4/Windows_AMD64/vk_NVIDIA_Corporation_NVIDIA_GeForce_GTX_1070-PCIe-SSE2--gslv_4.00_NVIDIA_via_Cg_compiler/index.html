@@ -74,8 +74,6 @@ Enabled device extensions:
         
             <li><a href="Clear/index.html">Clear</a></li>
         
-            <li><a href="Color%20zeta%20overlap/index.html">Color zeta overlap</a></li>
-        
             <li><a href="Color_key/index.html">Color_key</a></li>
         
             <li><a href="Color_mask_blend/index.html">Color_mask_blend</a></li>
@@ -168,8 +166,6 @@ Enabled device extensions:
         
             <li><a href="Stipple_tests/index.html">Stipple_tests</a></li>
         
-            <li><a href="Surface%20format/index.html">Surface format</a></li>
-        
             <li><a href="Surface_clip/index.html">Surface_clip</a></li>
         
             <li><a href="Surface_format/index.html">Surface_format</a></li>
@@ -182,17 +178,11 @@ Enabled device extensions:
         
             <li><a href="Texgen_with_texture_matrix/index.html">Texgen_with_texture_matrix</a></li>
         
-            <li><a href="Texture%20border/index.html">Texture border</a></li>
-        
-            <li><a href="Texture%20border%20color/index.html">Texture border color</a></li>
-        
-            <li><a href="Texture%20format/index.html">Texture format</a></li>
-        
-            <li><a href="Texture%20render%20target/index.html">Texture render target</a></li>
-        
             <li><a href="Texture_anisotropy/index.html">Texture_anisotropy</a></li>
         
             <li><a href="Texture_border/index.html">Texture_border</a></li>
+        
+            <li><a href="Texture_border_color/index.html">Texture_border_color</a></li>
         
             <li><a href="Texture_CPU_Update/index.html">Texture_CPU_Update</a></li>
         
@@ -226,8 +216,6 @@ Enabled device extensions:
         
             <li><a href="Viewport/index.html">Viewport</a></li>
         
-            <li><a href="Volume%20texture/index.html">Volume texture</a></li>
-        
             <li><a href="Volume_texture/index.html">Volume_texture</a></li>
         
             <li><a href="W_param/index.html">W_param</a></li>
@@ -244,7 +232,7 @@ Enabled device extensions:
         
     </ul>
 
-<h1>Failed tests (12)</h1>
+<h1>Failed tests (25)</h1>
 
     <h2>Clear::SCF_X1A7R8G8B8_O1A7R8G8B8</h2>
     <div class="code-snippet">
@@ -314,7 +302,7 @@ nv2a: unimplemented color surface format 0x5
     </div>
 
 
-    <h2>Color zeta overlap::AdjacentWithAA</h2>
+    <h2>Color_zeta_overlap::AdjacentWithAA</h2>
     <div class="code-snippet">
 
     </div>
@@ -345,7 +333,7 @@ vk_result = -3
     </div>
 
 
-    <h2>Surface format::Fmt_X1A7R8G8B8_O1A7R8G8B8</h2>
+    <h2>Surface_format::Fmt_X1A7R8G8B8_O1A7R8G8B8</h2>
     <div class="code-snippet">
 nv2a: unimplemented color surface format 0x7
 
@@ -362,21 +350,58 @@ nv2a: unimplemented color surface format 0x7
     </div>
 
 
-    <h2>Texture border color::TextureBorderColor</h2>
+    <h2>Surface_format::Fmt_X1A7R8G8B8_Z1A7R8G8B8</h2>
     <div class="code-snippet">
+nv2a: unimplemented color surface format 0x6
 
     </div>
 
     <div class="code-snippet">
+nv2a: unimplemented color surface format 0x6
 
     </div>
 
     <div class="code-snippet">
+nv2a: unimplemented color surface format 0x6
 
     </div>
 
 
-    <h2>Texture border::2D</h2>
+    <h2>Surface_format::Fmt_X1R5G5B5_O1R5G5B5</h2>
+    <div class="code-snippet">
+nv2a: unimplemented color surface format 0x2
+
+    </div>
+
+    <div class="code-snippet">
+nv2a: unimplemented color surface format 0x2
+
+    </div>
+
+    <div class="code-snippet">
+nv2a: unimplemented color surface format 0x2
+
+    </div>
+
+
+    <h2>Surface_format::Fmt_X8R8G8B8_O8R8G8B8</h2>
+    <div class="code-snippet">
+nv2a: unimplemented color surface format 0x5
+
+    </div>
+
+    <div class="code-snippet">
+nv2a: unimplemented color surface format 0x5
+
+    </div>
+
+    <div class="code-snippet">
+nv2a: unimplemented color surface format 0x5
+
+    </div>
+
+
+    <h2>Texture_border::2D</h2>
     <div class="code-snippet">
 vk_result = -4
 
@@ -393,7 +418,177 @@ vk_result = -4
     </div>
 
 
-    <h2>Texture format::TexFmt_R6G5B5</h2>
+    <h2>Texture_border::2D_BorderTex_SZ</h2>
+    <div class="code-snippet">
+vk_result = -4
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+
+    </div>
+
+
+    <h2>Texture_border::3D_BorderTex_SZ_16x1</h2>
+    <div class="code-snippet">
+vk_result = -4
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+
+    </div>
+
+
+    <h2>Texture_border::3D_BorderTex_SZ_16x16</h2>
+    <div class="code-snippet">
+vk_result = -4
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+
+    </div>
+
+
+    <h2>Texture_border::3D_BorderTex_SZ_1x1</h2>
+    <div class="code-snippet">
+vk_result = -4
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+
+    </div>
+
+
+    <h2>Texture_border::3D_BorderTex_SZ_2x2</h2>
+    <div class="code-snippet">
+vk_result = -4
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+
+    </div>
+
+
+    <h2>Texture_border::3D_BorderTex_SZ_32x32</h2>
+    <div class="code-snippet">
+vk_result = -4
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+
+    </div>
+
+
+    <h2>Texture_border::3D_BorderTex_SZ_4x4</h2>
+    <div class="code-snippet">
+vk_result = -4
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+
+    </div>
+
+
+    <h2>Texture_border::3D_BorderTex_SZ_4x8</h2>
+    <div class="code-snippet">
+vk_result = -4
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+
+    </div>
+
+
+    <h2>Texture_border::3D_BorderTex_SZ_8x2</h2>
+    <div class="code-snippet">
+vk_result = -4
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+
+    </div>
+
+
+    <h2>Texture_border::3D_BorderTex_SZ_8x8</h2>
+    <div class="code-snippet">
+vk_result = -4
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+
+    </div>
+
+    <div class="code-snippet">
+vk_result = -4
+
+    </div>
+
+
+    <h2>Texture_border_color::TextureBorderColor</h2>
     <div class="code-snippet">
 
     </div>
@@ -407,7 +602,7 @@ vk_result = -4
     </div>
 
 
-    <h2>Texture render target::TexFmt_R6G5B5</h2>
+    <h2>Texture_format::TexFmt_R6G5B5</h2>
     <div class="code-snippet">
 
     </div>
@@ -421,7 +616,7 @@ vk_result = -4
     </div>
 
 
-    <h2>Volume texture::R6G5B5</h2>
+    <h2>Texture_render_target::TexFmt_R6G5B5</h2>
     <div class="code-snippet">
 
     </div>
@@ -433,6 +628,27 @@ vk_result = -4
     <div class="code-snippet">
 
     </div>
+
+
+    <h2>Volume_texture::R6G5B5</h2>
+    <div class="code-snippet">
+
+    </div>
+
+    <div class="code-snippet">
+
+    </div>
+
+    <div class="code-snippet">
+
+    </div>
+
+<h1>Flaky tests (1)</h1>
+
+<h2>Texture_shadow_comparator::2F16_-6.00-193.00_5.9400_A</h2>
+<div class="code-snippet">
+
+</div>
 
 <h1>Comparisons</h1>
     <h2 id="Xbox_Hardware"><a href="../../../../compare/xemu-0.8.103-master-ff1617d66468abd927f55f7082b3f53610ff26a4/Windows_AMD64/vk_NVIDIA_Corporation_NVIDIA_GeForce_GTX_1070-PCIe-SSE2--gslv_4.00_NVIDIA_via_Cg_compiler/index.html">Xbox_Hardware</a></h2>

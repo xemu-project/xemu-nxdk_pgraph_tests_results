@@ -55,8 +55,6 @@ GL_SHADING_LANGUAGE_VERSION: 4.10
         
             <li><a href="Clear/index.html">Clear</a></li>
         
-            <li><a href="Color%20zeta%20overlap/index.html">Color zeta overlap</a></li>
-        
             <li><a href="Color_key/index.html">Color_key</a></li>
         
             <li><a href="Color_mask_blend/index.html">Color_mask_blend</a></li>
@@ -177,9 +175,9 @@ GL_SHADING_LANGUAGE_VERSION: 4.10
         
     </ul>
 
-<h1>Failed tests (1)</h1>
+<h1>Failed tests (2)</h1>
 
-    <h2>Color zeta overlap::AdjacentWithAA</h2>
+    <h2>Color_zeta_overlap::AdjacentWithAA</h2>
     <div class="code-snippet">
 audio: Failed to create voice `ac97.pi'
 audio: Failed to create voice `ac97.mc'
@@ -206,6 +204,55 @@ audio: Failed to create voice `ac97.mc'
 Assertion failed: (d->pgraph.surface_color.buffer_dirty), function pgraph_surface_invalidate, file pgraph.c, line 5565.
 
     </div>
+
+
+    <h2>Color_zeta_overlap::ZetaIntoColor</h2>
+    <div class="code-snippet">
+audio: Failed to create voice `ac97.pi'
+audio: Failed to create voice `ac97.mc'
+2025-03-04 19:49:37.641 xemu[83479:8446917] +[IMKClient subclass]: chose IMKClient_Modern
+Assertion failed: (glGetError() == GL_NO_ERROR), function pgraph_method, file pgraph.c, line 995.
+
+    </div>
+
+    <div class="code-snippet">
+audio: Failed to create voice `ac97.pi'
+audio: Failed to create voice `ac97.mc'
+2025-03-04 19:59:09.651 xemu[84017:8455094] +[IMKClient subclass]: chose IMKClient_Modern
+2025-03-04 19:59:09.651 xemu[84017:8455094] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+Assertion failed: (glGetError() == GL_NO_ERROR), function pgraph_method, file pgraph.c, line 995.
+
+    </div>
+
+    <div class="code-snippet">
+audio: Failed to create voice `ac97.pi'
+audio: Failed to create voice `ac97.mc'
+2025-03-04 19:59:14.454 xemu[84032:8455262] +[IMKClient subclass]: chose IMKClient_Modern
+2025-03-04 19:59:14.454 xemu[84032:8455262] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+Assertion failed: (glGetError() == GL_NO_ERROR), function pgraph_method, file pgraph.c, line 995.
+
+    </div>
+
+<h1>Flaky tests (2)</h1>
+
+<h2>Blend_tests::0_SREVSUB_dstRGB</h2>
+<div class="code-snippet">
+audio: Failed to create voice `ac97.pi'
+audio: Failed to create voice `ac97.mc'
+2025-03-04 19:42:24.633 xemu[83018:8440190] +[IMKClient subclass]: chose IMKClient_Modern
+2025-03-04 19:42:24.633 xemu[83018:8440190] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+
+</div>
+
+
+<h2>Blend_tests::1-dstA_REVSUB_1-dstRGB</h2>
+<div class="code-snippet">
+audio: Failed to create voice `ac97.pi'
+audio: Failed to create voice `ac97.mc'
+2025-03-04 19:43:24.479 xemu[83091:8441496] +[IMKClient subclass]: chose IMKClient_Modern
+2025-03-04 19:43:24.479 xemu[83091:8441496] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+
+</div>
 
 <h1>Comparisons</h1>
     <h2 id="Xbox_Hardware"><a href="../../../../compare/xemu-0.7.98-master-7bfb7c85378f64f93556c365ea0cc18cb2181dc8/Darwin_arm64/gl_Apple_Apple_M3_Max--gslv_4.10/index.html">Xbox_Hardware</a></h2>

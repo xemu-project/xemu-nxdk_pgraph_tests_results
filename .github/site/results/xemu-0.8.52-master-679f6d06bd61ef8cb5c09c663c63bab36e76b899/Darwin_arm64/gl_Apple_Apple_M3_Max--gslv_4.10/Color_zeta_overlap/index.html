@@ -40,6 +40,23 @@
     <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/color_zeta_overlap_tests.h#L16">src/tests/color_zeta_overlap_tests.h</a></div>
 </div>
 
+<h2 id="AdjacentWithAA">AdjacentWithAA</h2><h3>Failures</h3>
+        
+        <div class="code-snippet">2025-04-16 19:04:54.093 xemu[89782:631002] +[IMKClient subclass]: chose IMKClient_Modern
+2025-04-16 19:04:54.093 xemu[89782:631002] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+Assertion failed: (d->pgraph.surface_color.buffer_dirty), function pgraph_gl_surface_invalidate, file surface.c, line 538.
+</div>
+        
+        <div class="code-snippet">2025-04-16 19:23:38.700 xemu[90465:641848] +[IMKClient subclass]: chose IMKClient_Modern
+2025-04-16 19:23:38.700 xemu[90465:641848] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+Assertion failed: (d->pgraph.surface_color.buffer_dirty), function pgraph_gl_surface_invalidate, file surface.c, line 538.
+</div>
+        
+        <div class="code-snippet">2025-04-16 19:23:43.551 xemu[90470:641986] +[IMKClient subclass]: chose IMKClient_Modern
+2025-04-16 19:23:43.551 xemu[90470:641986] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+Assertion failed: (d->pgraph.surface_color.buffer_dirty), function pgraph_gl_surface_invalidate, file surface.c, line 538.
+</div>
+        
 <h2 id="AdjacentWithClipOffset_l">AdjacentWithClipOffset_l</h2>
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.52-master-679f6d06bd61ef8cb5c09c663c63bab36e76b899/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Color_zeta_overlap/AdjacentWithClipOffset_l.png" alt="Test result for Color_zeta_overlap::AdjacentWithClipOffset_l" class="inline-image">
@@ -74,7 +91,13 @@
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.52-master-679f6d06bd61ef8cb5c09c663c63bab36e76b899/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Color_zeta_overlap/ZetaIntoColor.png" alt="Test result for Color_zeta_overlap::ZetaIntoColor" class="inline-image">
 </div>
-    
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">2025-04-16 19:12:35.834 xemu[90060:635391] +[IMKClient subclass]: chose IMKClient_Modern
+2025-04-16 19:12:35.834 xemu[90060:635391] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+Assertion failed: (glGetError() == GL_NO_ERROR), function pgraph_gl_sync, file display.c, line 395.
+</div>
+        
 <h2 id="ZetaIntoColor_ZB">ZetaIntoColor_ZB</h2>
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.52-master-679f6d06bd61ef8cb5c09c663c63bab36e76b899/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Color_zeta_overlap/ZetaIntoColor_ZB.png" alt="Test result for Color_zeta_overlap::ZetaIntoColor_ZB" class="inline-image">

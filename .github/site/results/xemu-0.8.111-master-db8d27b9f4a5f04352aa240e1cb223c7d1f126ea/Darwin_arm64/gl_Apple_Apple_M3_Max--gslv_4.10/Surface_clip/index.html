@@ -128,6 +128,25 @@
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.111-master-db8d27b9f4a5f04352aa240e1cb223c7d1f126ea/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Surface_clip/rt_x8y16_w632h464.png" alt="Test result for Surface_clip::rt_x8y16_w632h464" class="inline-image">
 </div>
     
+<h2 id="x0y0_w0h0">x0y0_w0h0</h2>
+        <div class="test-case-description">
+        <p>Configures the backbuffer as R5G6B5 and sets the clip region to 0,0 0x0, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. Because the format is 565, the colors are shifted from red -&gt; green, light green -&gt; light pink, and dark green -&gt; pink.</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+Assertion failed: (len > 0), function mem_access_callback_insert, file physmem.c, line 852.
+</div>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+Assertion failed: (len > 0), function mem_access_callback_insert, file physmem.c, line 852.
+</div>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+Assertion failed: (len > 0), function mem_access_callback_insert, file physmem.c, line 852.
+</div>
+        
 <h2 id="x0y0_w0h0_A8R8G8B8">x0y0_w0h0_A8R8G8B8</h2>
         <div class="test-case-description">
         <p>Configures the backbuffer as A8R8G8B8 and sets the clip region to 0,0 0x0, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. No geometry should be seen, since width and height of the clip region are 0.</p>
@@ -137,6 +156,52 @@
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.111-master-db8d27b9f4a5f04352aa240e1cb223c7d1f126ea/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Surface_clip/x0y0_w0h0_A8R8G8B8.png" alt="Test result for Surface_clip::x0y0_w0h0_A8R8G8B8" class="inline-image">
 </div>
     
+<h2 id="x0y0_w0h0_B8">x0y0_w0h0_B8</h2><h3>Failures</h3>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+Assertion failed: (len > 0), function mem_access_callback_insert, file physmem.c, line 852.
+</div>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+Assertion failed: (len > 0), function mem_access_callback_insert, file physmem.c, line 852.
+</div>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+Assertion failed: (len > 0), function mem_access_callback_insert, file physmem.c, line 852.
+</div>
+        
+<h2 id="x0y0_w0h0_G8B8">x0y0_w0h0_G8B8</h2><h3>Failures</h3>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+Assertion failed: (len > 0), function mem_access_callback_insert, file physmem.c, line 852.
+</div>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+Assertion failed: (len > 0), function mem_access_callback_insert, file physmem.c, line 852.
+</div>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+Assertion failed: (len > 0), function mem_access_callback_insert, file physmem.c, line 852.
+</div>
+        
+<h2 id="x0y0_w0h384">x0y0_w0h384</h2>
+        <div class="test-case-description">
+        <p>Configures the backbuffer as R5G6B5 and sets the clip region to 0,0 0x384, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. Because the format is 565, the colors are shifted from red -&gt; green, light green -&gt; light pink, and dark green -&gt; pink.</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+Assertion failed: (glCheckFramebufferStatus(GL_FRAMEBUFFER) == GL_FRAMEBUFFER_COMPLETE), function update_surface_part, file surface.c, line 1258.
+</div>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+Assertion failed: (glCheckFramebufferStatus(GL_FRAMEBUFFER) == GL_FRAMEBUFFER_COMPLETE), function update_surface_part, file surface.c, line 1258.
+</div>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+Assertion failed: (glCheckFramebufferStatus(GL_FRAMEBUFFER) == GL_FRAMEBUFFER_COMPLETE), function update_surface_part, file surface.c, line 1258.
+</div>
+        
 <h2 id="x0y0_w0h384_A8R8G8B8">x0y0_w0h384_A8R8G8B8</h2>
         <div class="test-case-description">
         <p>Configures the backbuffer as A8R8G8B8 and sets the clip region to 0,0 0x384, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. No geometry should be seen, since width and height of the clip region are 0.</p>
@@ -146,6 +211,52 @@
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.111-master-db8d27b9f4a5f04352aa240e1cb223c7d1f126ea/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Surface_clip/x0y0_w0h384_A8R8G8B8.png" alt="Test result for Surface_clip::x0y0_w0h384_A8R8G8B8" class="inline-image">
 </div>
     
+<h2 id="x0y0_w0h384_B8">x0y0_w0h384_B8</h2><h3>Failures</h3>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+Assertion failed: (glCheckFramebufferStatus(GL_FRAMEBUFFER) == GL_FRAMEBUFFER_COMPLETE), function update_surface_part, file surface.c, line 1258.
+</div>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+Assertion failed: (glCheckFramebufferStatus(GL_FRAMEBUFFER) == GL_FRAMEBUFFER_COMPLETE), function update_surface_part, file surface.c, line 1258.
+</div>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+Assertion failed: (glCheckFramebufferStatus(GL_FRAMEBUFFER) == GL_FRAMEBUFFER_COMPLETE), function update_surface_part, file surface.c, line 1258.
+</div>
+        
+<h2 id="x0y0_w0h384_G8B8">x0y0_w0h384_G8B8</h2><h3>Failures</h3>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+Assertion failed: (glCheckFramebufferStatus(GL_FRAMEBUFFER) == GL_FRAMEBUFFER_COMPLETE), function update_surface_part, file surface.c, line 1258.
+</div>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+Assertion failed: (glCheckFramebufferStatus(GL_FRAMEBUFFER) == GL_FRAMEBUFFER_COMPLETE), function update_surface_part, file surface.c, line 1258.
+</div>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+Assertion failed: (glCheckFramebufferStatus(GL_FRAMEBUFFER) == GL_FRAMEBUFFER_COMPLETE), function update_surface_part, file surface.c, line 1258.
+</div>
+        
+<h2 id="x0y0_w512h0">x0y0_w512h0</h2>
+        <div class="test-case-description">
+        <p>Configures the backbuffer as R5G6B5 and sets the clip region to 0,0 512x0, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. Because the format is 565, the colors are shifted from red -&gt; green, light green -&gt; light pink, and dark green -&gt; pink.</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+Assertion failed: (len > 0), function mem_access_callback_insert, file physmem.c, line 852.
+</div>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+Assertion failed: (len > 0), function mem_access_callback_insert, file physmem.c, line 852.
+</div>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+Assertion failed: (len > 0), function mem_access_callback_insert, file physmem.c, line 852.
+</div>
+        
 <h2 id="x0y0_w512h0_A8R8G8B8">x0y0_w512h0_A8R8G8B8</h2>
         <div class="test-case-description">
         <p>Configures the backbuffer as A8R8G8B8 and sets the clip region to 0,0 512x0, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. No geometry should be seen, since width and height of the clip region are 0.</p>
@@ -155,6 +266,34 @@
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.111-master-db8d27b9f4a5f04352aa240e1cb223c7d1f126ea/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Surface_clip/x0y0_w512h0_A8R8G8B8.png" alt="Test result for Surface_clip::x0y0_w512h0_A8R8G8B8" class="inline-image">
 </div>
     
+<h2 id="x0y0_w512h0_B8">x0y0_w512h0_B8</h2><h3>Failures</h3>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+Assertion failed: (len > 0), function mem_access_callback_insert, file physmem.c, line 852.
+</div>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+Assertion failed: (len > 0), function mem_access_callback_insert, file physmem.c, line 852.
+</div>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+Assertion failed: (len > 0), function mem_access_callback_insert, file physmem.c, line 852.
+</div>
+        
+<h2 id="x0y0_w512h0_G8B8">x0y0_w512h0_G8B8</h2><h3>Failures</h3>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+Assertion failed: (len > 0), function mem_access_callback_insert, file physmem.c, line 852.
+</div>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+Assertion failed: (len > 0), function mem_access_callback_insert, file physmem.c, line 852.
+</div>
+        
+        <div class="code-snippet">GL geometry shader winding: 0, 0, 0, 0
+Assertion failed: (len > 0), function mem_access_callback_insert, file physmem.c, line 852.
+</div>
+        
 <h2 id="x0y0_w512h384">x0y0_w512h384</h2>
         <div class="test-case-description">
         <p>Configures the backbuffer as R5G6B5 and sets the clip region to 0,0 512x384, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. No red should be seen, and the light green quads should be fully visible. Because the format is 565, the colors are shifted from red -&gt; green, light green -&gt; light pink, and dark green -&gt; pink.</p>

@@ -51,6 +51,30 @@
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_surface/1-DstAlpha_R5G6B5.png" alt="Test result for Blend_surface::1-DstAlpha_R5G6B5" class="inline-image">
 </div>
     
+<h2 id="1-DstAlpha_X_O1RGB5">1-DstAlpha_X_O1RGB5</h2>
+        <div class="test-case-description">
+        <p>Demonstrates behavior of blend func ADD (1 - DstAlpha) (Zero) with surface mode NV097_SET_SURFACE_FORMAT_COLOR_LE_X1R5G5B5_O1R5G5B5. The background is initialized to various colors (see labels) via a DIFFUSE quad render. A white quad is then blended on top and the final composition rendered to the backbuffer with alpha forced to 1.0 to display the effect on the color channels.</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x2</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x2</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x2</div>
+        
+<h2 id="1-DstAlpha_X_ORGB8">1-DstAlpha_X_ORGB8</h2>
+        <div class="test-case-description">
+        <p>Demonstrates behavior of blend func ADD (1 - DstAlpha) (Zero) with surface mode NV097_SET_SURFACE_FORMAT_COLOR_LE_X8R8G8B8_O8R8G8B8. The background is initialized to various colors (see labels) via a DIFFUSE quad render. A white quad is then blended on top and the final composition rendered to the backbuffer with alpha forced to 1.0 to display the effect on the color channels.</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x5</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x5</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x5</div>
+        
 <h2 id="1-DstAlpha_X_Z1RGB5">1-DstAlpha_X_Z1RGB5</h2>
         <div class="test-case-description">
         <p>Demonstrates behavior of blend func ADD (1 - DstAlpha) (Zero) with surface mode NV097_SET_SURFACE_FORMAT_COLOR_LE_X1R5G5B5_Z1R5G5B5. The background is initialized to various colors (see labels) via a DIFFUSE quad render. A white quad is then blended on top and the final composition rendered to the backbuffer with alpha forced to 1.0 to display the effect on the color channels.</p>
@@ -69,6 +93,30 @@
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_surface/1-DstAlpha_X_ZRGB8.png" alt="Test result for Blend_surface::1-DstAlpha_X_ZRGB8" class="inline-image">
 </div>
     
+<h2 id="1-DstAlpha_XA_O1A7RGB8">1-DstAlpha_XA_O1A7RGB8</h2>
+        <div class="test-case-description">
+        <p>Demonstrates behavior of blend func ADD (1 - DstAlpha) (Zero) with surface mode NV097_SET_SURFACE_FORMAT_COLOR_LE_X1A7R8G8B8_O1A7R8G8B8. The background is initialized to various colors (see labels) via a DIFFUSE quad render. A white quad is then blended on top and the final composition rendered to the backbuffer with alpha forced to 1.0 to display the effect on the color channels.</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x7</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x7</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x7</div>
+        
+<h2 id="1-DstAlpha_XA_Z1A7RGB8">1-DstAlpha_XA_Z1A7RGB8</h2>
+        <div class="test-case-description">
+        <p>Demonstrates behavior of blend func ADD (1 - DstAlpha) (Zero) with surface mode NV097_SET_SURFACE_FORMAT_COLOR_LE_X1A7R8G8B8_Z1A7R8G8B8. The background is initialized to various colors (see labels) via a DIFFUSE quad render. A white quad is then blended on top and the final composition rendered to the backbuffer with alpha forced to 1.0 to display the effect on the color channels.</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x6</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x6</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x6</div>
+        
 <h2 id="ARGB8_Add_SrcA_1-SrcA">ARGB8_Add_SrcA_1-SrcA</h2>
         <div class="test-case-description">
         <p>Demonstrates the behavior of blending various texture formats with the surface mode set to NV097_SET_SURFACE_FORMAT_COLOR_LE_A8R8G8B8 and blend factors {SrcAlpha, 1 - SrcAlpha}. A test pattern is rendered multiple times, partially overlapping itself. A low opacity grey quad is rendered in the upper left, then composited against itself multiple times in the upper right. A zero alpha (or zero high nibble for non-alpha formats) quad is rendered in the lower left and composited against itself in the lower right.</p>
@@ -105,6 +153,30 @@
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_surface/DstAlpha_R5G6B5.png" alt="Test result for Blend_surface::DstAlpha_R5G6B5" class="inline-image">
 </div>
     
+<h2 id="DstAlpha_X_O1RGB5">DstAlpha_X_O1RGB5</h2>
+        <div class="test-case-description">
+        <p>Demonstrates behavior of blend func ADD (DstAlpha) (Zero) with surface mode NV097_SET_SURFACE_FORMAT_COLOR_LE_X1R5G5B5_O1R5G5B5. The background is initialized to various colors (see labels) via a DIFFUSE quad render. A white quad is then blended on top and the final composition rendered to the backbuffer with alpha forced to 1.0 to display the effect on the color channels.</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x2</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x2</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x2</div>
+        
+<h2 id="DstAlpha_X_ORGB8">DstAlpha_X_ORGB8</h2>
+        <div class="test-case-description">
+        <p>Demonstrates behavior of blend func ADD (DstAlpha) (Zero) with surface mode NV097_SET_SURFACE_FORMAT_COLOR_LE_X8R8G8B8_O8R8G8B8. The background is initialized to various colors (see labels) via a DIFFUSE quad render. A white quad is then blended on top and the final composition rendered to the backbuffer with alpha forced to 1.0 to display the effect on the color channels.</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x5</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x5</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x5</div>
+        
 <h2 id="DstAlpha_X_Z1RGB5">DstAlpha_X_Z1RGB5</h2>
         <div class="test-case-description">
         <p>Demonstrates behavior of blend func ADD (DstAlpha) (Zero) with surface mode NV097_SET_SURFACE_FORMAT_COLOR_LE_X1R5G5B5_Z1R5G5B5. The background is initialized to various colors (see labels) via a DIFFUSE quad render. A white quad is then blended on top and the final composition rendered to the backbuffer with alpha forced to 1.0 to display the effect on the color channels.</p>
@@ -123,6 +195,30 @@
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_surface/DstAlpha_X_ZRGB8.png" alt="Test result for Blend_surface::DstAlpha_X_ZRGB8" class="inline-image">
 </div>
     
+<h2 id="DstAlpha_XA_O1A7RGB8">DstAlpha_XA_O1A7RGB8</h2>
+        <div class="test-case-description">
+        <p>Demonstrates behavior of blend func ADD (DstAlpha) (Zero) with surface mode NV097_SET_SURFACE_FORMAT_COLOR_LE_X1A7R8G8B8_O1A7R8G8B8. The background is initialized to various colors (see labels) via a DIFFUSE quad render. A white quad is then blended on top and the final composition rendered to the backbuffer with alpha forced to 1.0 to display the effect on the color channels.</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x7</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x7</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x7</div>
+        
+<h2 id="DstAlpha_XA_Z1A7RGB8">DstAlpha_XA_Z1A7RGB8</h2>
+        <div class="test-case-description">
+        <p>Demonstrates behavior of blend func ADD (DstAlpha) (Zero) with surface mode NV097_SET_SURFACE_FORMAT_COLOR_LE_X1A7R8G8B8_Z1A7R8G8B8. The background is initialized to various colors (see labels) via a DIFFUSE quad render. A white quad is then blended on top and the final composition rendered to the backbuffer with alpha forced to 1.0 to display the effect on the color channels.</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x6</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x6</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x6</div>
+        
 <h2 id="R5G6B5_Add_SrcA_1-SrcA">R5G6B5_Add_SrcA_1-SrcA</h2>
         <div class="test-case-description">
         <p>Demonstrates the behavior of blending various texture formats with the surface mode set to NV097_SET_SURFACE_FORMAT_COLOR_LE_R5G6B5 and blend factors {SrcAlpha, 1 - SrcAlpha}. A test pattern is rendered multiple times, partially overlapping itself. A low opacity grey quad is rendered in the upper left, then composited against itself multiple times in the upper right. A zero alpha (or zero high nibble for non-alpha formats) quad is rendered in the lower left and composited against itself in the lower right.</p>
@@ -141,6 +237,54 @@
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_surface/R5G6B5_Add_SrcA_DstA.png" alt="Test result for Blend_surface::R5G6B5_Add_SrcA_DstA" class="inline-image">
 </div>
     
+<h2 id="X_O1RGB5_Add_SrcA_1-SrcA">X_O1RGB5_Add_SrcA_1-SrcA</h2>
+        <div class="test-case-description">
+        <p>Demonstrates the behavior of blending various texture formats with the surface mode set to NV097_SET_SURFACE_FORMAT_COLOR_LE_X1R5G5B5_O1R5G5B5 and blend factors {SrcAlpha, 1 - SrcAlpha}. A test pattern is rendered multiple times, partially overlapping itself. A low opacity grey quad is rendered in the upper left, then composited against itself multiple times in the upper right. A zero alpha (or zero high nibble for non-alpha formats) quad is rendered in the lower left and composited against itself in the lower right.</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x2</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x2</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x2</div>
+        
+<h2 id="X_O1RGB5_Add_SrcA_DstA">X_O1RGB5_Add_SrcA_DstA</h2>
+        <div class="test-case-description">
+        <p>Demonstrates the behavior of blending various texture formats with the surface mode set to NV097_SET_SURFACE_FORMAT_COLOR_LE_X1R5G5B5_O1R5G5B5 and blend factors {SrcAlpha, DstAlpha}. A test pattern is rendered multiple times, partially overlapping itself. A low opacity grey quad is rendered in the upper left, then composited against itself multiple times in the upper right. A zero alpha (or zero high nibble for non-alpha formats) quad is rendered in the lower left and composited against itself in the lower right.</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x2</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x2</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x2</div>
+        
+<h2 id="X_ORGB8_Add_SrcA_1-SrcA">X_ORGB8_Add_SrcA_1-SrcA</h2>
+        <div class="test-case-description">
+        <p>Demonstrates the behavior of blending various texture formats with the surface mode set to NV097_SET_SURFACE_FORMAT_COLOR_LE_X8R8G8B8_O8R8G8B8 and blend factors {SrcAlpha, 1 - SrcAlpha}. A test pattern is rendered multiple times, partially overlapping itself. A low opacity grey quad is rendered in the upper left, then composited against itself multiple times in the upper right. A zero alpha (or zero high nibble for non-alpha formats) quad is rendered in the lower left and composited against itself in the lower right.</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x5</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x5</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x5</div>
+        
+<h2 id="X_ORGB8_Add_SrcA_DstA">X_ORGB8_Add_SrcA_DstA</h2>
+        <div class="test-case-description">
+        <p>Demonstrates the behavior of blending various texture formats with the surface mode set to NV097_SET_SURFACE_FORMAT_COLOR_LE_X8R8G8B8_O8R8G8B8 and blend factors {SrcAlpha, DstAlpha}. A test pattern is rendered multiple times, partially overlapping itself. A low opacity grey quad is rendered in the upper left, then composited against itself multiple times in the upper right. A zero alpha (or zero high nibble for non-alpha formats) quad is rendered in the lower left and composited against itself in the lower right.</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x5</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x5</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x5</div>
+        
 <h2 id="X_Z1RGB5_Add_SrcA_1-SrcA">X_Z1RGB5_Add_SrcA_1-SrcA</h2>
         <div class="test-case-description">
         <p>Demonstrates the behavior of blending various texture formats with the surface mode set to NV097_SET_SURFACE_FORMAT_COLOR_LE_X1R5G5B5_Z1R5G5B5 and blend factors {SrcAlpha, 1 - SrcAlpha}. A test pattern is rendered multiple times, partially overlapping itself. A low opacity grey quad is rendered in the upper left, then composited against itself multiple times in the upper right. A zero alpha (or zero high nibble for non-alpha formats) quad is rendered in the lower left and composited against itself in the lower right.</p>
@@ -177,6 +321,54 @@
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_surface/X_ZRGB8_Add_SrcA_DstA.png" alt="Test result for Blend_surface::X_ZRGB8_Add_SrcA_DstA" class="inline-image">
 </div>
     
+<h2 id="XA_O1A7RGB8_Add_SrcA_1-SrcA">XA_O1A7RGB8_Add_SrcA_1-SrcA</h2>
+        <div class="test-case-description">
+        <p>Demonstrates the behavior of blending various texture formats with the surface mode set to NV097_SET_SURFACE_FORMAT_COLOR_LE_X1A7R8G8B8_O1A7R8G8B8 and blend factors {SrcAlpha, 1 - SrcAlpha}. A test pattern is rendered multiple times, partially overlapping itself. A low opacity grey quad is rendered in the upper left, then composited against itself multiple times in the upper right. A zero alpha (or zero high nibble for non-alpha formats) quad is rendered in the lower left and composited against itself in the lower right.</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x7</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x7</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x7</div>
+        
+<h2 id="XA_O1A7RGB8_Add_SrcA_DstA">XA_O1A7RGB8_Add_SrcA_DstA</h2>
+        <div class="test-case-description">
+        <p>Demonstrates the behavior of blending various texture formats with the surface mode set to NV097_SET_SURFACE_FORMAT_COLOR_LE_X1A7R8G8B8_O1A7R8G8B8 and blend factors {SrcAlpha, DstAlpha}. A test pattern is rendered multiple times, partially overlapping itself. A low opacity grey quad is rendered in the upper left, then composited against itself multiple times in the upper right. A zero alpha (or zero high nibble for non-alpha formats) quad is rendered in the lower left and composited against itself in the lower right.</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x7</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x7</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x7</div>
+        
+<h2 id="XA_Z1A7RGB8_Add_SrcA_1-SrcA">XA_Z1A7RGB8_Add_SrcA_1-SrcA</h2>
+        <div class="test-case-description">
+        <p>Demonstrates the behavior of blending various texture formats with the surface mode set to NV097_SET_SURFACE_FORMAT_COLOR_LE_X1A7R8G8B8_Z1A7R8G8B8 and blend factors {SrcAlpha, 1 - SrcAlpha}. A test pattern is rendered multiple times, partially overlapping itself. A low opacity grey quad is rendered in the upper left, then composited against itself multiple times in the upper right. A zero alpha (or zero high nibble for non-alpha formats) quad is rendered in the lower left and composited against itself in the lower right.</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x6</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x6</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x6</div>
+        
+<h2 id="XA_Z1A7RGB8_Add_SrcA_DstA">XA_Z1A7RGB8_Add_SrcA_DstA</h2>
+        <div class="test-case-description">
+        <p>Demonstrates the behavior of blending various texture formats with the surface mode set to NV097_SET_SURFACE_FORMAT_COLOR_LE_X1A7R8G8B8_Z1A7R8G8B8 and blend factors {SrcAlpha, DstAlpha}. A test pattern is rendered multiple times, partially overlapping itself. A low opacity grey quad is rendered in the upper left, then composited against itself multiple times in the upper right. A zero alpha (or zero high nibble for non-alpha formats) quad is rendered in the lower left and composited against itself in the lower right. </p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x6</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x6</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x6</div>
+        
 </div>
 
     <script src="../../../../../script.js"></script>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee: Linux_x86_64, GL: NVIDIA Corporation - NVIDIA GeForce RTX 4090-PCIe-SSE2 - 4.0.0 NVIDIA 580.178.04, Shader: 4.00 NVIDIA via Cg compiler - Texture_format</title>
+    <link rel="stylesheet" href="../../../../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../../../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    
+      <a href="../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Arrow_chevron_up_in_sharp_solid_style.svg" width="32" alt="Navigate up one level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Texture_format</h1>
+
+<div class="label-value-grid">
+    <div class="label"><a href="https://xemu.app">xemu</a> version</div>
+    <div class="value">xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee</div>
+
+    <div class="label">Platform</div>
+    <div class="value">Linux_x86_64</div>
+
+    <div class="label">Renderer</div>
+    <div class="value">Vulkan</div>
+
+    <div class="label">GL info</div>
+    <div class="value">NVIDIA Corporation - NVIDIA GeForce RTX 4090-PCIe-SSE2 - 4.0.0 NVIDIA 580.178.04</div>
+
+    <div class="label">GLSL version</div>
+    <div class="value">4.00 NVIDIA via Cg compiler</div>
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Exercises rendering a textured quad using various NV2A hardware texture formats. A color gradient is generated and converted to the target format (applying swizzling if swizzled), then sampled via the projective 2D shader stage with the final combiner set to output the sampled texture color. Also tests 8-bit palettized textures across various palette sizes and verifies alpha channel behavior for formats containing dummy "X" alpha components.</div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/texture_format_tests.h#L23">src/tests/texture_format_tests.h</a></div>
+</div>
+
+<h2 id="TexFmt_R16B16">TexFmt_R16B16</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in R16B16 swizzled format (NV097_SET_TEXTURE_FORMAT_COLOR_SZ_YB_16_YA_16).</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">nv2a: unimplemented texture color format 0x33
+</div>
+        
+        <div class="code-snippet">nv2a: unimplemented texture color format 0x33
+</div>
+        
+        <div class="code-snippet">nv2a: unimplemented texture color format 0x33
+</div>
+        
+<h2 id="TexFmt_R16B16_L">TexFmt_R16B16_L</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in R16B16 linear format (NV097_SET_TEXTURE_FORMAT_COLOR_LU_IMAGE_YB16YA16).</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">nv2a: unimplemented texture color format 0x36
+</div>
+        
+        <div class="code-snippet">nv2a: unimplemented texture color format 0x36
+</div>
+        
+        <div class="code-snippet">nv2a: unimplemented texture color format 0x36
+</div>
+        
+<h2 id="TexFmt_R6G5B5">TexFmt_R6G5B5</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in R6G5B5 swizzled format.</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">vk_result = -3
+xemu-0.8.136-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/texture.c:1241: void create_texture(PGRAPHState *, int): Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+</div>
+        
+        <div class="code-snippet">vk_result = -3
+xemu-0.8.136-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/texture.c:1241: void create_texture(PGRAPHState *, int): Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+</div>
+        
+        <div class="code-snippet">vk_result = -3
+xemu-0.8.136-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/texture.c:1241: void create_texture(PGRAPHState *, int): Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+</div>
+        
+<h2 id="TexFmt_Y16">TexFmt_Y16</h2>
+        <div class="test-case-description">
+        <p>Samples a 2D color gradient texture in Y16 swizzled format (NV097_SET_TEXTURE_FORMAT_COLOR_SZ_Y16, format 0x32).</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">nv2a: unimplemented texture color format 0x32
+</div>
+        
+        <div class="code-snippet">nv2a: unimplemented texture color format 0x32
+</div>
+        
+        <div class="code-snippet">nv2a: unimplemented texture color format 0x32
+</div>
+        
+</div>
+
+    <script src="../../../../../script.js"></script>
+</body>
+</html>

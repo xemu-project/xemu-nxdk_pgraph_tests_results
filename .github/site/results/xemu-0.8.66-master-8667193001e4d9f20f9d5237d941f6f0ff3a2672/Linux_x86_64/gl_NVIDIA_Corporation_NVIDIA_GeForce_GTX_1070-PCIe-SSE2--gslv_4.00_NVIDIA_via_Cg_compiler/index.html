@@ -55,8 +55,6 @@ GL_SHADING_LANGUAGE_VERSION: 4.00 NVIDIA via Cg compiler
         
             <li><a href="Clear/index.html">Clear</a></li>
         
-            <li><a href="Color%20zeta%20overlap/index.html">Color zeta overlap</a></li>
-        
             <li><a href="Color_key/index.html">Color_key</a></li>
         
             <li><a href="Color_mask_blend/index.html">Color_mask_blend</a></li>
@@ -141,8 +139,6 @@ GL_SHADING_LANGUAGE_VERSION: 4.00 NVIDIA via Cg compiler
         
             <li><a href="Stipple_tests/index.html">Stipple_tests</a></li>
         
-            <li><a href="Surface%20format/index.html">Surface format</a></li>
-        
             <li><a href="Surface_clip/index.html">Surface_clip</a></li>
         
             <li><a href="Surface_format/index.html">Surface_format</a></li>
@@ -189,8 +185,6 @@ GL_SHADING_LANGUAGE_VERSION: 4.00 NVIDIA via Cg compiler
         
             <li><a href="Viewport/index.html">Viewport</a></li>
         
-            <li><a href="Volume%20texture/index.html">Volume texture</a></li>
-        
             <li><a href="Volume_texture/index.html">Volume_texture</a></li>
         
             <li><a href="W_param/index.html">W_param</a></li>
@@ -205,9 +199,9 @@ GL_SHADING_LANGUAGE_VERSION: 4.00 NVIDIA via Cg compiler
         
     </ul>
 
-<h1>Failed tests (3)</h1>
+<h1>Failed tests (6)</h1>
 
-    <h2>Color zeta overlap::AdjacentWithAA</h2>
+    <h2>Color_zeta_overlap::AdjacentWithAA</h2>
     <div class="code-snippet">
 xemu-v0.8.66-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/gl/surface.c:534: pgraph_gl_surface_invalidate: Assertion `d->pgraph.surface_color.buffer_dirty' failed.
 
@@ -224,7 +218,7 @@ xemu-v0.8.66-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/gl/surface.c:534: pgraph_gl
     </div>
 
 
-    <h2>Surface format::Fmt_X1A7R8G8B8_O1A7R8G8B8</h2>
+    <h2>Surface_format::Fmt_X1A7R8G8B8_O1A7R8G8B8</h2>
     <div class="code-snippet">
 nv2a: unimplemented color surface format 0x7
 
@@ -241,7 +235,58 @@ nv2a: unimplemented color surface format 0x7
     </div>
 
 
-    <h2>Volume texture::R6G5B5</h2>
+    <h2>Surface_format::Fmt_X1A7R8G8B8_Z1A7R8G8B8</h2>
+    <div class="code-snippet">
+nv2a: unimplemented color surface format 0x6
+
+    </div>
+
+    <div class="code-snippet">
+nv2a: unimplemented color surface format 0x6
+
+    </div>
+
+    <div class="code-snippet">
+nv2a: unimplemented color surface format 0x6
+
+    </div>
+
+
+    <h2>Surface_format::Fmt_X1R5G5B5_O1R5G5B5</h2>
+    <div class="code-snippet">
+nv2a: unimplemented color surface format 0x2
+
+    </div>
+
+    <div class="code-snippet">
+nv2a: unimplemented color surface format 0x2
+
+    </div>
+
+    <div class="code-snippet">
+nv2a: unimplemented color surface format 0x2
+
+    </div>
+
+
+    <h2>Surface_format::Fmt_X8R8G8B8_O8R8G8B8</h2>
+    <div class="code-snippet">
+nv2a: unimplemented color surface format 0x5
+
+    </div>
+
+    <div class="code-snippet">
+nv2a: unimplemented color surface format 0x5
+
+    </div>
+
+    <div class="code-snippet">
+nv2a: unimplemented color surface format 0x5
+
+    </div>
+
+
+    <h2>Volume_texture::R6G5B5</h2>
     <div class="code-snippet">
 xemu-v0.8.66-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/texture.c:381: pgraph_convert_texture_data: Assertion `depth == 1' failed.
 
@@ -256,6 +301,14 @@ xemu-v0.8.66-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/texture.c:381: pgraph_conve
 xemu-v0.8.66-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/texture.c:381: pgraph_convert_texture_data: Assertion `depth == 1' failed.
 
     </div>
+
+<h1>Flaky tests (1)</h1>
+
+<h2>Color_zeta_overlap::ZetaIntoColor</h2>
+<div class="code-snippet">
+xemu-v0.8.66-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/gl/display.c:395: pgraph_gl_sync: Assertion `glGetError() == GL_NO_ERROR' failed.
+
+</div>
 
 <h1>Comparisons</h1>
     <h2 id="Xbox_Hardware"><a href="../../../../compare/xemu-0.8.66-master-8667193001e4d9f20f9d5237d941f6f0ff3a2672/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_GTX_1070-PCIe-SSE2--gslv_4.00_NVIDIA_via_Cg_compiler/index.html">Xbox_Hardware</a></h2>

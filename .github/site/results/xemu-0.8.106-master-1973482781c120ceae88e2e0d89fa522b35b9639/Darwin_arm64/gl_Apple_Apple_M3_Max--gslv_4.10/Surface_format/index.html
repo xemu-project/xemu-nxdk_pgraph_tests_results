@@ -76,6 +76,52 @@
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.106-master-1973482781c120ceae88e2e0d89fa522b35b9639/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Surface_format/Fmt_R5G6B5.png" alt="Test result for Surface_format::Fmt_R5G6B5" class="inline-image">
 </div>
     
+<h2 id="Fmt_X1A7R8G8B8_O1A7R8G8B8">Fmt_X1A7R8G8B8_O1A7R8G8B8</h2>
+        <div class="test-case-description">
+        <p>Tests the X1A7R8G8B8_O1A7R8G8B8 surface format. Quads appear similar to A8R8G8B8, but the high bit of the alpha is set to 1, causing all quads to be less translucent.</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+nv2a: unimplemented color surface format 0x7
+</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x7
+</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x7
+</div>
+        
+<h2 id="Fmt_X1A7R8G8B8_Z1A7R8G8B8">Fmt_X1A7R8G8B8_Z1A7R8G8B8</h2>
+        <div class="test-case-description">
+        <p>Tests the X1A7R8G8B8_Z1A7R8G8B8 surface format. Quads appear similar to A8R8G8B8, but the high bit of the alpha is set to 0, causing all quads to be translucent.</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x6
+</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x6
+</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x6
+</div>
+        
+<h2 id="Fmt_X1R5G5B5_O1R5G5B5">Fmt_X1R5G5B5_O1R5G5B5</h2>
+        <div class="test-case-description">
+        <p>Tests the X1R5G5B5_O1R5G5B5 surface format.</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x2
+</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x2
+</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x2
+</div>
+        
 <h2 id="Fmt_X1R5G5B5_Z1R5G5B5">Fmt_X1R5G5B5_Z1R5G5B5</h2>
         <div class="test-case-description">
         <p>Tests the X1R5G5B5_Z1R5G5B5 surface format.</p>
@@ -85,6 +131,21 @@
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.106-master-1973482781c120ceae88e2e0d89fa522b35b9639/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Surface_format/Fmt_X1R5G5B5_Z1R5G5B5.png" alt="Test result for Surface_format::Fmt_X1R5G5B5_Z1R5G5B5" class="inline-image">
 </div>
     
+<h2 id="Fmt_X8R8G8B8_O8R8G8B8">Fmt_X8R8G8B8_O8R8G8B8</h2>
+        <div class="test-case-description">
+        <p>Tests the X8R8G8B8_O8R8G8B8 surface format. Quads appear similar to A8R8G8B8, but the alpha is set to fully opaque.</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x5
+</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x5
+</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x5
+</div>
+        
 <h2 id="Fmt_X8R8G8B8_Z8R8G8B8">Fmt_X8R8G8B8_Z8R8G8B8</h2>
         <div class="test-case-description">
         <p>Tests the X8R8G8B8_Z8R8G8B8 surface format. Quads appear similar to A8R8G8B8, but the alpha is set to fully transparent (no quads should appear in the top half of the image). </p>

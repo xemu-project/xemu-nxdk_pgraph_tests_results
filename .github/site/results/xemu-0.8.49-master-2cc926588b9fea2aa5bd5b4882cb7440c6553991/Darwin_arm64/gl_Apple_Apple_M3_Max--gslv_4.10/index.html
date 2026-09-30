@@ -55,8 +55,6 @@ GL_SHADING_LANGUAGE_VERSION: 4.10
         
             <li><a href="Clear/index.html">Clear</a></li>
         
-            <li><a href="Color%20zeta%20overlap/index.html">Color zeta overlap</a></li>
-        
             <li><a href="Color_key/index.html">Color_key</a></li>
         
             <li><a href="Color_mask_blend/index.html">Color_mask_blend</a></li>
@@ -137,8 +135,6 @@ GL_SHADING_LANGUAGE_VERSION: 4.10
         
             <li><a href="Stipple_tests/index.html">Stipple_tests</a></li>
         
-            <li><a href="Surface%20format/index.html">Surface format</a></li>
-        
             <li><a href="Surface_clip/index.html">Surface_clip</a></li>
         
             <li><a href="Surface_format/index.html">Surface_format</a></li>
@@ -195,9 +191,9 @@ GL_SHADING_LANGUAGE_VERSION: 4.10
         
     </ul>
 
-<h1>Failed tests (2)</h1>
+<h1>Failed tests (5)</h1>
 
-    <h2>Color zeta overlap::AdjacentWithAA</h2>
+    <h2>Color_zeta_overlap::AdjacentWithAA</h2>
     <div class="code-snippet">
 2025-04-13 10:14:15.600 xemu[64515:8222859] +[IMKClient subclass]: chose IMKClient_Modern
 2025-04-13 10:14:15.600 xemu[64515:8222859] +[IMKInputSession subclass]: chose IMKInputSession_Modern
@@ -220,7 +216,7 @@ Assertion failed: (d->pgraph.surface_color.buffer_dirty), function pgraph_gl_sur
     </div>
 
 
-    <h2>Surface format::Fmt_X1A7R8G8B8_O1A7R8G8B8</h2>
+    <h2>Surface_format::Fmt_X1A7R8G8B8_O1A7R8G8B8</h2>
     <div class="code-snippet">
 2025-04-13 10:22:02.110 xemu[65716:8233642] +[IMKClient subclass]: chose IMKClient_Modern
 2025-04-13 10:22:02.110 xemu[65716:8233642] +[IMKInputSession subclass]: chose IMKInputSession_Modern
@@ -241,6 +237,85 @@ nv2a: unimplemented color surface format 0x7
 nv2a: unimplemented color surface format 0x7
 
     </div>
+
+
+    <h2>Surface_format::Fmt_X1A7R8G8B8_Z1A7R8G8B8</h2>
+    <div class="code-snippet">
+2025-04-13 10:29:04.030 xemu[66784:8251609] +[IMKClient subclass]: chose IMKClient_Modern
+2025-04-13 10:29:04.030 xemu[66784:8251609] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+nv2a: unimplemented color surface format 0x6
+
+    </div>
+
+    <div class="code-snippet">
+2025-04-13 10:33:30.984 xemu[67509:8262006] +[IMKClient subclass]: chose IMKClient_Modern
+2025-04-13 10:33:30.984 xemu[67509:8262006] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+nv2a: unimplemented color surface format 0x6
+
+    </div>
+
+    <div class="code-snippet">
+2025-04-13 10:33:35.945 xemu[67522:8262209] +[IMKClient subclass]: chose IMKClient_Modern
+2025-04-13 10:33:35.945 xemu[67522:8262209] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+nv2a: unimplemented color surface format 0x6
+
+    </div>
+
+
+    <h2>Surface_format::Fmt_X1R5G5B5_O1R5G5B5</h2>
+    <div class="code-snippet">
+2025-04-13 10:29:09.108 xemu[66801:8251928] +[IMKClient subclass]: chose IMKClient_Modern
+2025-04-13 10:29:09.108 xemu[66801:8251928] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+nv2a: unimplemented color surface format 0x2
+
+    </div>
+
+    <div class="code-snippet">
+2025-04-13 10:33:40.920 xemu[67540:8262448] +[IMKClient subclass]: chose IMKClient_Modern
+2025-04-13 10:33:40.920 xemu[67540:8262448] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+nv2a: unimplemented color surface format 0x2
+
+    </div>
+
+    <div class="code-snippet">
+2025-04-13 10:33:45.879 xemu[67553:8262659] +[IMKClient subclass]: chose IMKClient_Modern
+2025-04-13 10:33:45.879 xemu[67553:8262659] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+nv2a: unimplemented color surface format 0x2
+
+    </div>
+
+
+    <h2>Surface_format::Fmt_X8R8G8B8_O8R8G8B8</h2>
+    <div class="code-snippet">
+2025-04-13 10:29:14.217 xemu[66818:8252186] +[IMKClient subclass]: chose IMKClient_Modern
+2025-04-13 10:29:14.217 xemu[66818:8252186] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+nv2a: unimplemented color surface format 0x5
+
+    </div>
+
+    <div class="code-snippet">
+2025-04-13 10:33:50.899 xemu[67575:8262906] +[IMKClient subclass]: chose IMKClient_Modern
+2025-04-13 10:33:50.899 xemu[67575:8262906] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+nv2a: unimplemented color surface format 0x5
+
+    </div>
+
+    <div class="code-snippet">
+2025-04-13 10:33:55.863 xemu[67588:8263106] +[IMKClient subclass]: chose IMKClient_Modern
+2025-04-13 10:33:55.863 xemu[67588:8263106] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+nv2a: unimplemented color surface format 0x5
+
+    </div>
+
+<h1>Flaky tests (1)</h1>
+
+<h2>Color_zeta_overlap::ZetaIntoColor</h2>
+<div class="code-snippet">
+2025-04-13 10:21:55.660 xemu[65688:8233077] +[IMKClient subclass]: chose IMKClient_Modern
+2025-04-13 10:21:55.660 xemu[65688:8233077] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+Assertion failed: (glGetError() == GL_NO_ERROR), function pgraph_gl_sync, file display.c, line 395.
+
+</div>
 
 <h1>Comparisons</h1>
     <h2 id="Xbox_Hardware"><a href="../../../../compare/xemu-0.8.49-master-2cc926588b9fea2aa5bd5b4882cb7440c6553991/Darwin_arm64/gl_Apple_Apple_M3_Max--gslv_4.10/index.html">Xbox_Hardware</a></h2>

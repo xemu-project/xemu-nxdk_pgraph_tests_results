@@ -55,8 +55,6 @@ GL_SHADING_LANGUAGE_VERSION: 4.10
         
             <li><a href="Clear/index.html">Clear</a></li>
         
-            <li><a href="Color%20zeta%20overlap/index.html">Color zeta overlap</a></li>
-        
             <li><a href="Color_key/index.html">Color_key</a></li>
         
             <li><a href="Color_mask_blend/index.html">Color_mask_blend</a></li>
@@ -185,7 +183,7 @@ GL_SHADING_LANGUAGE_VERSION: 4.10
 
 <h1>Failed tests (1)</h1>
 
-    <h2>Color zeta overlap::AdjacentWithAA</h2>
+    <h2>Color_zeta_overlap::AdjacentWithAA</h2>
     <div class="code-snippet">
 2025-03-13 22:32:33.513 xemu[52242:304394] +[IMKClient subclass]: chose IMKClient_Modern
 2025-03-13 22:32:33.513 xemu[52242:304394] +[IMKInputSession subclass]: chose IMKInputSession_Modern
@@ -206,6 +204,16 @@ Assertion failed: (d->pgraph.surface_color.buffer_dirty), function pgraph_gl_sur
 Assertion failed: (d->pgraph.surface_color.buffer_dirty), function pgraph_gl_surface_invalidate, file surface.c, line 538.
 
     </div>
+
+<h1>Flaky tests (1)</h1>
+
+<h2>Color_zeta_overlap::ZetaIntoColor</h2>
+<div class="code-snippet">
+2025-03-13 22:40:37.687 xemu[52505:309346] +[IMKClient subclass]: chose IMKClient_Modern
+2025-03-13 22:40:37.687 xemu[52505:309346] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+Assertion failed: (glGetError() == GL_NO_ERROR), function pgraph_gl_sync, file display.c, line 395.
+
+</div>
 
 <h1>Comparisons</h1>
     <h2 id="Xbox_Hardware"><a href="../../../../compare/xemu-0.8.34-master-a143f66ce48ef37ccb15bbdd4daed3c6df2eaee9/Darwin_arm64/gl_Apple_Apple_M3_Max--gslv_4.10/index.html">Xbox_Hardware</a></h2>

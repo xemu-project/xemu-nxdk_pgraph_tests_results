@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee: Linux_x86_64, GL: NVIDIA Corporation - NVIDIA GeForce RTX 4090-PCIe-SSE2 - 4.0.0 NVIDIA 580.178.04, Shader: 4.00 NVIDIA via Cg compiler - Bump_map</title>
+    <link rel="stylesheet" href="../../../../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../../../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    
+      <a href="../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Arrow_chevron_up_in_sharp_solid_style.svg" width="32" alt="Navigate up one level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Bump_map</h1>
+
+<div class="label-value-grid">
+    <div class="label"><a href="https://xemu.app">xemu</a> version</div>
+    <div class="value">xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee</div>
+
+    <div class="label">Platform</div>
+    <div class="value">Linux_x86_64</div>
+
+    <div class="label">Renderer</div>
+    <div class="value">Vulkan</div>
+
+    <div class="label">GL info</div>
+    <div class="value">NVIDIA Corporation - NVIDIA GeForce RTX 4090-PCIe-SSE2 - 4.0.0 NVIDIA 580.178.04</div>
+
+    <div class="label">GLSL version</div>
+    <div class="value">4.00 NVIDIA via Cg compiler</div>
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Exercises bump mapping via projective 2D and dot product / bumpenvmap shader stages. Tests standard 8-bit du/dv bump mapping with G8B8, R6G5B5, and other formats across combinations of signed and unsigned coordinates, 90-degree rotations, and cross-channel mappings. Also exercises 16-bit HILO bump mapping using NV097_SET_TEXTURE_FORMAT_COLOR_SZ_YB_16_YA_16 and NV097_SET_TEXTURE_FORMAT_COLOR_LU_IMAGE_YB16YA16.</div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/bump_map_tests.h#L21">src/tests/bump_map_tests.h</a></div>
+</div>
+
+<h2 id="BumpMap_R16B16">BumpMap_R16B16</h2>
+        <div class="test-case-description">
+        <p>Exercises 16-bit HILO bump mapping with a YB_16_YA_16 swizzled bump map texture (NV097_SET_TEXTURE_FORMAT_COLOR_SZ_YB_16_YA_16).</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">nv2a: unimplemented texture color format 0x33
+</div>
+        
+        <div class="code-snippet">nv2a: unimplemented texture color format 0x33
+</div>
+        
+        <div class="code-snippet">nv2a: unimplemented texture color format 0x33
+</div>
+        
+<h2 id="BumpMap_R16B16_B">BumpMap_R16B16_B</h2>
+        <div class="test-case-description">
+        <p>Exercises 16-bit HILO bump mapping with a YB_16_YA_16 swizzled texture using alternate blue color channel mapping.</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">nv2a: unimplemented texture color format 0x33
+</div>
+        
+        <div class="code-snippet">nv2a: unimplemented texture color format 0x33
+</div>
+        
+        <div class="code-snippet">nv2a: unimplemented texture color format 0x33
+</div>
+        
+<h2 id="BumpMap_R16B16_L">BumpMap_R16B16_L</h2>
+        <div class="test-case-description">
+        <p>Exercises 16-bit HILO bump mapping with a YB16YA16 linear bump map texture (NV097_SET_TEXTURE_FORMAT_COLOR_LU_IMAGE_YB16YA16).</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">nv2a: unimplemented texture color format 0x36
+</div>
+        
+        <div class="code-snippet">nv2a: unimplemented texture color format 0x36
+</div>
+        
+        <div class="code-snippet">nv2a: unimplemented texture color format 0x36
+</div>
+        
+<h2 id="BumpMap_R6G5B5">BumpMap_R6G5B5</h2>
+        <div class="test-case-description">
+        <p>Exercises 8-bit du/dv bump mapping with an R6G5B5 swizzled bump map texture.</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">vk_result = -3
+xemu-0.8.136-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/texture.c:1241: void create_texture(PGRAPHState *, int): Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+</div>
+        
+        <div class="code-snippet">vk_result = -3
+xemu-0.8.136-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/texture.c:1241: void create_texture(PGRAPHState *, int): Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+</div>
+        
+        <div class="code-snippet">vk_result = -3
+xemu-0.8.136-x86_64.AppImage: ../hw/xbox/nv2a/pgraph/vk/texture.c:1241: void create_texture(PGRAPHState *, int): Assertion `vk_result == VK_SUCCESS && "vk check failed"' failed.
+</div>
+        
+<h2 id="BumpMap_Y16">BumpMap_Y16</h2>
+        <div class="test-case-description">
+        <p>Exercises 8-bit du/dv bump mapping with a Y16 swizzled bump map texture (NV097_SET_TEXTURE_FORMAT_COLOR_SZ_Y16).</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">nv2a: unimplemented texture color format 0x32
+</div>
+        
+        <div class="code-snippet">nv2a: unimplemented texture color format 0x32
+</div>
+        
+        <div class="code-snippet">nv2a: unimplemented texture color format 0x32
+</div>
+        
+</div>
+
+    <script src="../../../../../script.js"></script>
+</body>
+</html>

@@ -76,6 +76,69 @@
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.52-master-679f6d06bd61ef8cb5c09c663c63bab36e76b899/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Surface_format/Fmt_R5G6B5.png" alt="Test result for Surface_format::Fmt_R5G6B5" class="inline-image">
 </div>
     
+<h2 id="Fmt_X1A7R8G8B8_O1A7R8G8B8">Fmt_X1A7R8G8B8_O1A7R8G8B8</h2>
+        <div class="test-case-description">
+        <p>Tests the X1A7R8G8B8_O1A7R8G8B8 surface format. Quads appear similar to A8R8G8B8, but the high bit of the alpha is set to 1, causing all quads to be less translucent.</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">2025-04-16 19:12:42.325 xemu[90086:635742] +[IMKClient subclass]: chose IMKClient_Modern
+2025-04-16 19:12:42.325 xemu[90086:635742] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+nv2a: unimplemented color surface format 0x7
+</div>
+        
+        <div class="code-snippet">2025-04-16 19:23:57.999 xemu[90486:642336] +[IMKClient subclass]: chose IMKClient_Modern
+2025-04-16 19:23:57.999 xemu[90486:642336] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+nv2a: unimplemented color surface format 0x7
+</div>
+        
+        <div class="code-snippet">2025-04-16 19:24:02.876 xemu[90490:642464] +[IMKClient subclass]: chose IMKClient_Modern
+2025-04-16 19:24:02.876 xemu[90490:642464] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+nv2a: unimplemented color surface format 0x7
+</div>
+        
+<h2 id="Fmt_X1A7R8G8B8_Z1A7R8G8B8">Fmt_X1A7R8G8B8_Z1A7R8G8B8</h2>
+        <div class="test-case-description">
+        <p>Tests the X1A7R8G8B8_Z1A7R8G8B8 surface format. Quads appear similar to A8R8G8B8, but the high bit of the alpha is set to 0, causing all quads to be translucent.</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">2025-04-16 19:19:53.462 xemu[90313:639218] +[IMKClient subclass]: chose IMKClient_Modern
+2025-04-16 19:19:53.462 xemu[90313:639218] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+nv2a: unimplemented color surface format 0x6
+</div>
+        
+        <div class="code-snippet">2025-04-16 19:24:07.769 xemu[90498:642598] +[IMKClient subclass]: chose IMKClient_Modern
+2025-04-16 19:24:07.769 xemu[90498:642598] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+nv2a: unimplemented color surface format 0x6
+</div>
+        
+        <div class="code-snippet">2025-04-16 19:24:12.656 xemu[90502:642693] +[IMKClient subclass]: chose IMKClient_Modern
+2025-04-16 19:24:12.656 xemu[90502:642693] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+nv2a: unimplemented color surface format 0x6
+</div>
+        
+<h2 id="Fmt_X1R5G5B5_O1R5G5B5">Fmt_X1R5G5B5_O1R5G5B5</h2>
+        <div class="test-case-description">
+        <p>Tests the X1R5G5B5_O1R5G5B5 surface format.</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">2025-04-16 19:19:58.444 xemu[90326:639460] +[IMKClient subclass]: chose IMKClient_Modern
+2025-04-16 19:19:58.444 xemu[90326:639460] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+nv2a: unimplemented color surface format 0x2
+</div>
+        
+        <div class="code-snippet">2025-04-16 19:24:17.572 xemu[90508:642793] +[IMKClient subclass]: chose IMKClient_Modern
+2025-04-16 19:24:17.572 xemu[90508:642793] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+nv2a: unimplemented color surface format 0x2
+</div>
+        
+        <div class="code-snippet">2025-04-16 19:24:22.465 xemu[90512:642876] +[IMKClient subclass]: chose IMKClient_Modern
+2025-04-16 19:24:22.465 xemu[90512:642876] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+nv2a: unimplemented color surface format 0x2
+</div>
+        
 <h2 id="Fmt_X1R5G5B5_Z1R5G5B5">Fmt_X1R5G5B5_Z1R5G5B5</h2>
         <div class="test-case-description">
         <p>Tests the X1R5G5B5_Z1R5G5B5 surface format.</p>
@@ -85,6 +148,27 @@
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.52-master-679f6d06bd61ef8cb5c09c663c63bab36e76b899/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Surface_format/Fmt_X1R5G5B5_Z1R5G5B5.png" alt="Test result for Surface_format::Fmt_X1R5G5B5_Z1R5G5B5" class="inline-image">
 </div>
     
+<h2 id="Fmt_X8R8G8B8_O8R8G8B8">Fmt_X8R8G8B8_O8R8G8B8</h2>
+        <div class="test-case-description">
+        <p>Tests the X8R8G8B8_O8R8G8B8 surface format. Quads appear similar to A8R8G8B8, but the alpha is set to fully opaque.</p>
+        </div>
+    <h3>Failures</h3>
+        
+        <div class="code-snippet">2025-04-16 19:20:03.406 xemu[90332:639592] +[IMKClient subclass]: chose IMKClient_Modern
+2025-04-16 19:20:03.406 xemu[90332:639592] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+nv2a: unimplemented color surface format 0x5
+</div>
+        
+        <div class="code-snippet">2025-04-16 19:24:27.353 xemu[90518:642998] +[IMKClient subclass]: chose IMKClient_Modern
+2025-04-16 19:24:27.353 xemu[90518:642998] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+nv2a: unimplemented color surface format 0x5
+</div>
+        
+        <div class="code-snippet">2025-04-16 19:24:32.243 xemu[90521:643089] +[IMKClient subclass]: chose IMKClient_Modern
+2025-04-16 19:24:32.243 xemu[90521:643089] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+nv2a: unimplemented color surface format 0x5
+</div>
+        
 <h2 id="Fmt_X8R8G8B8_Z8R8G8B8">Fmt_X8R8G8B8_Z8R8G8B8</h2>
         <div class="test-case-description">
         <p>Tests the X8R8G8B8_Z8R8G8B8 surface format. Quads appear similar to A8R8G8B8, but the alpha is set to fully transparent (no quads should appear in the top half of the image). </p>
