@@ -22,7 +22,11 @@ from urllib.parse import quote
 import requests
 from frozendict import deepfreeze, frozendict
 from jinja2 import Environment, FileSystemLoader
-from xemu_pgraph_ci_tools.models import RunIdentifier, SourceTestIdentifier
+from xemu_pgraph_ci_tools.models import (
+    ComparisonSummary,
+    RunIdentifier,
+    SourceTestIdentifier,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -176,11 +180,11 @@ class ComparisonInfo(NamedTuple):
             if len(parts) >= 4:
                 xemu_version = parts[0]
                 platform_info = parts[1]
-                gl_info = f"{parts[2]}--{parts[3]}"
+                gl_info = f"{parts[2]}--{parts[3]}".replace("__", "--")
             elif len(parts) == 3:
                 xemu_version = parts[0]
                 platform_info = parts[1]
-                gl_info = parts[2]
+                gl_info = parts[2].replace("__", "--")
             else:
                 xemu_version = parts[0]
                 platform_info = ""
@@ -190,15 +194,15 @@ class ComparisonInfo(NamedTuple):
             if len(components) >= 6:
                 xemu_version = components[-5]
                 platform_info = components[-4]
-                gl_info = f"{components[-3]}--{components[-2]}"
+                gl_info = f"{components[-3]}--{components[-2]}".replace("__", "--")
             elif len(components) == 5:
                 xemu_version = components[-4]
                 platform_info = components[-3]
-                gl_info = components[-2]
+                gl_info = components[-2].replace("__", "--")
             elif len(components) == 4:
                 xemu_version = components[-3]
                 platform_info = components[-2]
-                gl_info = components[-1]
+                gl_info = components[-1].replace("__", "--")
             else:
                 xemu_version = "UNKNOWN"
                 platform_info = "UNKNOWN"
@@ -211,7 +215,9 @@ class ComparisonInfo(NamedTuple):
                 platform_info=platform_info,
                 gl_info=gl_info,
             ),
-            golden_identifier_component=os.path.basename(run_identifier),
+            golden_identifier_component=os.path.basename(run_identifier).replace(
+                "__", "--"
+            ),
             golden_identifier=summary.get("golden_identifier", "UNKNOWN"),
             summary=deepfreeze(summary),
             results=results,
@@ -304,8 +310,17 @@ class ComparisonScanner:
         res_id = run_info.get("result_identifier", "")
         if res_id:
             results_base_path = os.path.join(self.results_dir, res_id.replace(":", "/"))
+            if not os.path.isdir(results_base_path):
+                results_base_path = os.path.join(
+                    self.results_dir,
+                    res_id.replace(":", "/").replace("--", "/").replace("__", "/"),
+                )
         else:
-            results_parts = [p for p in comp_parts[:-1] if not p.startswith("Xbox__")]
+            results_parts = [
+                p
+                for p in comp_parts[:-1]
+                if not p.startswith("Xbox__") and not p.startswith("Xbox--")
+            ]
             results_base_path = os.path.join(self.results_dir, *results_parts)
         golden_base_path = (
             ""
@@ -438,6 +453,81 @@ class ComparisonScanner:
             ]
         }
 
+    @staticmethod
+    def _merge_comparison_infos(
+        comp_list: list[ComparisonInfo],
+    ) -> list[ComparisonInfo]:
+        """Merges multiple ComparisonInfo instances comparing against the same golden into a single unified ComparisonInfo."""
+        by_golden: dict[str, list[ComparisonInfo]] = defaultdict(list)
+        for comp in comp_list:
+            by_golden[comp.golden_identifier].append(comp)
+
+        merged_list: list[ComparisonInfo] = []
+        for golden_id, comps in by_golden.items():
+            if len(comps) == 1:
+                merged_list.append(comps[0])
+                continue
+
+            merged_summary_model = ComparisonSummary(
+                result_identifier="",
+                golden_identifier=golden_id,
+            )
+            comps_sorted = sorted(comps, key=lambda c: len(c.results), reverse=True)
+            for c in comps_sorted:
+                s_dict = dict(c.summary)
+                model = ComparisonSummary(
+                    result_identifier=s_dict.get("result_identifier", ""),
+                    golden_identifier=s_dict.get("golden_identifier", golden_id),
+                    tests_without_goldens=list(s_dict.get("tests_without_goldens", [])),
+                    goldens_without_results=list(
+                        s_dict.get("goldens_without_results", [])
+                    ),
+                    tests_with_differences=dict(
+                        s_dict.get("tests_with_differences", {})
+                    ),
+                    tests_evaluated=list(s_dict.get("tests_evaluated", [])),
+                )
+                merged_summary_model.merge(model)
+
+            suites_by_name: dict[str, dict[str, TestCaseComparisonInfo]] = defaultdict(
+                dict
+            )
+            descriptors: dict[str, TestSuiteDescriptor | None] = {}
+            for c in comps_sorted:
+                for suite in c.results:
+                    if suite.descriptor and suite.suite_name not in descriptors:
+                        descriptors[suite.suite_name] = suite.descriptor
+                    for tc in suite.test_cases:
+                        if tc.test_name not in suites_by_name[suite.suite_name]:
+                            suites_by_name[suite.suite_name][tc.test_name] = tc
+                        else:
+                            existing_tc = suites_by_name[suite.suite_name][tc.test_name]
+                            if not existing_tc.diff_image_url and tc.diff_image_url:
+                                suites_by_name[suite.suite_name][tc.test_name] = tc
+
+            merged_results: list[TestSuiteComparisonInfo] = []
+            for suite_name, test_cases_map in suites_by_name.items():
+                merged_results.append(
+                    TestSuiteComparisonInfo(
+                        suite_name=suite_name,
+                        test_cases=tuple(test_cases_map.values()),
+                        descriptor=descriptors.get(suite_name),
+                    )
+                )
+
+            primary = comps_sorted[0]
+            merged_list.append(
+                ComparisonInfo(
+                    identifier=primary.identifier,
+                    golden_identifier_component=primary.golden_identifier_component,
+                    golden_identifier=golden_id,
+                    summary=deepfreeze(merged_summary_model.to_dict()),
+                    results=tuple(merged_results),
+                )
+            )
+
+        return merged_list
+
     def process(
         self,
     ) -> dict[RunIdentifier, list[ComparisonInfo]]:
@@ -450,6 +540,9 @@ class ComparisonScanner:
 
         for comparison in self._process_comparison_artifacts(run_identifier_to_summary):
             ret[comparison.identifier.minimal_identifier()].append(comparison)
+
+        for min_id in list(ret.keys()):
+            ret[min_id] = self._merge_comparison_infos(ret[min_id])
 
         return ret
 
@@ -628,8 +721,8 @@ class ResultsScanner:
                     comp_id.xemu_version == run_identifier.xemu_version
                     and comp_id.platform_info == run_identifier.platform_info
                 ):
-                    gl_a = run_identifier.gl_info.split("--")[0]
-                    gl_b = comp_id.gl_info.split("--")[0]
+                    gl_a = run_identifier.gl_info.replace("__", "--").split("--")[0]
+                    gl_b = comp_id.gl_info.replace("__", "--").split("--")[0]
                     if gl_a == gl_b:
                         comparisons = comp_list
                         break
@@ -741,13 +834,18 @@ class PrettyMachineInfo(NamedTuple):
 
         run_identifier = results_info.identifier
         platform = f"{os} - {cpu}" if cpu and os else run_identifier.platform_info
+        gl_parts = (
+            run_identifier.gl_info.split("--")
+            if "--" in run_identifier.gl_info
+            else run_identifier.gl_info.split("__")
+        )
         gl = (
             f"{gl_vendor} - {gl_renderer} - {gl_version}"
             if gl_vendor and gl_renderer and gl_version
-            else run_identifier.gl_info.split("--")[0]
+            else (gl_parts[0] if gl_parts else "")
         )
         if not glsl_version:
-            glsl_version = run_identifier.gl_info.split("--")[1]
+            glsl_version = gl_parts[1] if len(gl_parts) > 1 else ""
         renderer = "Vulkan" if results_info.renderer_info.get("vulkan") else "OpenGL"
 
         return cls(platform=platform, gl=gl, glsl=glsl_version, renderer=renderer)
