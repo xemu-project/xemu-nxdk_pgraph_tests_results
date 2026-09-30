@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Surface_format : xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee:Linux_x86_64:vk_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits):gslv_4.50 vs Xbox_Hardware</title>
+    <link rel="stylesheet" href="../../../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    
+      <a href="../../../../results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits)--gslv_4.50/index.html#Xbox_Hardware"><img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Arrow_chevron_up_in_sharp_solid_style.svg" width="32" alt="Navigate up one level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Surface_format : xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee:Linux_x86_64:vk_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits):gslv_4.50 vs Xbox_Hardware</h1>
+
+<div class="label-value-grid">
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Tests behavior of NV097_SET_SURFACE_FORMAT_COLOR. Tests render two quads into a render target with the surface color format under test. The left quad consists of 4 color gradient patches (red, yellow, cyan, blue) with alpha forced to fully opaque. The second quad uses the same color gradients but has alpha set in a radial pattern such that it is 0 at the corners and fully opaque in the center.</div>
+    
+        <div class="test-description-line">The resultant surface is then rendered to an RGBA framebuffer twice, once at the top of the screen with the alpha channel preserved, and again at the bottom of the screen with alpha forced to fully opaque.</div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/surface_format_tests.h#L19">src/tests/surface_format_tests.h</a></div>
+    <div class="label">Golden results</div>
+    <div class="value"><a href="https://abaire.github.io/nxdk_pgraph_tests_golden_results/results/Surface_format/index.html">https://abaire.github.io/nxdk_pgraph_tests_golden_results/results/Surface_format/index.html</a></div>
+</div>
+
+
+
+    <h3 id="Fmt_B8">Fmt_B8</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">12720.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Tests the B8 surface format. Quads appear as alpha+luma ramps and are distorted and repeated due to the difference in bytes per pixel.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Surface_format/Fmt_B8-diff.png" alt="Diff result for Surface_format::Fmt_B8" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Surface_format/Fmt_B8.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_format/Fmt_B8.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Surface_format/Fmt_B8.png" alt="Source image for Surface_format::Fmt_B8" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_format/Fmt_B8.png" alt="Golden image for Surface_format::Fmt_B8" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="Fmt_G8B8">Fmt_G8B8</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">22100.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Tests the G8B8 surface format. Quads set the red channel equal to the blue channel and alpha equal to the green channel. Quads are once again repeated due to the difference in bytes per pixel.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Surface_format/Fmt_G8B8-diff.png" alt="Diff result for Surface_format::Fmt_G8B8" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Surface_format/Fmt_G8B8.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_format/Fmt_G8B8.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Surface_format/Fmt_G8B8.png" alt="Source image for Surface_format::Fmt_G8B8" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_format/Fmt_G8B8.png" alt="Golden image for Surface_format::Fmt_G8B8" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="Fmt_X1R5G5B5_Z1R5G5B5">Fmt_X1R5G5B5_Z1R5G5B5</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">23401.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Tests the X1R5G5B5_Z1R5G5B5 surface format.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Surface_format/Fmt_X1R5G5B5_Z1R5G5B5-diff.png" alt="Diff result for Surface_format::Fmt_X1R5G5B5_Z1R5G5B5" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Surface_format/Fmt_X1R5G5B5_Z1R5G5B5.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_format/Fmt_X1R5G5B5_Z1R5G5B5.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Surface_format/Fmt_X1R5G5B5_Z1R5G5B5.png" alt="Source image for Surface_format::Fmt_X1R5G5B5_Z1R5G5B5" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_format/Fmt_X1R5G5B5_Z1R5G5B5.png" alt="Golden image for Surface_format::Fmt_X1R5G5B5_Z1R5G5B5" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="Fmt_X8R8G8B8_Z8R8G8B8">Fmt_X8R8G8B8_Z8R8G8B8</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">20903.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Tests the X8R8G8B8_Z8R8G8B8 surface format. Quads appear similar to A8R8G8B8, but the alpha is set to fully transparent (no quads should appear in the top half of the image). </p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Surface_format/Fmt_X8R8G8B8_Z8R8G8B8-diff.png" alt="Diff result for Surface_format::Fmt_X8R8G8B8_Z8R8G8B8" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Surface_format/Fmt_X8R8G8B8_Z8R8G8B8.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_format/Fmt_X8R8G8B8_Z8R8G8B8.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Surface_format/Fmt_X8R8G8B8_Z8R8G8B8.png" alt="Source image for Surface_format::Fmt_X8R8G8B8_Z8R8G8B8" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_format/Fmt_X8R8G8B8_Z8R8G8B8.png" alt="Golden image for Surface_format::Fmt_X8R8G8B8_Z8R8G8B8" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div></div>
+
+    <script src="../../../../script.js"></script>
+</body>
+</html>

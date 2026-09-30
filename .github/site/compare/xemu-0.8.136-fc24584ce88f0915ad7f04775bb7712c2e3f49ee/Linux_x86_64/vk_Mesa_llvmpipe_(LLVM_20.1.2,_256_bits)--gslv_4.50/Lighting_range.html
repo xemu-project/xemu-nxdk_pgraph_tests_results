@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Lighting_range : xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee:Linux_x86_64:vk_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits):gslv_4.50 vs Xbox_Hardware</title>
+    <link rel="stylesheet" href="../../../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    
+      <a href="../../../../results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits)--gslv_4.50/index.html#Xbox_Hardware"><img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Arrow_chevron_up_in_sharp_solid_style.svg" width="32" alt="Navigate up one level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Lighting_range : xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee:Linux_x86_64:vk_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits):gslv_4.50 vs Xbox_Hardware</h1>
+
+<div class="label-value-grid">
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Tests the effects of NV097_SET_LIGHT_LOCAL_RANGE (0x1024).</div>
+    
+        <div class="test-description-line">Each test renders a grid mesh in the center, angled such that the left side is closer to the camera than the right. Two quads are also rendered to the left and the right of the main mesh, the one on the left at a depth close to the camera and the one on the right farther away.</div>
+    
+        <div class="test-description-line">A light is then projected onto the geometry with a range cutoff set such that a portion of the vertices should not be lit.</div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/lighting_range_tests.h#L27">src/tests/lighting_range_tests.h</a></div>
+    <div class="label">Golden results</div>
+    <div class="value"><a href="https://abaire.github.io/nxdk_pgraph_tests_golden_results/results/Lighting_range/index.html">https://abaire.github.io/nxdk_pgraph_tests_golden_results/results/Lighting_range/index.html</a></div>
+</div>
+
+
+
+    <h3 id="Directional">Directional</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">66998.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Tests behavior using the fixed function pipeline with a directional (infinite) light.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Lighting_range/Directional-diff.png" alt="Diff result for Lighting_range::Directional" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Lighting_range/Directional.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_range/Directional.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Lighting_range/Directional.png" alt="Source image for Lighting_range::Directional" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_range/Directional.png" alt="Golden image for Lighting_range::Directional" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="Point">Point</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">2550.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Tests behavior using the fixed function pipeline with a point (local) light. Attenuation is set to 0 for the light, resulting in hard edges.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Lighting_range/Point-diff.png" alt="Diff result for Lighting_range::Point" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Lighting_range/Point.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_range/Point.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Lighting_range/Point.png" alt="Source image for Lighting_range::Point" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_range/Point.png" alt="Golden image for Lighting_range::Point" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="Spot">Spot</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">2951.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Tests behavior using the fixed function pipeline with a spotlight. Attenuation is set to 0 for the light, resulting in hard edges. </p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Lighting_range/Spot-diff.png" alt="Diff result for Lighting_range::Spot" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Lighting_range/Spot.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_range/Spot.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Lighting_range/Spot.png" alt="Source image for Lighting_range::Spot" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_range/Spot.png" alt="Golden image for Lighting_range::Spot" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div></div>
+
+    <script src="../../../../script.js"></script>
+</body>
+</html>

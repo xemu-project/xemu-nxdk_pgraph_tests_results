@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee: Linux_x86_64, GL: Mesa - llvmpipe (LLVM 20.1.2, 256 bits) - 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.3, Shader: 4.50 - Clear</title>
+    <link rel="stylesheet" href="../../../../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../../../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    
+      <a href="../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Arrow_chevron_up_in_sharp_solid_style.svg" width="32" alt="Navigate up one level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Clear</h1>
+
+<div class="label-value-grid">
+    <div class="label"><a href="https://xemu.app">xemu</a> version</div>
+    <div class="value">xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee</div>
+
+    <div class="label">Platform</div>
+    <div class="value">Linux_x86_64</div>
+
+    <div class="label">Renderer</div>
+    <div class="value">Vulkan</div>
+
+    <div class="label">GL info</div>
+    <div class="value">Mesa - llvmpipe (LLVM 20.1.2, 256 bits) - 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.3</div>
+
+    <div class="label">GLSL version</div>
+    <div class="value">4.50</div>
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Tests the behavior of various write masks on NV097_CLEAR_SURFACE.</div>
+    
+        <div class="test-description-line">Color mask (C*) tests: Each test draws some geometry, then modifies the NV097_SET_COLOR_MASK, NV097_SET_DEPTH_MASK, and NV097_SET_STENCIL_MASK settings, then invokes NV097_CLEAR_SURFACE.</div>
+    
+        <div class="test-description-line">In all cases, the clear color is set to 0x7F7F7F7F and the depth value is set to 0xFFFFFFFF.</div>
+    
+        <div class="test-description-line">Surface format color (SFC*) tests: Each test clears a render target surface and then renders it as a texture with alpha blending disabled in order to test the interaction of surface format with NV097_CLEAR_SURFACE_COLOR.</div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/clear_tests.h#L23">src/tests/clear_tests.h</a></div>
+</div>
+
+<h2 id="C00000000_Depth_n">C00000000_Depth_n</h2>
+        <div class="test-case-description">
+        <p>Framebuffer result after disabling writing to all color channels and to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Clear/C00000000_Depth_n.png" alt="Test result for Clear::C00000000_Depth_n" class="inline-image">
+</div>
+    
+<h2 id="C00000000_Depth_n_ZB">C00000000_Depth_n_ZB</h2>
+        <div class="test-case-description">
+        <p>Z-buffer result after disabling writing to all color channels and to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Clear/C00000000_Depth_n_ZB.png" alt="Test result for Clear::C00000000_Depth_n_ZB" class="inline-image">
+</div>
+    
+<h2 id="C00000000_Depth_y">C00000000_Depth_y</h2>
+        <div class="test-case-description">
+        <p>Framebuffer result after disabling writing to all color channels and enabling writes to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Clear/C00000000_Depth_y.png" alt="Test result for Clear::C00000000_Depth_y" class="inline-image">
+</div>
+    
+<h2 id="C00000000_Depth_y_ZB">C00000000_Depth_y_ZB</h2>
+        <div class="test-case-description">
+        <p>Z-buffer result after disabling writing to all color channels and enabling writes to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Clear/C00000000_Depth_y_ZB.png" alt="Test result for Clear::C00000000_Depth_y_ZB" class="inline-image">
+</div>
+    
+<h2 id="C00000001_Depth_n">C00000001_Depth_n</h2>
+        <div class="test-case-description">
+        <p>Framebuffer result after disabling writing to all color channels except blue and to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Clear/C00000001_Depth_n.png" alt="Test result for Clear::C00000001_Depth_n" class="inline-image">
+</div>
+    
+<h2 id="C00000001_Depth_n_ZB">C00000001_Depth_n_ZB</h2>
+        <div class="test-case-description">
+        <p>Z-buffer result after disabling writing to all color channels except blue and to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Clear/C00000001_Depth_n_ZB.png" alt="Test result for Clear::C00000001_Depth_n_ZB" class="inline-image">
+</div>
+    
+<h2 id="C00000001_Depth_y">C00000001_Depth_y</h2>
+        <div class="test-case-description">
+        <p>Framebuffer result after disabling writing to all color channels except blue enabling writes to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Clear/C00000001_Depth_y.png" alt="Test result for Clear::C00000001_Depth_y" class="inline-image">
+</div>
+    
+<h2 id="C00000001_Depth_y_ZB">C00000001_Depth_y_ZB</h2>
+        <div class="test-case-description">
+        <p>Z-buffer result after disabling writing to all color channels except blue enabling writes to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Clear/C00000001_Depth_y_ZB.png" alt="Test result for Clear::C00000001_Depth_y_ZB" class="inline-image">
+</div>
+    
+<h2 id="C00000100_Depth_n">C00000100_Depth_n</h2>
+        <div class="test-case-description">
+        <p>Framebuffer result after disabling writing to all color channels except green and to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Clear/C00000100_Depth_n.png" alt="Test result for Clear::C00000100_Depth_n" class="inline-image">
+</div>
+    
+<h2 id="C00000100_Depth_n_ZB">C00000100_Depth_n_ZB</h2>
+        <div class="test-case-description">
+        <p>Z-buffer result after disabling writing to all color channels except green and to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Clear/C00000100_Depth_n_ZB.png" alt="Test result for Clear::C00000100_Depth_n_ZB" class="inline-image">
+</div>
+    
+<h2 id="C00000100_Depth_y">C00000100_Depth_y</h2>
+        <div class="test-case-description">
+        <p>Framebuffer result after disabling writing to all color channels except green and enabling writes to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Clear/C00000100_Depth_y.png" alt="Test result for Clear::C00000100_Depth_y" class="inline-image">
+</div>
+    
+<h2 id="C00000100_Depth_y_ZB">C00000100_Depth_y_ZB</h2>
+        <div class="test-case-description">
+        <p>Z-buffer result after disabling writing to all color channels except green and enabling writes to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Clear/C00000100_Depth_y_ZB.png" alt="Test result for Clear::C00000100_Depth_y_ZB" class="inline-image">
+</div>
+    
+<h2 id="C00010000_Depth_n">C00010000_Depth_n</h2>
+        <div class="test-case-description">
+        <p>Framebuffer result after disabling writing to all color channels except red and to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Clear/C00010000_Depth_n.png" alt="Test result for Clear::C00010000_Depth_n" class="inline-image">
+</div>
+    
+<h2 id="C00010000_Depth_n_ZB">C00010000_Depth_n_ZB</h2>
+        <div class="test-case-description">
+        <p>Z-buffer result after disabling writing to all color channels except red and to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Clear/C00010000_Depth_n_ZB.png" alt="Test result for Clear::C00010000_Depth_n_ZB" class="inline-image">
+</div>
+    
+<h2 id="C00010000_Depth_y">C00010000_Depth_y</h2>
+        <div class="test-case-description">
+        <p>Framebuffer result after disabling writing to all color channels except red and enabling writes to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Clear/C00010000_Depth_y.png" alt="Test result for Clear::C00010000_Depth_y" class="inline-image">
+</div>
+    
+<h2 id="C00010000_Depth_y_ZB">C00010000_Depth_y_ZB</h2>
+        <div class="test-case-description">
+        <p>Z-buffer result after disabling writing to all color channels except red and enabling writes to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Clear/C00010000_Depth_y_ZB.png" alt="Test result for Clear::C00010000_Depth_y_ZB" class="inline-image">
+</div>
+    
+<h2 id="C01000000_Depth_n">C01000000_Depth_n</h2>
+        <div class="test-case-description">
+        <p>Framebuffer result after disabling writing to all color channels except alpha and to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Clear/C01000000_Depth_n.png" alt="Test result for Clear::C01000000_Depth_n" class="inline-image">
+</div>
+    
+<h2 id="C01000000_Depth_n_ZB">C01000000_Depth_n_ZB</h2>
+        <div class="test-case-description">
+        <p>Z-buffer result after disabling writing to all color channels except alpha and to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Clear/C01000000_Depth_n_ZB.png" alt="Test result for Clear::C01000000_Depth_n_ZB" class="inline-image">
+</div>
+    
+<h2 id="C01000000_Depth_y">C01000000_Depth_y</h2>
+        <div class="test-case-description">
+        <p>Framebuffer result after disabling writing to all color channels except alpha and enabling writes to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Clear/C01000000_Depth_y.png" alt="Test result for Clear::C01000000_Depth_y" class="inline-image">
+</div>
+    
+<h2 id="C01000000_Depth_y_ZB">C01000000_Depth_y_ZB</h2>
+        <div class="test-case-description">
+        <p>Z-buffer result after disabling writing to all color channels except alpha and enabling writes to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Clear/C01000000_Depth_y_ZB.png" alt="Test result for Clear::C01000000_Depth_y_ZB" class="inline-image">
+</div>
+    
+<h2 id="C01010101_Depth_n">C01010101_Depth_n</h2>
+        <div class="test-case-description">
+        <p>Framebuffer result after enabling writing to all color channels but disabling writes to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Clear/C01010101_Depth_n.png" alt="Test result for Clear::C01010101_Depth_n" class="inline-image">
+</div>
+    
+<h2 id="C01010101_Depth_n_ZB">C01010101_Depth_n_ZB</h2>
+        <div class="test-case-description">
+        <p>Z-buffer result after enabling writing to all color channels but disabling writes to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Clear/C01010101_Depth_n_ZB.png" alt="Test result for Clear::C01010101_Depth_n_ZB" class="inline-image">
+</div>
+    
+<h2 id="C01010101_Depth_y">C01010101_Depth_y</h2>
+        <div class="test-case-description">
+        <p>Framebuffer result after enabling writing to all color channels and the depth/stencil buffer.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Clear/C01010101_Depth_y.png" alt="Test result for Clear::C01010101_Depth_y" class="inline-image">
+</div>
+    
+<h2 id="C01010101_Depth_y_ZB">C01010101_Depth_y_ZB</h2>
+        <div class="test-case-description">
+        <p>Z-buffer result after enabling writing to all color channels and the depth/stencil buffer.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Clear/C01010101_Depth_y_ZB.png" alt="Test result for Clear::C01010101_Depth_y_ZB" class="inline-image">
+</div>
+    
+<h2 id="Clear">Clear</h2><h3>Failures</h3>
+        
+        <div class="code-snippet">required device extension not found: VK_KHR_external_semaphore_fd
+nv2a: unimplemented color surface format 0x5</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x5</div>
+        
+        <div class="code-snippet">nv2a: unimplemented color surface format 0x5</div>
+        
+<h2 id="SCF_R5G6B5">SCF_R5G6B5</h2>
+        <div class="test-case-description">
+        <p>Tests the effect of clear color on LE_R5G6B5 surface format. (Note that the surface is rendered as an ARGB8 texture)</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Clear/SCF_R5G6B5.png" alt="Test result for Clear::SCF_R5G6B5" class="inline-image">
+</div>
+    
+<h2 id="SCF_X8R8G8B8_Z8R8G8B8">SCF_X8R8G8B8_Z8R8G8B8</h2>
+        <div class="test-case-description">
+        <p>Tests the effect of clear color on LE_X8R8G8B8_Z8R8G8B8 surface format. The cleared surface will have its most significant byte set to 0.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Clear/SCF_X8R8G8B8_Z8R8G8B8.png" alt="Test result for Clear::SCF_X8R8G8B8_Z8R8G8B8" class="inline-image">
+</div>
+    
+<h2 id="SFC_A8R8G8B8">SFC_A8R8G8B8</h2>
+        <div class="test-case-description">
+        <p>Tests the effect of clear color on LE_A8R8G8B8 surface format.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Clear/SFC_A8R8G8B8.png" alt="Test result for Clear::SFC_A8R8G8B8" class="inline-image">
+</div>
+    
+<h2 id="SFC_X1R5G5B5_Z1R5G5B5">SFC_X1R5G5B5_Z1R5G5B5</h2>
+        <div class="test-case-description">
+        <p>Tests the effect of clear color on LE_X1R5G5B5_Z1R5G5B5 surface format. The cleared surface will have its most significant bit set to 0. (Note that the surface is rendered as an ARGB8 texture)</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Clear/SFC_X1R5G5B5_Z1R5G5B5.png" alt="Test result for Clear::SFC_X1R5G5B5_Z1R5G5B5" class="inline-image">
+</div>
+    
+</div>
+
+    <script src="../../../../../script.js"></script>
+</body>
+</html>

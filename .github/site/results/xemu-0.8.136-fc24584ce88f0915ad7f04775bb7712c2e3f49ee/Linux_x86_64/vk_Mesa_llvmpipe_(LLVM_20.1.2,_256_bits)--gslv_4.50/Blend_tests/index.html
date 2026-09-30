@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee: Linux_x86_64, GL: Mesa - llvmpipe (LLVM 20.1.2, 256 bits) - 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.3, Shader: 4.50 - Blend_tests</title>
+    <link rel="stylesheet" href="../../../../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../../../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    
+      <a href="../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Arrow_chevron_up_in_sharp_solid_style.svg" width="32" alt="Navigate up one level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Blend_tests</h1>
+
+<div class="label-value-grid">
+    <div class="label"><a href="https://xemu.app">xemu</a> version</div>
+    <div class="value">xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee</div>
+
+    <div class="label">Platform</div>
+    <div class="value">Linux_x86_64</div>
+
+    <div class="label">Renderer</div>
+    <div class="value">Vulkan</div>
+
+    <div class="label">GL info</div>
+    <div class="value">Mesa - llvmpipe (LLVM 20.1.2, 256 bits) - 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.3</div>
+
+    <div class="label">GLSL version</div>
+    <div class="value">4.50</div>
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Tests the effects of NV097_SET_BLEND_EQUATION, NV097_SET_BLEND_FUNC_SFACTOR, and NV097_SET_BLEND_FUNC_DFACTOR on rendering unsigned textures.</div>
+    
+        <div class="test-description-line">All test names are of the form <sfactor>-<equation>-<dfactor> where:</div>
+    
+        <div class="test-description-line">sfactor/dfactor are one of: 0 - ZERO, 1 - ONE, srcRGB - SRC_COLOR, 1-srcRGB - ONE_MINUS_SRC_COLOR, srcA - SRC_ALPHA, 1-srcA - ONE_MINUS_SRC_ALPHA, dstA - DST_ALPHA, 1-dstA - ONE_MINUS_DST_ALPHA, dstRGB - DST_COLOR, 1-dstRGB - ONE_MINUS_DST_COLOR, srcAsat - SRC_ALPHA_SATURATE, cRGB - CONSTANT_COLOR, 1-cRGB - ONE_MINUS_CONSTANT_COLOR, cA - CONSTANT_ALPHA, 1-cA - ONE_MINUS_CONSTANT_ALPHA</div>
+    
+        <div class="test-description-line">equation is one of: ADD - NV097_SET_BLEND_EQUATION_V_FUNC_ADD, SUB - NV097_SET_BLEND_EQUATION_V_FUNC_SUBTRACT, REVSUB - NV097_SET_BLEND_EQUATION_V_FUNC_REVERSE_SUBTRACT, MIN - NV097_SET_BLEND_EQUATION_V_MIN, MAX - NV097_SET_BLEND_EQUATION_V_MAX, SADD - NV097_SET_BLEND_EQUATION_V_FUNC_ADD_SIGNED, SREVSUB - NV097_SET_BLEND_EQUATION_V_FUNC_REVERSE_SUBTRACT_SIGNED,</div>
+    
+        <div class="test-description-line">The left, center, and right renders are all composited against a 16 pixel checkerboard pattern alternating between a background color and fully opaque black.</div>
+    
+        <div class="test-description-line">On the left side of the screen, a column of squares is rendered with colors blended with the checkerboard and alpha always set to 0xDD.</div>
+    
+        <div class="test-description-line">In the center of the screen, a stack of concentric squares is rendered with colors that are not blended and alpha values blended with the checkerboard (the first 16x16 will be blended with the BG color, the next with full opaque black, etc...). Each square is composited with the previous square from outside to inside, so the outermost is only blended with the checkerboard, the next is blended with both the checkerboard and the result of the outermost blend, etc...</div>
+    
+        <div class="test-description-line">On the right side of the screen, a column of squares is rendered with both color and alpha values blended.</div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/blend_tests.h#L57">src/tests/blend_tests.h</a></div>
+</div>
+
+<h2 id="#spot_0_ADD">#spot_0_ADD</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_0_ADD.png" alt="Test result for Blend_tests::#spot_0_ADD" class="inline-image">
+</div>
+    
+<h2 id="#spot_0_MAX">#spot_0_MAX</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_0_MAX.png" alt="Test result for Blend_tests::#spot_0_MAX" class="inline-image">
+</div>
+    
+<h2 id="#spot_0_MIN">#spot_0_MIN</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_0_MIN.png" alt="Test result for Blend_tests::#spot_0_MIN" class="inline-image">
+</div>
+    
+<h2 id="#spot_0_REVSUB">#spot_0_REVSUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_0_REVSUB.png" alt="Test result for Blend_tests::#spot_0_REVSUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_0_SADD">#spot_0_SADD</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_0_SADD.png" alt="Test result for Blend_tests::#spot_0_SADD" class="inline-image">
+</div>
+    
+<h2 id="#spot_0_SREVSUB">#spot_0_SREVSUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_0_SREVSUB.png" alt="Test result for Blend_tests::#spot_0_SREVSUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_0_SUB">#spot_0_SUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_0_SUB.png" alt="Test result for Blend_tests::#spot_0_SUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-cA_ADD">#spot_1-cA_ADD</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-cA_ADD.png" alt="Test result for Blend_tests::#spot_1-cA_ADD" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-cA_MAX">#spot_1-cA_MAX</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-cA_MAX.png" alt="Test result for Blend_tests::#spot_1-cA_MAX" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-cA_MIN">#spot_1-cA_MIN</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-cA_MIN.png" alt="Test result for Blend_tests::#spot_1-cA_MIN" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-cA_REVSUB">#spot_1-cA_REVSUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-cA_REVSUB.png" alt="Test result for Blend_tests::#spot_1-cA_REVSUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-cA_SADD">#spot_1-cA_SADD</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-cA_SADD.png" alt="Test result for Blend_tests::#spot_1-cA_SADD" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-cA_SREVSUB">#spot_1-cA_SREVSUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-cA_SREVSUB.png" alt="Test result for Blend_tests::#spot_1-cA_SREVSUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-cA_SUB">#spot_1-cA_SUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-cA_SUB.png" alt="Test result for Blend_tests::#spot_1-cA_SUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-cRGB_ADD">#spot_1-cRGB_ADD</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-cRGB_ADD.png" alt="Test result for Blend_tests::#spot_1-cRGB_ADD" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-cRGB_MAX">#spot_1-cRGB_MAX</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-cRGB_MAX.png" alt="Test result for Blend_tests::#spot_1-cRGB_MAX" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-cRGB_MIN">#spot_1-cRGB_MIN</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-cRGB_MIN.png" alt="Test result for Blend_tests::#spot_1-cRGB_MIN" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-cRGB_REVSUB">#spot_1-cRGB_REVSUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-cRGB_REVSUB.png" alt="Test result for Blend_tests::#spot_1-cRGB_REVSUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-cRGB_SADD">#spot_1-cRGB_SADD</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-cRGB_SADD.png" alt="Test result for Blend_tests::#spot_1-cRGB_SADD" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-cRGB_SREVSUB">#spot_1-cRGB_SREVSUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-cRGB_SREVSUB.png" alt="Test result for Blend_tests::#spot_1-cRGB_SREVSUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-cRGB_SUB">#spot_1-cRGB_SUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-cRGB_SUB.png" alt="Test result for Blend_tests::#spot_1-cRGB_SUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-dstA_ADD">#spot_1-dstA_ADD</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-dstA_ADD.png" alt="Test result for Blend_tests::#spot_1-dstA_ADD" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-dstA_MAX">#spot_1-dstA_MAX</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-dstA_MAX.png" alt="Test result for Blend_tests::#spot_1-dstA_MAX" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-dstA_MIN">#spot_1-dstA_MIN</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-dstA_MIN.png" alt="Test result for Blend_tests::#spot_1-dstA_MIN" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-dstA_REVSUB">#spot_1-dstA_REVSUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-dstA_REVSUB.png" alt="Test result for Blend_tests::#spot_1-dstA_REVSUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-dstA_SADD">#spot_1-dstA_SADD</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-dstA_SADD.png" alt="Test result for Blend_tests::#spot_1-dstA_SADD" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-dstA_SREVSUB">#spot_1-dstA_SREVSUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-dstA_SREVSUB.png" alt="Test result for Blend_tests::#spot_1-dstA_SREVSUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-dstA_SUB">#spot_1-dstA_SUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-dstA_SUB.png" alt="Test result for Blend_tests::#spot_1-dstA_SUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-dstRGB_ADD">#spot_1-dstRGB_ADD</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-dstRGB_ADD.png" alt="Test result for Blend_tests::#spot_1-dstRGB_ADD" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-dstRGB_MAX">#spot_1-dstRGB_MAX</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-dstRGB_MAX.png" alt="Test result for Blend_tests::#spot_1-dstRGB_MAX" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-dstRGB_MIN">#spot_1-dstRGB_MIN</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-dstRGB_MIN.png" alt="Test result for Blend_tests::#spot_1-dstRGB_MIN" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-dstRGB_REVSUB">#spot_1-dstRGB_REVSUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-dstRGB_REVSUB.png" alt="Test result for Blend_tests::#spot_1-dstRGB_REVSUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-dstRGB_SADD">#spot_1-dstRGB_SADD</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-dstRGB_SADD.png" alt="Test result for Blend_tests::#spot_1-dstRGB_SADD" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-dstRGB_SREVSUB">#spot_1-dstRGB_SREVSUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-dstRGB_SREVSUB.png" alt="Test result for Blend_tests::#spot_1-dstRGB_SREVSUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-dstRGB_SUB">#spot_1-dstRGB_SUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-dstRGB_SUB.png" alt="Test result for Blend_tests::#spot_1-dstRGB_SUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-srcA_ADD">#spot_1-srcA_ADD</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-srcA_ADD.png" alt="Test result for Blend_tests::#spot_1-srcA_ADD" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-srcA_MAX">#spot_1-srcA_MAX</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-srcA_MAX.png" alt="Test result for Blend_tests::#spot_1-srcA_MAX" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-srcA_MIN">#spot_1-srcA_MIN</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-srcA_MIN.png" alt="Test result for Blend_tests::#spot_1-srcA_MIN" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-srcA_REVSUB">#spot_1-srcA_REVSUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-srcA_REVSUB.png" alt="Test result for Blend_tests::#spot_1-srcA_REVSUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-srcA_SADD">#spot_1-srcA_SADD</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-srcA_SADD.png" alt="Test result for Blend_tests::#spot_1-srcA_SADD" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-srcA_SREVSUB">#spot_1-srcA_SREVSUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-srcA_SREVSUB.png" alt="Test result for Blend_tests::#spot_1-srcA_SREVSUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-srcA_SUB">#spot_1-srcA_SUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-srcA_SUB.png" alt="Test result for Blend_tests::#spot_1-srcA_SUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-srcRGB_ADD">#spot_1-srcRGB_ADD</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-srcRGB_ADD.png" alt="Test result for Blend_tests::#spot_1-srcRGB_ADD" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-srcRGB_MAX">#spot_1-srcRGB_MAX</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-srcRGB_MAX.png" alt="Test result for Blend_tests::#spot_1-srcRGB_MAX" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-srcRGB_MIN">#spot_1-srcRGB_MIN</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-srcRGB_MIN.png" alt="Test result for Blend_tests::#spot_1-srcRGB_MIN" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-srcRGB_REVSUB">#spot_1-srcRGB_REVSUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-srcRGB_REVSUB.png" alt="Test result for Blend_tests::#spot_1-srcRGB_REVSUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-srcRGB_SADD">#spot_1-srcRGB_SADD</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-srcRGB_SADD.png" alt="Test result for Blend_tests::#spot_1-srcRGB_SADD" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-srcRGB_SREVSUB">#spot_1-srcRGB_SREVSUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-srcRGB_SREVSUB.png" alt="Test result for Blend_tests::#spot_1-srcRGB_SREVSUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_1-srcRGB_SUB">#spot_1-srcRGB_SUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1-srcRGB_SUB.png" alt="Test result for Blend_tests::#spot_1-srcRGB_SUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_1_ADD">#spot_1_ADD</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1_ADD.png" alt="Test result for Blend_tests::#spot_1_ADD" class="inline-image">
+</div>
+    
+<h2 id="#spot_1_MAX">#spot_1_MAX</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1_MAX.png" alt="Test result for Blend_tests::#spot_1_MAX" class="inline-image">
+</div>
+    
+<h2 id="#spot_1_MIN">#spot_1_MIN</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1_MIN.png" alt="Test result for Blend_tests::#spot_1_MIN" class="inline-image">
+</div>
+    
+<h2 id="#spot_1_REVSUB">#spot_1_REVSUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1_REVSUB.png" alt="Test result for Blend_tests::#spot_1_REVSUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_1_SADD">#spot_1_SADD</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1_SADD.png" alt="Test result for Blend_tests::#spot_1_SADD" class="inline-image">
+</div>
+    
+<h2 id="#spot_1_SREVSUB">#spot_1_SREVSUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1_SREVSUB.png" alt="Test result for Blend_tests::#spot_1_SREVSUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_1_SUB">#spot_1_SUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_1_SUB.png" alt="Test result for Blend_tests::#spot_1_SUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_cA_ADD">#spot_cA_ADD</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_cA_ADD.png" alt="Test result for Blend_tests::#spot_cA_ADD" class="inline-image">
+</div>
+    
+<h2 id="#spot_cA_MAX">#spot_cA_MAX</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_cA_MAX.png" alt="Test result for Blend_tests::#spot_cA_MAX" class="inline-image">
+</div>
+    
+<h2 id="#spot_cA_MIN">#spot_cA_MIN</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_cA_MIN.png" alt="Test result for Blend_tests::#spot_cA_MIN" class="inline-image">
+</div>
+    
+<h2 id="#spot_cA_REVSUB">#spot_cA_REVSUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_cA_REVSUB.png" alt="Test result for Blend_tests::#spot_cA_REVSUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_cA_SADD">#spot_cA_SADD</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_cA_SADD.png" alt="Test result for Blend_tests::#spot_cA_SADD" class="inline-image">
+</div>
+    
+<h2 id="#spot_cA_SREVSUB">#spot_cA_SREVSUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_cA_SREVSUB.png" alt="Test result for Blend_tests::#spot_cA_SREVSUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_cA_SUB">#spot_cA_SUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_cA_SUB.png" alt="Test result for Blend_tests::#spot_cA_SUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_cRGB_ADD">#spot_cRGB_ADD</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_cRGB_ADD.png" alt="Test result for Blend_tests::#spot_cRGB_ADD" class="inline-image">
+</div>
+    
+<h2 id="#spot_cRGB_MAX">#spot_cRGB_MAX</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_cRGB_MAX.png" alt="Test result for Blend_tests::#spot_cRGB_MAX" class="inline-image">
+</div>
+    
+<h2 id="#spot_cRGB_MIN">#spot_cRGB_MIN</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_cRGB_MIN.png" alt="Test result for Blend_tests::#spot_cRGB_MIN" class="inline-image">
+</div>
+    
+<h2 id="#spot_cRGB_REVSUB">#spot_cRGB_REVSUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_cRGB_REVSUB.png" alt="Test result for Blend_tests::#spot_cRGB_REVSUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_cRGB_SADD">#spot_cRGB_SADD</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_cRGB_SADD.png" alt="Test result for Blend_tests::#spot_cRGB_SADD" class="inline-image">
+</div>
+    
+<h2 id="#spot_cRGB_SREVSUB">#spot_cRGB_SREVSUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_cRGB_SREVSUB.png" alt="Test result for Blend_tests::#spot_cRGB_SREVSUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_cRGB_SUB">#spot_cRGB_SUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_cRGB_SUB.png" alt="Test result for Blend_tests::#spot_cRGB_SUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_dstA_ADD">#spot_dstA_ADD</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_dstA_ADD.png" alt="Test result for Blend_tests::#spot_dstA_ADD" class="inline-image">
+</div>
+    
+<h2 id="#spot_dstA_MAX">#spot_dstA_MAX</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_dstA_MAX.png" alt="Test result for Blend_tests::#spot_dstA_MAX" class="inline-image">
+</div>
+    
+<h2 id="#spot_dstA_MIN">#spot_dstA_MIN</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_dstA_MIN.png" alt="Test result for Blend_tests::#spot_dstA_MIN" class="inline-image">
+</div>
+    
+<h2 id="#spot_dstA_REVSUB">#spot_dstA_REVSUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_dstA_REVSUB.png" alt="Test result for Blend_tests::#spot_dstA_REVSUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_dstA_SADD">#spot_dstA_SADD</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_dstA_SADD.png" alt="Test result for Blend_tests::#spot_dstA_SADD" class="inline-image">
+</div>
+    
+<h2 id="#spot_dstA_SREVSUB">#spot_dstA_SREVSUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_dstA_SREVSUB.png" alt="Test result for Blend_tests::#spot_dstA_SREVSUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_dstA_SUB">#spot_dstA_SUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_dstA_SUB.png" alt="Test result for Blend_tests::#spot_dstA_SUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_dstRGB_ADD">#spot_dstRGB_ADD</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_dstRGB_ADD.png" alt="Test result for Blend_tests::#spot_dstRGB_ADD" class="inline-image">
+</div>
+    
+<h2 id="#spot_dstRGB_MAX">#spot_dstRGB_MAX</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_dstRGB_MAX.png" alt="Test result for Blend_tests::#spot_dstRGB_MAX" class="inline-image">
+</div>
+    
+<h2 id="#spot_dstRGB_MIN">#spot_dstRGB_MIN</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_dstRGB_MIN.png" alt="Test result for Blend_tests::#spot_dstRGB_MIN" class="inline-image">
+</div>
+    
+<h2 id="#spot_dstRGB_REVSUB">#spot_dstRGB_REVSUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_dstRGB_REVSUB.png" alt="Test result for Blend_tests::#spot_dstRGB_REVSUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_dstRGB_SADD">#spot_dstRGB_SADD</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_dstRGB_SADD.png" alt="Test result for Blend_tests::#spot_dstRGB_SADD" class="inline-image">
+</div>
+    
+<h2 id="#spot_dstRGB_SREVSUB">#spot_dstRGB_SREVSUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_dstRGB_SREVSUB.png" alt="Test result for Blend_tests::#spot_dstRGB_SREVSUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_dstRGB_SUB">#spot_dstRGB_SUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_dstRGB_SUB.png" alt="Test result for Blend_tests::#spot_dstRGB_SUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_srcA_ADD">#spot_srcA_ADD</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_srcA_ADD.png" alt="Test result for Blend_tests::#spot_srcA_ADD" class="inline-image">
+</div>
+    
+<h2 id="#spot_srcA_MAX">#spot_srcA_MAX</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_srcA_MAX.png" alt="Test result for Blend_tests::#spot_srcA_MAX" class="inline-image">
+</div>
+    
+<h2 id="#spot_srcA_MIN">#spot_srcA_MIN</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_srcA_MIN.png" alt="Test result for Blend_tests::#spot_srcA_MIN" class="inline-image">
+</div>
+    
+<h2 id="#spot_srcA_REVSUB">#spot_srcA_REVSUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_srcA_REVSUB.png" alt="Test result for Blend_tests::#spot_srcA_REVSUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_srcA_SADD">#spot_srcA_SADD</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_srcA_SADD.png" alt="Test result for Blend_tests::#spot_srcA_SADD" class="inline-image">
+</div>
+    
+<h2 id="#spot_srcA_SREVSUB">#spot_srcA_SREVSUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_srcA_SREVSUB.png" alt="Test result for Blend_tests::#spot_srcA_SREVSUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_srcA_SUB">#spot_srcA_SUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_srcA_SUB.png" alt="Test result for Blend_tests::#spot_srcA_SUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_srcAsat_ADD">#spot_srcAsat_ADD</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_srcAsat_ADD.png" alt="Test result for Blend_tests::#spot_srcAsat_ADD" class="inline-image">
+</div>
+    
+<h2 id="#spot_srcAsat_MAX">#spot_srcAsat_MAX</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_srcAsat_MAX.png" alt="Test result for Blend_tests::#spot_srcAsat_MAX" class="inline-image">
+</div>
+    
+<h2 id="#spot_srcAsat_MIN">#spot_srcAsat_MIN</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_srcAsat_MIN.png" alt="Test result for Blend_tests::#spot_srcAsat_MIN" class="inline-image">
+</div>
+    
+<h2 id="#spot_srcAsat_REVSUB">#spot_srcAsat_REVSUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_srcAsat_REVSUB.png" alt="Test result for Blend_tests::#spot_srcAsat_REVSUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_srcAsat_SADD">#spot_srcAsat_SADD</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_srcAsat_SADD.png" alt="Test result for Blend_tests::#spot_srcAsat_SADD" class="inline-image">
+</div>
+    
+<h2 id="#spot_srcAsat_SREVSUB">#spot_srcAsat_SREVSUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_srcAsat_SREVSUB.png" alt="Test result for Blend_tests::#spot_srcAsat_SREVSUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_srcAsat_SUB">#spot_srcAsat_SUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_srcAsat_SUB.png" alt="Test result for Blend_tests::#spot_srcAsat_SUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_srcRGB_ADD">#spot_srcRGB_ADD</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_srcRGB_ADD.png" alt="Test result for Blend_tests::#spot_srcRGB_ADD" class="inline-image">
+</div>
+    
+<h2 id="#spot_srcRGB_MAX">#spot_srcRGB_MAX</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_srcRGB_MAX.png" alt="Test result for Blend_tests::#spot_srcRGB_MAX" class="inline-image">
+</div>
+    
+<h2 id="#spot_srcRGB_MIN">#spot_srcRGB_MIN</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_srcRGB_MIN.png" alt="Test result for Blend_tests::#spot_srcRGB_MIN" class="inline-image">
+</div>
+    
+<h2 id="#spot_srcRGB_REVSUB">#spot_srcRGB_REVSUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_srcRGB_REVSUB.png" alt="Test result for Blend_tests::#spot_srcRGB_REVSUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_srcRGB_SADD">#spot_srcRGB_SADD</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_srcRGB_SADD.png" alt="Test result for Blend_tests::#spot_srcRGB_SADD" class="inline-image">
+</div>
+    
+<h2 id="#spot_srcRGB_SREVSUB">#spot_srcRGB_SREVSUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_srcRGB_SREVSUB.png" alt="Test result for Blend_tests::#spot_srcRGB_SREVSUB" class="inline-image">
+</div>
+    
+<h2 id="#spot_srcRGB_SUB">#spot_srcRGB_SUB</h2>
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Blend_tests/%23spot_srcRGB_SUB.png" alt="Test result for Blend_tests::#spot_srcRGB_SUB" class="inline-image">
+</div>
+    
+</div>
+
+    <script src="../../../../../script.js"></script>
+</body>
+</html>

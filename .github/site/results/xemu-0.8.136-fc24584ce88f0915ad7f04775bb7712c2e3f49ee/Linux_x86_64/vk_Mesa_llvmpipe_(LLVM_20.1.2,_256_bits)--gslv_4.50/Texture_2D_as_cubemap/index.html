@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee: Linux_x86_64, GL: Mesa - llvmpipe (LLVM 20.1.2, 256 bits) - 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.3, Shader: 4.50 - Texture_2D_as_cubemap</title>
+    <link rel="stylesheet" href="../../../../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../../../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    
+      <a href="../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Arrow_chevron_up_in_sharp_solid_style.svg" width="32" alt="Navigate up one level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Texture_2D_as_cubemap</h1>
+
+<div class="label-value-grid">
+    <div class="label"><a href="https://xemu.app">xemu</a> version</div>
+    <div class="value">xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee</div>
+
+    <div class="label">Platform</div>
+    <div class="value">Linux_x86_64</div>
+
+    <div class="label">Renderer</div>
+    <div class="value">Vulkan</div>
+
+    <div class="label">GL info</div>
+    <div class="value">Mesa - llvmpipe (LLVM 20.1.2, 256 bits) - 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.3</div>
+
+    <div class="label">GLSL version</div>
+    <div class="value">4.50</div>
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Tests the behavior of various texture stage modes that require cubemap/volumetric textures but are given textures registered as 2d.</div>
+    
+        <div class="test-description-line">NOTE: This suite tests behavior of incorrectly configured textures. Please see</div>
+    
+        <div class="test-description-line">TextureCubemapTests</div>
+    
+        <div class="test-description-line"> for examples of how these modes should actually be used.</div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/texture_2d_as_cubemap_tests.h#L15">src/tests/texture_2d_as_cubemap_tests.h</a></div>
+</div>
+
+<h2 id="Cubemap_Bad2D">Cubemap_Bad2D</h2>
+        <div class="test-case-description">
+        <p>Renders two angles of a cube utilizing a cubemap texture.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_2D_as_cubemap/Cubemap_Bad2D.png" alt="Test result for Texture_2D_as_cubemap::Cubemap_Bad2D" class="inline-image">
+</div>
+    
+<h2 id="DotReflectDiffuse_Bad2D">DotReflectDiffuse_Bad2D</h2>
+        <div class="test-case-description">
+        <p>Renders two angles of a cube utilizing PS_TEXTUREMODES_DOT_RFLCT_DIFF pixel shading mode but passing a 2d texture instead of a cubemap for the final lookup.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_2D_as_cubemap/DotReflectDiffuse_Bad2D.png" alt="Test result for Texture_2D_as_cubemap::DotReflectDiffuse_Bad2D" class="inline-image">
+</div>
+    
+<h2 id="DotReflectSpec_Bad2D">DotReflectSpec_Bad2D</h2>
+        <div class="test-case-description">
+        <p>Renders two angles of a cube utilizing PS_TEXTUREMODES_DOT_RFLCT_SPEC pixel shading mode but passing a 2d texture instead of a cubemap for the final lookup.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_2D_as_cubemap/DotReflectSpec_Bad2D.png" alt="Test result for Texture_2D_as_cubemap::DotReflectSpec_Bad2D" class="inline-image">
+</div>
+    
+<h2 id="DotReflectSpecConst_Bad2D">DotReflectSpecConst_Bad2D</h2>
+        <div class="test-case-description">
+        <p>Renders two angles of a cube utilizing PS_TEXTUREMODES_DOT_RFLCT_SPEC_CONST but passing a 2d texture instead of a cubemap for the final lookup.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_2D_as_cubemap/DotReflectSpecConst_Bad2D.png" alt="Test result for Texture_2D_as_cubemap::DotReflectSpecConst_Bad2D" class="inline-image">
+</div>
+    
+<h2 id="DotSTR3D_Bad2D">DotSTR3D_Bad2D</h2>
+        <div class="test-case-description">
+        <p>Renders two angles of a cube utilizing PS_TEXTUREMODES_DOT_STR_3D pixel shading mode but passing a 2d texture instead of a cubemap for the final lookup.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_2D_as_cubemap/DotSTR3D_Bad2D.png" alt="Test result for Texture_2D_as_cubemap::DotSTR3D_Bad2D" class="inline-image">
+</div>
+    
+<h2 id="DotSTRCube_Bad2D">DotSTRCube_Bad2D</h2>
+        <div class="test-case-description">
+        <p>Renders two angles of a cube utilizing PS_TEXTUREMODES_DOT_STR_CUBE pixel shading mode but passing a 2d texture instead of a cubemap for the final lookup. </p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_2D_as_cubemap/DotSTRCube_Bad2D.png" alt="Test result for Texture_2D_as_cubemap::DotSTRCube_Bad2D" class="inline-image">
+</div>
+    
+</div>
+
+    <script src="../../../../../script.js"></script>
+</body>
+</html>

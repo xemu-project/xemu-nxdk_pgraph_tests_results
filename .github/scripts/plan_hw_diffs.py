@@ -8,7 +8,7 @@ import logging
 import os
 import sys
 
-from xemu_pgraph_ci_tools.hw_diffs import identify_missing_hw_diffs
+from xemu_pgraph_ci_tools.hw_diffs import GitWorkTree, identify_missing_hw_diffs
 
 logger = logging.getLogger(__name__)
 
@@ -43,11 +43,13 @@ def main() -> int:
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
+    git_tree = GitWorkTree(args.results_dir)
     tasks = identify_missing_hw_diffs(
         results_dir=args.results_dir,
         output_dir=args.output_dir,
         golden_dir=args.golden_dir,
         cache_path=args.cache_path,
+        git_tree=git_tree,
     )
 
     diff_count = len(tasks)

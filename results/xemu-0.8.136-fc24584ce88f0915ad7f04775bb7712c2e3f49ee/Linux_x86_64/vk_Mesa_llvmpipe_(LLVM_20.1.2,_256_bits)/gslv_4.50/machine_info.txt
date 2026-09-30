@@ -1,0 +1,12 @@
+xemu_version: 0.8.136
+xemu_commit: fc24584ce88f0915ad7f04775bb7712c2e3f49ee
+xemu_date: Mon Jun  8 05:42:46 UTC 2026
+CPU: 
+OS_Version: Ubuntu 24.04.5 LTS
+GL_VENDOR: Mesa
+GL_RENDERER: llvmpipe (LLVM 20.1.2, 256 bits)
+GL_VERSION: 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.3
+GL_SHADING_LANGUAGE_VERSION: 4.50
+GL geometry shader winding: 0, 0, 0, 0
+Available physical devices:
+- llvmpipe (LLVM 20.1.2, 256 bits)

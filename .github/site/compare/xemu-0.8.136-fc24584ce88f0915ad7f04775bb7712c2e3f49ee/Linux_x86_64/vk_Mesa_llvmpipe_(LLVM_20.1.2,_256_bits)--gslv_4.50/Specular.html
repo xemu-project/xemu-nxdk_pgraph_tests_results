@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Specular : xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee:Linux_x86_64:vk_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits):gslv_4.50 vs Xbox_Hardware</title>
+    <link rel="stylesheet" href="../../../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    
+      <a href="../../../../results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits)--gslv_4.50/index.html#Xbox_Hardware"><img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Arrow_chevron_up_in_sharp_solid_style.svg" width="32" alt="Navigate up one level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Specular : xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee:Linux_x86_64:vk_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits):gslv_4.50 vs Xbox_Hardware</h1>
+
+<div class="label-value-grid">
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Tests handling of specular color with interesting combinations of lighting settings and specular params.</div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/specular_tests.h#L17">src/tests/specular_tests.h</a></div>
+    <div class="label">Golden results</div>
+    <div class="value"><a href="https://abaire.github.io/nxdk_pgraph_tests_golden_results/results/Specular/index.html">https://abaire.github.io/nxdk_pgraph_tests_golden_results/results/Specular/index.html</a></div>
+</div>
+
+
+
+    <h3 id="ControlFlags_FF">ControlFlags_FF</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">8065.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Demonstrates that SET_SPECULAR_ENABLE = false forces specular values to {0, 0, 0, 1}. Also demonstrates that failing to set ALPHA_FROM_MATERIAL_SPECULAR will cause the specular alpha to be set to 1 and failing to set SEPARATE_SPECULAR will pass through vertex specular RGB instead of performing the light calculation.</p><p>Renders two groups of two rows of 4 quads each with the fixed function pipeline. The first row is the specular component, the second is the diffuse. Lighting is enabled but with a directional light pointing at {1, 0, 1}.</p><p>Each quad has specular and diffuse colors of: UL = {1.f, 0.f, 0.f, 0.15f}, {0.f, 0.f, 0.5f, 1.f} UR = {1.f, 0.f, 0.f, 0.75f}, {0.f, 0.f, 0.75f, 1.f} LR = {0.f, 1.f, 0.f, 1.f}, {0.f, 0.f, 1.f, 1.f} LL = {0.f, 1.f, 0.f, 0.2f}, {0.f, 0.f, 0.25f, 1.f}</p><p>The upper row has SET_SPECULAR_ENABLE = false. The lower row has it true. The first column has SET_LIGHT_CONTROL = SEPARATE_SPECULAR + ALPHA_FROM_MATERIAL_SPECULAR The second has SET_LIGHT_CONTROL = SEPARATE_SPECULAR The third has SET_LIGHT_CONTROL = ALPHA_FROM_MATERIAL_SPECULAR The fourth has SET_LIGHT_CONTROL = 0</p><p>Because lighting is enabled, the diffuse alpha is entirely dictated by SET_MATERIAL_ALPHA, and RGB is entirely set by the lighting calculations. </p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Specular/ControlFlags_FF-diff.png" alt="Diff result for Specular::ControlFlags_FF" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/ControlFlags_FF.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/ControlFlags_FF.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/ControlFlags_FF.png" alt="Source image for Specular::ControlFlags_FF" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/ControlFlags_FF.png" alt="Golden image for Specular::ControlFlags_FF" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="ControlFlags_VS">ControlFlags_VS</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">82690.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Demonstrates that SET_SPECULAR_ENABLE = false forces specular values to {0, 0, 0, 1}. Also demonstrates that failing to set ALPHA_FROM_MATERIAL_SPECULAR will cause the specular alpha to be set to 1 and failing to set SEPARATE_SPECULAR will pass through vertex specular RGB instead of performing the light calculation.</p><p>Renders two groups of two rows of 4 quads each with the fixed function pipeline. The first row is the specular component, the second is the diffuse. Lighting is enabled but with a directional light pointing at {1, 0, 1}.</p><p>Each quad has specular and diffuse colors of: UL = {1.f, 0.f, 0.f, 0.15f}, {0.f, 0.f, 0.5f, 1.f} UR = {1.f, 0.f, 0.f, 0.75f}, {0.f, 0.f, 0.75f, 1.f} LR = {0.f, 1.f, 0.f, 1.f}, {0.f, 0.f, 1.f, 1.f} LL = {0.f, 1.f, 0.f, 0.2f}, {0.f, 0.f, 0.25f, 1.f}</p><p>The upper row has SET_SPECULAR_ENABLE = false. The lower row has it true. The first column has SET_LIGHT_CONTROL = SEPARATE_SPECULAR + ALPHA_FROM_MATERIAL_SPECULAR The second has SET_LIGHT_CONTROL = SEPARATE_SPECULAR The third has SET_LIGHT_CONTROL = ALPHA_FROM_MATERIAL_SPECULAR The fourth has SET_LIGHT_CONTROL = 0</p><p>Because lighting is enabled, the diffuse alpha is entirely dictated by SET_MATERIAL_ALPHA, and RGB is entirely set by the lighting calculations. </p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Specular/ControlFlags_VS-diff.png" alt="Diff result for Specular::ControlFlags_VS" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/ControlFlags_VS.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/ControlFlags_VS.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/ControlFlags_VS.png" alt="Source image for Specular::ControlFlags_VS" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/ControlFlags_VS.png" alt="Golden image for Specular::ControlFlags_VS" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="ControlFlagsLightDisable_FF">ControlFlagsLightDisable_FF</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">1501.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Demonstrates that SET_SPECULAR_ENABLE = false forces specular values to {0, 0, 0, 1}. Also demonstrates that failing to set ALPHA_FROM_MATERIAL_SPECULAR will cause the specular alpha to be set to 1.</p><p>Renders two groups of two rows of 4 quads each with the fixed function pipeline. The first row is the specular component, the second is the diffuse. Lighting is disabled.</p><p>Each quad has specular and diffuse colors of: UL = {1.f, 0.f, 0.f, 0.15f}, {0.f, 0.f, 0.5f, 1.f} UR = {1.f, 0.f, 0.f, 0.75f}, {0.f, 0.f, 0.75f, 1.f} LR = {0.f, 1.f, 0.f, 1.f}, {0.f, 0.f, 1.f, 1.f} LL = {0.f, 1.f, 0.f, 0.2f}, {0.f, 0.f, 0.25f, 1.f}</p><p>The upper two rows have SET_SPECULAR_ENABLE = false. The lower rows have it true. The first column has SET_LIGHT_CONTROL = SEPARATE_SPECULAR + ALPHA_FROM_MATERIAL_SPECULAR The second has SET_LIGHT_CONTROL = SEPARATE_SPECULAR The third has SET_LIGHT_CONTROL = ALPHA_FROM_MATERIAL_SPECULAR The fourth has SET_LIGHT_CONTROL = 0 </p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Specular/ControlFlagsLightDisable_FF-diff.png" alt="Diff result for Specular::ControlFlagsLightDisable_FF" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/ControlFlagsLightDisable_FF.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/ControlFlagsLightDisable_FF.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/ControlFlagsLightDisable_FF.png" alt="Source image for Specular::ControlFlagsLightDisable_FF" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/ControlFlagsLightDisable_FF.png" alt="Golden image for Specular::ControlFlagsLightDisable_FF" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="ControlFlagsLightDisable_VS">ControlFlagsLightDisable_VS</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">1776.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Demonstrates that SET_SPECULAR_ENABLE = false forces specular values to {0, 0, 0, 1}. Also demonstrates that failing to set ALPHA_FROM_MATERIAL_SPECULAR will cause the specular alpha to be set to 1.</p><p>Renders two groups of two rows of 4 quads each with the fixed function pipeline. The first row is the specular component, the second is the diffuse. Lighting is disabled.</p><p>Each quad has specular and diffuse colors of: UL = {1.f, 0.f, 0.f, 0.15f}, {0.f, 0.f, 0.5f, 1.f} UR = {1.f, 0.f, 0.f, 0.75f}, {0.f, 0.f, 0.75f, 1.f} LR = {0.f, 1.f, 0.f, 1.f}, {0.f, 0.f, 1.f, 1.f} LL = {0.f, 1.f, 0.f, 0.2f}, {0.f, 0.f, 0.25f, 1.f}</p><p>The upper row has SET_SPECULAR_ENABLE = false. The lower row has it true. The first column has SET_LIGHT_CONTROL = SEPARATE_SPECULAR + ALPHA_FROM_MATERIAL_SPECULAR The second has SET_LIGHT_CONTROL = SEPARATE_SPECULAR The third has SET_LIGHT_CONTROL = ALPHA_FROM_MATERIAL_SPECULAR The fourth has SET_LIGHT_CONTROL = 0 </p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Specular/ControlFlagsLightDisable_VS-diff.png" alt="Diff result for Specular::ControlFlagsLightDisable_VS" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/ControlFlagsLightDisable_VS.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/ControlFlagsLightDisable_VS.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/ControlFlagsLightDisable_VS.png" alt="Source image for Specular::ControlFlagsLightDisable_VS" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/ControlFlagsLightDisable_VS.png" alt="Golden image for Specular::ControlFlagsLightDisable_VS" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="ControlFlagsNoLight_FF">ControlFlagsNoLight_FF</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">761.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Demonstrates that SET_SPECULAR_ENABLE = false forces specular values to {0, 0, 0, 1}. Also demonstrates that failing to set ALPHA_FROM_MATERIAL_SPECULAR will cause the specular alpha to be set to 1 and failing to set SEPARATE_SPECULAR will pass through vertex specular RGB instead of performing the light calculation.</p><p>Renders two groups of two rows of 4 quads each with the fixed function pipeline. The first row is the specular component, the second is the diffuse. Lighting is enabled but no light exists.</p><p>Each quad has specular and diffuse colors of: UL = {1.f, 0.f, 0.f, 0.15f}, {0.f, 0.f, 0.5f, 1.f} UR = {1.f, 0.f, 0.f, 0.75f}, {0.f, 0.f, 0.75f, 1.f} LR = {0.f, 1.f, 0.f, 1.f}, {0.f, 0.f, 1.f, 1.f} LL = {0.f, 1.f, 0.f, 0.2f}, {0.f, 0.f, 0.25f, 1.f}</p><p>The upper row has SET_SPECULAR_ENABLE = false. The lower row has it true. The first column has SET_LIGHT_CONTROL = SEPARATE_SPECULAR + ALPHA_FROM_MATERIAL_SPECULAR The second has SET_LIGHT_CONTROL = SEPARATE_SPECULAR The third has SET_LIGHT_CONTROL = ALPHA_FROM_MATERIAL_SPECULAR The fourth has SET_LIGHT_CONTROL = 0</p><p>Because lighting is enabled, the diffuse alpha is entirely dictated by SET_MATERIAL_ALPHA, and RGB is entirely set by the lighting calculations. </p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Specular/ControlFlagsNoLight_FF-diff.png" alt="Diff result for Specular::ControlFlagsNoLight_FF" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/ControlFlagsNoLight_FF.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/ControlFlagsNoLight_FF.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/ControlFlagsNoLight_FF.png" alt="Source image for Specular::ControlFlagsNoLight_FF" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/ControlFlagsNoLight_FF.png" alt="Golden image for Specular::ControlFlagsNoLight_FF" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="ControlFlagsNoLight_VS">ControlFlagsNoLight_VS</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">83376.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Demonstrates that SET_SPECULAR_ENABLE = false forces specular values to {0, 0, 0, 1}. Also demonstrates that failing to set ALPHA_FROM_MATERIAL_SPECULAR will cause the specular alpha to be set to 1 and failing to set SEPARATE_SPECULAR will pass through vertex specular RGB instead of performing the light calculation.</p><p>Renders two groups of two rows of 4 quads each with the fixed function pipeline. The first row is the specular component, the second is the diffuse. Lighting is enabled but no light exists.</p><p>Each quad has specular and diffuse colors of: UL = {1.f, 0.f, 0.f, 0.15f}, {0.f, 0.f, 0.5f, 1.f} UR = {1.f, 0.f, 0.f, 0.75f}, {0.f, 0.f, 0.75f, 1.f} LR = {0.f, 1.f, 0.f, 1.f}, {0.f, 0.f, 1.f, 1.f} LL = {0.f, 1.f, 0.f, 0.2f}, {0.f, 0.f, 0.25f, 1.f}</p><p>The upper row has SET_SPECULAR_ENABLE = false. The lower row has it true. The first column has SET_LIGHT_CONTROL = SEPARATE_SPECULAR + ALPHA_FROM_MATERIAL_SPECULAR The second has SET_LIGHT_CONTROL = SEPARATE_SPECULAR The third has SET_LIGHT_CONTROL = ALPHA_FROM_MATERIAL_SPECULAR The fourth has SET_LIGHT_CONTROL = 0</p><p>Because lighting is enabled, the diffuse alpha is entirely dictated by SET_MATERIAL_ALPHA, and RGB is entirely set by the lighting calculations. </p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Specular/ControlFlagsNoLight_VS-diff.png" alt="Diff result for Specular::ControlFlagsNoLight_VS" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/ControlFlagsNoLight_VS.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/ControlFlagsNoLight_VS.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/ControlFlagsNoLight_VS.png" alt="Source image for Specular::ControlFlagsNoLight_VS" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/ControlFlagsNoLight_VS.png" alt="Golden image for Specular::ControlFlagsNoLight_VS" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="NonUnitNormal_0.972">NonUnitNormal_0.972</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">11301.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a triangle fan with spherical normals that are scaled to be 0.972 in length. 0.972 is small enough that no pixels are illuminated.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Specular/NonUnitNormal_0.972-diff.png" alt="Diff result for Specular::NonUnitNormal_0.972" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/NonUnitNormal_0.972.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/NonUnitNormal_0.972.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/NonUnitNormal_0.972.png" alt="Source image for Specular::NonUnitNormal_0.972" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/NonUnitNormal_0.972.png" alt="Golden image for Specular::NonUnitNormal_0.972" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="NonUnitNormal_0.973">NonUnitNormal_0.973</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">13426.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a triangle fan with spherical normals that are scaled to be 0.973 in length. 0.973 is large enough that center pixels are non-0.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Specular/NonUnitNormal_0.973-diff.png" alt="Diff result for Specular::NonUnitNormal_0.973" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/NonUnitNormal_0.973.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/NonUnitNormal_0.973.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/NonUnitNormal_0.973.png" alt="Source image for Specular::NonUnitNormal_0.973" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/NonUnitNormal_0.973.png" alt="Golden image for Specular::NonUnitNormal_0.973" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="NonUnitNormal_1.000">NonUnitNormal_1.000</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">2161.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a triangle fan with spherical unit-length normals. This is the control image.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Specular/NonUnitNormal_1.000-diff.png" alt="Diff result for Specular::NonUnitNormal_1.000" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/NonUnitNormal_1.000.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/NonUnitNormal_1.000.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/NonUnitNormal_1.000.png" alt="Source image for Specular::NonUnitNormal_1.000" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/NonUnitNormal_1.000.png" alt="Golden image for Specular::NonUnitNormal_1.000" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="NonUnitNormal_1.008">NonUnitNormal_1.008</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">2161.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a triangle fan with spherical normals that are scaled to be 1.008 in length. This is close enough to 1.0 that the color is still applied.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Specular/NonUnitNormal_1.008-diff.png" alt="Diff result for Specular::NonUnitNormal_1.008" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/NonUnitNormal_1.008.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/NonUnitNormal_1.008.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/NonUnitNormal_1.008.png" alt="Source image for Specular::NonUnitNormal_1.008" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/NonUnitNormal_1.008.png" alt="Golden image for Specular::NonUnitNormal_1.008" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="NonUnitNormal_1.009">NonUnitNormal_1.009</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">47821.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a triangle fan with spherical normals that are scaled to be 1.009 in length. This demonstrates that specular color is reset to 0 when overflowing ~1.0. </p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Specular/NonUnitNormal_1.009-diff.png" alt="Diff result for Specular::NonUnitNormal_1.009" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/NonUnitNormal_1.009.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/NonUnitNormal_1.009.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/NonUnitNormal_1.009.png" alt="Source image for Specular::NonUnitNormal_1.009" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/NonUnitNormal_1.009.png" alt="Golden image for Specular::NonUnitNormal_1.009" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="SpecParams_FF_AllZero">SpecParams_FF_AllZero</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">25788.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a number of meshes with a directional light and a point light, shading the specular channel only. LIGHT_CONTROL is set to SEPARATE_SPECULAR and SET_SPECULAR_PARAMS is set to the values displayed in the image.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Specular/SpecParams_FF_AllZero-diff.png" alt="Diff result for Specular::SpecParams_FF_AllZero" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/SpecParams_FF_AllZero.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_AllZero.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/SpecParams_FF_AllZero.png" alt="Source image for Specular::SpecParams_FF_AllZero" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_AllZero.png" alt="Golden image for Specular::SpecParams_FF_AllZero" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="SpecParams_FF_InvMechAssault">SpecParams_FF_InvMechAssault</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">25607.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a number of meshes with a directional light and a point light, shading the specular channel only. LIGHT_CONTROL is set to SEPARATE_SPECULAR and SET_SPECULAR_PARAMS is set to the values displayed in the image.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Specular/SpecParams_FF_InvMechAssault-diff.png" alt="Diff result for Specular::SpecParams_FF_InvMechAssault" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/SpecParams_FF_InvMechAssault.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_InvMechAssault.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/SpecParams_FF_InvMechAssault.png" alt="Source image for Specular::SpecParams_FF_InvMechAssault" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_InvMechAssault.png" alt="Golden image for Specular::SpecParams_FF_InvMechAssault" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="SpecParams_FF_MechAssault">SpecParams_FF_MechAssault</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">4279.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a number of meshes with a directional light and a point light, shading the specular channel only. LIGHT_CONTROL is set to SEPARATE_SPECULAR and SET_SPECULAR_PARAMS is set to the values displayed in the image.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Specular/SpecParams_FF_MechAssault-diff.png" alt="Diff result for Specular::SpecParams_FF_MechAssault" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/SpecParams_FF_MechAssault.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_MechAssault.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/SpecParams_FF_MechAssault.png" alt="Source image for Specular::SpecParams_FF_MechAssault" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_MechAssault.png" alt="Golden image for Specular::SpecParams_FF_MechAssault" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="SpecParams_FF_NinjaGaidenBlack">SpecParams_FF_NinjaGaidenBlack</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">4225.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders a number of meshes with a directional light and a point light, shading the specular channel only. LIGHT_CONTROL is set to SEPARATE_SPECULAR and SET_SPECULAR_PARAMS is set to the values displayed in the image.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Specular/SpecParams_FF_NinjaGaidenBlack-diff.png" alt="Diff result for Specular::SpecParams_FF_NinjaGaidenBlack" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/SpecParams_FF_NinjaGaidenBlack.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_NinjaGaidenBlack.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/SpecParams_FF_NinjaGaidenBlack.png" alt="Source image for Specular::SpecParams_FF_NinjaGaidenBlack" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_NinjaGaidenBlack.png" alt="Golden image for Specular::SpecParams_FF_NinjaGaidenBlack" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="SpecParams_FF_Pow0_1">SpecParams_FF_Pow0_1</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">8257.0</div></div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Specular/SpecParams_FF_Pow0_1-diff.png" alt="Diff result for Specular::SpecParams_FF_Pow0_1" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/SpecParams_FF_Pow0_1.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_Pow0_1.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/SpecParams_FF_Pow0_1.png" alt="Source image for Specular::SpecParams_FF_Pow0_1" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_Pow0_1.png" alt="Golden image for Specular::SpecParams_FF_Pow0_1" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="SpecParams_FF_Pow16_0">SpecParams_FF_Pow16_0</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">4181.0</div></div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Specular/SpecParams_FF_Pow16_0-diff.png" alt="Diff result for Specular::SpecParams_FF_Pow16_0" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/SpecParams_FF_Pow16_0.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_Pow16_0.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/SpecParams_FF_Pow16_0.png" alt="Source image for Specular::SpecParams_FF_Pow16_0" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_Pow16_0.png" alt="Golden image for Specular::SpecParams_FF_Pow16_0" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="SpecParams_FF_Pow1_0">SpecParams_FF_Pow1_0</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">13321.0</div></div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Specular/SpecParams_FF_Pow1_0-diff.png" alt="Diff result for Specular::SpecParams_FF_Pow1_0" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/SpecParams_FF_Pow1_0.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_Pow1_0.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/SpecParams_FF_Pow1_0.png" alt="Source image for Specular::SpecParams_FF_Pow1_0" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_Pow1_0.png" alt="Golden image for Specular::SpecParams_FF_Pow1_0" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="SpecParams_FF_Pow24_0">SpecParams_FF_Pow24_0</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">4253.0</div></div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Specular/SpecParams_FF_Pow24_0-diff.png" alt="Diff result for Specular::SpecParams_FF_Pow24_0" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/SpecParams_FF_Pow24_0.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_Pow24_0.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/SpecParams_FF_Pow24_0.png" alt="Source image for Specular::SpecParams_FF_Pow24_0" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_Pow24_0.png" alt="Golden image for Specular::SpecParams_FF_Pow24_0" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="SpecParams_FF_Pow2_0">SpecParams_FF_Pow2_0</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">9821.0</div></div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Specular/SpecParams_FF_Pow2_0-diff.png" alt="Diff result for Specular::SpecParams_FF_Pow2_0" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/SpecParams_FF_Pow2_0.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_Pow2_0.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/SpecParams_FF_Pow2_0.png" alt="Source image for Specular::SpecParams_FF_Pow2_0" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_Pow2_0.png" alt="Golden image for Specular::SpecParams_FF_Pow2_0" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="SpecParams_FF_Pow4_0">SpecParams_FF_Pow4_0</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">3482.0</div></div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Specular/SpecParams_FF_Pow4_0-diff.png" alt="Diff result for Specular::SpecParams_FF_Pow4_0" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/SpecParams_FF_Pow4_0.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_Pow4_0.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/SpecParams_FF_Pow4_0.png" alt="Source image for Specular::SpecParams_FF_Pow4_0" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_Pow4_0.png" alt="Golden image for Specular::SpecParams_FF_Pow4_0" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="SpecParams_FF_Pow8_0">SpecParams_FF_Pow8_0</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">4079.0</div></div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Specular/SpecParams_FF_Pow8_0-diff.png" alt="Diff result for Specular::SpecParams_FF_Pow8_0" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/SpecParams_FF_Pow8_0.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_Pow8_0.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Specular/SpecParams_FF_Pow8_0.png" alt="Source image for Specular::SpecParams_FF_Pow8_0" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_Pow8_0.png" alt="Golden image for Specular::SpecParams_FF_Pow8_0" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div></div>
+
+    <script src="../../../../script.js"></script>
+</body>
+</html>
