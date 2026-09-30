@@ -1,0 +1,78 @@
+name: Cleanup Legacy Comparison Paths
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "Target to clean up ('all', 'github_pages', or 'archives')"
+        required: true
+        type: choice
+        options:
+          - all
+          - github_pages
+          - archives
+        default: all
+      dry_run:
+        description: "Dry run (simulate without modifying or pushing)"
+        required: false
+        type: boolean
+        default: false
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          ref: github_pages
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install requirements
+        run: |
+          export PIP_BREAK_SYSTEM_PACKAGES=1
+          pip3 install -r .github/scripts/requirements.txt
+
+      - name: Configure Git
+        run: |
+          git config --local user.email "$GITHUB_ACTOR+github-actions@users.noreply.github.com"
+          git config --local user.name "$GITHUB_ACTOR via action"
+
+      - name: Run Cleanup
+        run: |
+          DRY_RUN_ARG=""
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            DRY_RUN_ARG="--dry-run"
+          fi
+          python3 .github/scripts/cleanup_legacy_paths.py \
+            --target "${{ inputs.target }}" \
+            $DRY_RUN_ARG \
+            -v
+
+      - name: Setup Pages
+        if: inputs.target != 'archives' && inputs.dry_run != true
+        uses: actions/configure-pages@v6
+
+      - name: Upload artifact
+        if: inputs.target != 'archives' && inputs.dry_run != true
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: '.github/site'
+
+      - name: Deploy to GitHub Pages
+        if: inputs.target != 'archives' && inputs.dry_run != true
+        id: deployment
+        uses: actions/deploy-pages@v5
