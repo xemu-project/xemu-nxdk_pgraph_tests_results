@@ -1,0 +1,12 @@
+xemu_version: 0.7.98
+xemu_branch: master
+xemu_commit: 7bfb7c85378f64f93556c365ea0cc18cb2181dc8
+xemu_date: Mon Jul 10 04:25:11 UTC 2023
+xemu_settings_get_base_path: base path: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.7.98/xemu.app/Contents/Resources/
+xemu_settings_get_path: config path: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.7.98/xemu.app/Contents/Resources/xemu.toml
+CPU: 
+OS_Version: Version 15.3.1 (Build 24D70)
+GL_VENDOR: Apple
+GL_RENDERER: Apple M3 Max
+GL_VERSION: 4.1 Metal - 89.3
+GL_SHADING_LANGUAGE_VERSION: 4.10
