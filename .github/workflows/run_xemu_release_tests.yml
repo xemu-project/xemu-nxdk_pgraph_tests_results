@@ -132,7 +132,7 @@ jobs:
           retention-days: 1
 
   run-shards:
-    name: Run Shard ${{ matrix.shard }}/${{ matrix.total_shards }}
+    name: Run ${{ matrix.renderer }} Shard ${{ matrix.shard }}/${{ matrix.total_shards }}
     needs: prepare-test-assets
     runs-on: ubuntu-24.04
     strategy:
@@ -140,6 +140,7 @@ jobs:
       matrix:
         shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
         total_shards: [16]
+        renderer: [gl, vulkan]
     steps:
       - name: Set up Python
         uses: actions/setup-python@v7
@@ -152,7 +153,8 @@ jobs:
           sudo apt-get install -y --no-install-recommends \
             xvfb libgl1-mesa-dri libgl1 libglx-mesa0 libegl1 libosmesa6 perceptualdiff \
             libsdl2-2.0-0 libepoxy0 libpixman-1-0 libslirp0 libsamplerate0 \
-            libpipewire-0.3-0 libvulkan1 libpcap0.8 libusb-1.0-0 libcurl4 libfuse2t64
+            libpipewire-0.3-0 libvulkan1 libpcap0.8 libusb-1.0-0 libcurl4 libfuse2t64 \
+            mesa-vulkan-drivers
 
       - name: Download Test Assets
         uses: actions/download-artifact@v8
@@ -179,7 +181,13 @@ jobs:
           APPIMAGE_EXTRACT_AND_RUN: "1"
         run: |
           chmod +x assets/xemu
-          mkdir -p output_shard_${{ matrix.shard }}
+          mkdir -p output_shard_${{ matrix.renderer }}_${{ matrix.shard }}
+
+          EXTRA_ARGS=""
+          if [ "${{ matrix.renderer }}" = "vulkan" ]; then
+            EXTRA_ARGS="--use-vulkan"
+          fi
+
           xvfb-run -s "-screen 0 1280x720x24" xemu-pgraph-run \
             --verbose \
             --snapshot \
@@ -194,13 +202,14 @@ jobs:
             --iso ./assets/nxdk_pgraph_tests.iso \
             --shard-index ${{ matrix.shard }} \
             --shard-count ${{ matrix.total_shards }} \
-            --results-path ./output_shard_${{ matrix.shard }}
+            --results-path ./output_shard_${{ matrix.renderer }}_${{ matrix.shard }} \
+            $EXTRA_ARGS
 
       - name: Upload Shard Results
         uses: actions/upload-artifact@v7
         with:
-          name: shard-${{ matrix.shard }}-results
-          path: output_shard_${{ matrix.shard }}/
+          name: shard-${{ matrix.renderer }}-${{ matrix.shard }}-results
+          path: output_shard_${{ matrix.renderer }}_${{ matrix.shard }}/
           retention-days: 1
 
   merge-and-create-pr:
@@ -241,8 +250,18 @@ jobs:
       - name: Merge Shard Results
         run: |
           mkdir -p merged_results
-          SHARD_DIRS=$(find shard_results -mindepth 1 -maxdepth 1 -type d)
-          xemu-pgraph-merge --inputs $SHARD_DIRS --output-dir ./merged_results
+
+          GL_SHARD_DIRS=$(find shard_results -mindepth 1 -maxdepth 1 -type d -name "shard-gl-*-results")
+          if [ -n "$GL_SHARD_DIRS" ]; then
+            echo "Merging GL shard results..."
+            xemu-pgraph-merge --inputs $GL_SHARD_DIRS --output-dir ./merged_results
+          fi
+
+          VK_SHARD_DIRS=$(find shard_results -mindepth 1 -maxdepth 1 -type d -name "shard-vulkan-*-results")
+          if [ -n "$VK_SHARD_DIRS" ]; then
+            echo "Merging Vulkan shard results..."
+            xemu-pgraph-merge --inputs $VK_SHARD_DIRS --output-dir ./merged_results
+          fi
 
       - name: Copy Merged Results to Repository
         run: |
@@ -289,8 +308,10 @@ jobs:
           - **xemu release tag**: \`${XEMU_TAG}\`
           - **nxdk_pgraph_tests tag**: \`${PGRAPH_TAG}\`
           - **BIOS**: Roswell BIOS
-          - **Renderer**: Software GL (Mesa llvmpipe via xvfb)
-          - **Execution**: 16 parallel CI shards
+          - **Renderers**:
+            - OpenGL (Software Mesa llvmpipe via xvfb)
+            - Vulkan (Software Mesa lavapipe via xvfb)
+          - **Execution**: 16 parallel CI shards per renderer (32 total shards)
           ${EXTRA_DESC}
 
           Please review the committed results and image diffs. Merging this PR to \`main\` will automatically trigger the downstream pipeline to compute HW diffs, update the GitHub Pages comparison site, and archive raw images.
