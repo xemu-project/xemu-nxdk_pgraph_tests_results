@@ -23,6 +23,58 @@
 
 
 
+    <h3 id="RenderTextureClearLoop">RenderTextureClearLoop</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">inf</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Exercises the xemu texture cache invalidation defect (xemu #2036) triggered by rendering into a swizzled surface, sampling it as a texture (which causes xemu to blit the GPU surface into the GL texture via surf_to_tex while retaining the pre-render RAM hash in binding-&gt;data_hash), then clearing that surface as a linear surface back to black. Displays three quads side-by-side:</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <div class="missing-image">No source result</div>
+    
+    </div>
+
+    
+    <div class="titled-image">
+        <div class="image-title"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_render_target/RenderTextureClearLoop.png">Golden</a> - No source result</div>
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_render_target/RenderTextureClearLoop.png" alt="Golden image for Texture_render_target::RenderTextureClearLoop">
+    </div>
+    
+
+    </div>
+    <h3 id="RenderTextureLoop">RenderTextureLoop</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">inf</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders Blue, Green, and Red into a surface sequentially, texturing separate screen quads to verify render-to-texture loop updates.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <div class="missing-image">No source result</div>
+    
+    </div>
+
+    
+    <div class="titled-image">
+        <div class="image-title"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_render_target/RenderTextureLoop.png">Golden</a> - No source result</div>
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_render_target/RenderTextureLoop.png" alt="Golden image for Texture_render_target::RenderTextureLoop">
+    </div>
+    
+
+    </div>
     <h3 id="TexFmt_A1R5G5B5">TexFmt_A1R5G5B5</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
@@ -43,8 +95,8 @@
 
     
     <div class="titled-image">
-        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A1R5G5B5.png">Source</a> - No golden result</div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A1R5G5B5.png" alt="Source image for Texture_render_target::TexFmt_A1R5G5B5">
+        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A1R5G5B5.png">Source</a> - No golden result</div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A1R5G5B5.png" alt="Source image for Texture_render_target::TexFmt_A1R5G5B5">
     </div>
     
 
@@ -69,8 +121,8 @@
 
     
     <div class="titled-image">
-        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A1R5G5B5_L.png">Source</a> - No golden result</div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A1R5G5B5_L.png" alt="Source image for Texture_render_target::TexFmt_A1R5G5B5_L">
+        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A1R5G5B5_L.png">Source</a> - No golden result</div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A1R5G5B5_L.png" alt="Source image for Texture_render_target::TexFmt_A1R5G5B5_L">
     </div>
     
 
@@ -95,8 +147,8 @@
 
     
     <div class="titled-image">
-        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A4R4G4B4.png">Source</a> - No golden result</div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A4R4G4B4.png" alt="Source image for Texture_render_target::TexFmt_A4R4G4B4">
+        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A4R4G4B4.png">Source</a> - No golden result</div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A4R4G4B4.png" alt="Source image for Texture_render_target::TexFmt_A4R4G4B4">
     </div>
     
 
@@ -121,8 +173,8 @@
 
     
     <div class="titled-image">
-        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A4R4G4B4_L.png">Source</a> - No golden result</div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A4R4G4B4_L.png" alt="Source image for Texture_render_target::TexFmt_A4R4G4B4_L">
+        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A4R4G4B4_L.png">Source</a> - No golden result</div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A4R4G4B4_L.png" alt="Source image for Texture_render_target::TexFmt_A4R4G4B4_L">
     </div>
     
 
@@ -189,8 +241,8 @@
 
     
     <div class="titled-image">
-        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A8B8G8R8.png">Source</a> - No golden result</div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A8B8G8R8.png" alt="Source image for Texture_render_target::TexFmt_A8B8G8R8">
+        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A8B8G8R8.png">Source</a> - No golden result</div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A8B8G8R8.png" alt="Source image for Texture_render_target::TexFmt_A8B8G8R8">
     </div>
     
 
@@ -215,8 +267,8 @@
 
     
     <div class="titled-image">
-        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A8B8G8R8_L.png">Source</a> - No golden result</div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A8B8G8R8_L.png" alt="Source image for Texture_render_target::TexFmt_A8B8G8R8_L">
+        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A8B8G8R8_L.png">Source</a> - No golden result</div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A8B8G8R8_L.png" alt="Source image for Texture_render_target::TexFmt_A8B8G8R8_L">
     </div>
     
 
@@ -241,8 +293,8 @@
 
     
     <div class="titled-image">
-        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A8R8G8B8.png">Source</a> - No golden result</div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A8R8G8B8.png" alt="Source image for Texture_render_target::TexFmt_A8R8G8B8">
+        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A8R8G8B8.png">Source</a> - No golden result</div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A8R8G8B8.png" alt="Source image for Texture_render_target::TexFmt_A8R8G8B8">
     </div>
     
 
@@ -267,8 +319,8 @@
 
     
     <div class="titled-image">
-        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A8R8G8B8_L.png">Source</a> - No golden result</div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A8R8G8B8_L.png" alt="Source image for Texture_render_target::TexFmt_A8R8G8B8_L">
+        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A8R8G8B8_L.png">Source</a> - No golden result</div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A8R8G8B8_L.png" alt="Source image for Texture_render_target::TexFmt_A8R8G8B8_L">
     </div>
     
 
@@ -288,8 +340,8 @@
 
     
     <div class="titled-image">
-        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A8Y8.png">Source</a> - No golden result</div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A8Y8.png" alt="Source image for Texture_render_target::TexFmt_A8Y8">
+        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A8Y8.png">Source</a> - No golden result</div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_A8Y8.png" alt="Source image for Texture_render_target::TexFmt_A8Y8">
     </div>
     
 
@@ -309,8 +361,8 @@
 
     
     <div class="titled-image">
-        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_AY8.png">Source</a> - No golden result</div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_AY8.png" alt="Source image for Texture_render_target::TexFmt_AY8">
+        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_AY8.png">Source</a> - No golden result</div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_AY8.png" alt="Source image for Texture_render_target::TexFmt_AY8">
     </div>
     
 
@@ -330,8 +382,8 @@
 
     
     <div class="titled-image">
-        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_AY8_L.png">Source</a> - No golden result</div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_AY8_L.png" alt="Source image for Texture_render_target::TexFmt_AY8_L">
+        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_AY8_L.png">Source</a> - No golden result</div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_AY8_L.png" alt="Source image for Texture_render_target::TexFmt_AY8_L">
     </div>
     
 
@@ -356,8 +408,8 @@
 
     
     <div class="titled-image">
-        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_B8G8R8A8.png">Source</a> - No golden result</div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_B8G8R8A8.png" alt="Source image for Texture_render_target::TexFmt_B8G8R8A8">
+        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_B8G8R8A8.png">Source</a> - No golden result</div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_B8G8R8A8.png" alt="Source image for Texture_render_target::TexFmt_B8G8R8A8">
     </div>
     
 
@@ -382,8 +434,8 @@
 
     
     <div class="titled-image">
-        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_B8G8R8A8_L.png">Source</a> - No golden result</div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_B8G8R8A8_L.png" alt="Source image for Texture_render_target::TexFmt_B8G8R8A8_L">
+        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_B8G8R8A8_L.png">Source</a> - No golden result</div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_B8G8R8A8_L.png" alt="Source image for Texture_render_target::TexFmt_B8G8R8A8_L">
     </div>
     
 
@@ -397,17 +449,17 @@
 
     <div class="image-container">
     
-    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/compare-results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max--gslv_4.10/Xbox--Xbox--DirectX--nv2a/Texture_render_target/TexFmt_DXT1-diff.png" alt="Diff result for Texture_render_target::TexFmt_DXT1" class="inline-image">
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/compare-results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max--gslv_4.10/Xbox--Xbox--DirectX--nv2a/Texture_render_target/TexFmt_DXT1-diff.png" alt="Diff result for Texture_render_target::TexFmt_DXT1" class="inline-image">
     
     </div>
 
     
     <div class="image-pair">
         <div class="image-pair-title-bar">
-            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_DXT1.png">Source</a></div>
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_DXT1.png">Source</a></div>
             <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_render_target/TexFmt_DXT1.png">Golden</a></div>
         </div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_DXT1.png" alt="Source image for Texture_render_target::TexFmt_DXT1" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_DXT1.png" alt="Source image for Texture_render_target::TexFmt_DXT1" class="image-comparison" data-state="source">
         <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_render_target/TexFmt_DXT1.png" alt="Golden image for Texture_render_target::TexFmt_DXT1" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
@@ -428,8 +480,8 @@
 
     
     <div class="titled-image">
-        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_G8B8.png">Source</a> - No golden result</div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_G8B8.png" alt="Source image for Texture_render_target::TexFmt_G8B8">
+        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_G8B8.png">Source</a> - No golden result</div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_G8B8.png" alt="Source image for Texture_render_target::TexFmt_G8B8">
     </div>
     
 
@@ -454,8 +506,8 @@
 
     
     <div class="titled-image">
-        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_G8B8_L.png">Source</a> - No golden result</div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_G8B8_L.png" alt="Source image for Texture_render_target::TexFmt_G8B8_L">
+        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_G8B8_L.png">Source</a> - No golden result</div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_G8B8_L.png" alt="Source image for Texture_render_target::TexFmt_G8B8_L">
     </div>
     
 
@@ -526,17 +578,17 @@
 
     <div class="image-container">
     
-    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/compare-results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max--gslv_4.10/Xbox--Xbox--DirectX--nv2a/Texture_render_target/TexFmt_R5G6B5-diff.png" alt="Diff result for Texture_render_target::TexFmt_R5G6B5" class="inline-image">
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/compare-results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max--gslv_4.10/Xbox--Xbox--DirectX--nv2a/Texture_render_target/TexFmt_R5G6B5-diff.png" alt="Diff result for Texture_render_target::TexFmt_R5G6B5" class="inline-image">
     
     </div>
 
     
     <div class="image-pair">
         <div class="image-pair-title-bar">
-            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_R5G6B5.png">Source</a></div>
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_R5G6B5.png">Source</a></div>
             <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_render_target/TexFmt_R5G6B5.png">Golden</a></div>
         </div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_R5G6B5.png" alt="Source image for Texture_render_target::TexFmt_R5G6B5" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_R5G6B5.png" alt="Source image for Texture_render_target::TexFmt_R5G6B5" class="image-comparison" data-state="source">
         <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_render_target/TexFmt_R5G6B5.png" alt="Golden image for Texture_render_target::TexFmt_R5G6B5" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
@@ -556,17 +608,17 @@
 
     <div class="image-container">
     
-    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/compare-results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max--gslv_4.10/Xbox--Xbox--DirectX--nv2a/Texture_render_target/TexFmt_R5G6B5_L-diff.png" alt="Diff result for Texture_render_target::TexFmt_R5G6B5_L" class="inline-image">
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/compare-results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max--gslv_4.10/Xbox--Xbox--DirectX--nv2a/Texture_render_target/TexFmt_R5G6B5_L-diff.png" alt="Diff result for Texture_render_target::TexFmt_R5G6B5_L" class="inline-image">
     
     </div>
 
     
     <div class="image-pair">
         <div class="image-pair-title-bar">
-            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_R5G6B5_L.png">Source</a></div>
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_R5G6B5_L.png">Source</a></div>
             <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_render_target/TexFmt_R5G6B5_L.png">Golden</a></div>
         </div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_R5G6B5_L.png" alt="Source image for Texture_render_target::TexFmt_R5G6B5_L" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_R5G6B5_L.png" alt="Source image for Texture_render_target::TexFmt_R5G6B5_L" class="image-comparison" data-state="source">
         <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_render_target/TexFmt_R5G6B5_L.png" alt="Golden image for Texture_render_target::TexFmt_R5G6B5_L" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
@@ -602,17 +654,17 @@
 
     <div class="image-container">
     
-    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/compare-results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max--gslv_4.10/Xbox--Xbox--DirectX--nv2a/Texture_render_target/TexFmt_R8B8-diff.png" alt="Diff result for Texture_render_target::TexFmt_R8B8" class="inline-image">
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/compare-results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max--gslv_4.10/Xbox--Xbox--DirectX--nv2a/Texture_render_target/TexFmt_R8B8-diff.png" alt="Diff result for Texture_render_target::TexFmt_R8B8" class="inline-image">
     
     </div>
 
     
     <div class="image-pair">
         <div class="image-pair-title-bar">
-            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_R8B8.png">Source</a></div>
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_R8B8.png">Source</a></div>
             <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_render_target/TexFmt_R8B8.png">Golden</a></div>
         </div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_R8B8.png" alt="Source image for Texture_render_target::TexFmt_R8B8" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_R8B8.png" alt="Source image for Texture_render_target::TexFmt_R8B8" class="image-comparison" data-state="source">
         <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_render_target/TexFmt_R8B8.png" alt="Golden image for Texture_render_target::TexFmt_R8B8" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
@@ -638,8 +690,8 @@
 
     
     <div class="titled-image">
-        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_R8G8B8A8.png">Source</a> - No golden result</div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_R8G8B8A8.png" alt="Source image for Texture_render_target::TexFmt_R8G8B8A8">
+        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_R8G8B8A8.png">Source</a> - No golden result</div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_R8G8B8A8.png" alt="Source image for Texture_render_target::TexFmt_R8G8B8A8">
     </div>
     
 
@@ -664,8 +716,8 @@
 
     
     <div class="titled-image">
-        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_R8G8B8A8_L.png">Source</a> - No golden result</div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_R8G8B8A8_L.png" alt="Source image for Texture_render_target::TexFmt_R8G8B8A8_L">
+        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_R8G8B8A8_L.png">Source</a> - No golden result</div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_R8G8B8A8_L.png" alt="Source image for Texture_render_target::TexFmt_R8G8B8A8_L">
     </div>
     
 
@@ -679,17 +731,17 @@
 
     <div class="image-container">
     
-    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/compare-results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max--gslv_4.10/Xbox--Xbox--DirectX--nv2a/Texture_render_target/TexFmt_SZ_Index8_p128-diff.png" alt="Diff result for Texture_render_target::TexFmt_SZ_Index8_p128" class="inline-image">
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/compare-results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max--gslv_4.10/Xbox--Xbox--DirectX--nv2a/Texture_render_target/TexFmt_SZ_Index8_p128-diff.png" alt="Diff result for Texture_render_target::TexFmt_SZ_Index8_p128" class="inline-image">
     
     </div>
 
     
     <div class="image-pair">
         <div class="image-pair-title-bar">
-            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_SZ_Index8_p128.png">Source</a></div>
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_SZ_Index8_p128.png">Source</a></div>
             <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_render_target/TexFmt_SZ_Index8_p128.png">Golden</a></div>
         </div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_SZ_Index8_p128.png" alt="Source image for Texture_render_target::TexFmt_SZ_Index8_p128" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_SZ_Index8_p128.png" alt="Source image for Texture_render_target::TexFmt_SZ_Index8_p128" class="image-comparison" data-state="source">
         <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_render_target/TexFmt_SZ_Index8_p128.png" alt="Golden image for Texture_render_target::TexFmt_SZ_Index8_p128" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
@@ -704,17 +756,17 @@
 
     <div class="image-container">
     
-    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/compare-results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max--gslv_4.10/Xbox--Xbox--DirectX--nv2a/Texture_render_target/TexFmt_SZ_Index8_p256-diff.png" alt="Diff result for Texture_render_target::TexFmt_SZ_Index8_p256" class="inline-image">
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/compare-results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max--gslv_4.10/Xbox--Xbox--DirectX--nv2a/Texture_render_target/TexFmt_SZ_Index8_p256-diff.png" alt="Diff result for Texture_render_target::TexFmt_SZ_Index8_p256" class="inline-image">
     
     </div>
 
     
     <div class="image-pair">
         <div class="image-pair-title-bar">
-            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_SZ_Index8_p256.png">Source</a></div>
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_SZ_Index8_p256.png">Source</a></div>
             <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_render_target/TexFmt_SZ_Index8_p256.png">Golden</a></div>
         </div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_SZ_Index8_p256.png" alt="Source image for Texture_render_target::TexFmt_SZ_Index8_p256" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_SZ_Index8_p256.png" alt="Source image for Texture_render_target::TexFmt_SZ_Index8_p256" class="image-comparison" data-state="source">
         <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_render_target/TexFmt_SZ_Index8_p256.png" alt="Golden image for Texture_render_target::TexFmt_SZ_Index8_p256" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
@@ -729,17 +781,17 @@
 
     <div class="image-container">
     
-    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/compare-results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max--gslv_4.10/Xbox--Xbox--DirectX--nv2a/Texture_render_target/TexFmt_SZ_Index8_p32-diff.png" alt="Diff result for Texture_render_target::TexFmt_SZ_Index8_p32" class="inline-image">
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/compare-results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max--gslv_4.10/Xbox--Xbox--DirectX--nv2a/Texture_render_target/TexFmt_SZ_Index8_p32-diff.png" alt="Diff result for Texture_render_target::TexFmt_SZ_Index8_p32" class="inline-image">
     
     </div>
 
     
     <div class="image-pair">
         <div class="image-pair-title-bar">
-            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_SZ_Index8_p32.png">Source</a></div>
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_SZ_Index8_p32.png">Source</a></div>
             <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_render_target/TexFmt_SZ_Index8_p32.png">Golden</a></div>
         </div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_SZ_Index8_p32.png" alt="Source image for Texture_render_target::TexFmt_SZ_Index8_p32" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_SZ_Index8_p32.png" alt="Source image for Texture_render_target::TexFmt_SZ_Index8_p32" class="image-comparison" data-state="source">
         <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_render_target/TexFmt_SZ_Index8_p32.png" alt="Golden image for Texture_render_target::TexFmt_SZ_Index8_p32" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
@@ -754,17 +806,17 @@
 
     <div class="image-container">
     
-    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/compare-results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max--gslv_4.10/Xbox--Xbox--DirectX--nv2a/Texture_render_target/TexFmt_SZ_Index8_p64-diff.png" alt="Diff result for Texture_render_target::TexFmt_SZ_Index8_p64" class="inline-image">
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/compare-results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max--gslv_4.10/Xbox--Xbox--DirectX--nv2a/Texture_render_target/TexFmt_SZ_Index8_p64-diff.png" alt="Diff result for Texture_render_target::TexFmt_SZ_Index8_p64" class="inline-image">
     
     </div>
 
     
     <div class="image-pair">
         <div class="image-pair-title-bar">
-            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_SZ_Index8_p64.png">Source</a></div>
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_SZ_Index8_p64.png">Source</a></div>
             <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_render_target/TexFmt_SZ_Index8_p64.png">Golden</a></div>
         </div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_SZ_Index8_p64.png" alt="Source image for Texture_render_target::TexFmt_SZ_Index8_p64" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_SZ_Index8_p64.png" alt="Source image for Texture_render_target::TexFmt_SZ_Index8_p64" class="image-comparison" data-state="source">
         <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_render_target/TexFmt_SZ_Index8_p64.png" alt="Golden image for Texture_render_target::TexFmt_SZ_Index8_p64" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
@@ -784,17 +836,17 @@
 
     <div class="image-container">
     
-    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/compare-results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max--gslv_4.10/Xbox--Xbox--DirectX--nv2a/Texture_render_target/TexFmt_UYVY_L-diff.png" alt="Diff result for Texture_render_target::TexFmt_UYVY_L" class="inline-image">
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/compare-results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max--gslv_4.10/Xbox--Xbox--DirectX--nv2a/Texture_render_target/TexFmt_UYVY_L-diff.png" alt="Diff result for Texture_render_target::TexFmt_UYVY_L" class="inline-image">
     
     </div>
 
     
     <div class="image-pair">
         <div class="image-pair-title-bar">
-            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_UYVY_L.png">Source</a></div>
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_UYVY_L.png">Source</a></div>
             <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_render_target/TexFmt_UYVY_L.png">Golden</a></div>
         </div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_UYVY_L.png" alt="Source image for Texture_render_target::TexFmt_UYVY_L" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_UYVY_L.png" alt="Source image for Texture_render_target::TexFmt_UYVY_L" class="image-comparison" data-state="source">
         <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_render_target/TexFmt_UYVY_L.png" alt="Golden image for Texture_render_target::TexFmt_UYVY_L" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
@@ -814,17 +866,17 @@
 
     <div class="image-container">
     
-    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/compare-results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max--gslv_4.10/Xbox--Xbox--DirectX--nv2a/Texture_render_target/TexFmt_X1R5G5B5-diff.png" alt="Diff result for Texture_render_target::TexFmt_X1R5G5B5" class="inline-image">
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/compare-results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max--gslv_4.10/Xbox--Xbox--DirectX--nv2a/Texture_render_target/TexFmt_X1R5G5B5-diff.png" alt="Diff result for Texture_render_target::TexFmt_X1R5G5B5" class="inline-image">
     
     </div>
 
     
     <div class="image-pair">
         <div class="image-pair-title-bar">
-            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_X1R5G5B5.png">Source</a></div>
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_X1R5G5B5.png">Source</a></div>
             <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_render_target/TexFmt_X1R5G5B5.png">Golden</a></div>
         </div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_X1R5G5B5.png" alt="Source image for Texture_render_target::TexFmt_X1R5G5B5" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_X1R5G5B5.png" alt="Source image for Texture_render_target::TexFmt_X1R5G5B5" class="image-comparison" data-state="source">
         <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_render_target/TexFmt_X1R5G5B5.png" alt="Golden image for Texture_render_target::TexFmt_X1R5G5B5" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
@@ -844,17 +896,17 @@
 
     <div class="image-container">
     
-    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/compare-results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max--gslv_4.10/Xbox--Xbox--DirectX--nv2a/Texture_render_target/TexFmt_X1R5G5B5_L-diff.png" alt="Diff result for Texture_render_target::TexFmt_X1R5G5B5_L" class="inline-image">
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/compare-results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max--gslv_4.10/Xbox--Xbox--DirectX--nv2a/Texture_render_target/TexFmt_X1R5G5B5_L-diff.png" alt="Diff result for Texture_render_target::TexFmt_X1R5G5B5_L" class="inline-image">
     
     </div>
 
     
     <div class="image-pair">
         <div class="image-pair-title-bar">
-            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_X1R5G5B5_L.png">Source</a></div>
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_X1R5G5B5_L.png">Source</a></div>
             <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_render_target/TexFmt_X1R5G5B5_L.png">Golden</a></div>
         </div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_X1R5G5B5_L.png" alt="Source image for Texture_render_target::TexFmt_X1R5G5B5_L" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_X1R5G5B5_L.png" alt="Source image for Texture_render_target::TexFmt_X1R5G5B5_L" class="image-comparison" data-state="source">
         <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_render_target/TexFmt_X1R5G5B5_L.png" alt="Golden image for Texture_render_target::TexFmt_X1R5G5B5_L" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
@@ -880,8 +932,8 @@
 
     
     <div class="titled-image">
-        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_X8R8G8B8.png">Source</a> - No golden result</div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_X8R8G8B8.png" alt="Source image for Texture_render_target::TexFmt_X8R8G8B8">
+        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_X8R8G8B8.png">Source</a> - No golden result</div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_X8R8G8B8.png" alt="Source image for Texture_render_target::TexFmt_X8R8G8B8">
     </div>
     
 
@@ -906,8 +958,8 @@
 
     
     <div class="titled-image">
-        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_X8R8G8B8_L.png">Source</a> - No golden result</div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_X8R8G8B8_L.png" alt="Source image for Texture_render_target::TexFmt_X8R8G8B8_L">
+        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_X8R8G8B8_L.png">Source</a> - No golden result</div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_X8R8G8B8_L.png" alt="Source image for Texture_render_target::TexFmt_X8R8G8B8_L">
     </div>
     
 
@@ -952,17 +1004,17 @@
 
     <div class="image-container">
     
-    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/compare-results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max--gslv_4.10/Xbox--Xbox--DirectX--nv2a/Texture_render_target/TexFmt_Y16_L-diff.png" alt="Diff result for Texture_render_target::TexFmt_Y16_L" class="inline-image">
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/compare-results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max--gslv_4.10/Xbox--Xbox--DirectX--nv2a/Texture_render_target/TexFmt_Y16_L-diff.png" alt="Diff result for Texture_render_target::TexFmt_Y16_L" class="inline-image">
     
     </div>
 
     
     <div class="image-pair">
         <div class="image-pair-title-bar">
-            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_Y16_L.png">Source</a></div>
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_Y16_L.png">Source</a></div>
             <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_render_target/TexFmt_Y16_L.png">Golden</a></div>
         </div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_Y16_L.png" alt="Source image for Texture_render_target::TexFmt_Y16_L" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_Y16_L.png" alt="Source image for Texture_render_target::TexFmt_Y16_L" class="image-comparison" data-state="source">
         <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_render_target/TexFmt_Y16_L.png" alt="Golden image for Texture_render_target::TexFmt_Y16_L" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
@@ -983,8 +1035,8 @@
 
     
     <div class="titled-image">
-        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_Y8.png">Source</a> - No golden result</div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_Y8.png" alt="Source image for Texture_render_target::TexFmt_Y8">
+        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_Y8.png">Source</a> - No golden result</div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_Y8.png" alt="Source image for Texture_render_target::TexFmt_Y8">
     </div>
     
 
@@ -1004,8 +1056,8 @@
 
     
     <div class="titled-image">
-        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_Y8_L.png">Source</a> - No golden result</div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_Y8_L.png" alt="Source image for Texture_render_target::TexFmt_Y8_L">
+        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_Y8_L.png">Source</a> - No golden result</div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_Y8_L.png" alt="Source image for Texture_render_target::TexFmt_Y8_L">
     </div>
     
 
@@ -1024,17 +1076,17 @@
 
     <div class="image-container">
     
-    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/compare-results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max--gslv_4.10/Xbox--Xbox--DirectX--nv2a/Texture_render_target/TexFmt_YUY2_L-diff.png" alt="Diff result for Texture_render_target::TexFmt_YUY2_L" class="inline-image">
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/compare-results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max--gslv_4.10/Xbox--Xbox--DirectX--nv2a/Texture_render_target/TexFmt_YUY2_L-diff.png" alt="Diff result for Texture_render_target::TexFmt_YUY2_L" class="inline-image">
     
     </div>
 
     
     <div class="image-pair">
         <div class="image-pair-title-bar">
-            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_YUY2_L.png">Source</a></div>
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_YUY2_L.png">Source</a></div>
             <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_render_target/TexFmt_YUY2_L.png">Golden</a></div>
         </div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/./.worktree_github_pages/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_YUY2_L.png" alt="Source image for Texture_render_target::TexFmt_YUY2_L" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.41-master-9e58abc95184320d830c3c11628b0d9605614abb/Darwin_arm64/gl_Apple_Apple_M3_Max/gslv_4.10/Texture_render_target/TexFmt_YUY2_L.png" alt="Source image for Texture_render_target::TexFmt_YUY2_L" class="image-comparison" data-state="source">
         <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_render_target/TexFmt_YUY2_L.png" alt="Golden image for Texture_render_target::TexFmt_YUY2_L" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     

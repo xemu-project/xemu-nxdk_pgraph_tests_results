@@ -735,8 +735,8 @@ class ResultsScanner:
         return ResultsInfo(
             identifier=run_identifier,
             machine_info=machine_info,
-            renderer_info=results_summary.get("renderer_info"),
-            runner_info=results_summary.get("runner_info"),
+            renderer_info=results_summary.get("renderer_info", {}),
+            runner_info=results_summary.get("runner_info", {}),
             results=tuple(list(suite_results.values())),
             comparisons=comparisons,
         )
@@ -1096,7 +1096,7 @@ class PagesWriter:
         os.makedirs(output_dir, exist_ok=True)
 
         pretty_machine_info = PrettyMachineInfo.parse(run)
-        result_infos: dict[str, dict[str, str]] = {}
+        result_infos: dict[str, dict[str, Any]] = {}
         for result in suite.test_results:
             result_infos[result.name] = {"url": result.artifact_url}
         for info in suite.flaky_tests.values():
@@ -1143,7 +1143,7 @@ class PagesWriter:
             for name, info in suite.flaky_tests.items():
                 all_flaky_tests[name] = info.get("failures", [])
 
-        comparisons: dict[str, dict[str, str]] = {}
+        comparisons: dict[str, dict[str, Any]] = {}
         for comparison in run.comparisons:
             golden_base_url = (
                 self.hw_images_base_url
@@ -1214,8 +1214,8 @@ class PagesWriter:
         output_dir = self.output_dir
 
         with open(os.path.join(output_dir, "index.html"), "w") as outfile:
-            emulator_grouped_pages = defaultdict(
-                lambda: defaultdict(lambda: defaultdict(list))
+            emulator_grouped_pages: dict[str, dict[str, dict[str, list[Any]]]] = (
+                defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
             )
             for run_identifier, run in run_identifier_keyed_results.items():
                 if (
