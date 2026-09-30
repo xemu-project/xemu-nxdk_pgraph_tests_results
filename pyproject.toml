@@ -4,10 +4,20 @@ dependencies = [
   "ruff==0.16.4",
 ]
 
+[tool.hatch.envs.default]
+skip-install = true
+
+[tool.hatch.envs.hatch-test]
+skip-install = true
+
 [tool.hatch.envs.types]
+skip-install = true
 dependencies = [
   "mypy==2.3.1",
 ]
+
+[tool.hatch.envs.types.scripts]
+check = "mypy --ignore-missing-imports {args:.github/scripts}"
 
 [tool.ruff]
 extend-exclude = ["submodules"]

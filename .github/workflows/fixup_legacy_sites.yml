@@ -1,0 +1,94 @@
+name: Fixup Legacy Sites
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: 'Target to fixup: all, github_pages, archives, or dir'
+        type: choice
+        options:
+          - all
+          - github_pages
+          - archives
+        default: all
+      version:
+        description: 'Target xemu version or pattern (e.g. xemu-0.8.136, or empty for all)'
+        required: false
+        default: ''
+        type: string
+      dry_run:
+        description: 'Simulate fixup without pushing changes'
+        required: false
+        default: false
+        type: boolean
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  fixup:
+    name: Fixup legacy comparison sites
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Checkout golden results
+        uses: actions/checkout@v7
+        with:
+          repository: abaire/nxdk_pgraph_tests_golden_results
+          path: cache/nxdk_pgraph_tests_golden_results
+          sparse-checkout: |
+            results
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          export PIP_BREAK_SYSTEM_PACKAGES=1
+          pip3 install -r .github/scripts/requirements.txt
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Run fixup script
+        run: |
+          python3 .github/scripts/fixup_legacy_sites.py \
+            --target "${{ inputs.target }}" \
+            ${{ inputs.version != '' && format('--version "{0}"', inputs.version) || '' }} \
+            ${{ inputs.dry_run && '--dry-run' || '' }} \
+            --golden-dir cache/nxdk_pgraph_tests_golden_results/results \
+            --site-output-dir site-deployment \
+            -v
+
+      - name: Setup Pages
+        if: ${{ !inputs.dry_run && (inputs.target == 'all' || inputs.target == 'github_pages') }}
+        uses: actions/configure-pages@v6
+
+      - name: Upload Pages artifact
+        if: ${{ !inputs.dry_run && (inputs.target == 'all' || inputs.target == 'github_pages') }}
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: site-deployment
+
+      - name: Deploy to GitHub Pages
+        if: ${{ !inputs.dry_run && (inputs.target == 'all' || inputs.target == 'github_pages') }}
+        id: deployment
+        uses: actions/deploy-pages@v5
