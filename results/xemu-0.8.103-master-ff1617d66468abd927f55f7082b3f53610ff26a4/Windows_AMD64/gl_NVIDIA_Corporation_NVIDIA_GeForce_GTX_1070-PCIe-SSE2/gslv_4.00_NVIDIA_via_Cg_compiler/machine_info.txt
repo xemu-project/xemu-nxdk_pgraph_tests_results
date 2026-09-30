@@ -1,0 +1,11 @@
+xemu_version: 0.8.103
+xemu_branch: master
+xemu_commit: ff1617d66468abd927f55f7082b3f53610ff26a4
+xemu_date: Fri Sep 19 23:59:12 UTC 2025
+nvapi: Saved settings
+CPU: Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz
+OS_Version:  24H2
+GL_VENDOR: NVIDIA Corporation
+GL_RENDERER: NVIDIA GeForce GTX 1070/PCIe/SSE2
+GL_VERSION: 4.0.0 NVIDIA 581.15
+GL_SHADING_LANGUAGE_VERSION: 4.00 NVIDIA via Cg compiler
