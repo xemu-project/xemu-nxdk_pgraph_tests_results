@@ -1,0 +1,260 @@
+name: Regenerate Result Pages
+
+on:
+  workflow_dispatch:
+    inputs:
+      page_url:
+        description: 'URL of the result page to regenerate (e.g. https://xemu-project.github.io/xemu-nxdk_pgraph_tests_results/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Darwin_arm64/gl_Apple_Apple_M5_Max--gslv_4.10/index.html)'
+        required: true
+        type: string
+      force_regenerate:
+        description: 'Force re-compute all diffs for the target result'
+        required: false
+        default: true
+        type: boolean
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  ImportResults:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Branch
+        uses: actions/checkout@v7
+        with:
+          path: source-branch
+      - name: Checkout GitHub Pages Branch
+        uses: actions/checkout@v7
+        with:
+          ref: github_pages
+          path: github-pages-branch
+          fetch-depth: 0
+      - name: Sync site scripts
+        run: |
+          mkdir -p github-pages-branch/.github/scripts
+          rsync -avz source-branch/.github/scripts/ github-pages-branch/.github/scripts/
+          mkdir -p github-pages-branch/dev_scripts
+          rsync -avz source-branch/dev_scripts/ github-pages-branch/dev_scripts/
+      - name: Restore Target Result from URL
+        run: |
+          python3 source-branch/.github/scripts/restore_result_from_url.py \
+            --url "${{ inputs.page_url }}" \
+            ${{ inputs.force_regenerate && '--force' || '' }} \
+            --repo-dir github-pages-branch \
+            --target-dir github-pages-branch \
+            -v
+      - name: Prepare artifact
+        run: |
+          python3 source-branch/.github/scripts/prepare_artifact_staging.py \
+            --source-dir github-pages-branch \
+            --staging-dir artifact-staging
+      - name: Upload data
+        uses: actions/upload-artifact@v7
+        with:
+          name: updated-data
+          path: artifact-staging/
+          retention-days: 1
+          include-hidden-files: true
+
+  PlanDiffs:
+    needs: [ ImportResults ]
+    runs-on: ubuntu-latest
+    if: needs.ImportResults.result == 'success'
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+      diff_count: ${{ steps.plan.outputs.diff_count }}
+      shard_count: ${{ steps.plan.outputs.shard_count }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: github_pages
+      - uses: actions/download-artifact@v8
+        with:
+          name: updated-data
+      - name: Apply file deletions (if any)
+        run: |
+          if [ -f .deleted_files.txt ]; then
+            echo "Applying deletions from .deleted_files.txt..."
+            while IFS= read -r f; do
+              rm -rf "$f"
+            done < .deleted_files.txt
+            rm -f .deleted_files.txt
+          fi
+      - uses: actions/setup-python@v7
+        with: { python-version: '3.12', cache: 'pip' }
+      - name: Install requirements
+        run: |
+          export PIP_BREAK_SYSTEM_PACKAGES=1
+          pip3 install -r .github/scripts/requirements.txt
+      - name: Plan diff tasks
+        id: plan
+        run: python3 .github/scripts/plan_hw_diffs.py --max-shards 32 --output-plan-file diff_tasks.json
+      - name: Upload plan artifact
+        if: steps.plan.outputs.diff_count > '0'
+        uses: actions/upload-artifact@v7
+        with:
+          name: diff-plan
+          path: diff_tasks.json
+          retention-days: 1
+
+  DiffAgainstHW:
+    needs: [ ImportResults, PlanDiffs ]
+    name: Diff shard ${{ matrix.shard }}
+    runs-on: ubuntu-latest
+    if: needs.PlanDiffs.outputs.diff_count > '0'
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.PlanDiffs.outputs.matrix) }}
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: github_pages
+      - uses: actions/download-artifact@v8
+        with:
+          name: updated-data
+      - name: Apply file deletions (if any)
+        run: |
+          if [ -f .deleted_files.txt ]; then
+            echo "Applying deletions from .deleted_files.txt..."
+            while IFS= read -r f; do
+              rm -rf "$f"
+            done < .deleted_files.txt
+            rm -f .deleted_files.txt
+          fi
+      - uses: actions/download-artifact@v8
+        with:
+          name: diff-plan
+      - uses: actions/setup-python@v7
+        with: { python-version: '3.12', cache: 'pip' }
+      - name: Install requirements
+        run: |
+          sudo apt-get update && sudo apt-get install -y perceptualdiff
+          export PIP_BREAK_SYSTEM_PACKAGES=1
+          pip3 install -r .github/scripts/requirements.txt -r dev_scripts/requirements.txt
+      - name: Generate diffs
+        run: |
+          python3 .github/scripts/generate_missing_hw_diffs.py \
+            --tasks-file diff_tasks.json \
+            --shard-index ${{ matrix.shard }} \
+            --shard-count ${{ needs.PlanDiffs.outputs.shard_count }} \
+            --stage-dir diff-staging
+      - name: Upload partial diffs
+        uses: actions/upload-artifact@v7
+        with:
+          name: diffs-${{ strategy.job-index }}
+          path: diff-staging/
+          retention-days: 1
+
+  Publish:
+    runs-on: ubuntu-latest
+    needs: [ ImportResults, PlanDiffs, DiffAgainstHW ]
+    if: |
+      always() &&
+      needs.ImportResults.result == 'success' &&
+      (needs.DiffAgainstHW.result == 'success' || needs.DiffAgainstHW.result == 'skipped')
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: github_pages
+      - uses: actions/download-artifact@v8
+        with:
+          name: updated-data
+      - name: Apply file deletions (if any)
+        run: |
+          if [ -f .deleted_files.txt ]; then
+            echo "Applying deletions from .deleted_files.txt..."
+            while IFS= read -r f; do
+              rm -rf "$f"
+            done < .deleted_files.txt
+            rm -f .deleted_files.txt
+          fi
+      - name: Download shard diffs
+        if: needs.DiffAgainstHW.result == 'success'
+        uses: actions/download-artifact@v8
+        with:
+          pattern: diffs-*
+          path: incoming-diffs/
+      - name: Merge diffs
+        run: |
+          if [ -d incoming-diffs ]; then
+            echo "Merging incoming shard diffs..."
+            for diff_dir in incoming-diffs/diffs-*; do
+              if [ -d "$diff_dir" ]; then
+                echo "Merging $diff_dir..."
+                rsync -av --exclude="KEEP_ARTIFACT" "$diff_dir/" .
+              fi
+            done
+            rm -rf incoming-diffs
+          fi
+          rm -f KEEP_ARTIFACT
+      - uses: actions/setup-python@v7
+        with: { python-version: '3.12', cache: 'pip' }
+      - name: Install requirements
+        run: |
+          export PIP_BREAK_SYSTEM_PACKAGES=1
+          pip3 install -r .github/scripts/requirements.txt
+      - name: Reduce shard summaries
+        run: python3 .github/scripts/merge_comparison_summaries.py --comparison-dir compare-results
+      - name: Generate site content
+        run: |
+          python3 .github/scripts/generate_results_site.py results .github/site \
+            --comparison-dir compare-results \
+            --base-url https://raw.githubusercontent.com/${{ github.repository }}/github_pages \
+            -v
+      - name: Commit and Push
+        run: |
+          git config --local user.email "$GITHUB_ACTOR+github-actions@users.noreply.github.com"
+          git config --local user.name "$GITHUB_ACTOR via action"
+          
+          git add results/ .github/scripts/ compare-results/ .github/site/
+          
+          if git diff-index --quiet HEAD; then
+            echo "No changes to commit"
+          else
+            git commit -m "Regenerate site pages for result (${{ github.run_number }})"
+            git push
+          fi
+      - name: Setup Pages
+        uses: actions/configure-pages@v6
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: '.github/site'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
+
+  ArchiveResults:
+    needs: [ Publish ]
+    runs-on: ubuntu-latest
+    if: always() && needs.Publish.result == 'success'
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout github_pages
+        uses: actions/checkout@v7
+        with:
+          ref: github_pages
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with: { python-version: '3.12', cache: 'pip' }
+      - name: Sync all version archives
+        run: |
+          git config --local user.email "$GITHUB_ACTOR+github-actions@users.noreply.github.com"
+          git config --local user.name "$GITHUB_ACTOR via action"
+          python3 .github/scripts/sync_archives.py

@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 import sys
+from typing import Any
 
 scripts_dir = str(Path(__file__).parent.parent / ".github" / "scripts")
 if scripts_dir not in sys.path:
@@ -41,7 +42,7 @@ def test_collect_tests_from_results_dir_pngs(tmp_path: Path) -> None:
 def test_collect_tests_from_results_dir_json(tmp_path: Path) -> None:
     results_dir = tmp_path / "results_run"
     results_dir.mkdir(parents=True)
-    results_json = {
+    results_json: dict[str, Any] = {
         "passed": {"2D Lines::Line1": {}, "Blend surface::Blend1": {}},
         "failed": {"2D Lines::Line2": {}},
         "flaky": {},
