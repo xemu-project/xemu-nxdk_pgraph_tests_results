@@ -13,6 +13,7 @@ import logging
 import math
 import os
 import re
+import shutil
 import sys
 from collections import defaultdict
 from dataclasses import dataclass
@@ -557,6 +558,39 @@ RendererInfo = dict[str, str]
 ResultsSummary = dict[str, Any]
 
 
+def _normalize_results_summary(results_summary: ResultsSummary) -> ResultsSummary:
+    """Normalizes suite names in results_summary (from results.json) so keys use underscores,
+    matching on-disk directory names and golden results, and fixes inverted name/suite in failures.
+    """
+    normalized: ResultsSummary = dict(results_summary)
+    for section in ("passed", "failed", "flaky"):
+        if section not in results_summary or not isinstance(
+            results_summary[section], dict
+        ):
+            continue
+        new_section: dict[str, Any] = {}
+        for fqname, item in results_summary[section].items():
+            if "::" in fqname:
+                suite, test_name = fqname.split("::", 1)
+                norm_suite = suite.replace(" ", "_")
+                norm_fqname = f"{norm_suite}::{test_name}"
+            else:
+                norm_suite = ""
+                test_name = fqname
+                norm_fqname = fqname
+
+            if isinstance(item, dict):
+                item_copy = dict(item)
+                if norm_suite:
+                    item_copy["suite"] = norm_suite
+                item_copy["name"] = test_name
+                new_section[norm_fqname] = item_copy
+            else:
+                new_section[norm_fqname] = item
+        normalized[section] = new_section
+    return normalized
+
+
 @dataclass
 class TestResult:
     """Contains information about the results of a specific test within a suite."""
@@ -698,14 +732,47 @@ class ResultsScanner:
             if result:
                 suite_results[suite_name] = result
 
-        for fqname, failure in results_summary.get("failed", {}).items():
-            suite, _ = fqname.split("::")
+        for fqname, _failure in results_summary.get("failed", {}).items():
+            if "::" not in fqname:
+                continue
+            suite, _ = fqname.split("::", 1)
             if suite not in suite_results:
                 suite_results[suite] = SuiteResults(
                     name=suite,
                     test_results=(),
-                    failed_tests=deepfreeze({fqname: failure}),
-                    flaky_tests=frozendict(),
+                    failed_tests=deepfreeze(
+                        {
+                            k: v
+                            for k, v in results_summary.get("failed", {}).items()
+                            if k.startswith(f"{suite}::")
+                        }
+                    ),
+                    flaky_tests=deepfreeze(
+                        {
+                            k: v
+                            for k, v in results_summary.get("flaky", {}).items()
+                            if k.startswith(f"{suite}::")
+                        }
+                    ),
+                    descriptor=self._get_suite_descriptor(suite),
+                )
+
+        for fqname, _flaky in results_summary.get("flaky", {}).items():
+            if "::" not in fqname:
+                continue
+            suite, _ = fqname.split("::", 1)
+            if suite not in suite_results:
+                suite_results[suite] = SuiteResults(
+                    name=suite,
+                    test_results=(),
+                    failed_tests=frozendict(),
+                    flaky_tests=deepfreeze(
+                        {
+                            k: v
+                            for k, v in results_summary.get("flaky", {}).items()
+                            if k.startswith(f"{suite}::")
+                        }
+                    ),
                     descriptor=self._get_suite_descriptor(suite),
                 )
 
@@ -749,7 +816,9 @@ class ResultsScanner:
 
         def load_results(subpath: str) -> tuple[str, ResultsSummary]:
             full_path = os.path.join(self.results_dir, subpath)
-            return os.path.dirname(full_path), _load_json_file(full_path)
+            return os.path.dirname(full_path), _normalize_results_summary(
+                _load_json_file(full_path)
+            )
 
         run_id_to_results: dict[str, ResultsSummary] = {
             key: value
@@ -1099,10 +1168,25 @@ class PagesWriter:
         result_infos: dict[str, dict[str, Any]] = {}
         for result in suite.test_results:
             result_infos[result.name] = {"url": result.artifact_url}
-        for info in suite.flaky_tests.values():
-            result_infos.get(info["name"], {})["failures"] = info["failures"]
-        for info in suite.failed_tests.values():
-            result_infos[info["name"]] = {"url": None, "failures": info["failures"]}
+        for fq_name, info in suite.flaky_tests.items():
+            test_name = (
+                fq_name.split("::")[-1]
+                if "::" in fq_name
+                else info.get("name", fq_name)
+            )
+            if test_name not in result_infos:
+                result_infos[test_name] = {"url": None}
+            result_infos[test_name]["failures"] = info.get("failures", [])
+        for fq_name, info in suite.failed_tests.items():
+            test_name = (
+                fq_name.split("::")[-1]
+                if "::" in fq_name
+                else info.get("name", fq_name)
+            )
+            result_infos[test_name] = {
+                "url": None,
+                "failures": info.get("failures", []),
+            }
 
         with open(os.path.join(output_dir, "index.html"), "w") as outfile:
             outfile.write(
@@ -1126,6 +1210,12 @@ class PagesWriter:
         output_subdir = os.path.join(RESULTS_SUBDIR, run.identifier.minimal_path)
         output_dir = os.path.join(self.output_dir, output_subdir)
         os.makedirs(output_dir, exist_ok=True)
+
+        valid_suite_names = {suite.name for suite in run.results}
+        for entry in os.scandir(output_dir):
+            if entry.is_dir() and entry.name not in valid_suite_names:
+                logger.info("Removing stale suite directory: %s", entry.path)
+                shutil.rmtree(entry.path, ignore_errors=True)
 
         result_urls = {
             suite.name: os.path.relpath(
