@@ -180,11 +180,11 @@ class ComparisonInfo(NamedTuple):
             if len(parts) >= 4:
                 xemu_version = parts[0]
                 platform_info = parts[1]
-                gl_info = f"{parts[2]}__{parts[3]}".replace("--", "__")
+                gl_info = f"{parts[2]}--{parts[3]}".replace("__", "--")
             elif len(parts) == 3:
                 xemu_version = parts[0]
                 platform_info = parts[1]
-                gl_info = parts[2].replace("--", "__")
+                gl_info = parts[2].replace("__", "--")
             else:
                 xemu_version = parts[0]
                 platform_info = ""
@@ -194,15 +194,15 @@ class ComparisonInfo(NamedTuple):
             if len(components) >= 6:
                 xemu_version = components[-5]
                 platform_info = components[-4]
-                gl_info = f"{components[-3]}__{components[-2]}".replace("--", "__")
+                gl_info = f"{components[-3]}--{components[-2]}".replace("__", "--")
             elif len(components) == 5:
                 xemu_version = components[-4]
                 platform_info = components[-3]
-                gl_info = components[-2].replace("--", "__")
+                gl_info = components[-2].replace("__", "--")
             elif len(components) == 4:
                 xemu_version = components[-3]
                 platform_info = components[-2]
-                gl_info = components[-1].replace("--", "__")
+                gl_info = components[-1].replace("__", "--")
             else:
                 xemu_version = "UNKNOWN"
                 platform_info = "UNKNOWN"
@@ -216,7 +216,7 @@ class ComparisonInfo(NamedTuple):
                 gl_info=gl_info,
             ),
             golden_identifier_component=os.path.basename(run_identifier).replace(
-                "--", "__"
+                "__", "--"
             ),
             golden_identifier=summary.get("golden_identifier", "UNKNOWN"),
             summary=deepfreeze(summary),
@@ -310,8 +310,17 @@ class ComparisonScanner:
         res_id = run_info.get("result_identifier", "")
         if res_id:
             results_base_path = os.path.join(self.results_dir, res_id.replace(":", "/"))
+            if not os.path.isdir(results_base_path):
+                results_base_path = os.path.join(
+                    self.results_dir,
+                    res_id.replace(":", "/").replace("--", "/").replace("__", "/"),
+                )
         else:
-            results_parts = [p for p in comp_parts[:-1] if not p.startswith("Xbox__")]
+            results_parts = [
+                p
+                for p in comp_parts[:-1]
+                if not p.startswith("Xbox__") and not p.startswith("Xbox--")
+            ]
             results_base_path = os.path.join(self.results_dir, *results_parts)
         golden_base_path = (
             ""
@@ -712,8 +721,8 @@ class ResultsScanner:
                     comp_id.xemu_version == run_identifier.xemu_version
                     and comp_id.platform_info == run_identifier.platform_info
                 ):
-                    gl_a = run_identifier.gl_info.replace("--", "__").split("__")[0]
-                    gl_b = comp_id.gl_info.replace("--", "__").split("__")[0]
+                    gl_a = run_identifier.gl_info.replace("__", "--").split("--")[0]
+                    gl_b = comp_id.gl_info.replace("__", "--").split("--")[0]
                     if gl_a == gl_b:
                         comparisons = comp_list
                         break
@@ -826,9 +835,9 @@ class PrettyMachineInfo(NamedTuple):
         run_identifier = results_info.identifier
         platform = f"{os} - {cpu}" if cpu and os else run_identifier.platform_info
         gl_parts = (
-            run_identifier.gl_info.split("__")
-            if "__" in run_identifier.gl_info
-            else run_identifier.gl_info.split("--")
+            run_identifier.gl_info.split("--")
+            if "--" in run_identifier.gl_info
+            else run_identifier.gl_info.split("__")
         )
         gl = (
             f"{gl_vendor} - {gl_renderer} - {gl_version}"

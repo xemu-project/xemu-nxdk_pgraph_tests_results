@@ -33,7 +33,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v7
         with:
-          ref: github_pages
           fetch-depth: 0
 
       - uses: actions/setup-python@v7
@@ -51,28 +50,35 @@ jobs:
           git config --local user.email "$GITHUB_ACTOR+github-actions@users.noreply.github.com"
           git config --local user.name "$GITHUB_ACTOR via action"
 
+      - name: Fetch all remote branches
+        run: |
+          git config --local remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
+          git fetch origin --prune
+
       - name: Run Cleanup
         run: |
+          find .
           DRY_RUN_ARG=""
           if [ "${{ inputs.dry_run }}" = "true" ]; then
             DRY_RUN_ARG="--dry-run"
           fi
           python3 .github/scripts/cleanup_legacy_paths.py \
             --target "${{ inputs.target }}" \
+            --site-output-dir .github/site \
             $DRY_RUN_ARG \
             -v
 
       - name: Setup Pages
-        if: inputs.target != 'archives' && inputs.dry_run != true
+        if: inputs.target != 'archives' && !inputs.dry_run
         uses: actions/configure-pages@v6
 
       - name: Upload artifact
-        if: inputs.target != 'archives' && inputs.dry_run != true
+        if: inputs.target != 'archives' && !inputs.dry_run
         uses: actions/upload-pages-artifact@v5
         with:
           path: '.github/site'
 
       - name: Deploy to GitHub Pages
-        if: inputs.target != 'archives' && inputs.dry_run != true
+        if: inputs.target != 'archives' && !inputs.dry_run
         id: deployment
         uses: actions/deploy-pages@v5

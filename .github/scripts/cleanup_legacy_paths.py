@@ -29,44 +29,46 @@ def git(*args: str, cwd: str | None = None) -> str:
     return res.stdout.strip()
 
 
+def ensure_remote_fetched(remote: str = "origin", cwd: str | None = None) -> None:
+    """Ensures all remote branches are fetched so origin/* refs are available."""
+    try:
+        logger.info("Configuring remote %s to fetch all branches...", remote)
+        git(
+            "config",
+            f"remote.{remote}.fetch",
+            f"+refs/heads/*:refs/remotes/{remote}/*",
+            cwd=cwd,
+        )
+        git("fetch", remote, "--prune", cwd=cwd)
+    except Exception as e:
+        logger.warning("Could not fetch remote branches for %s: %s", remote, e)
+
+
 def resolve_canonical_path(comp_dir: str, base_dir: str) -> str | None:
     """Determines the canonical comparison path for a given directory under base_dir.
 
-    Returns the canonical directory path, or None if comp_dir is already canonical.
+    Returns the canonical directory path (using '--'), or None if comp_dir is already canonical.
     """
     rel = os.path.relpath(comp_dir, base_dir)
     parts = [p for p in rel.replace("\\", "/").split("/") if p]
 
     # Expected structures:
-    # 4 parts: [version, platform, gl_info--glsl_info, target]
-    # 5 parts: [version, platform, gl_info, glsl_info, target]
+    # 4 parts: [version, platform, gl_vendor--glsl_ver, target]
+    # 5 parts: [version, platform, gl_vendor, glsl_ver, target]
     if len(parts) == 4:
         version, platform, gl_combined, target = parts
-        if "--" in gl_combined:
-            gl_parts = gl_combined.split("--", 1)
-            gl_vendor = gl_parts[0]
-            glsl_ver = gl_parts[1]
-        elif "__" in gl_combined:
-            gl_parts = gl_combined.split("__", 1)
-            gl_vendor = gl_parts[0]
-            glsl_ver = gl_parts[1]
-        else:
-            gl_vendor = gl_combined
-            glsl_ver = ""
-
-        canonical_target = target.replace("--", "__")
-        if glsl_ver:
-            canonical_rel = os.path.join(
-                version, platform, gl_vendor, glsl_ver, canonical_target
-            )
-        else:
-            canonical_rel = os.path.join(version, platform, gl_vendor, canonical_target)
+        canonical_gl = gl_combined.replace("__", "--")
+        canonical_target = target.replace("__", "--")
+        canonical_rel = os.path.join(version, platform, canonical_gl, canonical_target)
     elif len(parts) == 5:
         version, platform, gl_vendor, glsl_ver, target = parts
-        canonical_target = target.replace("--", "__")
-        canonical_rel = os.path.join(
-            version, platform, gl_vendor, glsl_ver, canonical_target
-        )
+        canonical_gl = f"{gl_vendor}--{glsl_ver}".replace("__", "--")
+        canonical_target = target.replace("__", "--")
+        canonical_rel = os.path.join(version, platform, canonical_gl, canonical_target)
+    elif len(parts) == 3:
+        version, platform, target = parts
+        canonical_target = target.replace("__", "--")
+        canonical_rel = os.path.join(version, platform, canonical_target)
     else:
         return None
 
@@ -87,12 +89,22 @@ def cleanup_directory(base_dir: str, *, dry_run: bool = False) -> int:
         logger.info("Base directory '%s' does not exist.", base_dir)
         return 0
 
-    # Discover directories containing summary.json
+    # Discover comparison directories: either containing summary.json or ending with Xbox*
+    comp_dirs = set()
     summary_files = glob.glob("**/summary.json", root_dir=base_dir, recursive=True)
+    for sf in summary_files:
+        comp_dirs.add(os.path.dirname(os.path.join(base_dir, sf)))
+    for root, dirnames, _ in os.walk(base_dir):
+        if any(
+            root.endswith(target)
+            for target in ("Xbox--Xbox--DirectX--nv2a", "Xbox__Xbox__DirectX__nv2a")
+        ):
+            comp_dirs.add(root)
+            dirnames.clear()
+
     migrated_count = 0
 
-    for sf in sorted(summary_files):
-        comp_dir = os.path.dirname(os.path.join(base_dir, sf))
+    for comp_dir in sorted(comp_dirs):
         canonical_dir = resolve_canonical_path(comp_dir, base_dir)
         if not canonical_dir:
             continue
@@ -111,7 +123,7 @@ def cleanup_directory(base_dir: str, *, dry_run: bool = False) -> int:
                     src_file = os.path.join(root, filename)
                     rel_file = os.path.relpath(src_file, comp_dir)
                     dest_file = os.path.join(canonical_dir, rel_file)
-                    if not os.path.exists(dest_file):
+                    if not os.path.exists(dest_file) or os.path.getsize(dest_file) == 0:
                         os.makedirs(os.path.dirname(dest_file), exist_ok=True)
                         shutil.copy2(src_file, dest_file)
 
@@ -121,12 +133,24 @@ def cleanup_directory(base_dir: str, *, dry_run: bool = False) -> int:
         if os.path.isfile(src_summary_path):
             try:
                 src_summary = ComparisonSummary.load_from_file(src_summary_path)
+                src_summary.result_identifier = src_summary.result_identifier.replace(
+                    "__", "--"
+                )
+                src_summary.golden_identifier = src_summary.golden_identifier.replace(
+                    "__", "--"
+                )
                 if os.path.isfile(dest_summary_path):
                     try:
                         dest_summary = ComparisonSummary.load_from_file(
                             dest_summary_path
                         )
                         dest_summary.merge(src_summary)
+                        dest_summary.result_identifier = (
+                            dest_summary.result_identifier.replace("__", "--")
+                        )
+                        dest_summary.golden_identifier = (
+                            dest_summary.golden_identifier.replace("__", "--")
+                        )
                         dest_summary.save_to_file(dest_summary_path)
                     except Exception:
                         src_summary.save_to_file(dest_summary_path)
@@ -166,12 +190,13 @@ def cleanup_archive_branches(
 
     commits and pushes the updated branch trees.
     """
+    ensure_remote_fetched(remote)
     branches_output = git("branch", "-r")
-    archive_branches = [
-        b.strip().split(f"{remote}/")[1]
-        for b in branches_output.split()
-        if f"{remote}/archive/" in b
-    ]
+    archive_branches = []
+    for line in branches_output.splitlines():
+        line = line.strip()
+        if f"{remote}/archive/" in line and "->" not in line:
+            archive_branches.append(line.split(f"{remote}/", 1)[1])
 
     logger.info("Found %d archive branches to inspect.", len(archive_branches))
     success = True
@@ -179,14 +204,14 @@ def cleanup_archive_branches(
     for branch in sorted(archive_branches):
         logger.info("Processing archive branch: %s...", branch)
         try:
-            # Check if branch has compare-results with '--'
+            # Check if branch has compare-results with '__'
             tree_files = git(
                 "ls-tree", "-r", "--name-only", f"{remote}/{branch}"
             ).splitlines()
             legacy_entries = [
                 f
                 for f in tree_files
-                if f.startswith("compare-results/") and ("--" in f)
+                if f.startswith("compare-results/") and ("__" in f)
             ]
             if not legacy_entries:
                 logger.info("  [OK] %s has no legacy paths.", branch)
@@ -202,6 +227,13 @@ def cleanup_archive_branches(
 
             # Create a detached worktree or checkout branch
             worktree_dir = f".worktree_{branch.replace('/', '_')}"
+            if os.path.exists(worktree_dir):
+                try:
+                    git("worktree", "remove", "--force", worktree_dir)
+                except Exception:
+                    shutil.rmtree(worktree_dir, ignore_errors=True)
+                    git("worktree", "prune")
+
             try:
                 git("worktree", "add", "--detach", worktree_dir, f"{remote}/{branch}")
                 comp_dir = os.path.join(worktree_dir, "compare-results")
@@ -213,7 +245,7 @@ def cleanup_archive_branches(
                         git(
                             "commit",
                             "-m",
-                            "Clean up legacy comparison paths using '--' to '__'",
+                            "Clean up legacy comparison paths using '__' to '--'",
                             cwd=worktree_dir,
                         )
                         if push:
@@ -227,7 +259,12 @@ def cleanup_archive_branches(
                                 cwd=worktree_dir,
                             )
             finally:
-                git("worktree", "remove", "--force", worktree_dir)
+                if os.path.exists(worktree_dir):
+                    try:
+                        git("worktree", "remove", "--force", worktree_dir)
+                    except Exception:
+                        shutil.rmtree(worktree_dir, ignore_errors=True)
+                        git("worktree", "prune")
 
         except Exception:
             logger.exception("Failed processing branch %s", branch)
@@ -242,45 +279,112 @@ def cleanup_github_pages(
     dry_run: bool = False,
     push: bool = True,
     repo_root: str = ".",
+    site_output_dir: str | None = None,
 ) -> bool:
     """Cleans up compare-results on github_pages, removes old site compare pages with '--',
 
     regenerates .github/site, and commits/pushes.
     """
+    ensure_remote_fetched(remote, cwd=repo_root)
     logger.info("Cleaning up github_pages branch...")
-    comp_dir = os.path.join(repo_root, "compare-results")
-    migrated = cleanup_directory(comp_dir, dry_run=dry_run)
 
-    # Also clean up any legacy directories in .github/site/compare if present
-    site_compare_dir = os.path.join(repo_root, ".github", "site", "compare")
-    if os.path.isdir(site_compare_dir):
-        for entry in os.listdir(site_compare_dir):
-            entry_path = os.path.join(site_compare_dir, entry)
-            if os.path.isdir(entry_path):
-                for root, dirnames, _filenames in os.walk(entry_path, topdown=False):
-                    for d in dirnames:
-                        if "--" in d:
-                            legacy_p = os.path.join(root, d)
-                            logger.info("Removing legacy site directory: %s", legacy_p)
-                            if not dry_run:
-                                shutil.rmtree(legacy_p, ignore_errors=True)
+    try:
+        tree_files = git(
+            "ls-tree", "-r", "--name-only", f"{remote}/github_pages", cwd=repo_root
+        ).splitlines()
+        legacy_entries = [
+            f for f in tree_files if f.startswith("compare-results/") and ("__" in f)
+        ]
+        logger.info(
+            "Found %d legacy compare files on %s/github_pages.",
+            len(legacy_entries),
+            remote,
+        )
+    except Exception as e:
+        logger.warning("Could not list tree for %s/github_pages: %s", remote, e)
+        legacy_entries = []
 
     if dry_run:
-        logger.info("[Dry Run] Would commit and push cleaned github_pages.")
+        logger.info(
+            "[Dry Run] Would clean up %d legacy compare files on github_pages.",
+            len(legacy_entries),
+        )
         return True
 
-    if migrated > 0:
-        logger.info("Regenerating site with generate_results_site.py...")
+    worktree_needed = not os.path.isdir(os.path.join(repo_root, "compare-results"))
+    worktree_dir = (
+        os.path.join(repo_root, ".worktree_github_pages")
+        if worktree_needed
+        else repo_root
+    )
+
+    if worktree_needed:
+        logger.info("Creating worktree for %s/github_pages...", remote)
+        if os.path.exists(worktree_dir):
+            try:
+                git("worktree", "remove", "--force", worktree_dir, cwd=repo_root)
+            except Exception:
+                shutil.rmtree(worktree_dir, ignore_errors=True)
+                git("worktree", "prune", cwd=repo_root)
+        try:
+            git(
+                "worktree",
+                "add",
+                "--detach",
+                worktree_dir,
+                f"{remote}/github_pages",
+                cwd=repo_root,
+            )
+        except Exception as e:
+            logger.error("Failed to create worktree for github_pages: %s", e)
+            return False
+
+    try:
+        src_scripts = os.path.join(repo_root, ".github", "scripts")
+        dst_scripts = os.path.join(worktree_dir, ".github", "scripts")
+        if os.path.abspath(src_scripts) != os.path.abspath(
+            dst_scripts
+        ) and os.path.isdir(src_scripts):
+            logger.info("Syncing updated .github/scripts to github_pages...")
+            shutil.copytree(src_scripts, dst_scripts, dirs_exist_ok=True)
+
+        comp_dir = os.path.join(worktree_dir, "compare-results")
+        cleanup_directory(comp_dir, dry_run=False)
+
+        # Clean up any legacy directories in .github/site/compare if present
+        site_compare_dir = os.path.join(worktree_dir, ".github", "site", "compare")
+        if os.path.isdir(site_compare_dir):
+            for entry in os.listdir(site_compare_dir):
+                entry_path = os.path.join(site_compare_dir, entry)
+                if os.path.isdir(entry_path):
+                    for root, dirnames, _filenames in os.walk(
+                        entry_path, topdown=False
+                    ):
+                        for d in dirnames:
+                            if "__" in d:
+                                legacy_p = os.path.join(root, d)
+                                logger.info(
+                                    "Removing legacy site directory: %s", legacy_p
+                                )
+                                shutil.rmtree(legacy_p, ignore_errors=True)
+
         gen_script = os.path.join(
-            repo_root, ".github", "scripts", "generate_results_site.py"
+            worktree_dir, ".github", "scripts", "generate_results_site.py"
         )
+        if not os.path.isfile(gen_script):
+            gen_script = os.path.join(
+                repo_root, ".github", "scripts", "generate_results_site.py"
+            )
+
         if os.path.isfile(gen_script):
+            logger.info("Regenerating site with generate_results_site.py...")
+            site_target = os.path.join(worktree_dir, ".github", "site")
             subprocess.run(
                 [
                     sys.executable,
                     gen_script,
-                    os.path.join(repo_root, "results"),
-                    os.path.join(repo_root, ".github", "site"),
+                    os.path.join(worktree_dir, "results"),
+                    site_target,
                     "--comparison-dir",
                     comp_dir,
                     "-v",
@@ -288,23 +392,48 @@ def cleanup_github_pages(
                 check=True,
             )
 
-        git("add", "-A", "compare-results", ".github/site", cwd=repo_root)
-        status = git("status", "--porcelain", cwd=repo_root)
+        git(
+            "add",
+            "-A",
+            "compare-results",
+            ".github/scripts",
+            ".github/site",
+            cwd=worktree_dir,
+        )
+        status = git("status", "--porcelain", cwd=worktree_dir)
         if status and push:
+            logger.info("Committing and pushing cleaned github_pages...")
             git(
                 "commit",
                 "-m",
-                "Clean up legacy comparison paths using '--' to '__'",
-                cwd=repo_root,
+                "Clean up legacy comparison paths using '__' to '--'",
+                cwd=worktree_dir,
             )
-            git("push", remote, "HEAD:refs/heads/github_pages", cwd=repo_root)
+            git("push", remote, "HEAD:refs/heads/github_pages", cwd=worktree_dir)
 
-    return True
+        if site_output_dir:
+            dst_site = os.path.abspath(site_output_dir)
+            src_site = os.path.abspath(os.path.join(worktree_dir, ".github", "site"))
+            if dst_site != src_site and os.path.isdir(src_site):
+                logger.info(
+                    "Copying generated site to %s for deployment...", site_output_dir
+                )
+                os.makedirs(dst_site, exist_ok=True)
+                shutil.copytree(src_site, dst_site, dirs_exist_ok=True)
+
+        return True
+    finally:
+        if worktree_needed and os.path.exists(worktree_dir):
+            try:
+                git("worktree", "remove", "--force", worktree_dir, cwd=repo_root)
+            except Exception:
+                shutil.rmtree(worktree_dir, ignore_errors=True)
+                git("worktree", "prune", cwd=repo_root)
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Clean up legacy paths using '--' to canonical '__'"
+        description="Clean up paths using '__' to canonical '--'"
     )
     parser.add_argument(
         "--target",
@@ -333,6 +462,11 @@ def main() -> int:
         help="Commit changes but do not push to remote",
     )
     parser.add_argument(
+        "--site-output-dir",
+        default=None,
+        help="Optional directory to copy generated .github/site to for GitHub Pages deployment",
+    )
+    parser.add_argument(
         "--verbose",
         "-v",
         action="store_true",
@@ -353,7 +487,10 @@ def main() -> int:
 
     if args.target == "github_pages":
         success = cleanup_github_pages(
-            remote=args.remote, dry_run=args.dry_run, push=should_push
+            remote=args.remote,
+            dry_run=args.dry_run,
+            push=should_push,
+            site_output_dir=args.site_output_dir,
         )
         return 0 if success else 1
 
@@ -365,7 +502,10 @@ def main() -> int:
 
     if args.target == "all":
         ok1 = cleanup_github_pages(
-            remote=args.remote, dry_run=args.dry_run, push=should_push
+            remote=args.remote,
+            dry_run=args.dry_run,
+            push=should_push,
+            site_output_dir=args.site_output_dir,
         )
         ok2 = cleanup_archive_branches(
             remote=args.remote, dry_run=args.dry_run, push=should_push
