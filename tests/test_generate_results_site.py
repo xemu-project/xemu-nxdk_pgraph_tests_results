@@ -58,6 +58,7 @@ if scripts_dir not in sys.path:
 
 from generate_results_site import (  # noqa: E402
     PagesWriter,
+    PrettyMachineInfo,
     ResultsInfo,
     ResultsScanner,
     SuiteResults,
@@ -236,15 +237,6 @@ def test_write_test_suite_results_page_uses_test_name(tmp_path: Path) -> None:
     )
 
     run_id = sys.modules["xemu_pgraph_ci_tools.models"].RunIdentifier("v1", "p1", "gl1")
-    run_info = ResultsInfo(
-        identifier=run_id,
-        machine_info=["CPU: Test"],
-        renderer_info={"vulkan": False},
-        runner_info={},
-        results=(),
-        comparisons=[],
-    )
-
     suite = SuiteResults(
         name="Texture_format",
         test_results=(
@@ -259,6 +251,14 @@ def test_write_test_suite_results_page_uses_test_name(tmp_path: Path) -> None:
             }
         },
         descriptor=None,
+    )
+    run_info = ResultsInfo(
+        identifier=run_id,
+        machine_info=["CPU: Test"],
+        renderer_info={"vulkan": False},
+        runner_info={},
+        results=(suite,),
+        comparisons=[],
     )
 
     writer._write_test_suite_results_page(run_info, suite)
@@ -319,3 +319,131 @@ def test_write_run_results_pages_removes_stale_directories(tmp_path: Path) -> No
     assert not stale_suite_dir.exists()
     # Active suite directory "Texture_format" should exist
     assert (run_output_dir / "Texture_format").exists()
+
+
+def _make_results_info(
+    xemu_version: str,
+    platform: str,
+    gl_info: str,
+    machine_info: list[str],
+    *,
+    is_vulkan: bool = False,
+) -> ResultsInfo:
+    RunIdentClass = sys.modules["xemu_pgraph_ci_tools.models"].RunIdentifier
+    run_id = RunIdentClass(
+        xemu_version=xemu_version,
+        platform_info=platform,
+        gl_info=gl_info,
+    )
+    return ResultsInfo(
+        identifier=run_id,
+        machine_info=machine_info,
+        renderer_info={"vulkan": is_vulkan},
+        runner_info={},
+        results=(),
+        comparisons=[],
+    )
+
+
+def test_pretty_machine_info_platform_not_split_by_cpu_or_os() -> None:
+    gl_machine_info = [
+        "xemu_version: 0.8.136",
+        "CPU: AMD EPYC 9V74 80-Core Processor",
+        "OS_Version: Ubuntu 24.04.4 LTS",
+        "GL_VENDOR: Mesa",
+        "GL_RENDERER: llvmpipe (LLVM 20.1.2, 256 bits)",
+        "GL_VERSION: 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.2",
+        "GL_SHADING_LANGUAGE_VERSION: 4.50",
+    ]
+    gl_info = _make_results_info(
+        "xemu-0.8.136",
+        "Linux_x86_64",
+        "gl_Mesa_llvmpipe--gslv_4.50",
+        gl_machine_info,
+        is_vulkan=False,
+    )
+    pretty_gl = PrettyMachineInfo.parse(gl_info)
+    assert pretty_gl.platform == "Linux_x86_64"
+    assert pretty_gl.renderer == "OpenGL"
+    assert (
+        pretty_gl.gl
+        == "Mesa - llvmpipe (LLVM 20.1.2, 256 bits) - 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.2"
+    )
+    assert pretty_gl.glsl == "4.50"
+
+    vk_machine_info = [
+        "xemu_version: 0.8.136",
+        "CPU: ",
+        "OS_Version: Ubuntu 24.04.5 LTS",
+        "GL_VENDOR: Mesa",
+        "GL_RENDERER: llvmpipe (LLVM 20.1.2, 256 bits)",
+        "GL_VERSION: 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.3",
+        "GL_SHADING_LANGUAGE_VERSION: 4.50",
+    ]
+    vk_info = _make_results_info(
+        "xemu-0.8.136",
+        "Linux_x86_64",
+        "vk_Mesa_llvmpipe--gslv_4.50",
+        vk_machine_info,
+        is_vulkan=True,
+    )
+    pretty_vk = PrettyMachineInfo.parse(vk_info)
+    assert pretty_vk.platform == "Linux_x86_64"
+    assert pretty_vk.renderer == "Vulkan"
+
+
+def test_top_level_index_groups_renderers_under_same_platform(tmp_path: Path) -> None:
+    gl_info = _make_results_info(
+        "xemu-0.8.136",
+        "Linux_x86_64",
+        "gl_Mesa_llvmpipe--gslv_4.50",
+        [
+            "CPU: AMD EPYC 9V74 80-Core Processor",
+            "OS_Version: Ubuntu 24.04.4 LTS",
+        ],
+        is_vulkan=False,
+    )
+    vk_info = _make_results_info(
+        "xemu-0.8.136",
+        "Linux_x86_64",
+        "vk_Mesa_llvmpipe--gslv_4.50",
+        [
+            "CPU: ",
+            "OS_Version: Ubuntu 24.04.5 LTS",
+        ],
+        is_vulkan=True,
+    )
+
+    results = {
+        "run_gl": gl_info,
+        "run_vk": vk_info,
+    }
+
+    mock_env = MagicMock()
+    mock_template = MagicMock()
+    mock_template.render.return_value = "<html>mock</html>"
+    mock_env.get_template.return_value = mock_template
+
+    writer = PagesWriter(
+        results=results,
+        env=mock_env,
+        output_dir=str(tmp_path),
+        result_images_base_url="http://test/results",
+        hw_golden_images_base_url="http://test/hw",
+        test_source_base_url="http://test/src",
+        hw_golden_browser_base_url="http://test/hw_browser",
+    )
+
+    writer._write_top_level_index()
+
+    mock_env.get_template.assert_called_with("index.html.j2")
+    render_calls = mock_template.render.call_args_list
+    assert len(render_calls) == 1
+    rendered_groups = render_calls[0].kwargs["emulator_grouped_results"]
+
+    assert "xemu-0.8.136" in rendered_groups
+    # There should only be one platform under xemu-0.8.136: "Linux_x86_64"
+    assert list(rendered_groups["xemu-0.8.136"].keys()) == ["Linux_x86_64"]
+    # Both OpenGL and Vulkan should be nested under Linux_x86_64
+    assert "OpenGL" in rendered_groups["xemu-0.8.136"]["Linux_x86_64"]
+    assert "Vulkan" in rendered_groups["xemu-0.8.136"]["Linux_x86_64"]
