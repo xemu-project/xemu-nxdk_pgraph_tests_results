@@ -1,0 +1,12 @@
+xemu_version: 0.8.48
+xemu_branch: master
+xemu_commit: ebec5e30284a6ef2c55fe4f1d1c123eb88c19a74
+xemu_date: Tue Apr  8 23:28:03 UTC 2025
+xemu_settings_get_base_path: base path: /mnt/linux_data/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-v0.8.48-x86_64.AppImage.home/.local/share/xemu/xemu/
+xemu_settings_get_path: config path: /mnt/linux_data/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-v0.8.48-x86_64.AppImage.home/.local/share/xemu/xemu/xemu.toml
+CPU: Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz
+OS_Version: Ubuntu 24.04.2 LTS
+GL_VENDOR: NVIDIA Corporation
+GL_RENDERER: NVIDIA GeForce GTX 1070/PCIe/SSE2
+GL_VERSION: 4.0.0 NVIDIA 570.124.06
+GL_SHADING_LANGUAGE_VERSION: 4.00 NVIDIA via Cg compiler
