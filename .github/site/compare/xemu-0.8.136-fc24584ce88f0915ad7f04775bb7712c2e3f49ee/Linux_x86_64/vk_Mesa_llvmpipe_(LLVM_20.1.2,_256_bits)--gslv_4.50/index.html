@@ -343,7 +343,7 @@
         <h3 id="3D_primitive_LineLoop-inlinearrays-ls">LineLoop-inlinearrays-ls</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">2550.0</div>
+            <div class="value">1513.0</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Draws vertices as a line loop using NV097_INLINE_ARRAY with line smoothing enabled.</p>
@@ -4926,6 +4926,39 @@
 
 
     
+        <h3 id="Antialiasing_tests_CPUWriteIgnoresSurfaceConfig">CPUWriteIgnoresSurfaceConfig</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">24121.0</div>
+            <div class="label">Description</div>
+            <div class="value">
+                <p>This test verifies that direct writes to VRAM bypass any surface configuration. It sets up a texture surface with antialiasing enabled, then writes directly to texture memory and renders the texture to the screen. It is expected that antialiasing has no effect.</p>
+            </div>
+        </div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Antialiasing_tests/CPUWriteIgnoresSurfaceConfig-diff.png" alt="Diff result for Antialiasing_tests::CPUWriteIgnoresSurfaceConfig" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Antialiasing_tests/CPUWriteIgnoresSurfaceConfig.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Antialiasing_tests/CPUWriteIgnoresSurfaceConfig.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Antialiasing_tests/CPUWriteIgnoresSurfaceConfig.png" alt="Source image for Antialiasing_tests::CPUWriteIgnoresSurfaceConfig" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Antialiasing_tests/CPUWriteIgnoresSurfaceConfig.png" alt="Golden image for Antialiasing_tests::CPUWriteIgnoresSurfaceConfig" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
         <h3 id="Antialiasing_tests_FBSurfaceWithCenterCorner2">FBSurfaceWithCenterCorner2</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
@@ -4957,7 +4990,7 @@
         <h3 id="Antialiasing_tests_GPUAAWriteAfterCPUWrite">GPUAAWriteAfterCPUWrite</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">134.0</div></div>
+            <div class="value">138.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -6033,7 +6066,7 @@
         <h3 id="Attrib_float_-NaNq_NaNq">-NaNq_NaNq</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">13636.0</div></div>
+            <div class="value">13684.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -6061,7 +6094,7 @@
         <h3 id="Attrib_float_-NaNs_NaNs">-NaNs_NaNs</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">13696.0</div></div>
+            <div class="value">13744.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -6161,7 +6194,7 @@
         <h3 id="Blend_surface_1-DstAlpha_X_Z1RGB5">1-DstAlpha_X_Z1RGB5</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">32768.0</div>
+            <div class="value">32812.0</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Demonstrates behavior of blend func ADD (1 - DstAlpha) (Zero) with surface mode NV097_SET_SURFACE_FORMAT_COLOR_LE_X1R5G5B5_Z1R5G5B5. The background is initialized to various colors (see labels) via a DIFFUSE quad render. A white quad is then blended on top and the final composition rendered to the backbuffer with alpha forced to 1.0 to display the effect on the color channels.</p>
@@ -6194,7 +6227,7 @@
         <h3 id="Blend_surface_1-DstAlpha_X_ZRGB8">1-DstAlpha_X_ZRGB8</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">59052.0</div>
+            <div class="value">59096.0</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Demonstrates behavior of blend func ADD (1 - DstAlpha) (Zero) with surface mode NV097_SET_SURFACE_FORMAT_COLOR_LE_X8R8G8B8_Z8R8G8B8. The background is initialized to various colors (see labels) via a DIFFUSE quad render. A white quad is then blended on top and the final composition rendered to the backbuffer with alpha forced to 1.0 to display the effect on the color channels.</p>
@@ -6293,7 +6326,7 @@
         <h3 id="Blend_surface_DstAlpha_X_Z1RGB5">DstAlpha_X_Z1RGB5</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">32768.0</div>
+            <div class="value">32812.0</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Demonstrates behavior of blend func ADD (DstAlpha) (Zero) with surface mode NV097_SET_SURFACE_FORMAT_COLOR_LE_X1R5G5B5_Z1R5G5B5. The background is initialized to various colors (see labels) via a DIFFUSE quad render. A white quad is then blended on top and the final composition rendered to the backbuffer with alpha forced to 1.0 to display the effect on the color channels.</p>
@@ -6326,7 +6359,7 @@
         <h3 id="Blend_surface_DstAlpha_X_ZRGB8">DstAlpha_X_ZRGB8</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">59052.0</div>
+            <div class="value">59096.0</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Demonstrates behavior of blend func ADD (DstAlpha) (Zero) with surface mode NV097_SET_SURFACE_FORMAT_COLOR_LE_X8R8G8B8_Z8R8G8B8. The background is initialized to various colors (see labels) via a DIFFUSE quad render. A white quad is then blended on top and the final composition rendered to the backbuffer with alpha forced to 1.0 to display the effect on the color channels.</p>
@@ -9354,6 +9387,39 @@
             </div>
             <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Combiner/CombinerOps.png" alt="Source image for Combiner::CombinerOps" class="image-comparison" data-state="source">
             <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Combiner/CombinerOps.png" alt="Golden image for Combiner::CombinerOps" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Combiner_SignedToUnsignedMapping">SignedToUnsignedMapping</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">2656.0</div>
+            <div class="label">Description</div>
+            <div class="value">
+                <p>Validates behavior when known signed (negative) values are mapped as MAP_UNSIGNED_IDENTITY versus MAP_SIGNED_IDENTITY across intermediate registers, pass-through texture coordinates, and a multi-stage pipeline. Verifies that MAP_UNSIGNED_IDENTITY properly clamps negative values to 0.0 (preserving base colors), while MAP_SIGNED_IDENTITY preserves negative values (allowing subtraction). </p>
+            </div>
+        </div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Combiner/SignedToUnsignedMapping-diff.png" alt="Diff result for Combiner::SignedToUnsignedMapping" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Combiner/SignedToUnsignedMapping.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Combiner/SignedToUnsignedMapping.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Combiner/SignedToUnsignedMapping.png" alt="Source image for Combiner::SignedToUnsignedMapping" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Combiner/SignedToUnsignedMapping.png" alt="Golden image for Combiner::SignedToUnsignedMapping" class="image-comparison" data-state="golden" style="display: none;">
         </div>
         
 
@@ -18456,7 +18522,7 @@
         <h3 id="Image_blit_BlitBeyondWidth">BlitBeyondWidth</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">233225.0</div>
+            <div class="value">234426.0</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Demonstrates the interaction between 0x9F image blit operations and assigned GPU tiles. A blit operation is configured with a target smaller than the source. The target address is set within an active GPU tile such that the blit would extend beyond the end of the tile and a guard value is tested to prove that the blit is clipped to stay within the tile. A similar blit is performed outside of the tile, demonstrating that unprotected blits may overdraw the target region.</p>
@@ -18486,10 +18552,43 @@
         </div>
 
     
+        <h3 id="Image_blit_BlitRenderBlit">BlitRenderBlit</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">10165.0</div>
+            <div class="label">Description</div>
+            <div class="value">
+                <p>Blits an image into a render surface, then performs a 3d render on top of the surface, then another blit on top of the composited two. Finally does a srccopy to blit the finished composition to the framebuffer. Demonstrates apparent incorrect ordering in various versions of xemu.</p>
+            </div>
+        </div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Image_blit/BlitRenderBlit-diff.png" alt="Diff result for Image_blit::BlitRenderBlit" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Image_blit/BlitRenderBlit.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/BlitRenderBlit.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Image_blit/BlitRenderBlit.png" alt="Source image for Image_blit::BlitRenderBlit" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/BlitRenderBlit.png" alt="Golden image for Image_blit::BlitRenderBlit" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
         <h3 id="Image_blit_DirtyOverlappedDestSurf">DirtyOverlappedDestSurf</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">46464.0</div>
+            <div class="value">59776.0</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Performs a 3d render into the backbuffer, then a 2D srccopy that completely overwrites it. Finally performs another 3d render, demonstrating incorrect behavior in various versions of xemu.</p>
@@ -18519,10 +18618,183 @@
         </div>
 
     
+        <h3 id="Image_blit_ImgBlt_BLENDAND_XRGB_B44400000">ImgBlt_BLENDAND_XRGB_B44400000</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">2946.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Image_blit/ImgBlt_BLENDAND_XRGB_B44400000-diff.png" alt="Diff result for Image_blit::ImgBlt_BLENDAND_XRGB_B44400000" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Image_blit/ImgBlt_BLENDAND_XRGB_B44400000.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_BLENDAND_XRGB_B44400000.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Image_blit/ImgBlt_BLENDAND_XRGB_B44400000.png" alt="Source image for Image_blit::ImgBlt_BLENDAND_XRGB_B44400000" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_BLENDAND_XRGB_B44400000.png" alt="Golden image for Image_blit::ImgBlt_BLENDAND_XRGB_B44400000" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Image_blit_ImgBlt_BLENDAND_XRGB_B444FFFFF">ImgBlt_BLENDAND_XRGB_B444FFFFF</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">2946.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Image_blit/ImgBlt_BLENDAND_XRGB_B444FFFFF-diff.png" alt="Diff result for Image_blit::ImgBlt_BLENDAND_XRGB_B444FFFFF" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Image_blit/ImgBlt_BLENDAND_XRGB_B444FFFFF.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_BLENDAND_XRGB_B444FFFFF.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Image_blit/ImgBlt_BLENDAND_XRGB_B444FFFFF.png" alt="Source image for Image_blit::ImgBlt_BLENDAND_XRGB_B444FFFFF" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_BLENDAND_XRGB_B444FFFFF.png" alt="Golden image for Image_blit::ImgBlt_BLENDAND_XRGB_B444FFFFF" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Image_blit_ImgBlt_BLENDAND_XRGB_B66800000">ImgBlt_BLENDAND_XRGB_B66800000</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">5632.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Image_blit/ImgBlt_BLENDAND_XRGB_B66800000-diff.png" alt="Diff result for Image_blit::ImgBlt_BLENDAND_XRGB_B66800000" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Image_blit/ImgBlt_BLENDAND_XRGB_B66800000.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_BLENDAND_XRGB_B66800000.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Image_blit/ImgBlt_BLENDAND_XRGB_B66800000.png" alt="Source image for Image_blit::ImgBlt_BLENDAND_XRGB_B66800000" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_BLENDAND_XRGB_B66800000.png" alt="Golden image for Image_blit::ImgBlt_BLENDAND_XRGB_B66800000" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Image_blit_ImgBlt_BLENDAND_XRGB_B7F800000">ImgBlt_BLENDAND_XRGB_B7F800000</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">5632.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Image_blit/ImgBlt_BLENDAND_XRGB_B7F800000-diff.png" alt="Diff result for Image_blit::ImgBlt_BLENDAND_XRGB_B7F800000" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Image_blit/ImgBlt_BLENDAND_XRGB_B7F800000.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_BLENDAND_XRGB_B7F800000.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Image_blit/ImgBlt_BLENDAND_XRGB_B7F800000.png" alt="Source image for Image_blit::ImgBlt_BLENDAND_XRGB_B7F800000" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_BLENDAND_XRGB_B7F800000.png" alt="Golden image for Image_blit::ImgBlt_BLENDAND_XRGB_B7F800000" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Image_blit_ImgBlt_BLENDAND_XRGB_B7FFFFFFF">ImgBlt_BLENDAND_XRGB_B7FFFFFFF</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">5632.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Image_blit/ImgBlt_BLENDAND_XRGB_B7FFFFFFF-diff.png" alt="Diff result for Image_blit::ImgBlt_BLENDAND_XRGB_B7FFFFFFF" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Image_blit/ImgBlt_BLENDAND_XRGB_B7FFFFFFF.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_BLENDAND_XRGB_B7FFFFFFF.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Image_blit/ImgBlt_BLENDAND_XRGB_B7FFFFFFF.png" alt="Source image for Image_blit::ImgBlt_BLENDAND_XRGB_B7FFFFFFF" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_BLENDAND_XRGB_B7FFFFFFF.png" alt="Golden image for Image_blit::ImgBlt_BLENDAND_XRGB_B7FFFFFFF" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Image_blit_ImgBlt_Clip_0_0_640_480">ImgBlt_Clip_0_0_640_480</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">5632.0</div>
+            <div class="label">Description</div>
+            <div class="value">
+                <p>Demonstrates expected behavior of the contextual clip rectangle (class 0x19) during image blits.</p>
+            </div>
+        </div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Image_blit/ImgBlt_Clip_0_0_640_480-diff.png" alt="Diff result for Image_blit::ImgBlt_Clip_0_0_640_480" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Image_blit/ImgBlt_Clip_0_0_640_480.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_Clip_0_0_640_480.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Image_blit/ImgBlt_Clip_0_0_640_480.png" alt="Source image for Image_blit::ImgBlt_Clip_0_0_640_480" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_Clip_0_0_640_480.png" alt="Golden image for Image_blit::ImgBlt_Clip_0_0_640_480" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
         <h3 id="Image_blit_ImgBlt_Clip_300_200_16_24">ImgBlt_Clip_300_200_16_24</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">13248.0</div></div>
+            <div class="value">14139.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -18550,7 +18822,7 @@
         <h3 id="Image_blit_ImgBlt_Clip_320_240_0_0">ImgBlt_Clip_320_240_0_0</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">13632.0</div></div>
+            <div class="value">14203.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -18578,7 +18850,7 @@
         <h3 id="Image_blit_ImgBlt_Clip_320_240_0_10">ImgBlt_Clip_320_240_0_10</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">13632.0</div></div>
+            <div class="value">14203.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -18606,7 +18878,7 @@
         <h3 id="Image_blit_ImgBlt_Clip_320_240_1_1">ImgBlt_Clip_320_240_1_1</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">13631.0</div></div>
+            <div class="value">14202.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -18634,7 +18906,7 @@
         <h3 id="Image_blit_ImgBlt_Clip_320_240_640_480">ImgBlt_Clip_320_240_640_480</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">10780.0</div></div>
+            <div class="value">11351.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -18662,7 +18934,7 @@
         <h3 id="Image_blit_ImgBlt_Clip_320_240_64_40">ImgBlt_Clip_320_240_64_40</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">11564.0</div></div>
+            <div class="value">12135.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -18681,6 +18953,62 @@
             </div>
             <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Image_blit/ImgBlt_Clip_320_240_64_40.png" alt="Source image for Image_blit::ImgBlt_Clip_320_240_64_40" class="image-comparison" data-state="source">
             <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_Clip_320_240_64_40.png" alt="Golden image for Image_blit::ImgBlt_Clip_320_240_64_40" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Image_blit_ImgBlt_SRCCOPY_ARGB_B00000000">ImgBlt_SRCCOPY_ARGB_B00000000</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">5632.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Image_blit/ImgBlt_SRCCOPY_ARGB_B00000000-diff.png" alt="Diff result for Image_blit::ImgBlt_SRCCOPY_ARGB_B00000000" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Image_blit/ImgBlt_SRCCOPY_ARGB_B00000000.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_SRCCOPY_ARGB_B00000000.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Image_blit/ImgBlt_SRCCOPY_ARGB_B00000000.png" alt="Source image for Image_blit::ImgBlt_SRCCOPY_ARGB_B00000000" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_SRCCOPY_ARGB_B00000000.png" alt="Golden image for Image_blit::ImgBlt_SRCCOPY_ARGB_B00000000" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Image_blit_ImgBlt_SRCCOPY_XRGB_B00000000">ImgBlt_SRCCOPY_XRGB_B00000000</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">5632.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Image_blit/ImgBlt_SRCCOPY_XRGB_B00000000-diff.png" alt="Diff result for Image_blit::ImgBlt_SRCCOPY_XRGB_B00000000" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Image_blit/ImgBlt_SRCCOPY_XRGB_B00000000.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_SRCCOPY_XRGB_B00000000.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Image_blit/ImgBlt_SRCCOPY_XRGB_B00000000.png" alt="Source image for Image_blit::ImgBlt_SRCCOPY_XRGB_B00000000" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_SRCCOPY_XRGB_B00000000.png" alt="Golden image for Image_blit::ImgBlt_SRCCOPY_XRGB_B00000000" class="image-comparison" data-state="golden" style="display: none;">
         </div>
         
 
@@ -27818,6 +28146,34 @@
         </div>
 
     
+        <h3 id="Stencil_Stencil_ZERO">Stencil_ZERO</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">40000.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Stencil/Stencil_ZERO-diff.png" alt="Diff result for Stencil::Stencil_ZERO" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Stencil/Stencil_ZERO.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Stencil/Stencil_ZERO.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Stencil/Stencil_ZERO.png" alt="Source image for Stencil::Stencil_ZERO" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Stencil/Stencil_ZERO.png" alt="Golden image for Stencil::Stencil_ZERO" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
         <h3 id="Stencil_Stencil_ZERO_DT">Stencil_ZERO_DT</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
@@ -29008,6 +29364,426 @@
         </div>
 
     
+        <h3 id="Texgen_with_texture_matrix_PassThrough_Disabled_Negate">PassThrough_Disabled_Negate</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">130713.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_Disabled_Negate-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_Disabled_Negate" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_Disabled_Negate.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_Disabled_Negate.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_Disabled_Negate.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_Disabled_Negate" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_Disabled_Negate.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_Disabled_Negate" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_Disabled_RotateX">PassThrough_Disabled_RotateX</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">127791.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_Disabled_RotateX-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_Disabled_RotateX" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_Disabled_RotateX.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_Disabled_RotateX.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_Disabled_RotateX.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_Disabled_RotateX" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_Disabled_RotateX.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_Disabled_RotateX" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_Disabled_RotateZ">PassThrough_Disabled_RotateZ</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">129208.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_Disabled_RotateZ-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_Disabled_RotateZ" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_Disabled_RotateZ.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_Disabled_RotateZ.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_Disabled_RotateZ.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_Disabled_RotateZ" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_Disabled_RotateZ.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_Disabled_RotateZ" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_EyeLinear_Negate">PassThrough_EyeLinear_Negate</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">130713.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_EyeLinear_Negate-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_EyeLinear_Negate" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_EyeLinear_Negate.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_EyeLinear_Negate.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_EyeLinear_Negate.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_EyeLinear_Negate" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_EyeLinear_Negate.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_EyeLinear_Negate" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_EyeLinear_RotateX">PassThrough_EyeLinear_RotateX</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">127791.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_EyeLinear_RotateX-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_EyeLinear_RotateX" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_EyeLinear_RotateX.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_EyeLinear_RotateX.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_EyeLinear_RotateX.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_EyeLinear_RotateX" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_EyeLinear_RotateX.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_EyeLinear_RotateX" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_EyeLinear_RotateZ">PassThrough_EyeLinear_RotateZ</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">129208.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_EyeLinear_RotateZ-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_EyeLinear_RotateZ" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_EyeLinear_RotateZ.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_EyeLinear_RotateZ.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_EyeLinear_RotateZ.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_EyeLinear_RotateZ" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_EyeLinear_RotateZ.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_EyeLinear_RotateZ" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_NormalMap_Negate">PassThrough_NormalMap_Negate</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">130713.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_NormalMap_Negate-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_NormalMap_Negate" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_NormalMap_Negate.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_NormalMap_Negate.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_NormalMap_Negate.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_NormalMap_Negate" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_NormalMap_Negate.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_NormalMap_Negate" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_NormalMap_RotateX">PassThrough_NormalMap_RotateX</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">127791.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_NormalMap_RotateX-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_NormalMap_RotateX" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_NormalMap_RotateX.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_NormalMap_RotateX.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_NormalMap_RotateX.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_NormalMap_RotateX" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_NormalMap_RotateX.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_NormalMap_RotateX" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_NormalMap_RotateZ">PassThrough_NormalMap_RotateZ</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">129208.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_NormalMap_RotateZ-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_NormalMap_RotateZ" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_NormalMap_RotateZ.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_NormalMap_RotateZ.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_NormalMap_RotateZ.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_NormalMap_RotateZ" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_NormalMap_RotateZ.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_NormalMap_RotateZ" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_ObjectLinear_Negate">PassThrough_ObjectLinear_Negate</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">130713.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_ObjectLinear_Negate-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_ObjectLinear_Negate" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ObjectLinear_Negate.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ObjectLinear_Negate.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ObjectLinear_Negate.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_ObjectLinear_Negate" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ObjectLinear_Negate.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_ObjectLinear_Negate" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_ObjectLinear_RotateX">PassThrough_ObjectLinear_RotateX</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">127791.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_ObjectLinear_RotateX-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_ObjectLinear_RotateX" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ObjectLinear_RotateX.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ObjectLinear_RotateX.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ObjectLinear_RotateX.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_ObjectLinear_RotateX" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ObjectLinear_RotateX.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_ObjectLinear_RotateX" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_ObjectLinear_RotateZ">PassThrough_ObjectLinear_RotateZ</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">129208.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_ObjectLinear_RotateZ-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_ObjectLinear_RotateZ" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ObjectLinear_RotateZ.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ObjectLinear_RotateZ.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ObjectLinear_RotateZ.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_ObjectLinear_RotateZ" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ObjectLinear_RotateZ.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_ObjectLinear_RotateZ" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_ReflectionMap_Negate">PassThrough_ReflectionMap_Negate</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">130713.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_ReflectionMap_Negate-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_ReflectionMap_Negate" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ReflectionMap_Negate.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ReflectionMap_Negate.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ReflectionMap_Negate.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_ReflectionMap_Negate" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ReflectionMap_Negate.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_ReflectionMap_Negate" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_ReflectionMap_RotateX">PassThrough_ReflectionMap_RotateX</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">127791.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_ReflectionMap_RotateX-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_ReflectionMap_RotateX" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ReflectionMap_RotateX.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ReflectionMap_RotateX.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ReflectionMap_RotateX.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_ReflectionMap_RotateX" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ReflectionMap_RotateX.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_ReflectionMap_RotateX" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_ReflectionMap_RotateZ">PassThrough_ReflectionMap_RotateZ</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">129208.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_ReflectionMap_RotateZ-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_ReflectionMap_RotateZ" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ReflectionMap_RotateZ.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ReflectionMap_RotateZ.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ReflectionMap_RotateZ.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_ReflectionMap_RotateZ" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ReflectionMap_RotateZ.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_ReflectionMap_RotateZ" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
 
 
     <h2><a href="Texture_2D_as_cubemap.html">Texture_2D_as_cubemap</a></h2>
@@ -29304,7 +30080,7 @@
         <h3 id="Texture_border_2D_BorderTex_SZ">2D_BorderTex_SZ</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">13470.0</div></div>
+            <div class="value">12442.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -29398,7 +30174,7 @@
         <h3 id="Texture_border_color_TextureBorderColor">TextureBorderColor</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">25444.0</div>
+            <div class="value">25449.0</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Demonstrates that texture format has no effect on texture border color. </p>
@@ -32024,6 +32800,351 @@
             </div>
             <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Texture_perspective_enable/TexPerspective_Untextured.png" alt="Source image for Texture_perspective_enable::TexPerspective_Untextured" class="image-comparison" data-state="source">
             <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_perspective_enable/TexPerspective_Untextured.png" alt="Golden image for Texture_perspective_enable::TexPerspective_Untextured" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+
+
+    <h2><a href="Texture_projective_2D.html">Texture_projective_2D</a></h2>
+    <div class="label-value-grid">
+        <div class="label">Description</div>
+        <div class="value">
+            <div class="test-description-line">Tests 2D projective texturing (STAGE_2D_PROJECTIVE / PS_TEXTUREMODES_PROJECTIVE2D) with explicit Q coordinate interpolation across quads and triangles.</div>
+        </div>
+        
+        <div class="label">Suite class def</div>
+        <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/texture_projective_2d_tests.h#L18">src/tests/texture_projective_2d_tests.h</a></div>
+    </div>
+
+
+    
+        <h3 id="Texture_projective_2D_ExplicitQ_HorizontalCross_Bitri">ExplicitQ_HorizontalCross_Bitri</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">158.0</div>
+            <div class="label">Description</div>
+            <div class="value">
+                <p>Evaluates the horizontal zero-crossing test triangulated as two triangles.</p>
+            </div>
+        </div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texture_projective_2D/ExplicitQ_HorizontalCross_Bitri-diff.png" alt="Diff result for Texture_projective_2D::ExplicitQ_HorizontalCross_Bitri" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_projective_2D/ExplicitQ_HorizontalCross_Bitri.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_projective_2D/ExplicitQ_HorizontalCross_Bitri.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_projective_2D/ExplicitQ_HorizontalCross_Bitri.png" alt="Source image for Texture_projective_2D::ExplicitQ_HorizontalCross_Bitri" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_projective_2D/ExplicitQ_HorizontalCross_Bitri.png" alt="Golden image for Texture_projective_2D::ExplicitQ_HorizontalCross_Bitri" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texture_projective_2D_ExplicitQ_HorizontalCross_Quad">ExplicitQ_HorizontalCross_Quad</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">266.0</div>
+            <div class="label">Description</div>
+            <div class="value">
+                <p>Evaluates projective coordinate division across a horizontal zero-crossing on a quad:</p>
+            </div>
+        </div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texture_projective_2D/ExplicitQ_HorizontalCross_Quad-diff.png" alt="Diff result for Texture_projective_2D::ExplicitQ_HorizontalCross_Quad" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_projective_2D/ExplicitQ_HorizontalCross_Quad.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_projective_2D/ExplicitQ_HorizontalCross_Quad.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_projective_2D/ExplicitQ_HorizontalCross_Quad.png" alt="Source image for Texture_projective_2D::ExplicitQ_HorizontalCross_Quad" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_projective_2D/ExplicitQ_HorizontalCross_Quad.png" alt="Golden image for Texture_projective_2D::ExplicitQ_HorizontalCross_Quad" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texture_projective_2D_ExplicitQ_MixedCorners_Bitri">ExplicitQ_MixedCorners_Bitri</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">436.0</div>
+            <div class="label">Description</div>
+            <div class="value">
+                <p>Evaluates the mixed corner Q configuration triangulated as two triangles.</p>
+            </div>
+        </div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texture_projective_2D/ExplicitQ_MixedCorners_Bitri-diff.png" alt="Diff result for Texture_projective_2D::ExplicitQ_MixedCorners_Bitri" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_projective_2D/ExplicitQ_MixedCorners_Bitri.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_projective_2D/ExplicitQ_MixedCorners_Bitri.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_projective_2D/ExplicitQ_MixedCorners_Bitri.png" alt="Source image for Texture_projective_2D::ExplicitQ_MixedCorners_Bitri" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_projective_2D/ExplicitQ_MixedCorners_Bitri.png" alt="Golden image for Texture_projective_2D::ExplicitQ_MixedCorners_Bitri" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texture_projective_2D_ExplicitQ_OpposingCorners_Bitri">ExplicitQ_OpposingCorners_Bitri</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">1166.0</div>
+            <div class="label">Description</div>
+            <div class="value">
+                <p>Evaluates the saddle-shaped Q surface triangulated as two triangles.</p>
+            </div>
+        </div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texture_projective_2D/ExplicitQ_OpposingCorners_Bitri-diff.png" alt="Diff result for Texture_projective_2D::ExplicitQ_OpposingCorners_Bitri" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_projective_2D/ExplicitQ_OpposingCorners_Bitri.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_projective_2D/ExplicitQ_OpposingCorners_Bitri.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_projective_2D/ExplicitQ_OpposingCorners_Bitri.png" alt="Source image for Texture_projective_2D::ExplicitQ_OpposingCorners_Bitri" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_projective_2D/ExplicitQ_OpposingCorners_Bitri.png" alt="Golden image for Texture_projective_2D::ExplicitQ_OpposingCorners_Bitri" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texture_projective_2D_ExplicitQ_OpposingCorners_Quad">ExplicitQ_OpposingCorners_Quad</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">1241.0</div>
+            <div class="label">Description</div>
+            <div class="value">
+                <p>Evaluates projective coordinate division on a saddle-shaped Q surface:</p>
+            </div>
+        </div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texture_projective_2D/ExplicitQ_OpposingCorners_Quad-diff.png" alt="Diff result for Texture_projective_2D::ExplicitQ_OpposingCorners_Quad" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_projective_2D/ExplicitQ_OpposingCorners_Quad.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_projective_2D/ExplicitQ_OpposingCorners_Quad.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_projective_2D/ExplicitQ_OpposingCorners_Quad.png" alt="Source image for Texture_projective_2D::ExplicitQ_OpposingCorners_Quad" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_projective_2D/ExplicitQ_OpposingCorners_Quad.png" alt="Golden image for Texture_projective_2D::ExplicitQ_OpposingCorners_Quad" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texture_projective_2D_ExplicitQ_UniformSigns">ExplicitQ_UniformSigns</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">1248.0</div>
+            <div class="label">Description</div>
+            <div class="value">
+                <p>Evaluates constant Q values across 5 quads per wrap mode:</p>
+            </div>
+        </div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texture_projective_2D/ExplicitQ_UniformSigns-diff.png" alt="Diff result for Texture_projective_2D::ExplicitQ_UniformSigns" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_projective_2D/ExplicitQ_UniformSigns.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_projective_2D/ExplicitQ_UniformSigns.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_projective_2D/ExplicitQ_UniformSigns.png" alt="Source image for Texture_projective_2D::ExplicitQ_UniformSigns" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_projective_2D/ExplicitQ_UniformSigns.png" alt="Golden image for Texture_projective_2D::ExplicitQ_UniformSigns" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texture_projective_2D_ExplicitQ_VerticalCross_Bitri">ExplicitQ_VerticalCross_Bitri</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">1028.0</div>
+            <div class="label">Description</div>
+            <div class="value">
+                <p>Evaluates the vertical zero-crossing test triangulated as two triangles.</p>
+            </div>
+        </div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texture_projective_2D/ExplicitQ_VerticalCross_Bitri-diff.png" alt="Diff result for Texture_projective_2D::ExplicitQ_VerticalCross_Bitri" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_projective_2D/ExplicitQ_VerticalCross_Bitri.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_projective_2D/ExplicitQ_VerticalCross_Bitri.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_projective_2D/ExplicitQ_VerticalCross_Bitri.png" alt="Source image for Texture_projective_2D::ExplicitQ_VerticalCross_Bitri" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_projective_2D/ExplicitQ_VerticalCross_Bitri.png" alt="Golden image for Texture_projective_2D::ExplicitQ_VerticalCross_Bitri" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texture_projective_2D_ExplicitQ_VerticalCross_Quad">ExplicitQ_VerticalCross_Quad</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">1023.0</div>
+            <div class="label">Description</div>
+            <div class="value">
+                <p>Evaluates projective coordinate division across a vertical zero-crossing on a quad:</p>
+            </div>
+        </div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texture_projective_2D/ExplicitQ_VerticalCross_Quad-diff.png" alt="Diff result for Texture_projective_2D::ExplicitQ_VerticalCross_Quad" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_projective_2D/ExplicitQ_VerticalCross_Quad.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_projective_2D/ExplicitQ_VerticalCross_Quad.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_projective_2D/ExplicitQ_VerticalCross_Quad.png" alt="Source image for Texture_projective_2D::ExplicitQ_VerticalCross_Quad" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_projective_2D/ExplicitQ_VerticalCross_Quad.png" alt="Golden image for Texture_projective_2D::ExplicitQ_VerticalCross_Quad" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texture_projective_2D_ExplicitQ_ZeroCorner_Bitri">ExplicitQ_ZeroCorner_Bitri</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">3154.0</div>
+            <div class="label">Description</div>
+            <div class="value">
+                <p>Evaluates the single zero corner configuration triangulated as two triangles.</p>
+            </div>
+        </div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texture_projective_2D/ExplicitQ_ZeroCorner_Bitri-diff.png" alt="Diff result for Texture_projective_2D::ExplicitQ_ZeroCorner_Bitri" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_projective_2D/ExplicitQ_ZeroCorner_Bitri.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_projective_2D/ExplicitQ_ZeroCorner_Bitri.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_projective_2D/ExplicitQ_ZeroCorner_Bitri.png" alt="Source image for Texture_projective_2D::ExplicitQ_ZeroCorner_Bitri" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_projective_2D/ExplicitQ_ZeroCorner_Bitri.png" alt="Golden image for Texture_projective_2D::ExplicitQ_ZeroCorner_Bitri" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texture_projective_2D_ExplicitQ_ZeroCorner_Quad">ExplicitQ_ZeroCorner_Quad</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">2356.0</div>
+            <div class="label">Description</div>
+            <div class="value">
+                <p>Evaluates projective division with three corners at q = 1.0 and BL corner at q = 0.0:</p>
+            </div>
+        </div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texture_projective_2D/ExplicitQ_ZeroCorner_Quad-diff.png" alt="Diff result for Texture_projective_2D::ExplicitQ_ZeroCorner_Quad" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_projective_2D/ExplicitQ_ZeroCorner_Quad.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_projective_2D/ExplicitQ_ZeroCorner_Quad.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_projective_2D/ExplicitQ_ZeroCorner_Quad.png" alt="Source image for Texture_projective_2D::ExplicitQ_ZeroCorner_Quad" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_projective_2D/ExplicitQ_ZeroCorner_Quad.png" alt="Golden image for Texture_projective_2D::ExplicitQ_ZeroCorner_Quad" class="image-comparison" data-state="golden" style="display: none;">
         </div>
         
 
@@ -34793,6 +35914,62 @@
             </div>
             <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Vertex_shader_rounding_tests/Compositing_2.png" alt="Source image for Vertex_shader_rounding_tests::Compositing_2" class="image-comparison" data-state="source">
             <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/Compositing_2.png" alt="Golden image for Vertex_shader_rounding_tests::Compositing_2" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Vertex_shader_rounding_tests_GeometrySubscreen_0.5625">GeometrySubscreen_0.5625</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">102.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_rounding_tests/GeometrySubscreen_0.5625-diff.png" alt="Diff result for Vertex_shader_rounding_tests::GeometrySubscreen_0.5625" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Vertex_shader_rounding_tests/GeometrySubscreen_0.5625.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/GeometrySubscreen_0.5625.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Vertex_shader_rounding_tests/GeometrySubscreen_0.5625.png" alt="Source image for Vertex_shader_rounding_tests::GeometrySubscreen_0.5625" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/GeometrySubscreen_0.5625.png" alt="Golden image for Vertex_shader_rounding_tests::GeometrySubscreen_0.5625" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Vertex_shader_rounding_tests_GeometrySubscreen_1.0000">GeometrySubscreen_1.0000</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">101.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_rounding_tests/GeometrySubscreen_1.0000-diff.png" alt="Diff result for Vertex_shader_rounding_tests::GeometrySubscreen_1.0000" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Vertex_shader_rounding_tests/GeometrySubscreen_1.0000.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/GeometrySubscreen_1.0000.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Vertex_shader_rounding_tests/GeometrySubscreen_1.0000.png" alt="Source image for Vertex_shader_rounding_tests::GeometrySubscreen_1.0000" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/GeometrySubscreen_1.0000.png" alt="Golden image for Vertex_shader_rounding_tests::GeometrySubscreen_1.0000" class="image-comparison" data-state="golden" style="display: none;">
         </div>
         
 
@@ -47191,7 +48368,7 @@
         <h3 id="W_param_ff_w_zero_inf__bitri_w-0.25">ff_w_zero_inf__bitri_w-0.25</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">193.0</div></div>
+            <div class="value">235.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -47219,7 +48396,7 @@
         <h3 id="W_param_ff_w_zero_inf__bitri_w-0.50">ff_w_zero_inf__bitri_w-0.50</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">272.0</div></div>
+            <div class="value">311.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -47247,7 +48424,7 @@
         <h3 id="W_param_ff_w_zero_inf__bitri_w-0.96e-34">ff_w_zero_inf__bitri_w-0.96e-34</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">148903.0</div></div>
+            <div class="value">148913.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -47275,7 +48452,7 @@
         <h3 id="W_param_ff_w_zero_inf__bitri_w-1.00">ff_w_zero_inf__bitri_w-1.00</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">449.0</div></div>
+            <div class="value">534.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -47303,7 +48480,7 @@
         <h3 id="W_param_ff_w_zero_inf__bitri_w-1.50e-36">ff_w_zero_inf__bitri_w-1.50e-36</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">182852.0</div></div>
+            <div class="value">182862.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -47331,7 +48508,7 @@
         <h3 id="W_param_ff_w_zero_inf__bitri_w-1.88e-37">ff_w_zero_inf__bitri_w-1.88e-37</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">182884.0</div></div>
+            <div class="value">182894.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -47359,7 +48536,7 @@
         <h3 id="W_param_ff_w_zero_inf__bitri_w-2.00">ff_w_zero_inf__bitri_w-2.00</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">447.0</div></div>
+            <div class="value">532.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -47387,7 +48564,7 @@
         <h3 id="W_param_ff_w_zero_inf__bitri_w-3.08e-33">ff_w_zero_inf__bitri_w-3.08e-33</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">148968.0</div></div>
+            <div class="value">148978.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -47415,7 +48592,7 @@
         <h3 id="W_param_ff_w_zero_inf__bitri_w-3.76e-37">ff_w_zero_inf__bitri_w-3.76e-37</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">182881.0</div></div>
+            <div class="value">182891.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -47443,7 +48620,7 @@
         <h3 id="W_param_ff_w_zero_inf__bitri_w-4.00">ff_w_zero_inf__bitri_w-4.00</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">447.0</div></div>
+            <div class="value">532.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -47471,7 +48648,7 @@
         <h3 id="W_param_ff_w_zero_inf__bitri_w-7.52e-37">ff_w_zero_inf__bitri_w-7.52e-37</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">182975.0</div></div>
+            <div class="value">182985.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -47555,7 +48732,7 @@
         <h3 id="W_param_ff_w_zero_inf__bitri_w0.25">ff_w_zero_inf__bitri_w0.25</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">182.0</div></div>
+            <div class="value">213.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -47748,6 +48925,34 @@
         </div>
 
     
+        <h3 id="W_param_ff_w_zero_inf__quad_w-0.50">ff_w_zero_inf__quad_w-0.50</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">128.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/W_param/ff_w_zero_inf__quad_w-0.50-diff.png" alt="Diff result for W_param::ff_w_zero_inf__quad_w-0.50" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/W_param/ff_w_zero_inf__quad_w-0.50.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/W_param/ff_w_zero_inf__quad_w-0.50.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/W_param/ff_w_zero_inf__quad_w-0.50.png" alt="Source image for W_param::ff_w_zero_inf__quad_w-0.50" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/W_param/ff_w_zero_inf__quad_w-0.50.png" alt="Golden image for W_param::ff_w_zero_inf__quad_w-0.50" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
         <h3 id="W_param_ff_w_zero_inf__quad_w-1.50e-36">ff_w_zero_inf__quad_w-1.50e-36</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
@@ -47888,6 +49093,34 @@
         </div>
 
     
+        <h3 id="W_param_ff_w_zero_inf__quad_w0.25">ff_w_zero_inf__quad_w0.25</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">100.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/W_param/ff_w_zero_inf__quad_w0.25-diff.png" alt="Diff result for W_param::ff_w_zero_inf__quad_w0.25" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/W_param/ff_w_zero_inf__quad_w0.25.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/W_param/ff_w_zero_inf__quad_w0.25.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/W_param/ff_w_zero_inf__quad_w0.25.png" alt="Source image for W_param::ff_w_zero_inf__quad_w0.25" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/W_param/ff_w_zero_inf__quad_w0.25.png" alt="Golden image for W_param::ff_w_zero_inf__quad_w0.25" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
         <h3 id="W_param_ff_w_zero_inf__quad_winf">ff_w_zero_inf__quad_winf</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
@@ -47919,7 +49152,7 @@
         <h3 id="W_param_prog_w_zero_inf__bitri_w-0.00">prog_w_zero_inf__bitri_w-0.00</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">264081.0</div></div>
+            <div class="value">264091.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -47947,7 +49180,7 @@
         <h3 id="W_param_prog_w_zero_inf__bitri_w-0.25">prog_w_zero_inf__bitri_w-0.25</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">184.0</div></div>
+            <div class="value">239.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -47975,7 +49208,7 @@
         <h3 id="W_param_prog_w_zero_inf__bitri_w-0.50">prog_w_zero_inf__bitri_w-0.50</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">564.0</div></div>
+            <div class="value">636.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -48003,7 +49236,7 @@
         <h3 id="W_param_prog_w_zero_inf__bitri_w-0.96e-34">prog_w_zero_inf__bitri_w-0.96e-34</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">715.0</div></div>
+            <div class="value">775.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -48031,7 +49264,7 @@
         <h3 id="W_param_prog_w_zero_inf__bitri_w-1.00">prog_w_zero_inf__bitri_w-1.00</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">1813.0</div></div>
+            <div class="value">1957.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -48059,7 +49292,7 @@
         <h3 id="W_param_prog_w_zero_inf__bitri_w-1.50e-36">prog_w_zero_inf__bitri_w-1.50e-36</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">715.0</div></div>
+            <div class="value">775.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -48087,7 +49320,7 @@
         <h3 id="W_param_prog_w_zero_inf__bitri_w-1.88e-37">prog_w_zero_inf__bitri_w-1.88e-37</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">716.0</div></div>
+            <div class="value">776.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -48115,7 +49348,7 @@
         <h3 id="W_param_prog_w_zero_inf__bitri_w-2.00">prog_w_zero_inf__bitri_w-2.00</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">1813.0</div></div>
+            <div class="value">1957.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -48143,7 +49376,7 @@
         <h3 id="W_param_prog_w_zero_inf__bitri_w-3.08e-33">prog_w_zero_inf__bitri_w-3.08e-33</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">715.0</div></div>
+            <div class="value">775.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -48171,7 +49404,7 @@
         <h3 id="W_param_prog_w_zero_inf__bitri_w-3.76e-37">prog_w_zero_inf__bitri_w-3.76e-37</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">715.0</div></div>
+            <div class="value">775.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -48199,7 +49432,7 @@
         <h3 id="W_param_prog_w_zero_inf__bitri_w-4.00">prog_w_zero_inf__bitri_w-4.00</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">1814.0</div></div>
+            <div class="value">1958.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -48227,7 +49460,7 @@
         <h3 id="W_param_prog_w_zero_inf__bitri_w-7.52e-37">prog_w_zero_inf__bitri_w-7.52e-37</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">715.0</div></div>
+            <div class="value">775.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -48255,7 +49488,7 @@
         <h3 id="W_param_prog_w_zero_inf__bitri_w-inf">prog_w_zero_inf__bitri_w-inf</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">1824.0</div></div>
+            <div class="value">1859.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -48367,7 +49600,7 @@
         <h3 id="W_param_rcc_w_zero_inf__z-0.00">rcc_w_zero_inf__z-0.00</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">125892.0</div></div>
+            <div class="value">125902.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -48395,7 +49628,7 @@
         <h3 id="W_param_rcc_w_zero_inf__z-0.25">rcc_w_zero_inf__z-0.25</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">401.0</div></div>
+            <div class="value">497.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -48423,7 +49656,7 @@
         <h3 id="W_param_rcc_w_zero_inf__z-0.50">rcc_w_zero_inf__z-0.50</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">1758.0</div></div>
+            <div class="value">1854.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -48479,7 +49712,7 @@
         <h3 id="W_param_rcc_w_zero_inf__z-1.50e-36">rcc_w_zero_inf__z-1.50e-36</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">126312.0</div></div>
+            <div class="value">126329.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -48507,7 +49740,7 @@
         <h3 id="W_param_rcc_w_zero_inf__z-1.88e-37">rcc_w_zero_inf__z-1.88e-37</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">126322.0</div></div>
+            <div class="value">126339.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -48563,7 +49796,7 @@
         <h3 id="W_param_rcc_w_zero_inf__z-3.76e-37">rcc_w_zero_inf__z-3.76e-37</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">126272.0</div></div>
+            <div class="value">126289.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -48619,7 +49852,7 @@
         <h3 id="W_param_rcc_w_zero_inf__z-7.52e-37">rcc_w_zero_inf__z-7.52e-37</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">126418.0</div></div>
+            <div class="value">126435.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -48675,7 +49908,7 @@
         <h3 id="W_param_rcc_w_zero_inf__z0.00">rcc_w_zero_inf__z0.00</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">125932.0</div></div>
+            <div class="value">125942.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -48703,7 +49936,7 @@
         <h3 id="W_param_rcc_w_zero_inf__z0.25">rcc_w_zero_inf__z0.25</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">399.0</div></div>
+            <div class="value">495.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -48731,7 +49964,7 @@
         <h3 id="W_param_rcc_w_zero_inf__z0.50">rcc_w_zero_inf__z0.50</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">1720.0</div></div>
+            <div class="value">1816.0</div></div>
 
         <div class="comparison-image-set">
 
