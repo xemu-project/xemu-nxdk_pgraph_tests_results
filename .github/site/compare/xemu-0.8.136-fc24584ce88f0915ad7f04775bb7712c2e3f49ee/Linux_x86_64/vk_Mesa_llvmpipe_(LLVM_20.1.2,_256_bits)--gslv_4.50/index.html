@@ -4929,7 +4929,7 @@
         <h3 id="Antialiasing_tests_CPUWriteIgnoresSurfaceConfig">CPUWriteIgnoresSurfaceConfig</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">24121.0</div>
+            <div class="value">inf</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>This test verifies that direct writes to VRAM bypass any surface configuration. It sets up a texture surface with antialiasing enabled, then writes directly to texture memory and renders the texture to the screen. It is expected that antialiasing has no effect.</p>
@@ -4987,10 +4987,38 @@
         </div>
 
     
+        <h3 id="Antialiasing_tests_FramebufferNotModifiedBySurfaceState">FramebufferNotModifiedBySurfaceState</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">2169.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Antialiasing_tests/FramebufferNotModifiedBySurfaceState-diff.png" alt="Diff result for Antialiasing_tests::FramebufferNotModifiedBySurfaceState" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Antialiasing_tests/FramebufferNotModifiedBySurfaceState.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Antialiasing_tests/FramebufferNotModifiedBySurfaceState.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Antialiasing_tests/FramebufferNotModifiedBySurfaceState.png" alt="Source image for Antialiasing_tests::FramebufferNotModifiedBySurfaceState" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Antialiasing_tests/FramebufferNotModifiedBySurfaceState.png" alt="Golden image for Antialiasing_tests::FramebufferNotModifiedBySurfaceState" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
         <h3 id="Antialiasing_tests_GPUAAWriteAfterCPUWrite">GPUAAWriteAfterCPUWrite</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">138.0</div></div>
+            <div class="value">134.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -5009,6 +5037,34 @@
             </div>
             <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Antialiasing_tests/GPUAAWriteAfterCPUWrite.png" alt="Source image for Antialiasing_tests::GPUAAWriteAfterCPUWrite" class="image-comparison" data-state="source">
             <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Antialiasing_tests/GPUAAWriteAfterCPUWrite.png" alt="Golden image for Antialiasing_tests::GPUAAWriteAfterCPUWrite" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Antialiasing_tests_NonAACPURoundTrip">NonAACPURoundTrip</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">217.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Antialiasing_tests/NonAACPURoundTrip-diff.png" alt="Diff result for Antialiasing_tests::NonAACPURoundTrip" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Antialiasing_tests/NonAACPURoundTrip.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Antialiasing_tests/NonAACPURoundTrip.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Antialiasing_tests/NonAACPURoundTrip.png" alt="Source image for Antialiasing_tests::NonAACPURoundTrip" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Antialiasing_tests/NonAACPURoundTrip.png" alt="Golden image for Antialiasing_tests::NonAACPURoundTrip" class="image-comparison" data-state="golden" style="display: none;">
         </div>
         
 
@@ -18522,7 +18578,7 @@
         <h3 id="Image_blit_BlitBeyondWidth">BlitBeyondWidth</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">234426.0</div>
+            <div class="value">233225.0</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Demonstrates the interaction between 0x9F image blit operations and assigned GPU tiles. A blit operation is configured with a target smaller than the source. The target address is set within an active GPU tile such that the blit would extend beyond the end of the tile and a guard value is tested to prove that the blit is clipped to stay within the tile. A similar blit is performed outside of the tile, demonstrating that unprotected blits may overdraw the target region.</p>
@@ -18555,7 +18611,7 @@
         <h3 id="Image_blit_BlitRenderBlit">BlitRenderBlit</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">10165.0</div>
+            <div class="value">inf</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Blits an image into a render surface, then performs a 3d render on top of the surface, then another blit on top of the composited two. Finally does a srccopy to blit the finished composition to the framebuffer. Demonstrates apparent incorrect ordering in various versions of xemu.</p>
@@ -18588,7 +18644,7 @@
         <h3 id="Image_blit_DirtyOverlappedDestSurf">DirtyOverlappedDestSurf</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">59776.0</div>
+            <div class="value">46464.0</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Performs a 3d render into the backbuffer, then a 2D srccopy that completely overwrites it. Finally performs another 3d render, demonstrating incorrect behavior in various versions of xemu.</p>
@@ -18621,7 +18677,7 @@
         <h3 id="Image_blit_ImgBlt_BLENDAND_XRGB_B44400000">ImgBlt_BLENDAND_XRGB_B44400000</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">2946.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -18649,7 +18705,7 @@
         <h3 id="Image_blit_ImgBlt_BLENDAND_XRGB_B444FFFFF">ImgBlt_BLENDAND_XRGB_B444FFFFF</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">2946.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -18677,7 +18733,7 @@
         <h3 id="Image_blit_ImgBlt_BLENDAND_XRGB_B66800000">ImgBlt_BLENDAND_XRGB_B66800000</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">5632.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -18705,7 +18761,7 @@
         <h3 id="Image_blit_ImgBlt_BLENDAND_XRGB_B7F800000">ImgBlt_BLENDAND_XRGB_B7F800000</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">5632.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -18733,7 +18789,7 @@
         <h3 id="Image_blit_ImgBlt_BLENDAND_XRGB_B7FFFFFFF">ImgBlt_BLENDAND_XRGB_B7FFFFFFF</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">5632.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -18761,7 +18817,7 @@
         <h3 id="Image_blit_ImgBlt_Clip_0_0_640_480">ImgBlt_Clip_0_0_640_480</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">5632.0</div>
+            <div class="value">inf</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Demonstrates expected behavior of the contextual clip rectangle (class 0x19) during image blits.</p>
@@ -18794,7 +18850,7 @@
         <h3 id="Image_blit_ImgBlt_Clip_300_200_16_24">ImgBlt_Clip_300_200_16_24</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">14139.0</div></div>
+            <div class="value">13248.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -18822,7 +18878,7 @@
         <h3 id="Image_blit_ImgBlt_Clip_320_240_0_0">ImgBlt_Clip_320_240_0_0</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">14203.0</div></div>
+            <div class="value">13632.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -18850,7 +18906,7 @@
         <h3 id="Image_blit_ImgBlt_Clip_320_240_0_10">ImgBlt_Clip_320_240_0_10</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">14203.0</div></div>
+            <div class="value">13632.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -18878,7 +18934,7 @@
         <h3 id="Image_blit_ImgBlt_Clip_320_240_1_1">ImgBlt_Clip_320_240_1_1</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">14202.0</div></div>
+            <div class="value">13631.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -18906,7 +18962,7 @@
         <h3 id="Image_blit_ImgBlt_Clip_320_240_640_480">ImgBlt_Clip_320_240_640_480</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">11351.0</div></div>
+            <div class="value">10780.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -18934,7 +18990,7 @@
         <h3 id="Image_blit_ImgBlt_Clip_320_240_64_40">ImgBlt_Clip_320_240_64_40</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">12135.0</div></div>
+            <div class="value">11564.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -18962,7 +19018,7 @@
         <h3 id="Image_blit_ImgBlt_SRCCOPY_ARGB_B00000000">ImgBlt_SRCCOPY_ARGB_B00000000</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">5632.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -18990,7 +19046,7 @@
         <h3 id="Image_blit_ImgBlt_SRCCOPY_XRGB_B00000000">ImgBlt_SRCCOPY_XRGB_B00000000</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">5632.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -28205,7 +28261,7 @@
         <h3 id="Stencil_Stencil_ZERO_ST">Stencil_ZERO_ST</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">30000.0</div></div>
+            <div class="value">39172.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -29448,10 +29504,122 @@
         </div>
 
     
+        <h3 id="Texgen_with_texture_matrix_PassThrough_EyeLinear_Double">PassThrough_EyeLinear_Double</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">112566.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_EyeLinear_Double-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_EyeLinear_Double" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_EyeLinear_Double.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_EyeLinear_Double.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_EyeLinear_Double.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_EyeLinear_Double" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_EyeLinear_Double.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_EyeLinear_Double" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_EyeLinear_Half">PassThrough_EyeLinear_Half</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">112041.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_EyeLinear_Half-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_EyeLinear_Half" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_EyeLinear_Half.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_EyeLinear_Half.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_EyeLinear_Half.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_EyeLinear_Half" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_EyeLinear_Half.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_EyeLinear_Half" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_EyeLinear_Identity">PassThrough_EyeLinear_Identity</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">112315.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_EyeLinear_Identity-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_EyeLinear_Identity" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_EyeLinear_Identity.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_EyeLinear_Identity.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_EyeLinear_Identity.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_EyeLinear_Identity" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_EyeLinear_Identity.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_EyeLinear_Identity" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_EyeLinear_MatrixOff">PassThrough_EyeLinear_MatrixOff</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">112315.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_EyeLinear_MatrixOff-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_EyeLinear_MatrixOff" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_EyeLinear_MatrixOff.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_EyeLinear_MatrixOff.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_EyeLinear_MatrixOff.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_EyeLinear_MatrixOff" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_EyeLinear_MatrixOff.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_EyeLinear_MatrixOff" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
         <h3 id="Texgen_with_texture_matrix_PassThrough_EyeLinear_Negate">PassThrough_EyeLinear_Negate</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">130713.0</div></div>
+            <div class="value">84044.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -29479,7 +29647,7 @@
         <h3 id="Texgen_with_texture_matrix_PassThrough_EyeLinear_RotateX">PassThrough_EyeLinear_RotateX</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">127791.0</div></div>
+            <div class="value">84042.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -29504,10 +29672,38 @@
         </div>
 
     
+        <h3 id="Texgen_with_texture_matrix_PassThrough_EyeLinear_RotateY">PassThrough_EyeLinear_RotateY</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">131495.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_EyeLinear_RotateY-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_EyeLinear_RotateY" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_EyeLinear_RotateY.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_EyeLinear_RotateY.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_EyeLinear_RotateY.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_EyeLinear_RotateY" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_EyeLinear_RotateY.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_EyeLinear_RotateY" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
         <h3 id="Texgen_with_texture_matrix_PassThrough_EyeLinear_RotateZ">PassThrough_EyeLinear_RotateZ</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">129208.0</div></div>
+            <div class="value">112461.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -29532,10 +29728,122 @@
         </div>
 
     
+        <h3 id="Texgen_with_texture_matrix_PassThrough_EyeLinear_ShiftHMinus">PassThrough_EyeLinear_ShiftHMinus</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">112315.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_EyeLinear_ShiftHMinus-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_EyeLinear_ShiftHMinus" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_EyeLinear_ShiftHMinus.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_EyeLinear_ShiftHMinus.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_EyeLinear_ShiftHMinus.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_EyeLinear_ShiftHMinus" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_EyeLinear_ShiftHMinus.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_EyeLinear_ShiftHMinus" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_EyeLinear_ShiftHPlus">PassThrough_EyeLinear_ShiftHPlus</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">112315.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_EyeLinear_ShiftHPlus-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_EyeLinear_ShiftHPlus" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_EyeLinear_ShiftHPlus.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_EyeLinear_ShiftHPlus.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_EyeLinear_ShiftHPlus.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_EyeLinear_ShiftHPlus" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_EyeLinear_ShiftHPlus.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_EyeLinear_ShiftHPlus" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_EyeLinear_ShiftVMinus">PassThrough_EyeLinear_ShiftVMinus</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">112315.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_EyeLinear_ShiftVMinus-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_EyeLinear_ShiftVMinus" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_EyeLinear_ShiftVMinus.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_EyeLinear_ShiftVMinus.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_EyeLinear_ShiftVMinus.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_EyeLinear_ShiftVMinus" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_EyeLinear_ShiftVMinus.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_EyeLinear_ShiftVMinus" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_EyeLinear_ShiftVPlus">PassThrough_EyeLinear_ShiftVPlus</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">112315.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_EyeLinear_ShiftVPlus-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_EyeLinear_ShiftVPlus" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_EyeLinear_ShiftVPlus.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_EyeLinear_ShiftVPlus.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_EyeLinear_ShiftVPlus.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_EyeLinear_ShiftVPlus" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_EyeLinear_ShiftVPlus.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_EyeLinear_ShiftVPlus" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
         <h3 id="Texgen_with_texture_matrix_PassThrough_NormalMap_Negate">PassThrough_NormalMap_Negate</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">130713.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -29563,7 +29871,7 @@
         <h3 id="Texgen_with_texture_matrix_PassThrough_NormalMap_RotateX">PassThrough_NormalMap_RotateX</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">127791.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -29591,7 +29899,7 @@
         <h3 id="Texgen_with_texture_matrix_PassThrough_NormalMap_RotateZ">PassThrough_NormalMap_RotateZ</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">129208.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -29616,10 +29924,150 @@
         </div>
 
     
+        <h3 id="Texgen_with_texture_matrix_PassThrough_ObjectLinear_Arbitrary">PassThrough_ObjectLinear_Arbitrary</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">112045.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_ObjectLinear_Arbitrary-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_ObjectLinear_Arbitrary" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ObjectLinear_Arbitrary.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ObjectLinear_Arbitrary.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ObjectLinear_Arbitrary.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_ObjectLinear_Arbitrary" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ObjectLinear_Arbitrary.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_ObjectLinear_Arbitrary" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_ObjectLinear_Double">PassThrough_ObjectLinear_Double</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">112128.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_ObjectLinear_Double-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_ObjectLinear_Double" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ObjectLinear_Double.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ObjectLinear_Double.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ObjectLinear_Double.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_ObjectLinear_Double" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ObjectLinear_Double.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_ObjectLinear_Double" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_ObjectLinear_Half">PassThrough_ObjectLinear_Half</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">112036.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_ObjectLinear_Half-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_ObjectLinear_Half" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ObjectLinear_Half.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ObjectLinear_Half.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ObjectLinear_Half.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_ObjectLinear_Half" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ObjectLinear_Half.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_ObjectLinear_Half" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_ObjectLinear_Identity">PassThrough_ObjectLinear_Identity</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">112104.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_ObjectLinear_Identity-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_ObjectLinear_Identity" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ObjectLinear_Identity.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ObjectLinear_Identity.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ObjectLinear_Identity.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_ObjectLinear_Identity" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ObjectLinear_Identity.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_ObjectLinear_Identity" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_ObjectLinear_MatrixOff">PassThrough_ObjectLinear_MatrixOff</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">112104.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_ObjectLinear_MatrixOff-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_ObjectLinear_MatrixOff" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ObjectLinear_MatrixOff.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ObjectLinear_MatrixOff.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ObjectLinear_MatrixOff.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_ObjectLinear_MatrixOff" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ObjectLinear_MatrixOff.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_ObjectLinear_MatrixOff" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
         <h3 id="Texgen_with_texture_matrix_PassThrough_ObjectLinear_Negate">PassThrough_ObjectLinear_Negate</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">130713.0</div></div>
+            <div class="value">83956.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -29647,7 +30095,7 @@
         <h3 id="Texgen_with_texture_matrix_PassThrough_ObjectLinear_RotateX">PassThrough_ObjectLinear_RotateX</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">127791.0</div></div>
+            <div class="value">83591.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -29672,10 +30120,38 @@
         </div>
 
     
+        <h3 id="Texgen_with_texture_matrix_PassThrough_ObjectLinear_RotateY">PassThrough_ObjectLinear_RotateY</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">112250.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_ObjectLinear_RotateY-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_ObjectLinear_RotateY" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ObjectLinear_RotateY.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ObjectLinear_RotateY.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ObjectLinear_RotateY.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_ObjectLinear_RotateY" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ObjectLinear_RotateY.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_ObjectLinear_RotateY" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
         <h3 id="Texgen_with_texture_matrix_PassThrough_ObjectLinear_RotateZ">PassThrough_ObjectLinear_RotateZ</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">129208.0</div></div>
+            <div class="value">112228.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -29700,10 +30176,234 @@
         </div>
 
     
+        <h3 id="Texgen_with_texture_matrix_PassThrough_ObjectLinear_ShiftHMinus">PassThrough_ObjectLinear_ShiftHMinus</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">112104.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_ObjectLinear_ShiftHMinus-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_ObjectLinear_ShiftHMinus" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ObjectLinear_ShiftHMinus.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ObjectLinear_ShiftHMinus.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ObjectLinear_ShiftHMinus.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_ObjectLinear_ShiftHMinus" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ObjectLinear_ShiftHMinus.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_ObjectLinear_ShiftHMinus" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_ObjectLinear_ShiftHPlus">PassThrough_ObjectLinear_ShiftHPlus</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">112104.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_ObjectLinear_ShiftHPlus-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_ObjectLinear_ShiftHPlus" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ObjectLinear_ShiftHPlus.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ObjectLinear_ShiftHPlus.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ObjectLinear_ShiftHPlus.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_ObjectLinear_ShiftHPlus" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ObjectLinear_ShiftHPlus.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_ObjectLinear_ShiftHPlus" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_ObjectLinear_ShiftVMinus">PassThrough_ObjectLinear_ShiftVMinus</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">112104.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_ObjectLinear_ShiftVMinus-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_ObjectLinear_ShiftVMinus" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ObjectLinear_ShiftVMinus.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ObjectLinear_ShiftVMinus.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ObjectLinear_ShiftVMinus.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_ObjectLinear_ShiftVMinus" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ObjectLinear_ShiftVMinus.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_ObjectLinear_ShiftVMinus" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_ObjectLinear_ShiftVPlus">PassThrough_ObjectLinear_ShiftVPlus</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">112104.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_ObjectLinear_ShiftVPlus-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_ObjectLinear_ShiftVPlus" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ObjectLinear_ShiftVPlus.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ObjectLinear_ShiftVPlus.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ObjectLinear_ShiftVPlus.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_ObjectLinear_ShiftVPlus" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ObjectLinear_ShiftVPlus.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_ObjectLinear_ShiftVPlus" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_ReflectionMap_Double">PassThrough_ReflectionMap_Double</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">111298.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_ReflectionMap_Double-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_ReflectionMap_Double" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ReflectionMap_Double.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ReflectionMap_Double.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ReflectionMap_Double.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_ReflectionMap_Double" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ReflectionMap_Double.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_ReflectionMap_Double" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_ReflectionMap_Half">PassThrough_ReflectionMap_Half</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">107966.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_ReflectionMap_Half-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_ReflectionMap_Half" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ReflectionMap_Half.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ReflectionMap_Half.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ReflectionMap_Half.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_ReflectionMap_Half" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ReflectionMap_Half.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_ReflectionMap_Half" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_ReflectionMap_Identity">PassThrough_ReflectionMap_Identity</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">110093.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_ReflectionMap_Identity-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_ReflectionMap_Identity" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ReflectionMap_Identity.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ReflectionMap_Identity.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ReflectionMap_Identity.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_ReflectionMap_Identity" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ReflectionMap_Identity.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_ReflectionMap_Identity" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_ReflectionMap_MatrixOff">PassThrough_ReflectionMap_MatrixOff</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">110093.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_ReflectionMap_MatrixOff-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_ReflectionMap_MatrixOff" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ReflectionMap_MatrixOff.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ReflectionMap_MatrixOff.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ReflectionMap_MatrixOff.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_ReflectionMap_MatrixOff" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ReflectionMap_MatrixOff.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_ReflectionMap_MatrixOff" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
         <h3 id="Texgen_with_texture_matrix_PassThrough_ReflectionMap_Negate">PassThrough_ReflectionMap_Negate</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">130713.0</div></div>
+            <div class="value">81641.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -29731,7 +30431,7 @@
         <h3 id="Texgen_with_texture_matrix_PassThrough_ReflectionMap_RotateX">PassThrough_ReflectionMap_RotateX</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">127791.0</div></div>
+            <div class="value">81755.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -29756,10 +30456,38 @@
         </div>
 
     
+        <h3 id="Texgen_with_texture_matrix_PassThrough_ReflectionMap_RotateY">PassThrough_ReflectionMap_RotateY</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">131495.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_ReflectionMap_RotateY-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_ReflectionMap_RotateY" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ReflectionMap_RotateY.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ReflectionMap_RotateY.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ReflectionMap_RotateY.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_ReflectionMap_RotateY" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ReflectionMap_RotateY.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_ReflectionMap_RotateY" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
         <h3 id="Texgen_with_texture_matrix_PassThrough_ReflectionMap_RotateZ">PassThrough_ReflectionMap_RotateZ</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">129208.0</div></div>
+            <div class="value">110119.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -29778,6 +30506,118 @@
             </div>
             <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ReflectionMap_RotateZ.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_ReflectionMap_RotateZ" class="image-comparison" data-state="source">
             <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ReflectionMap_RotateZ.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_ReflectionMap_RotateZ" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_ReflectionMap_ShiftHMinus">PassThrough_ReflectionMap_ShiftHMinus</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">110093.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_ReflectionMap_ShiftHMinus-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_ReflectionMap_ShiftHMinus" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ReflectionMap_ShiftHMinus.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ReflectionMap_ShiftHMinus.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ReflectionMap_ShiftHMinus.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_ReflectionMap_ShiftHMinus" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ReflectionMap_ShiftHMinus.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_ReflectionMap_ShiftHMinus" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_ReflectionMap_ShiftHPlus">PassThrough_ReflectionMap_ShiftHPlus</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">110093.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_ReflectionMap_ShiftHPlus-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_ReflectionMap_ShiftHPlus" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ReflectionMap_ShiftHPlus.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ReflectionMap_ShiftHPlus.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ReflectionMap_ShiftHPlus.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_ReflectionMap_ShiftHPlus" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ReflectionMap_ShiftHPlus.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_ReflectionMap_ShiftHPlus" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_ReflectionMap_ShiftVMinus">PassThrough_ReflectionMap_ShiftVMinus</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">110093.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_ReflectionMap_ShiftVMinus-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_ReflectionMap_ShiftVMinus" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ReflectionMap_ShiftVMinus.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ReflectionMap_ShiftVMinus.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ReflectionMap_ShiftVMinus.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_ReflectionMap_ShiftVMinus" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ReflectionMap_ShiftVMinus.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_ReflectionMap_ShiftVMinus" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Texgen_with_texture_matrix_PassThrough_ReflectionMap_ShiftVPlus">PassThrough_ReflectionMap_ShiftVPlus</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">110093.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texgen_with_texture_matrix/PassThrough_ReflectionMap_ShiftVPlus-diff.png" alt="Diff result for Texgen_with_texture_matrix::PassThrough_ReflectionMap_ShiftVPlus" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ReflectionMap_ShiftVPlus.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ReflectionMap_ShiftVPlus.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texgen_with_texture_matrix/PassThrough_ReflectionMap_ShiftVPlus.png" alt="Source image for Texgen_with_texture_matrix::PassThrough_ReflectionMap_ShiftVPlus" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texgen_with_texture_matrix/PassThrough_ReflectionMap_ShiftVPlus.png" alt="Golden image for Texgen_with_texture_matrix::PassThrough_ReflectionMap_ShiftVPlus" class="image-comparison" data-state="golden" style="display: none;">
         </div>
         
 
@@ -31616,7 +32456,7 @@
         <h3 id="Texture_format_TexFmt_A1R5G5B5">TexFmt_A1R5G5B5</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">121778.0</div>
+            <div class="value">inf</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Samples a 2D color gradient texture in A1R5G5B5 swizzled format.</p>
@@ -31649,7 +32489,7 @@
         <h3 id="Texture_format_TexFmt_A1R5G5B5_L">TexFmt_A1R5G5B5_L</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">121778.0</div>
+            <div class="value">inf</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Samples a 2D color gradient texture in A1R5G5B5 linear format.</p>
@@ -31682,7 +32522,7 @@
         <h3 id="Texture_format_TexFmt_A4R4G4B4">TexFmt_A4R4G4B4</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">128686.0</div>
+            <div class="value">inf</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Samples a 2D color gradient texture in A4R4G4B4 swizzled format.</p>
@@ -31715,7 +32555,7 @@
         <h3 id="Texture_format_TexFmt_A4R4G4B4_L">TexFmt_A4R4G4B4_L</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">128686.0</div>
+            <div class="value">inf</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Samples a 2D color gradient texture in A4R4G4B4 linear format.</p>
@@ -31748,7 +32588,7 @@
         <h3 id="Texture_format_TexFmt_A8">TexFmt_A8</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">72031.0</div>
+            <div class="value">inf</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Samples a 2D color gradient texture in A8 swizzled format.</p>
@@ -31781,7 +32621,7 @@
         <h3 id="Texture_format_TexFmt_A8_L">TexFmt_A8_L</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">70103.0</div>
+            <div class="value">inf</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Samples a 2D color gradient texture in A8 linear format.</p>
@@ -31814,7 +32654,7 @@
         <h3 id="Texture_format_TexFmt_A8B8G8R8">TexFmt_A8B8G8R8</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">131853.0</div>
+            <div class="value">inf</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Samples a 2D color gradient texture in A8B8G8R8 swizzled format.</p>
@@ -31847,7 +32687,7 @@
         <h3 id="Texture_format_TexFmt_A8B8G8R8_L">TexFmt_A8B8G8R8_L</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">131853.0</div>
+            <div class="value">inf</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Samples a 2D color gradient texture in A8B8G8R8 linear format.</p>
@@ -31880,7 +32720,7 @@
         <h3 id="Texture_format_TexFmt_A8R8G8B8">TexFmt_A8R8G8B8</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">131853.0</div>
+            <div class="value">inf</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Samples a 2D color gradient texture in A8R8G8B8 swizzled format.</p>
@@ -31913,7 +32753,7 @@
         <h3 id="Texture_format_TexFmt_A8R8G8B8_L">TexFmt_A8R8G8B8_L</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">131853.0</div>
+            <div class="value">inf</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Samples a 2D color gradient texture in A8R8G8B8 linear format.</p>
@@ -31946,7 +32786,7 @@
         <h3 id="Texture_format_TexFmt_A8Y8">TexFmt_A8Y8</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">131447.0</div>
+            <div class="value">inf</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Samples a 2D color gradient texture in A8Y8 swizzled format.</p>
@@ -31979,7 +32819,7 @@
         <h3 id="Texture_format_TexFmt_AY8">TexFmt_AY8</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">134713.0</div>
+            <div class="value">inf</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Samples a 2D color gradient texture in AY8 swizzled format.</p>
@@ -32012,7 +32852,7 @@
         <h3 id="Texture_format_TexFmt_AY8_L">TexFmt_AY8_L</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">134713.0</div>
+            <div class="value">inf</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Samples a 2D color gradient texture in AY8 linear format.</p>
@@ -32045,7 +32885,7 @@
         <h3 id="Texture_format_TexFmt_B8G8R8A8">TexFmt_B8G8R8A8</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">131853.0</div>
+            <div class="value">inf</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Samples a 2D color gradient texture in B8G8R8A8 swizzled format.</p>
@@ -32078,7 +32918,7 @@
         <h3 id="Texture_format_TexFmt_B8G8R8A8_L">TexFmt_B8G8R8A8_L</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">131853.0</div>
+            <div class="value">inf</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Samples a 2D color gradient texture in B8G8R8A8 linear format.</p>
@@ -32111,7 +32951,7 @@
         <h3 id="Texture_format_TexFmt_DXT1">TexFmt_DXT1</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">121333.0</div>
+            <div class="value">19162.0</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Samples a 2D color gradient texture in DXT1 compressed format.</p>
@@ -32144,7 +32984,7 @@
         <h3 id="Texture_format_TexFmt_G8B8">TexFmt_G8B8</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">134734.0</div>
+            <div class="value">inf</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Samples a 2D color gradient texture in G8B8 swizzled format.</p>
@@ -32177,7 +33017,7 @@
         <h3 id="Texture_format_TexFmt_G8B8_L">TexFmt_G8B8_L</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">134734.0</div>
+            <div class="value">inf</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Samples a 2D color gradient texture in G8B8 linear format.</p>
@@ -35752,7 +36592,7 @@
         <h3 id="Texture_signed_component_tests_txt_A8R8G8B8_SREVSUB">txt_A8R8G8B8_SREVSUB</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">188958.0</div></div>
+            <div class="value">188980.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -35923,7 +36763,7 @@
         <h3 id="Vertex_shader_rounding_tests_GeometrySubscreen_0.5625">GeometrySubscreen_0.5625</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">102.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -35948,10 +36788,38 @@
         </div>
 
     
+        <h3 id="Vertex_shader_rounding_tests_GeometrySubscreen_0.5626">GeometrySubscreen_0.5626</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">120.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_rounding_tests/GeometrySubscreen_0.5626-diff.png" alt="Diff result for Vertex_shader_rounding_tests::GeometrySubscreen_0.5626" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Vertex_shader_rounding_tests/GeometrySubscreen_0.5626.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/GeometrySubscreen_0.5626.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Vertex_shader_rounding_tests/GeometrySubscreen_0.5626.png" alt="Source image for Vertex_shader_rounding_tests::GeometrySubscreen_0.5626" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/GeometrySubscreen_0.5626.png" alt="Golden image for Vertex_shader_rounding_tests::GeometrySubscreen_0.5626" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
         <h3 id="Vertex_shader_rounding_tests_GeometrySubscreen_1.0000">GeometrySubscreen_1.0000</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">101.0</div></div>
+            <div class="value">145.0</div></div>
 
         <div class="comparison-image-set">
 
