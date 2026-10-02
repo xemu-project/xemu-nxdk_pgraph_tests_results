@@ -157,6 +157,36 @@
     </div>
     
 
+    </div>
+    <h3 id="PassthruClamping">PassthruClamping</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">29442.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Validates that PS_TEXTUREMODES_PASSTHRU clamps texture coordinates to [0, 1] before passing them to the register combiners. Multi-stage color combiners apply multiplication, addition, and subtraction against known constants. Top row uses a 3-stage combiner (Mul -&gt; Add -&gt; Sub); bottom row uses a 2-stage combiner (Sub -&gt; Mul + Add). Four quads per row test [0, 1], negative [-1, 0], above one [1, 2], and mixed [-0.5, 1.5] coordinates. Out-of-range regions appear as solid clamped plateaus on hardware, whereas unclamped coordinates produce gradients.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Pixel_shader/PassthruClamping-diff.png" alt="Diff result for Pixel_shader::PassthruClamping" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Pixel_shader/PassthruClamping.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Pixel_shader/PassthruClamping.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Pixel_shader/PassthruClamping.png" alt="Source image for Pixel_shader::PassthruClamping" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Pixel_shader/PassthruClamping.png" alt="Golden image for Pixel_shader::PassthruClamping" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
     </div></div>
 
     <script src="../../../../script.js"></script>
