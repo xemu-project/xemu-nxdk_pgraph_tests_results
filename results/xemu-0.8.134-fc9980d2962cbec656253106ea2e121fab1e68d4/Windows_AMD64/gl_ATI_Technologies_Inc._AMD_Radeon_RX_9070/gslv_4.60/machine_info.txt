@@ -1,0 +1,10 @@
+xemu_version: 0.8.134
+xemu_commit: fc9980d2962cbec656253106ea2e121fab1e68d4
+xemu_date: Thu Feb 26 02:32:06 UTC 2026
+CPU: Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz
+OS_Version:  24H2
+GL_VENDOR: ATI Technologies Inc.
+GL_RENDERER: AMD Radeon RX 9070
+GL_VERSION: 4.0.0 Core Profile Context 26.5.1.260408
+GL_SHADING_LANGUAGE_VERSION: 4.60
+GL geometry shader winding: 0, 0, 0, 0
