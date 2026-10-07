@@ -1,0 +1,12 @@
+xemu_version: 0.8.20
+xemu_branch: master
+xemu_commit: 3bdb9e7fd4d6c9f5adec0543f1679d2943a0d092
+xemu_date: Sat Feb 15 23:59:22 UTC 2025
+xemu_settings_get_base_path: base path: D:\development\xbox\xemu-nxdk_pgraph_tests_results\cache\
+xemu_settings_get_path: config path: D:\development\xbox\xemu-nxdk_pgraph_tests_results\cache\xemu.toml
+CPU: Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz
+OS_Version:  22H2
+GL_VENDOR: NVIDIA Corporation
+GL_RENDERER: NVIDIA GeForce GTX 1070/PCIe/SSE2
+GL_VERSION: 4.0.0 NVIDIA 572.16
+GL_SHADING_LANGUAGE_VERSION: 4.00 NVIDIA via Cg compiler
