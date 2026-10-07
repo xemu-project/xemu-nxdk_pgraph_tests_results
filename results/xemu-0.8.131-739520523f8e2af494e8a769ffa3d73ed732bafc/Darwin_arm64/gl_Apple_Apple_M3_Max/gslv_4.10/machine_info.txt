@@ -1,0 +1,10 @@
+xemu_version: 0.8.131
+xemu_commit: 739520523f8e2af494e8a769ffa3d73ed732bafc
+xemu_date: Tue Jan 13 03:41:00 UTC 2026
+2026-01-13 18:47:07.209 xemu[81676:731183] ApplePersistenceIgnoreState: Existing state will not be touched. New state will be written to /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/xemu.app.0.savedState
+CPU: 
+OS_Version: Version 26.2 (Build 25C56)
+GL_VENDOR: Apple
+GL_RENDERER: Apple M3 Max
+GL_VERSION: 4.1 Metal - 90.5
+GL_SHADING_LANGUAGE_VERSION: 4.10
