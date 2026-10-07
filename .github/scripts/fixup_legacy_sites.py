@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 from __future__ import annotations
 
 import argparse
@@ -11,6 +9,8 @@ import shutil
 import subprocess
 import sys
 from typing import Any
+
+from xemu_pgraph_ci_tools.golden_config import GoldenConfig, load_golden_config
 
 logger = logging.getLogger(__name__)
 
@@ -38,7 +38,7 @@ def ensure_remote_fetched(remote: str = "origin", cwd: str | None = None) -> Non
             cwd=cwd,
         )
         git("fetch", remote, "--prune", cwd=cwd)
-    except Exception as e:
+    except (subprocess.CalledProcessError, OSError) as e:
         logger.warning("Could not fetch remote branches for %s: %s", remote, e)
 
 
@@ -97,7 +97,8 @@ def reconstruct_golden_tests_from_tree(compare_base: str) -> set[str]:
                             summary_path,
                         )
                         return combined
-            except Exception:
+            except (OSError, json.JSONDecodeError, KeyError, TypeError):
+                logger.debug("Failed reading %s", summary_path)
                 continue
     return set()
 
@@ -137,9 +138,10 @@ def find_matching_results_dir(
     if os.path.isdir(platform_dir):
         for entry in os.listdir(platform_dir):
             entry_path = os.path.join(platform_dir, entry)
-            if os.path.isdir(entry_path):
-                if renderer.startswith(entry) or cleaned.startswith(entry):
-                    return entry_path
+            if os.path.isdir(entry_path) and (
+                renderer.startswith(entry) or cleaned.startswith(entry)
+            ):
+                return entry_path
 
     return None
 
@@ -183,7 +185,7 @@ def collect_tests_from_results_dir(results_dir: str) -> set[str]:
                             t_name = t_info.get("name", "")
                             if s_name and t_name:
                                 tests.add(f"{s_name}:{t_name}")
-                except Exception as e:
+                except (OSError, json.JSONDecodeError, KeyError, TypeError) as e:
                     logger.warning(
                         "Error reading results.json at %s: %s", results_json_path, e
                     )
@@ -212,6 +214,7 @@ def fixup_comparison_dir(
     golden_tests: set[str],
     *,
     dry_run: bool = False,
+    golden_config: GoldenConfig | None = None,
 ) -> bool:
     """Regenerates summary.json in comp_dir based on actual results and diffs.
 
@@ -246,7 +249,7 @@ def fixup_comparison_dir(
         try:
             with open(summary_path, encoding="utf-8") as f:
                 old_summary = json.load(f)
-        except Exception as e:
+        except (OSError, json.JSONDecodeError, KeyError, TypeError) as e:
             logger.warning("Failed to parse existing %s: %s", summary_path, e)
 
     old_eval = old_summary.get("tests_evaluated", [])
@@ -273,6 +276,9 @@ def fixup_comparison_dir(
         new_nores = sorted(set(old_nores) - set(all_eval))
     else:
         new_nores = []
+
+    if golden_config and golden_config.has_deprecated_tests:
+        new_nores = [t for t in new_nores if not golden_config.is_deprecated_fq(t)]
 
     canonical_golden_id = (golden_id or "Xbox_Hardware").replace("__", "--")
     if not result_id:
@@ -325,9 +331,7 @@ def discover_comparison_dirs(base_dir: str) -> list[str]:
         return []
 
     for root, _dirs, files in os.walk(base_dir):
-        if "summary.json" in files:
-            comp_dirs.add(root)
-        elif any(
+        if "summary.json" in files or any(
             root.endswith(target)
             for target in (
                 "Xbox--Xbox--DirectX--nv2a",
@@ -345,11 +349,15 @@ def fixup_directory(
     version_filter: str | None = None,
     *,
     dry_run: bool = False,
+    golden_config: GoldenConfig | None = None,
 ) -> int:
     """Finds and fixes all comparison directories under compare_base."""
     golden_tests = load_golden_tests(golden_dir)
     if not golden_tests:
         golden_tests = reconstruct_golden_tests_from_tree(compare_base)
+
+    if golden_config is None:
+        golden_config = load_golden_config(golden_dir=golden_dir)
 
     comp_dirs = discover_comparison_dirs(compare_base)
     modified_count = 0
@@ -357,7 +365,13 @@ def fixup_directory(
     for cd in comp_dirs:
         if version_filter and version_filter not in cd:
             continue
-        if fixup_comparison_dir(cd, results_base, golden_tests, dry_run=dry_run):
+        if fixup_comparison_dir(
+            cd,
+            results_base,
+            golden_tests,
+            dry_run=dry_run,
+            golden_config=golden_config,
+        ):
             modified_count += 1
 
     logger.info("Updated %d comparison summaries in %s", modified_count, compare_base)
@@ -434,7 +448,7 @@ def fixup_archive_branches(
                             f"HEAD:refs/heads/{branch}",
                             cwd=worktree_dir,
                         )
-        except Exception as e:
+        except (subprocess.CalledProcessError, OSError) as e:
             logger.error("Failed to fixup archive branch %s: %s", branch, e)
             success = False
         finally:
@@ -447,7 +461,7 @@ def fixup_archive_branches(
                         worktree_dir,
                         cwd=repo_root,
                     )
-                except Exception:
+                except (subprocess.CalledProcessError, OSError):
                     shutil.rmtree(worktree_dir, ignore_errors=True)
                     git("worktree", "prune", cwd=repo_root)
 
@@ -479,7 +493,7 @@ def fixup_github_pages(
         if os.path.exists(worktree_dir):
             try:
                 git("worktree", "remove", "--force", worktree_dir, cwd=repo_root)
-            except Exception:
+            except (subprocess.CalledProcessError, OSError):
                 shutil.rmtree(worktree_dir, ignore_errors=True)
                 git("worktree", "prune", cwd=repo_root)
         try:
@@ -491,7 +505,7 @@ def fixup_github_pages(
                 f"{remote}/github_pages",
                 cwd=repo_root,
             )
-        except Exception as e:
+        except (subprocess.CalledProcessError, OSError) as e:
             logger.error("Failed to create worktree for github_pages: %s", e)
             return False
 
@@ -589,7 +603,7 @@ def fixup_github_pages(
         if worktree_needed and os.path.exists(worktree_dir):
             try:
                 git("worktree", "remove", "--force", worktree_dir, cwd=repo_root)
-            except Exception:
+            except (subprocess.CalledProcessError, OSError):
                 shutil.rmtree(worktree_dir, ignore_errors=True)
                 git("worktree", "prune", cwd=repo_root)
 
