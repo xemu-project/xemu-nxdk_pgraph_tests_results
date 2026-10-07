@@ -10209,6 +10209,105 @@
         </div>
 
     
+        <h3 id="Combiner_SpecularR0Sum">SpecularR0Sum</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">1210.0</div>
+            <div class="label">Description</div>
+            <div class="value">
+                <p>Validates final combiner SRC_SPEC_R0_SUM (R0 + Specular) across general combiner output operations (IDENTITY, OP_SHIFT_LEFT_1, OP_SHIFT_LEFT_2, OP_SHIFT_RIGHT_1, OP_BIAS, OP_SHIFT_LEFT_1_BIAS) with specular zeroed. Each quad is split into tested (left) and expected reference (right) halves, comparing direct SRC_R0 against SRC_SPEC_R0_SUM to isolate emulator discrepancies under bias operations. </p>
+            </div>
+        </div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Combiner/SpecularR0Sum-diff.png" alt="Diff result for Combiner::SpecularR0Sum" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Combiner/SpecularR0Sum.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Combiner/SpecularR0Sum.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Combiner/SpecularR0Sum.png" alt="Source image for Combiner::SpecularR0Sum" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Combiner/SpecularR0Sum.png" alt="Golden image for Combiner::SpecularR0Sum" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Combiner_SpecularR0SumFlags">SpecularR0SumFlags</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">1738.0</div>
+            <div class="label">Description</div>
+            <div class="value">
+                <p>Tests behavior of specular_add_invert_r0, specular_add_invert_v1, and specular_clamp on final combiner sum (SRC_SPEC_R0_SUM). Each quad is split into tested (left) and expected reference (right) halves. Validates positive overflow clamping on sums exceeding 1.0, individual and simultaneous operand inversion (1 - R0, 1 - V1), and clamping behavior with negative/underflowing input registers.</p>
+            </div>
+        </div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Combiner/SpecularR0SumFlags-diff.png" alt="Diff result for Combiner::SpecularR0SumFlags" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Combiner/SpecularR0SumFlags.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Combiner/SpecularR0SumFlags.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Combiner/SpecularR0SumFlags.png" alt="Source image for Combiner::SpecularR0SumFlags" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Combiner/SpecularR0SumFlags.png" alt="Golden image for Combiner::SpecularR0SumFlags" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Combiner_TextureDestination">TextureDestination</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">378.0</div>
+            <div class="label">Description</div>
+            <div class="value">
+                <p>Demonstrates and validates behavior when general combiner stages write to texture registers (DST_TEX0, DST_TEX1). Tests cross-stage register forwarding, in-place read-modify-write, multi-stage pipeline flow, direct Final Combiner register reads, alpha channel destination writes, and unbound texture registers as general scratch registers.</p>
+            </div>
+        </div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Combiner/TextureDestination-diff.png" alt="Diff result for Combiner::TextureDestination" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Combiner/TextureDestination.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Combiner/TextureDestination.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Combiner/TextureDestination.png" alt="Source image for Combiner::TextureDestination" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Combiner/TextureDestination.png" alt="Golden image for Combiner::TextureDestination" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
 
 
     <h2><a href="Context_switch.html">Context_switch</a></h2>
@@ -28881,7 +28980,7 @@
         <h3 id="Stencil_Stencil_REPLACE_DT">Stencil_REPLACE_DT</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">40000.0</div></div>
+            <div class="value">39415.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -28965,7 +29064,7 @@
         <h3 id="Stencil_Stencil_ZERO">Stencil_ZERO</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">38796.0</div></div>
+            <div class="value">40000.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -28993,7 +29092,7 @@
         <h3 id="Stencil_Stencil_ZERO_DT">Stencil_ZERO_DT</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">40000.0</div></div>
+            <div class="value">39415.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -39470,7 +39569,7 @@
         <h3 id="Texture_signed_component_tests_txt_A8R8G8B8_ADD">txt_A8R8G8B8_ADD</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">107073.0</div></div>
+            <div class="value">107801.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -39526,7 +39625,7 @@
         <h3 id="Texture_signed_component_tests_txt_A8R8G8B8_SREVSUB">txt_A8R8G8B8_SREVSUB</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">188996.0</div></div>
+            <div class="value">189139.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -39697,7 +39796,7 @@
         <h3 id="Vertex_shader_rounding_tests_GeometrySubscreen_0.9990">GeometrySubscreen_0.9990</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">145.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -39753,7 +39852,7 @@
         <h3 id="Vertex_shader_rounding_tests_RenderTarget">RenderTarget</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">1710.0</div></div>
+            <div class="value">1477.0</div></div>
 
         <div class="comparison-image-set">
 
