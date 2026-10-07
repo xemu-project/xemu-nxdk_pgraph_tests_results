@@ -1,0 +1,13 @@
+xemu_version: 0.8.106
+xemu_branch: master
+xemu_commit: 1973482781c120ceae88e2e0d89fa522b35b9639
+xemu_date: Mon Sep 29 06:46:19 UTC 2025
+xemu_settings_get_base_path: base path: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.106/xemu.app/Contents/Resources/
+xemu_settings_get_path: config path: /Users/abaire/development/xbox/pgraph_xemu_results/xemu-nxdk_pgraph_tests_results/cache/xemu-macos-v0.8.106/xemu.app/Contents/Resources/xemu.toml
+2025-10-12 18:35:34.577 xemu[52994:1228085] ApplePersistenceIgnoreState: Existing state will not be touched. New state will be written to /var/folders/z9/z9hjjrbs36741slg5blhthkr0000gn/T/xemu.app.0.savedState
+CPU: 
+OS_Version: Version 15.7.1 (Build 24G231)
+GL_VENDOR: Apple
+GL_RENDERER: Apple M3 Max
+GL_VERSION: 4.1 Metal - 89.4
+GL_SHADING_LANGUAGE_VERSION: 4.10

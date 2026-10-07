@@ -1,0 +1,31 @@
+xemu_version: 0.8.106
+xemu_branch: master
+xemu_commit: 1973482781c120ceae88e2e0d89fa522b35b9639
+xemu_date: Mon Sep 29 06:47:23 UTC 2025
+nvapi: Saved settings
+CPU: Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz
+OS_Version:  24H2
+GL_VENDOR: NVIDIA Corporation
+GL_RENDERER: NVIDIA GeForce GTX 1070/PCIe/SSE2
+GL_VERSION: 4.0.0 NVIDIA 581.15
+GL_SHADING_LANGUAGE_VERSION: 4.00 NVIDIA via Cg compiler
+Enabled instance extensions:
+- VK_KHR_surface
+- VK_KHR_win32_surface
+- VK_KHR_get_physical_device_properties2
+- VK_KHR_external_semaphore_capabilities
+- VK_KHR_external_memory_capabilities
+Available physical devices:
+- NVIDIA GeForce GTX 1070
+- NVIDIA GeForce GTX 1070
+Selected physical device: NVIDIA GeForce GTX 1070
+- Vendor: 10de, Device: 1b81
+- Driver Version: 581.60.0
+Enabled device extensions:
+- VK_KHR_external_semaphore
+- VK_KHR_external_memory
+- VK_KHR_external_memory_win32
+- VK_KHR_external_semaphore_win32
+- VK_EXT_custom_border_color
+- VK_EXT_provoking_vertex
+- VK_EXT_memory_budget
