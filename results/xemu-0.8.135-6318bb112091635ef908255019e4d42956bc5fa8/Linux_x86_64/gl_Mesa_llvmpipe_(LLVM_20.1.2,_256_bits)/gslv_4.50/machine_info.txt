@@ -1,0 +1,10 @@
+xemu_version: 0.8.135
+xemu_commit: 6318bb112091635ef908255019e4d42956bc5fa8
+xemu_date: Wed May 20 00:05:54 UTC 2026
+CPU: AMD EPYC 7763 64-Core Processor                
+OS_Version: Ubuntu 24.04.4 LTS
+GL_VENDOR: Mesa
+GL_RENDERER: llvmpipe (LLVM 20.1.2, 256 bits)
+GL_VERSION: 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.2
+GL_SHADING_LANGUAGE_VERSION: 4.50
+GL geometry shader winding: 0, 0, 0, 0
