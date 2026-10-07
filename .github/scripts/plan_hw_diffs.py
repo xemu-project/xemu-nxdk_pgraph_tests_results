@@ -8,6 +8,10 @@ import logging
 import os
 import sys
 
+from xemu_pgraph_ci_tools.golden_config import (
+    DEFAULT_HW_GOLDEN_CONFIG_URL,
+    load_golden_config,
+)
 from xemu_pgraph_ci_tools.hw_diffs import GitWorkTree, identify_missing_hw_diffs
 
 logger = logging.getLogger(__name__)
@@ -32,6 +36,14 @@ def main() -> int:
         "--cache-path", default="cache", help="Directory for caching downloaded goldens"
     )
     parser.add_argument(
+        "--golden-config", default=None, help="Path to golden config.json file"
+    )
+    parser.add_argument(
+        "--golden-config-url",
+        default=DEFAULT_HW_GOLDEN_CONFIG_URL,
+        help="URL for golden config.json",
+    )
+    parser.add_argument(
         "--max-shards", type=int, default=32, help="Maximum number of parallel shards"
     )
     parser.add_argument(
@@ -51,6 +63,24 @@ def main() -> int:
         cache_path=args.cache_path,
         git_tree=git_tree,
     )
+
+    golden_config = load_golden_config(
+        config_path=args.golden_config,
+        golden_dir=args.golden_dir,
+        cache_path=args.cache_path,
+        config_url=args.golden_config_url,
+    )
+
+    if golden_config.has_deprecated_tests:
+        orig_count = len(tasks)
+        tasks = [
+            t for t in tasks if not golden_config.is_deprecated(t.suite, t.test_case)
+        ]
+        logger.info(
+            "Filtered %d deprecated diff tasks; %d remaining",
+            orig_count - len(tasks),
+            len(tasks),
+        )
 
     diff_count = len(tasks)
     shard_count = min(diff_count, args.max_shards) if diff_count > 0 else 0

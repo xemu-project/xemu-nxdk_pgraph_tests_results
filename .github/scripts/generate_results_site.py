@@ -23,6 +23,11 @@ from urllib.parse import quote
 import requests
 from frozendict import deepfreeze, frozendict
 from jinja2 import Environment, FileSystemLoader
+from xemu_pgraph_ci_tools.golden_config import (
+    DEFAULT_HW_GOLDEN_CONFIG_URL,
+    GoldenConfig,
+    load_golden_config,
+)
 from xemu_pgraph_ci_tools.models import (
     ComparisonSummary,
     RunIdentifier,
@@ -272,6 +277,7 @@ class ComparisonScanner:
         test_suite_descriptors: dict[str, TestSuiteDescriptor],
         golden_results_dir: str = "",
         source_image_index: dict[SourceTestIdentifier, str] | None = None,
+        golden_config: GoldenConfig | None = None,
     ) -> None:
         self.comparison_dir = comparison_dir
         self.output_dir = output_dir
@@ -287,6 +293,7 @@ class ComparisonScanner:
             if source_image_index is not None
             else _index_source_images(results_dir)
         )
+        self.golden_config = golden_config or GoldenConfig()
 
     def _process_test_case_artifacts(
         self,
@@ -335,6 +342,13 @@ class ComparisonScanner:
 
         for image_file in images:
             test_name = os.path.basename(image_file).replace("-diff.png", "")
+            if self.golden_config.is_deprecated(suite_name, test_name):
+                logger.debug(
+                    "Skipping comparison artifact for deprecated test: %s:%s",
+                    suite_name,
+                    test_name,
+                )
+                continue
             fq_name = f"{suite_name}:{test_name}"
 
             original_image_subpath = fq_name.split(":")
@@ -431,8 +445,22 @@ class ComparisonScanner:
 
         ret: list[ComparisonInfo] = []
         for run_root, run_info in run_identifier_to_summary.items():
+            clean_info = dict(run_info)
+            if self.golden_config.has_deprecated_tests:
+                if "goldens_without_results" in clean_info:
+                    clean_info["goldens_without_results"] = [
+                        t
+                        for t in clean_info["goldens_without_results"]
+                        if not self.golden_config.is_deprecated_fq(t)
+                    ]
+                if "tests_with_differences" in clean_info:
+                    clean_info["tests_with_differences"] = {
+                        k: v
+                        for k, v in clean_info["tests_with_differences"].items()
+                        if not self.golden_config.is_deprecated_fq(k)
+                    }
             test_suites = run_identifier_to_suits.get(run_root, [])
-            ret.append(ComparisonInfo.parse(run_root, run_info, tuple(test_suites)))
+            ret.append(ComparisonInfo.parse(run_root, clean_info, tuple(test_suites)))
 
         return ret
 
@@ -454,8 +482,8 @@ class ComparisonScanner:
             ]
         }
 
-    @staticmethod
     def _merge_comparison_infos(
+        self,
         comp_list: list[ComparisonInfo],
     ) -> list[ComparisonInfo]:
         """Merges multiple ComparisonInfo instances comparing against the same golden into a single unified ComparisonInfo."""
@@ -466,7 +494,27 @@ class ComparisonScanner:
         merged_list: list[ComparisonInfo] = []
         for golden_id, comps in by_golden.items():
             if len(comps) == 1:
-                merged_list.append(comps[0])
+                comp = comps[0]
+                if self.golden_config.has_deprecated_tests:
+                    s_dict = dict(comp.summary)
+                    s_dict["goldens_without_results"] = [
+                        t
+                        for t in s_dict.get("goldens_without_results", [])
+                        if not self.golden_config.is_deprecated_fq(t)
+                    ]
+                    s_dict["tests_with_differences"] = {
+                        k: v
+                        for k, v in s_dict.get("tests_with_differences", {}).items()
+                        if not self.golden_config.is_deprecated_fq(k)
+                    }
+                    comp = ComparisonInfo(
+                        identifier=comp.identifier,
+                        golden_identifier_component=comp.golden_identifier_component,
+                        golden_identifier=comp.golden_identifier,
+                        summary=deepfreeze(s_dict),
+                        results=comp.results,
+                    )
+                merged_list.append(comp)
                 continue
 
             merged_summary_model = ComparisonSummary(
@@ -480,12 +528,16 @@ class ComparisonScanner:
                     result_identifier=s_dict.get("result_identifier", ""),
                     golden_identifier=s_dict.get("golden_identifier", golden_id),
                     tests_without_goldens=list(s_dict.get("tests_without_goldens", [])),
-                    goldens_without_results=list(
-                        s_dict.get("goldens_without_results", [])
-                    ),
-                    tests_with_differences=dict(
-                        s_dict.get("tests_with_differences", {})
-                    ),
+                    goldens_without_results=[
+                        t
+                        for t in s_dict.get("goldens_without_results", [])
+                        if not self.golden_config.is_deprecated_fq(t)
+                    ],
+                    tests_with_differences={
+                        k: v
+                        for k, v in s_dict.get("tests_with_differences", {}).items()
+                        if not self.golden_config.is_deprecated_fq(k)
+                    },
                     tests_evaluated=list(s_dict.get("tests_evaluated", [])),
                 )
                 merged_summary_model.merge(model)
@@ -732,7 +784,7 @@ class ResultsScanner:
             if result:
                 suite_results[suite_name] = result
 
-        for fqname, _failure in results_summary.get("failed", {}).items():
+        for fqname in results_summary.get("failed", {}):
             if "::" not in fqname:
                 continue
             suite, _ = fqname.split("::", 1)
@@ -757,7 +809,7 @@ class ResultsScanner:
                     descriptor=self._get_suite_descriptor(suite),
                 )
 
-        for fqname, _flaky in results_summary.get("flaky", {}).items():
+        for fqname in results_summary.get("flaky", {}):
             if "::" not in fqname:
                 continue
             suite, _ = fqname.split("::", 1)
@@ -931,6 +983,7 @@ class PagesWriter:
         test_source_base_url: str,
         hw_golden_browser_base_url: str,
         source_image_index: dict[SourceTestIdentifier, str] | None = None,
+        golden_config: GoldenConfig | None = None,
     ) -> None:
         self.results = results
         self.env = env
@@ -942,6 +995,7 @@ class PagesWriter:
         self.test_source_base_url = test_source_base_url.rstrip("/")
         self.hw_golden_browser_base_url = hw_golden_browser_base_url.rstrip("/")
         self.source_image_index = source_image_index or {}
+        self.golden_config = golden_config or GoldenConfig()
 
     @staticmethod
     def _comparison_suite_url(
@@ -1012,12 +1066,20 @@ class PagesWriter:
         suite_to_results: dict[str, list[TestCaseComparisonInfo]] = defaultdict(
             list,
             {
-                result.suite_name: list(result.test_cases)
+                result.suite_name: [
+                    tc
+                    for tc in result.test_cases
+                    if not self.golden_config.is_deprecated(
+                        result.suite_name, tc.test_name
+                    )
+                ]
                 for result in comparison.results
             },
         )
 
         for fqname in comparison.summary.get("goldens_without_results", []):
+            if self.golden_config.is_deprecated_fq(fqname):
+                continue
             suite_name, test_name = self.split_fq_name(fqname)
             info = TestCaseComparisonInfo(
                 test_name=test_name,
@@ -1029,6 +1091,8 @@ class PagesWriter:
             suite_to_results[suite_name].append(info)
 
         for fqname in comparison.summary.get("tests_without_goldens", []):
+            if self.golden_config.is_deprecated_fq(fqname):
+                continue
             suite_name, test_name = self.split_fq_name(fqname)
             info = TestCaseComparisonInfo(
                 test_name=test_name,
@@ -1056,6 +1120,7 @@ class PagesWriter:
                             "descriptor": self._pack_descriptor(suite.descriptor),
                         }
                         for suite in comparison.results
+                        if suite_to_results[suite.suite_name]
                     },
                     css_dir=os.path.relpath(self.css_output_dir, output_dir),
                     js_dir=os.path.relpath(self.js_output_dir, output_dir),
@@ -1065,17 +1130,23 @@ class PagesWriter:
             )
 
         for suite_results in comparison.results:
+            suite_test_results = suite_to_results[suite_results.suite_name]
+            if not suite_test_results:
+                continue
             self._write_comparison_suite_page(
                 comparison,
                 suite_results,
-                suite_to_results[suite_results.suite_name],
+                suite_test_results,
                 navigate_up_url,
             )
 
     @staticmethod
     def split_fq_name(fully_qualified_test_name: str) -> tuple[str, str]:
         """Splits a fully qualified test name into (suite, test_case)."""
-        split = fully_qualified_test_name.split(":", 1)
+        if "::" in fully_qualified_test_name:
+            split = fully_qualified_test_name.split("::", 1)
+        else:
+            split = fully_qualified_test_name.split(":", 1)
         return split[0], split[1]
 
     @staticmethod
@@ -1244,12 +1315,14 @@ class PagesWriter:
                     fqname, golden_base_url
                 )
                 for fqname in comparison.summary.get("goldens_without_results", [])
+                if not self.golden_config.is_deprecated_fq(fqname)
             }
             extra_tests: dict[str, str] = {
                 fqname.replace(":", " "): self.results_url_for_fqtest(
                     run.identifier, fqname
                 )
                 for fqname in comparison.summary.get("tests_without_goldens", [])
+                if not self.golden_config.is_deprecated_fq(fqname)
             }
 
             comparisons[comparison.golden_identifier] = {
@@ -1262,9 +1335,19 @@ class PagesWriter:
                         output_subdir,
                     )
                     for suite_result in comparison.results
+                    if any(
+                        not self.golden_config.is_deprecated(
+                            suite_result.suite_name, tc.test_name
+                        )
+                        for tc in suite_result.test_cases
+                    )
                 },
                 "difference_count": len(
-                    comparison.summary.get("tests_with_differences", {})
+                    [
+                        k
+                        for k in comparison.summary.get("tests_with_differences", {})
+                        if not self.golden_config.is_deprecated_fq(k)
+                    ]
                 ),
                 "missing_tests": missing_tests,
                 "extra_tests": extra_tests,
@@ -1432,11 +1515,26 @@ def main():
         default="https://abaire.github.io/nxdk_pgraph_tests_golden_results/results",
         help="URL at which the test suite pages containing golden images from Xbox hardware may be publicly accessed.",
     )
+    parser.add_argument(
+        "--hw-golden-config-url",
+        default=DEFAULT_HW_GOLDEN_CONFIG_URL,
+        help="URL from which the golden config.json may be publicly accessed.",
+    )
+    parser.add_argument(
+        "--golden-config",
+        help="Path to golden config.json file. If omitted, attempts to find config.json in local golden directory or cache, falling back to --hw-golden-config-url.",
+    )
 
     args = parser.parse_args()
 
     log_level = logging.DEBUG if args.verbose else logging.INFO
     logging.basicConfig(level=log_level)
+
+    golden_config = load_golden_config(
+        config_path=args.golden_config,
+        golden_dir=args.golden_results_dir,
+        config_url=args.hw_golden_config_url,
+    )
 
     os.makedirs(args.output_dir, exist_ok=True)
 
@@ -1458,6 +1556,7 @@ def main():
             test_suite_descriptors,
             args.golden_results_dir,
             source_image_index=source_image_index,
+            golden_config=golden_config,
         ).process()
     else:
         run_identifier_to_comparison_results = {}
@@ -1487,6 +1586,7 @@ def main():
         args.test_source_browser_base_url,
         args.hw_golden_browser_base_url,
         source_image_index=source_image_index,
+        golden_config=golden_config,
     ).write()
 
 
