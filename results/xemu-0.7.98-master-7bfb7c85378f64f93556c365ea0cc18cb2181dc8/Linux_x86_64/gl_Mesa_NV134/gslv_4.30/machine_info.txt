@@ -1,0 +1,12 @@
+xemu_version: 0.7.98
+xemu_branch: master
+xemu_commit: 7bfb7c85378f64f93556c365ea0cc18cb2181dc8
+xemu_date: Mon Jul 10 04:22:59 UTC 2023
+xemu_settings_get_base_path: base path: /home/abaire/.local/share/xemu/xemu/
+xemu_settings_get_path: config path: /home/abaire/.local/share/xemu/xemu/xemu.toml
+CPU: Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz
+OS_Version: Ubuntu 24.04.1 LTS
+GL_VENDOR: Mesa
+GL_RENDERER: NV134
+GL_VERSION: 4.3 (Core Profile) Mesa 24.2.8-1ubuntu1~24.04.1
+GL_SHADING_LANGUAGE_VERSION: 4.30
