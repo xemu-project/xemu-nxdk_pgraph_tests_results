@@ -1,14 +1,21 @@
 from __future__ import annotations
 
 import json
-from pathlib import Path
 import sys
+from pathlib import Path
 
 scripts_dir = str(Path(__file__).parent.parent / ".github" / "scripts")
 if scripts_dir not in sys.path:
     sys.path.insert(0, scripts_dir)
 
-from fixup_legacy_sites import (  # noqa: E402
+for candidate in [
+    Path(__file__).resolve().parents[3] / "xemu-pgraph-ci-tools" / "src",
+    Path(__file__).resolve().parents[2] / "xemu-pgraph-ci-tools" / "src",
+]:
+    if candidate.is_dir() and str(candidate) not in sys.path:
+        sys.path.insert(0, str(candidate))
+
+from fixup_legacy_sites import (
     collect_diff_tests,
     collect_tests_from_results_dir,
     discover_comparison_dirs,
@@ -16,6 +23,7 @@ from fixup_legacy_sites import (  # noqa: E402
     fixup_comparison_dir,
     reconstruct_golden_tests_from_tree,
 )
+from xemu_pgraph_ci_tools.golden_config import GoldenConfig
 
 
 def test_collect_tests_from_results_dir_pngs(tmp_path: Path) -> None:
@@ -258,3 +266,40 @@ def test_discover_comparison_dirs(tmp_path: Path) -> None:
 
     found = discover_comparison_dirs(str(comp_base))
     assert set(found) == {str(dir1), str(dir2)}
+
+
+def test_fixup_comparison_dir_with_golden_config(tmp_path: Path) -> None:
+    version = "xemu-0.8.136"
+    platform = "Darwin_arm64"
+    renderer = "gl_Apple_M5--gslv_4.10"
+    comp_base = tmp_path / "compare-results"
+    comp_dir = comp_base / version / platform / renderer / "Xbox--Xbox--DirectX--nv2a"
+    comp_dir.mkdir(parents=True)
+
+    results_root = tmp_path / "results"
+    res_dir = results_root / version / platform / renderer
+    res_dir.mkdir(parents=True)
+
+    golden_tests = {"SuiteA:Test1", "SuiteB:DeprecatedTest", "SuiteC:ActiveTest"}
+    golden_cfg = GoldenConfig(
+        deprecated_tests={"SuiteB": ["DeprecatedTest"]},
+        version=1,
+    )
+
+    modified = fixup_comparison_dir(
+        str(comp_dir),
+        str(results_root),
+        golden_tests,
+        golden_config=golden_cfg,
+        dry_run=False,
+    )
+    assert modified is True
+
+    summary_file = comp_dir / "summary.json"
+    assert summary_file.is_file()
+    with open(summary_file, encoding="utf-8") as f:
+        data = json.load(f)
+
+    assert "SuiteB:DeprecatedTest" not in data["goldens_without_results"]
+    assert "SuiteA:Test1" in data["goldens_without_results"]
+    assert "SuiteC:ActiveTest" in data["goldens_without_results"]

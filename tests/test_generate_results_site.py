@@ -1,28 +1,35 @@
 from __future__ import annotations
 
-from pathlib import Path
+import json
 import sys
+from pathlib import Path
+from typing import Any
 from unittest.mock import MagicMock
+
+for candidate in [
+    Path(__file__).resolve().parents[3] / "xemu-pgraph-ci-tools" / "src",
+    Path(__file__).resolve().parents[2] / "xemu-pgraph-ci-tools" / "src",
+]:
+    if candidate.is_dir() and str(candidate) not in sys.path:
+        sys.path.insert(0, str(candidate))
 
 # Mock third-party dependencies not present in default test environment
 for mod in [
     "requests",
     "jinja2",
     "frozendict",
-    "xemu_pgraph_ci_tools",
-    "xemu_pgraph_ci_tools.models",
 ]:
     if mod not in sys.modules:
         sys.modules[mod] = MagicMock()
 
 # Minimal frozendict mock if needed
-import frozendict  # noqa: E402
+import frozendict
 
 if isinstance(frozendict.frozendict, MagicMock):
     frozendict.frozendict = dict
     frozendict.deepfreeze = lambda x: x
 
-from xemu_pgraph_ci_tools.models import RunIdentifier  # noqa: E402
+from xemu_pgraph_ci_tools.models import RunIdentifier
 
 if isinstance(RunIdentifier, MagicMock):
 
@@ -32,6 +39,9 @@ if isinstance(RunIdentifier, MagicMock):
             xemu_version: str = "v1",
             platform_info: str = "p1",
             gl_info: str = "gl1",
+            *args,
+            run_identifier: Any = None,
+            **kwargs,
         ) -> None:
             self.xemu_version = xemu_version
             self.platform_info = platform_info
@@ -56,17 +66,22 @@ scripts_dir = str(Path(__file__).parent.parent / ".github" / "scripts")
 if scripts_dir not in sys.path:
     sys.path.insert(0, scripts_dir)
 
-from generate_results_site import (  # noqa: E402
+from generate_results_site import (
+    ComparisonInfo,
+    ComparisonScanner,
     PagesWriter,
     PrettyMachineInfo,
     ResultsInfo,
     ResultsScanner,
     SuiteResults,
     TestResult,
+    TestSuiteComparisonInfo,
     _normalize_results_summary,
 )
+from xemu_pgraph_ci_tools.golden_config import GoldenConfig
 
 TestResult.__test__ = False
+TestSuiteComparisonInfo.__test__ = False
 
 
 def test_normalize_results_summary_spaces_and_swapped_names() -> None:
@@ -447,3 +462,197 @@ def test_top_level_index_groups_renderers_under_same_platform(tmp_path: Path) ->
     # Both OpenGL and Vulkan should be nested under Linux_x86_64
     assert "OpenGL" in rendered_groups["xemu-0.8.136"]["Linux_x86_64"]
     assert "Vulkan" in rendered_groups["xemu-0.8.136"]["Linux_x86_64"]
+
+
+def test_write_run_results_pages_suppresses_deprecated_missing_tests(
+    tmp_path: Path,
+) -> None:
+    run_info = _make_results_info(
+        "xemu-0.8.136",
+        "Linux_x86_64",
+        "gl_Mesa_llvmpipe--gslv_4.50",
+        ["CPU: Test"],
+    )
+
+    summary = {
+        "result_identifier": "xemu-0.8.136:Linux_x86_64:gl_Mesa_llvmpipe:gslv_4.50",
+        "golden_identifier": "Xbox_Hardware",
+        "goldens_without_results": [
+            "Blend_tests:0_ADD_1",
+            "Valid_suite:Valid_test",
+        ],
+        "tests_without_goldens": [],
+        "tests_with_differences": {
+            "Blend_tests:0_ADD_1": 10.0,
+            "Valid_suite:Other": 5.0,
+        },
+        "tests_evaluated": [],
+    }
+
+    comp = ComparisonInfo.parse(
+        run_identifier="xemu-0.8.136/Linux_x86_64/gl_Mesa_llvmpipe--gslv_4.50/Xbox_Hardware",
+        summary=summary,
+        results=(),
+    )
+    run_info = ResultsInfo(
+        identifier=run_info.identifier,
+        machine_info=run_info.machine_info,
+        renderer_info=run_info.renderer_info,
+        runner_info=run_info.runner_info,
+        results=(),
+        comparisons=[comp],
+    )
+
+    mock_env = MagicMock()
+    mock_template = MagicMock()
+    mock_template.render.return_value = "<html>mock</html>"
+    mock_env.get_template.return_value = mock_template
+
+    golden_config = GoldenConfig(deprecated_tests={"Blend_tests": ["0_ADD_1"]})
+
+    writer = PagesWriter(
+        results={str(run_info.identifier): run_info},
+        env=mock_env,
+        output_dir=str(tmp_path),
+        result_images_base_url="http://test/results",
+        hw_golden_images_base_url="http://test/hw",
+        test_source_base_url="http://test/src",
+        hw_golden_browser_base_url="http://test/hw_browser",
+        golden_config=golden_config,
+    )
+
+    writer._write_run_results_pages(run_info)
+
+    render_calls = mock_template.render.call_args_list
+    assert len(render_calls) >= 1
+    rendered_comps = render_calls[-1].kwargs["comparisons"]
+
+    hw_comp = rendered_comps["Xbox_Hardware"]
+    # "Blend_tests:0_ADD_1" must be suppressed!
+    assert "Blend_tests :: 0_ADD_1" not in hw_comp["missing_tests"]
+    assert "Valid_suite :: Valid_test" in hw_comp["missing_tests"]
+    # difference_count must not count deprecated test differences
+    assert hw_comp["difference_count"] == 1
+
+
+def test_write_comparisons_page_suppresses_deprecated_tests(tmp_path: Path) -> None:
+    summary = {
+        "result_identifier": "xemu-0.8.136:Linux_x86_64:gl_Mesa_llvmpipe:gslv_4.50",
+        "golden_identifier": "Xbox_Hardware",
+        "goldens_without_results": [
+            "Blend_tests:0_ADD_1",
+            "Valid_suite:Valid_test",
+        ],
+        "tests_without_goldens": ["Blend_tests:0_ADD_1"],
+        "tests_with_differences": {},
+        "tests_evaluated": [],
+    }
+
+    valid_suite = TestSuiteComparisonInfo(
+        suite_name="Valid_suite",
+        test_cases=(),
+        descriptor=None,
+    )
+    blend_suite = TestSuiteComparisonInfo(
+        suite_name="Blend_tests",
+        test_cases=(),
+        descriptor=None,
+    )
+
+    comp = ComparisonInfo.parse(
+        run_identifier="xemu-0.8.136/Linux_x86_64/gl_Mesa_llvmpipe--gslv_4.50/Xbox_Hardware",
+        summary=summary,
+        results=(valid_suite, blend_suite),
+    )
+
+    mock_env = MagicMock()
+    mock_template = MagicMock()
+    mock_template.render.return_value = "<html>mock</html>"
+    mock_env.get_template.return_value = mock_template
+
+    golden_config = GoldenConfig(deprecated_tests={"Blend_tests": ["0_ADD_1"]})
+
+    writer = PagesWriter(
+        results={},
+        env=mock_env,
+        output_dir=str(tmp_path),
+        result_images_base_url="http://test/results",
+        hw_golden_images_base_url="http://test/hw",
+        test_source_base_url="http://test/src",
+        hw_golden_browser_base_url="http://test/hw_browser",
+        golden_config=golden_config,
+    )
+
+    writer._write_comparisons_page(comp, golden_base_url="http://test/hw")
+
+    render_calls = mock_template.render.call_args_list
+    assert len(render_calls) == 2
+    rendered_results = render_calls[0].kwargs["results"]
+
+    # "Blend_tests" has only deprecated tests, so it must not be in rendered_results
+    assert "Blend_tests" not in rendered_results
+    assert "Valid_suite" in rendered_results
+    # And the per-suite diff page was only rendered for Valid_suite, not Blend_tests
+    assert render_calls[1].kwargs["suite_name"] == "Valid_suite"
+
+
+def test_comparison_scanner_filters_deprecated_tests(tmp_path: Path) -> None:
+    comp_dir = (
+        tmp_path
+        / "compare"
+        / "xemu-0.8.136"
+        / "Linux_x86_64"
+        / "gl_Mesa_llvmpipe--gslv_4.50"
+        / "Xbox_Hardware"
+    )
+    suite_dir = comp_dir / "Blend_tests"
+    suite_dir.mkdir(parents=True)
+    (suite_dir / "0_ADD_1-diff.png").touch()
+    (suite_dir / "Valid_test-diff.png").touch()
+
+    summary = {
+        "result_identifier": "xemu-0.8.136:Linux_x86_64:gl_Mesa_llvmpipe:gslv_4.50",
+        "golden_identifier": "Xbox_Hardware",
+        "goldens_without_results": [
+            "Blend_tests:0_ADD_1",
+            "Blend_tests:Valid_missing",
+        ],
+        "tests_without_goldens": [],
+        "tests_with_differences": {
+            "Blend_tests:0_ADD_1": 15.0,
+            "Blend_tests:Valid_test": 5.0,
+        },
+        "tests_evaluated": ["Blend_tests:Valid_test"],
+    }
+    (comp_dir / "summary.json").write_text(json.dumps(summary), encoding="utf-8")
+
+    golden_config = GoldenConfig(deprecated_tests={"Blend_tests": ["0_ADD_1"]})
+
+    scanner = ComparisonScanner(
+        comparison_dir=str(tmp_path / "compare"),
+        output_dir=str(tmp_path / "out"),
+        base_url="https://example.com",
+        results_dir=str(tmp_path / "results"),
+        hw_golden_base_url="https://example.com/hw",
+        test_suite_descriptors={},
+        golden_config=golden_config,
+    )
+
+    comp_results = scanner.process()
+    assert len(comp_results) == 1
+    comps = next(iter(comp_results.values()))
+    assert len(comps) == 1
+    comp = comps[0]
+
+    # Verify deprecated tests removed from summary in ComparisonInfo
+    assert "Blend_tests:0_ADD_1" not in comp.summary["goldens_without_results"]
+    assert "Blend_tests:Valid_missing" in comp.summary["goldens_without_results"]
+    assert "Blend_tests:0_ADD_1" not in comp.summary["tests_with_differences"]
+    assert "Blend_tests:Valid_test" in comp.summary["tests_with_differences"]
+
+    # Verify deprecated diffs excluded from results
+    assert len(comp.results) == 1
+    blend_results = comp.results[0]
+    test_names = [tc.test_name for tc in blend_results.test_cases]
+    assert "0_ADD_1" not in test_names
+    assert "Valid_test" in test_names
