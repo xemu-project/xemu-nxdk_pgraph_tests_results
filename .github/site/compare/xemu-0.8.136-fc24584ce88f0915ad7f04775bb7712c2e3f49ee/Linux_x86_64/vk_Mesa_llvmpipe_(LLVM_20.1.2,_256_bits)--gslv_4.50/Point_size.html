@@ -36,6 +36,58 @@
 
 
 
+    <h3 id="LargestPointSize_FF">LargestPointSize_FF</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">inf</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Using the fixed function pipeline: Top row renders a single point with a point size of 1 pixel (8), then a huge value with ~0x1FF set. Bottom row renders a single point with a point size of 511 (0x1FF), then a huge value with ~0x1FF set. 64 pixel ruler quads are rendered near the huge value points. Demonstrates that values larger than 0x1FF are completely ignored rather than masked.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <div class="missing-image">No source result</div>
+    
+    </div>
+
+    
+    <div class="titled-image">
+        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/LargestPointSize_FF.png">Source</a> - No golden result</div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/LargestPointSize_FF.png" alt="Source image for Point_size::LargestPointSize_FF">
+    </div>
+    
+
+    </div>
+    <h3 id="LargestPointSize_VS">LargestPointSize_VS</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">inf</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Using the programmable pipeline: Top row renders a single point with a point size of 1 pixel (8), then a huge value with ~0x1FF set. Bottom row renders a single point with a point size of 511 (0x1FF), then a huge value with ~0x1FF set. 64 pixel ruler quads are rendered near the huge value points. Demonstrates that values larger than 0x1FF are completely ignored rather than masked.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <div class="missing-image">No source result</div>
+    
+    </div>
+
+    
+    <div class="titled-image">
+        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/LargestPointSize_VS.png">Source</a> - No golden result</div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/LargestPointSize_VS.png" alt="Source image for Point_size::LargestPointSize_VS">
+    </div>
+    
+
+    </div>
     <h3 id="PointSmoothOff_01_FF">PointSmoothOff_01_FF</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
@@ -50,17 +102,17 @@
 
     <div class="image-container">
     
-    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Point_size/PointSmoothOff_01_FF-diff.png" alt="Diff result for Point_size::PointSmoothOff_01_FF" class="inline-image">
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Point_size/PointSmoothOff_01_FF-diff.png" alt="Diff result for Point_size::PointSmoothOff_01_FF" class="inline-image">
     
     </div>
 
     
     <div class="image-pair">
         <div class="image-pair-title-bar">
-            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Point_size/PointSmoothOff_01_FF.png">Source</a></div>
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/PointSmoothOff_01_FF.png">Source</a></div>
             <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOff_01_FF.png">Golden</a></div>
         </div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Point_size/PointSmoothOff_01_FF.png" alt="Source image for Point_size::PointSmoothOff_01_FF" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/PointSmoothOff_01_FF.png" alt="Source image for Point_size::PointSmoothOff_01_FF" class="image-comparison" data-state="source">
         <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOff_01_FF.png" alt="Golden image for Point_size::PointSmoothOff_01_FF" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
@@ -80,17 +132,17 @@
 
     <div class="image-container">
     
-    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Point_size/PointSmoothOff_01_VS-diff.png" alt="Diff result for Point_size::PointSmoothOff_01_VS" class="inline-image">
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Point_size/PointSmoothOff_01_VS-diff.png" alt="Diff result for Point_size::PointSmoothOff_01_VS" class="inline-image">
     
     </div>
 
     
     <div class="image-pair">
         <div class="image-pair-title-bar">
-            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Point_size/PointSmoothOff_01_VS.png">Source</a></div>
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/PointSmoothOff_01_VS.png">Source</a></div>
             <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOff_01_VS.png">Golden</a></div>
         </div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Point_size/PointSmoothOff_01_VS.png" alt="Source image for Point_size::PointSmoothOff_01_VS" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/PointSmoothOff_01_VS.png" alt="Source image for Point_size::PointSmoothOff_01_VS" class="image-comparison" data-state="source">
         <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOff_01_VS.png" alt="Golden image for Point_size::PointSmoothOff_01_VS" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
@@ -110,17 +162,17 @@
 
     <div class="image-container">
     
-    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Point_size/PointSmoothOff_04_FF-diff.png" alt="Diff result for Point_size::PointSmoothOff_04_FF" class="inline-image">
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Point_size/PointSmoothOff_04_FF-diff.png" alt="Diff result for Point_size::PointSmoothOff_04_FF" class="inline-image">
     
     </div>
 
     
     <div class="image-pair">
         <div class="image-pair-title-bar">
-            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Point_size/PointSmoothOff_04_FF.png">Source</a></div>
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/PointSmoothOff_04_FF.png">Source</a></div>
             <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOff_04_FF.png">Golden</a></div>
         </div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Point_size/PointSmoothOff_04_FF.png" alt="Source image for Point_size::PointSmoothOff_04_FF" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/PointSmoothOff_04_FF.png" alt="Source image for Point_size::PointSmoothOff_04_FF" class="image-comparison" data-state="source">
         <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOff_04_FF.png" alt="Golden image for Point_size::PointSmoothOff_04_FF" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
@@ -140,17 +192,17 @@
 
     <div class="image-container">
     
-    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Point_size/PointSmoothOff_04_VS-diff.png" alt="Diff result for Point_size::PointSmoothOff_04_VS" class="inline-image">
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Point_size/PointSmoothOff_04_VS-diff.png" alt="Diff result for Point_size::PointSmoothOff_04_VS" class="inline-image">
     
     </div>
 
     
     <div class="image-pair">
         <div class="image-pair-title-bar">
-            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Point_size/PointSmoothOff_04_VS.png">Source</a></div>
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/PointSmoothOff_04_VS.png">Source</a></div>
             <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOff_04_VS.png">Golden</a></div>
         </div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Point_size/PointSmoothOff_04_VS.png" alt="Source image for Point_size::PointSmoothOff_04_VS" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/PointSmoothOff_04_VS.png" alt="Source image for Point_size::PointSmoothOff_04_VS" class="image-comparison" data-state="source">
         <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOff_04_VS.png" alt="Golden image for Point_size::PointSmoothOff_04_VS" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
@@ -170,17 +222,17 @@
 
     <div class="image-container">
     
-    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Point_size/PointSmoothOff_08_FF-diff.png" alt="Diff result for Point_size::PointSmoothOff_08_FF" class="inline-image">
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Point_size/PointSmoothOff_08_FF-diff.png" alt="Diff result for Point_size::PointSmoothOff_08_FF" class="inline-image">
     
     </div>
 
     
     <div class="image-pair">
         <div class="image-pair-title-bar">
-            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Point_size/PointSmoothOff_08_FF.png">Source</a></div>
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/PointSmoothOff_08_FF.png">Source</a></div>
             <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOff_08_FF.png">Golden</a></div>
         </div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Point_size/PointSmoothOff_08_FF.png" alt="Source image for Point_size::PointSmoothOff_08_FF" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/PointSmoothOff_08_FF.png" alt="Source image for Point_size::PointSmoothOff_08_FF" class="image-comparison" data-state="source">
         <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOff_08_FF.png" alt="Golden image for Point_size::PointSmoothOff_08_FF" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
@@ -200,17 +252,17 @@
 
     <div class="image-container">
     
-    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Point_size/PointSmoothOff_08_VS-diff.png" alt="Diff result for Point_size::PointSmoothOff_08_VS" class="inline-image">
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Point_size/PointSmoothOff_08_VS-diff.png" alt="Diff result for Point_size::PointSmoothOff_08_VS" class="inline-image">
     
     </div>
 
     
     <div class="image-pair">
         <div class="image-pair-title-bar">
-            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Point_size/PointSmoothOff_08_VS.png">Source</a></div>
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/PointSmoothOff_08_VS.png">Source</a></div>
             <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOff_08_VS.png">Golden</a></div>
         </div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Point_size/PointSmoothOff_08_VS.png" alt="Source image for Point_size::PointSmoothOff_08_VS" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/PointSmoothOff_08_VS.png" alt="Source image for Point_size::PointSmoothOff_08_VS" class="image-comparison" data-state="source">
         <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOff_08_VS.png" alt="Golden image for Point_size::PointSmoothOff_08_VS" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
@@ -230,18 +282,44 @@
 
     <div class="image-container">
     
-    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Point_size/PointSmoothOff_16_FF-diff.png" alt="Diff result for Point_size::PointSmoothOff_16_FF" class="inline-image">
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Point_size/PointSmoothOff_16_FF-diff.png" alt="Diff result for Point_size::PointSmoothOff_16_FF" class="inline-image">
     
     </div>
 
     
     <div class="image-pair">
         <div class="image-pair-title-bar">
-            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Point_size/PointSmoothOff_16_FF.png">Source</a></div>
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/PointSmoothOff_16_FF.png">Source</a></div>
             <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOff_16_FF.png">Golden</a></div>
         </div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Point_size/PointSmoothOff_16_FF.png" alt="Source image for Point_size::PointSmoothOff_16_FF" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/PointSmoothOff_16_FF.png" alt="Source image for Point_size::PointSmoothOff_16_FF" class="image-comparison" data-state="source">
         <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOff_16_FF.png" alt="Golden image for Point_size::PointSmoothOff_16_FF" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="PointSmoothOff_16_VS">PointSmoothOff_16_VS</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">inf</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders points using a programmable shader with point smoothing disabled. Point size starts at 0 and increases by 16 per point starting at the upper left point.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <div class="missing-image">No source result</div>
+    
+    </div>
+
+    
+    <div class="titled-image">
+        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/PointSmoothOff_16_VS.png">Source</a> - No golden result</div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/PointSmoothOff_16_VS.png" alt="Source image for Point_size::PointSmoothOff_16_VS">
     </div>
     
 
@@ -260,17 +338,17 @@
 
     <div class="image-container">
     
-    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Point_size/PointSmoothOn_01_FF-diff.png" alt="Diff result for Point_size::PointSmoothOn_01_FF" class="inline-image">
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Point_size/PointSmoothOn_01_FF-diff.png" alt="Diff result for Point_size::PointSmoothOn_01_FF" class="inline-image">
     
     </div>
 
     
     <div class="image-pair">
         <div class="image-pair-title-bar">
-            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Point_size/PointSmoothOn_01_FF.png">Source</a></div>
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/PointSmoothOn_01_FF.png">Source</a></div>
             <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOn_01_FF.png">Golden</a></div>
         </div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Point_size/PointSmoothOn_01_FF.png" alt="Source image for Point_size::PointSmoothOn_01_FF" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/PointSmoothOn_01_FF.png" alt="Source image for Point_size::PointSmoothOn_01_FF" class="image-comparison" data-state="source">
         <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOn_01_FF.png" alt="Golden image for Point_size::PointSmoothOn_01_FF" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
@@ -290,17 +368,17 @@
 
     <div class="image-container">
     
-    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Point_size/PointSmoothOn_01_VS-diff.png" alt="Diff result for Point_size::PointSmoothOn_01_VS" class="inline-image">
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Point_size/PointSmoothOn_01_VS-diff.png" alt="Diff result for Point_size::PointSmoothOn_01_VS" class="inline-image">
     
     </div>
 
     
     <div class="image-pair">
         <div class="image-pair-title-bar">
-            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Point_size/PointSmoothOn_01_VS.png">Source</a></div>
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/PointSmoothOn_01_VS.png">Source</a></div>
             <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOn_01_VS.png">Golden</a></div>
         </div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Point_size/PointSmoothOn_01_VS.png" alt="Source image for Point_size::PointSmoothOn_01_VS" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/PointSmoothOn_01_VS.png" alt="Source image for Point_size::PointSmoothOn_01_VS" class="image-comparison" data-state="source">
         <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOn_01_VS.png" alt="Golden image for Point_size::PointSmoothOn_01_VS" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
@@ -320,17 +398,17 @@
 
     <div class="image-container">
     
-    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Point_size/PointSmoothOn_04_FF-diff.png" alt="Diff result for Point_size::PointSmoothOn_04_FF" class="inline-image">
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Point_size/PointSmoothOn_04_FF-diff.png" alt="Diff result for Point_size::PointSmoothOn_04_FF" class="inline-image">
     
     </div>
 
     
     <div class="image-pair">
         <div class="image-pair-title-bar">
-            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Point_size/PointSmoothOn_04_FF.png">Source</a></div>
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/PointSmoothOn_04_FF.png">Source</a></div>
             <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOn_04_FF.png">Golden</a></div>
         </div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Point_size/PointSmoothOn_04_FF.png" alt="Source image for Point_size::PointSmoothOn_04_FF" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/PointSmoothOn_04_FF.png" alt="Source image for Point_size::PointSmoothOn_04_FF" class="image-comparison" data-state="source">
         <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOn_04_FF.png" alt="Golden image for Point_size::PointSmoothOn_04_FF" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
@@ -350,17 +428,17 @@
 
     <div class="image-container">
     
-    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Point_size/PointSmoothOn_04_VS-diff.png" alt="Diff result for Point_size::PointSmoothOn_04_VS" class="inline-image">
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Point_size/PointSmoothOn_04_VS-diff.png" alt="Diff result for Point_size::PointSmoothOn_04_VS" class="inline-image">
     
     </div>
 
     
     <div class="image-pair">
         <div class="image-pair-title-bar">
-            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Point_size/PointSmoothOn_04_VS.png">Source</a></div>
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/PointSmoothOn_04_VS.png">Source</a></div>
             <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOn_04_VS.png">Golden</a></div>
         </div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Point_size/PointSmoothOn_04_VS.png" alt="Source image for Point_size::PointSmoothOn_04_VS" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/PointSmoothOn_04_VS.png" alt="Source image for Point_size::PointSmoothOn_04_VS" class="image-comparison" data-state="source">
         <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOn_04_VS.png" alt="Golden image for Point_size::PointSmoothOn_04_VS" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
@@ -380,17 +458,17 @@
 
     <div class="image-container">
     
-    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Point_size/PointSmoothOn_08_FF-diff.png" alt="Diff result for Point_size::PointSmoothOn_08_FF" class="inline-image">
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Point_size/PointSmoothOn_08_FF-diff.png" alt="Diff result for Point_size::PointSmoothOn_08_FF" class="inline-image">
     
     </div>
 
     
     <div class="image-pair">
         <div class="image-pair-title-bar">
-            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Point_size/PointSmoothOn_08_FF.png">Source</a></div>
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/PointSmoothOn_08_FF.png">Source</a></div>
             <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOn_08_FF.png">Golden</a></div>
         </div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Point_size/PointSmoothOn_08_FF.png" alt="Source image for Point_size::PointSmoothOn_08_FF" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/PointSmoothOn_08_FF.png" alt="Source image for Point_size::PointSmoothOn_08_FF" class="image-comparison" data-state="source">
         <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOn_08_FF.png" alt="Golden image for Point_size::PointSmoothOn_08_FF" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
@@ -410,17 +488,17 @@
 
     <div class="image-container">
     
-    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Point_size/PointSmoothOn_08_VS-diff.png" alt="Diff result for Point_size::PointSmoothOn_08_VS" class="inline-image">
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Point_size/PointSmoothOn_08_VS-diff.png" alt="Diff result for Point_size::PointSmoothOn_08_VS" class="inline-image">
     
     </div>
 
     
     <div class="image-pair">
         <div class="image-pair-title-bar">
-            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Point_size/PointSmoothOn_08_VS.png">Source</a></div>
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/PointSmoothOn_08_VS.png">Source</a></div>
             <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOn_08_VS.png">Golden</a></div>
         </div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Point_size/PointSmoothOn_08_VS.png" alt="Source image for Point_size::PointSmoothOn_08_VS" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/PointSmoothOn_08_VS.png" alt="Source image for Point_size::PointSmoothOn_08_VS" class="image-comparison" data-state="source">
         <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOn_08_VS.png" alt="Golden image for Point_size::PointSmoothOn_08_VS" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
@@ -440,18 +518,122 @@
 
     <div class="image-container">
     
-    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Point_size/PointSmoothOn_16_FF-diff.png" alt="Diff result for Point_size::PointSmoothOn_16_FF" class="inline-image">
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Point_size/PointSmoothOn_16_FF-diff.png" alt="Diff result for Point_size::PointSmoothOn_16_FF" class="inline-image">
     
     </div>
 
     
     <div class="image-pair">
         <div class="image-pair-title-bar">
-            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Point_size/PointSmoothOn_16_FF.png">Source</a></div>
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/PointSmoothOn_16_FF.png">Source</a></div>
             <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOn_16_FF.png">Golden</a></div>
         </div>
-        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_NVIDIA_Corporation_NVIDIA_GeForce_RTX_4090-PCIe-SSE2/gslv_4.00_NVIDIA_via_Cg_compiler/Point_size/PointSmoothOn_16_FF.png" alt="Source image for Point_size::PointSmoothOn_16_FF" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/PointSmoothOn_16_FF.png" alt="Source image for Point_size::PointSmoothOn_16_FF" class="image-comparison" data-state="source">
         <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOn_16_FF.png" alt="Golden image for Point_size::PointSmoothOn_16_FF" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="PointSmoothOn_16_VS">PointSmoothOn_16_VS</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">inf</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders points using a programmable shader with point smoothing enabled. Point size starts at 0 and increases by 16 per point starting at the upper left point.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <div class="missing-image">No source result</div>
+    
+    </div>
+
+    
+    <div class="titled-image">
+        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/PointSmoothOn_16_VS.png">Source</a> - No golden result</div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/PointSmoothOn_16_VS.png" alt="Source image for Point_size::PointSmoothOn_16_VS">
+    </div>
+    
+
+    </div>
+    <h3 id="SmallestPointSize_FF">SmallestPointSize_FF</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">inf</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Using the fixed function pipeline, render points sized 0 - 1 with point params and smoothing off.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <div class="missing-image">No source result</div>
+    
+    </div>
+
+    
+    <div class="titled-image">
+        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/SmallestPointSize_FF.png">Source</a> - No golden result</div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/SmallestPointSize_FF.png" alt="Source image for Point_size::SmallestPointSize_FF">
+    </div>
+    
+
+    </div>
+    <h3 id="SmallestPointSize_VS">SmallestPointSize_VS</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">inf</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Using the programmable pipeline, render points sized 0 - 1 with point params enabled and smoothing off.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <div class="missing-image">No source result</div>
+    
+    </div>
+
+    
+    <div class="titled-image">
+        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/SmallestPointSize_VS.png">Source</a> - No golden result</div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/SmallestPointSize_VS.png" alt="Source image for Point_size::SmallestPointSize_VS">
+    </div>
+    
+
+    </div>
+    <h3 id="VSPointSize">VSPointSize</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">inf</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Using the programmable pipeline, renders two rows with a point using immediate mode (SET_POINT_SIZE) followed by a DrawArrays with a configured point size (v6) parameter. Then renders another two rows with point params enabled with a constant scale factor. Demonstrates that point size is entirely governed by SET_POINT_SIZE when point params is disabled and that it is not possible for the vertex shader to influence point size. Further demonstrates that point size is entirely goverened by oPts if point params are enabled. </p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <div class="missing-image">No source result</div>
+    
+    </div>
+
+    
+    <div class="titled-image">
+        <div class="image-title"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/VSPointSize.png">Source</a> - No golden result</div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_size/VSPointSize.png" alt="Source image for Point_size::VSPointSize">
     </div>
     
 

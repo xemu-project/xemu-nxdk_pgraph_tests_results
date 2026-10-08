@@ -31,8 +31,19 @@ from xemu_pgraph_ci_tools.golden_config import (
 from xemu_pgraph_ci_tools.models import (
     ComparisonSummary,
     RunIdentifier,
-    SourceTestIdentifier,
 )
+
+
+@dataclass(frozen=True)
+class SourceTestIdentifier:
+    """Encapsulates the identification of a specific test artifact within a test run."""
+
+    xemu_version: str
+    platform_info: str
+    suite_name: str
+    test_name: str
+    gl_info: str = ""
+
 
 logger = logging.getLogger(__name__)
 
@@ -230,6 +241,49 @@ class ComparisonInfo(NamedTuple):
         )
 
 
+def find_matching_results_dir(
+    results_root: str,
+    version: str,
+    platform: str,
+    renderer: str,
+) -> str | None:
+    """Finds the directory under results_root that matches the given run parameters."""
+    if not os.path.isdir(results_root):
+        return None
+
+    direct = os.path.join(results_root, version, platform, renderer)
+    if os.path.isdir(direct):
+        return direct
+
+    if "--" in renderer:
+        vendor, glsl = renderer.split("--", 1)
+        slash_path = os.path.join(results_root, version, platform, vendor, glsl)
+        if os.path.isdir(slash_path):
+            return slash_path
+
+    cleaned = renderer.replace("__", "--")
+    cleaned_direct = os.path.join(results_root, version, platform, cleaned)
+    if os.path.isdir(cleaned_direct):
+        return cleaned_direct
+
+    if "--" in cleaned:
+        vendor, glsl = cleaned.split("--", 1)
+        cleaned_slash = os.path.join(results_root, version, platform, vendor, glsl)
+        if os.path.isdir(cleaned_slash):
+            return cleaned_slash
+
+    platform_dir = os.path.join(results_root, version, platform)
+    if os.path.isdir(platform_dir):
+        for entry in os.listdir(platform_dir):
+            entry_path = os.path.join(platform_dir, entry)
+            if os.path.isdir(entry_path) and (
+                renderer.startswith(entry) or cleaned.startswith(entry)
+            ):
+                return entry_path
+
+    return None
+
+
 def _index_source_images(results_dir: str) -> dict[SourceTestIdentifier, str]:
     """Indexes all PNG images in results_dir into a map:
     SourceTestIdentifier -> relative_path_from_repo_root
@@ -251,12 +305,17 @@ def _index_source_images(results_dir: str) -> dict[SourceTestIdentifier, str]:
         if len(components) >= 3:
             xemu_ver = components[0]
             platform = components[1]
+            gl_parts = components[2:-1]
+            gl_info = "--".join(
+                c.replace(":", "--").replace("__", "--") for c in gl_parts
+            )
             for f in pngs:
                 test_name = os.path.splitext(f)[0]
                 full_rel = os.path.join(results_dir, rel_root, f)
                 ident = SourceTestIdentifier(
                     xemu_version=xemu_ver,
                     platform_info=platform,
+                    gl_info=gl_info,
                     suite_name=suite_name,
                     test_name=test_name,
                 )
@@ -317,6 +376,8 @@ class ComparisonScanner:
         # Restore the paths of the original images that were used to produce the diff image.
         res_id = run_info.get("result_identifier", "")
         if res_id:
+            parsed_run = RunIdentifier.parse(res_id).minimal_identifier()
+            gl_info = parsed_run.gl_info
             results_base_path = os.path.join(self.results_dir, res_id.replace(":", "/"))
             if not os.path.isdir(results_base_path):
                 results_base_path = os.path.join(
@@ -327,9 +388,26 @@ class ComparisonScanner:
             results_parts = [
                 p
                 for p in comp_parts[:-1]
-                if not p.startswith("Xbox__") and not p.startswith("Xbox--")
+                if not p.startswith("Xbox__")
+                and not p.startswith("Xbox--")
+                and p != HW_GOLDEN_IDENTIFIER
             ]
+            if len(results_parts) >= 3:
+                gl_parts = results_parts[2:]
+                gl_info = "--".join(
+                    c.replace(":", "--").replace("__", "--") for c in gl_parts
+                )
+            else:
+                gl_info = ""
             results_base_path = os.path.join(self.results_dir, *results_parts)
+
+        if not os.path.isdir(results_base_path) and gl_info:
+            matched_dir = find_matching_results_dir(
+                self.results_dir, xemu_ver, platform, gl_info
+            )
+            if matched_dir:
+                results_base_path = matched_dir
+
         golden_base_path = (
             ""
             if run_info["golden_identifier"] == HW_GOLDEN_IDENTIFIER
@@ -356,10 +434,33 @@ class ComparisonScanner:
             ident = SourceTestIdentifier(
                 xemu_version=xemu_ver,
                 platform_info=platform,
+                gl_info=gl_info,
                 suite_name=suite_name,
                 test_name=test_name,
             )
             rel_src = self.source_image_index.get(ident)
+            if not rel_src and gl_info:
+                gl_prefix = gl_info.split("--")[0]
+                for indexed_ident, indexed_path in self.source_image_index.items():
+                    if (
+                        indexed_ident.xemu_version == xemu_ver
+                        and indexed_ident.platform_info == platform
+                        and indexed_ident.suite_name == suite_name
+                        and indexed_ident.test_name == test_name
+                        and indexed_ident.gl_info.split("--")[0] == gl_prefix
+                    ):
+                        rel_src = indexed_path
+                        break
+            if not rel_src:
+                rel_src = self.source_image_index.get(
+                    SourceTestIdentifier(
+                        xemu_version=xemu_ver,
+                        platform_info=platform,
+                        suite_name=suite_name,
+                        test_name=test_name,
+                        gl_info="",
+                    )
+                )
             if rel_src:
                 source_image_url = (
                     f"{self.base_url}/{quote(rel_src.replace(os.sep, '/'))}"
@@ -1161,13 +1262,37 @@ class PagesWriter:
         self, run: RunIdentifier, fully_qualified_test_name: str
     ) -> str:
         suite, test_case = self.split_fq_name(fully_qualified_test_name)
+        gl_info = run.gl_info.replace(":", "--").replace("__", "--")
         ident = SourceTestIdentifier(
             xemu_version=run.xemu_version,
             platform_info=run.platform_info,
+            gl_info=gl_info,
             suite_name=suite,
             test_name=test_case,
         )
         rel_src = self.source_image_index.get(ident)
+        if not rel_src and gl_info:
+            gl_prefix = gl_info.split("--")[0]
+            for indexed_ident, indexed_path in self.source_image_index.items():
+                if (
+                    indexed_ident.xemu_version == run.xemu_version
+                    and indexed_ident.platform_info == run.platform_info
+                    and indexed_ident.suite_name == suite
+                    and indexed_ident.test_name == test_case
+                    and indexed_ident.gl_info.split("--")[0] == gl_prefix
+                ):
+                    rel_src = indexed_path
+                    break
+        if not rel_src:
+            rel_src = self.source_image_index.get(
+                SourceTestIdentifier(
+                    xemu_version=run.xemu_version,
+                    platform_info=run.platform_info,
+                    suite_name=suite,
+                    test_name=test_case,
+                    gl_info="",
+                )
+            )
         if rel_src:
             return f"{self.images_base_url}/{quote(rel_src.replace(os.sep, '/'))}"
 
@@ -1175,6 +1300,15 @@ class PagesWriter:
             if (
                 results_info.identifier.xemu_version == run.xemu_version
                 and results_info.identifier.platform_info == run.platform_info
+                and (
+                    not gl_info
+                    or results_info.identifier.gl_info.replace(":", "--").replace(
+                        "__", "--"
+                    )
+                    == gl_info
+                    or results_info.identifier.gl_info.split(":")[0].replace("__", "--")
+                    == gl_info.split("--")[0]
+                )
             ):
                 for s in results_info.results:
                     if s.name == suite:
