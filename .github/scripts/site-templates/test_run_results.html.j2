@@ -32,7 +32,8 @@
 {% endif %}
 
 {%- if failed_tests %}
-<h1>Failed tests ({{ failed_tests | length }})</h1>
+<details>
+    <summary><h1>Failed tests ({{ failed_tests | length }})</h1></summary>
 {%- for test_name, failure_infos in failed_tests | dictsort %}
 
     <h2>{{ test_name }}</h2>
@@ -43,6 +44,7 @@
 {% endfor -%}
 
 {% endfor -%}
+</details>
 {% endif -%}
 
 {%- if flaky_tests %}
