@@ -21,3 +21,6 @@ check = "mypy --ignore-missing-imports {args:.github/scripts}"
 
 [tool.ruff]
 extend-exclude = ["submodules"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["E402"]

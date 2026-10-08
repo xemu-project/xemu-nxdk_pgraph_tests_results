@@ -50,6 +50,18 @@ if isinstance(RunIdentifier, MagicMock):
 
         @classmethod
         def parse(cls, s: str) -> DummyRunIdentifier:
+            if ":" in s:
+                parts = s.split(":")
+                gl = (
+                    f"{parts[2]}--{parts[3]}"
+                    if len(parts) >= 4
+                    else (parts[2] if len(parts) >= 3 else "gl1")
+                )
+                return cls(
+                    parts[0] if len(parts) >= 1 else "v1",
+                    parts[1] if len(parts) >= 2 else "p1",
+                    gl,
+                )
             parts = s.split("/")
             return cls(
                 parts[-3] if len(parts) >= 3 else "v1",
@@ -73,9 +85,11 @@ from generate_results_site import (
     PrettyMachineInfo,
     ResultsInfo,
     ResultsScanner,
+    SourceTestIdentifier,
     SuiteResults,
     TestResult,
     TestSuiteComparisonInfo,
+    _index_source_images,
     _normalize_results_summary,
 )
 from xemu_pgraph_ci_tools.golden_config import GoldenConfig
@@ -656,3 +670,152 @@ def test_comparison_scanner_filters_deprecated_tests(tmp_path: Path) -> None:
     test_names = [tc.test_name for tc in blend_results.test_cases]
     assert "0_ADD_1" not in test_names
     assert "Valid_test" in test_names
+
+
+def test_index_source_images_distinguishes_multiple_renderers(tmp_path: Path) -> None:
+    results_dir = tmp_path / "results"
+    mesa_dir = (
+        results_dir
+        / "xemu-0.8.136"
+        / "Linux_x86_64"
+        / "vk_Mesa_llvmpipe"
+        / "gslv_4.50"
+        / "Point_sprite"
+    )
+    nvidia_dir = (
+        results_dir
+        / "xemu-0.8.136"
+        / "Linux_x86_64"
+        / "gl_NVIDIA_Corporation"
+        / "gslv_4.00"
+        / "Point_sprite"
+    )
+    mesa_dir.mkdir(parents=True)
+    nvidia_dir.mkdir(parents=True)
+
+    mesa_img = mesa_dir / "AlphaTest.png"
+    mesa_img.touch()
+    nvidia_img = nvidia_dir / "AlphaTest.png"
+    nvidia_img.touch()
+
+    indexed = _index_source_images(str(results_dir))
+
+    ident_mesa = SourceTestIdentifier(
+        xemu_version="xemu-0.8.136",
+        platform_info="Linux_x86_64",
+        gl_info="vk_Mesa_llvmpipe--gslv_4.50",
+        suite_name="Point_sprite",
+        test_name="AlphaTest",
+    )
+    ident_nvidia = SourceTestIdentifier(
+        xemu_version="xemu-0.8.136",
+        platform_info="Linux_x86_64",
+        gl_info="gl_NVIDIA_Corporation--gslv_4.00",
+        suite_name="Point_sprite",
+        test_name="AlphaTest",
+    )
+
+    assert ident_mesa in indexed
+    assert ident_nvidia in indexed
+    assert indexed[ident_mesa] == str(mesa_img)
+    assert indexed[ident_nvidia] == str(nvidia_img)
+    assert len(indexed) == 2
+
+
+def test_comparison_scanner_links_to_correct_hardware_renderer(tmp_path: Path) -> None:
+    results_dir = tmp_path / "results"
+    mesa_results = (
+        results_dir
+        / "xemu-0.8.136"
+        / "Linux_x86_64"
+        / "vk_Mesa_llvmpipe"
+        / "gslv_4.50"
+        / "Point_sprite"
+    )
+    nvidia_results = (
+        results_dir
+        / "xemu-0.8.136"
+        / "Linux_x86_64"
+        / "gl_NVIDIA_Corporation"
+        / "gslv_4.00"
+        / "Point_sprite"
+    )
+    mesa_results.mkdir(parents=True)
+    nvidia_results.mkdir(parents=True)
+    (mesa_results / "AlphaTest.png").touch()
+    (nvidia_results / "AlphaTest.png").touch()
+
+    compare_dir = tmp_path / "compare"
+    mesa_comp = (
+        compare_dir
+        / "xemu-0.8.136"
+        / "Linux_x86_64"
+        / "vk_Mesa_llvmpipe--gslv_4.50"
+        / "Xbox_Hardware"
+        / "Point_sprite"
+    )
+    nvidia_comp = (
+        compare_dir
+        / "xemu-0.8.136"
+        / "Linux_x86_64"
+        / "gl_NVIDIA_Corporation--gslv_4.00"
+        / "Xbox_Hardware"
+        / "Point_sprite"
+    )
+    mesa_comp.mkdir(parents=True)
+    nvidia_comp.mkdir(parents=True)
+    (mesa_comp / "AlphaTest-diff.png").touch()
+    (nvidia_comp / "AlphaTest-diff.png").touch()
+
+    mesa_summary = {
+        "result_identifier": "xemu-0.8.136:Linux_x86_64:vk_Mesa_llvmpipe:gslv_4.50",
+        "golden_identifier": "Xbox_Hardware",
+        "goldens_without_results": [],
+        "tests_without_goldens": [],
+        "tests_with_differences": {"Point_sprite:AlphaTest": 1.0},
+        "tests_evaluated": ["Point_sprite:AlphaTest"],
+    }
+    nvidia_summary = {
+        "result_identifier": "xemu-0.8.136:Linux_x86_64:gl_NVIDIA_Corporation:gslv_4.00",
+        "golden_identifier": "Xbox_Hardware",
+        "goldens_without_results": [],
+        "tests_without_goldens": [],
+        "tests_with_differences": {"Point_sprite:AlphaTest": 2.0},
+        "tests_evaluated": ["Point_sprite:AlphaTest"],
+    }
+    (mesa_comp.parent / "summary.json").write_text(
+        json.dumps(mesa_summary), encoding="utf-8"
+    )
+    (nvidia_comp.parent / "summary.json").write_text(
+        json.dumps(nvidia_summary), encoding="utf-8"
+    )
+
+    scanner = ComparisonScanner(
+        comparison_dir=str(compare_dir),
+        output_dir=str(tmp_path / "out"),
+        base_url="https://raw.githubusercontent.com/test",
+        results_dir=str(results_dir),
+        hw_golden_base_url="https://example.com/hw",
+        test_suite_descriptors={},
+    )
+
+    comp_results = scanner.process()
+    assert len(comp_results) == 2
+
+    for comps in comp_results.values():
+        assert len(comps) == 1
+        comp = comps[0]
+        assert len(comp.results) == 1
+        suite_res = comp.results[0]
+        assert suite_res.suite_name == "Point_sprite"
+        assert len(suite_res.test_cases) == 1
+        tc = suite_res.test_cases[0]
+
+        if "vk_Mesa_llvmpipe" in comp.identifier.gl_info:
+            assert "vk_Mesa_llvmpipe" in tc.source_image_url
+            assert "gl_NVIDIA_Corporation" not in tc.source_image_url
+        elif "gl_NVIDIA_Corporation" in comp.identifier.gl_info:
+            assert "gl_NVIDIA_Corporation" in tc.source_image_url
+            assert "vk_Mesa_llvmpipe" not in tc.source_image_url
+        else:
+            raise AssertionError(f"Unexpected run identifier: {comp.identifier}")
