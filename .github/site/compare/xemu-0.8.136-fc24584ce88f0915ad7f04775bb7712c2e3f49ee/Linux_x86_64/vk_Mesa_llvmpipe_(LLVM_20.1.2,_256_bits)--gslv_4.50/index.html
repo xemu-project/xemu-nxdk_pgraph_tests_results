@@ -18677,7 +18677,7 @@
         <h3 id="Image_blit_BlitBeyondWidth">BlitBeyondWidth</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">234391.0</div>
+            <div class="value">233367.0</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Demonstrates the interaction between 0x9F image blit operations and assigned GPU tiles. A blit operation is configured with a target smaller than the source. The target address is set within an active GPU tile such that the blit would extend beyond the end of the tile and a guard value is tested to prove that the blit is clipped to stay within the tile. A similar blit is performed outside of the tile, demonstrating that unprotected blits may overdraw the target region.</p>
@@ -18710,7 +18710,7 @@
         <h3 id="Image_blit_BlitRenderBlit">BlitRenderBlit</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">10165.0</div>
+            <div class="value">inf</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Blits an image into a render surface, then performs a 3d render on top of the surface, then another blit on top of the composited two. Finally does a srccopy to blit the finished composition to the framebuffer. Demonstrates apparent incorrect ordering in various versions of xemu.</p>
@@ -18743,7 +18743,7 @@
         <h3 id="Image_blit_DirtyOverlappedDestSurf">DirtyOverlappedDestSurf</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">59776.0</div>
+            <div class="value">46464.0</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Performs a 3d render into the backbuffer, then a 2D srccopy that completely overwrites it. Finally performs another 3d render, demonstrating incorrect behavior in various versions of xemu.</p>
@@ -18776,7 +18776,7 @@
         <h3 id="Image_blit_ImgBlt_BLENDAND_XRGB_B44400000">ImgBlt_BLENDAND_XRGB_B44400000</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">2946.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -18804,7 +18804,7 @@
         <h3 id="Image_blit_ImgBlt_BLENDAND_XRGB_B444FFFFF">ImgBlt_BLENDAND_XRGB_B444FFFFF</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">2946.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -18832,7 +18832,7 @@
         <h3 id="Image_blit_ImgBlt_BLENDAND_XRGB_B66800000">ImgBlt_BLENDAND_XRGB_B66800000</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">5632.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -18860,7 +18860,7 @@
         <h3 id="Image_blit_ImgBlt_BLENDAND_XRGB_B7F800000">ImgBlt_BLENDAND_XRGB_B7F800000</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">5632.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -18888,7 +18888,7 @@
         <h3 id="Image_blit_ImgBlt_BLENDAND_XRGB_B7FFFFFFF">ImgBlt_BLENDAND_XRGB_B7FFFFFFF</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">5632.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -18916,7 +18916,7 @@
         <h3 id="Image_blit_ImgBlt_Clip_0_0_640_480">ImgBlt_Clip_0_0_640_480</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">5632.0</div>
+            <div class="value">inf</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Demonstrates expected behavior of the contextual clip rectangle (class 0x19) during image blits.</p>
@@ -18949,7 +18949,7 @@
         <h3 id="Image_blit_ImgBlt_Clip_300_200_16_24">ImgBlt_Clip_300_200_16_24</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">14139.0</div></div>
+            <div class="value">13248.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -18977,7 +18977,7 @@
         <h3 id="Image_blit_ImgBlt_Clip_320_240_0_0">ImgBlt_Clip_320_240_0_0</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">14203.0</div></div>
+            <div class="value">13632.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -19005,7 +19005,7 @@
         <h3 id="Image_blit_ImgBlt_Clip_320_240_0_10">ImgBlt_Clip_320_240_0_10</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">14203.0</div></div>
+            <div class="value">13632.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -19033,7 +19033,7 @@
         <h3 id="Image_blit_ImgBlt_Clip_320_240_1_1">ImgBlt_Clip_320_240_1_1</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">14202.0</div></div>
+            <div class="value">13631.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -19061,7 +19061,7 @@
         <h3 id="Image_blit_ImgBlt_Clip_320_240_640_480">ImgBlt_Clip_320_240_640_480</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">11351.0</div></div>
+            <div class="value">10780.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -19089,7 +19089,7 @@
         <h3 id="Image_blit_ImgBlt_Clip_320_240_64_40">ImgBlt_Clip_320_240_64_40</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">12135.0</div></div>
+            <div class="value">11564.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -19117,7 +19117,7 @@
         <h3 id="Image_blit_ImgBlt_SRCCOPY_ARGB_B00000000">ImgBlt_SRCCOPY_ARGB_B00000000</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">5632.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -19145,7 +19145,7 @@
         <h3 id="Image_blit_ImgBlt_SRCCOPY_XRGB_B00000000">ImgBlt_SRCCOPY_XRGB_B00000000</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">5632.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -25094,6 +25094,62 @@
 
 
     
+        <h3 id="Point_sprite_AlphaMask_FF">AlphaMask_FF</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">33779.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Point_sprite/AlphaMask_FF-diff.png" alt="Diff result for Point_sprite::AlphaMask_FF" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_sprite/AlphaMask_FF.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_sprite/AlphaMask_FF.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_sprite/AlphaMask_FF.png" alt="Source image for Point_sprite::AlphaMask_FF" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_sprite/AlphaMask_FF.png" alt="Golden image for Point_sprite::AlphaMask_FF" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Point_sprite_AlphaMask_VS">AlphaMask_VS</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">16712.0</div></div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Point_sprite/AlphaMask_VS-diff.png" alt="Diff result for Point_sprite::AlphaMask_VS" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_sprite/AlphaMask_VS.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_sprite/AlphaMask_VS.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_sprite/AlphaMask_VS.png" alt="Source image for Point_sprite::AlphaMask_VS" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_sprite/AlphaMask_VS.png" alt="Golden image for Point_sprite::AlphaMask_VS" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
         <h3 id="Point_sprite_AlphaTest">AlphaTest</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
@@ -26815,7 +26871,7 @@
         <h3 id="Shade_model_W_Fixed_TriStrip_Flat_Last">W_Fixed_TriStrip_Flat_Last</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">167600.0</div></div>
+            <div class="value">167998.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -28253,7 +28309,7 @@
         <h3 id="Stencil_Stencil_REPLACE_DT">Stencil_REPLACE_DT</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">40000.0</div></div>
+            <div class="value">38796.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -28281,7 +28337,7 @@
         <h3 id="Stencil_Stencil_REPLACE_ST">Stencil_REPLACE_ST</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">30000.0</div></div>
+            <div class="value">39167.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -28337,7 +28393,7 @@
         <h3 id="Stencil_Stencil_ZERO">Stencil_ZERO</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">38796.0</div></div>
+            <div class="value">39094.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -32014,7 +32070,7 @@
         <h3 id="Texture_border_2D_BorderTex_SZ">2D_BorderTex_SZ</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">13256.0</div></div>
+            <div class="value">13470.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -37630,7 +37686,7 @@
         <h3 id="Texture_signed_component_tests_txt_A8R8G8B8_ADD">txt_A8R8G8B8_ADD</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">105183.0</div></div>
+            <div class="value">102992.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -37686,7 +37742,7 @@
         <h3 id="Texture_signed_component_tests_txt_A8R8G8B8_SREVSUB">txt_A8R8G8B8_SREVSUB</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">188995.0</div></div>
+            <div class="value">188987.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -37913,7 +37969,7 @@
         <h3 id="Vertex_shader_rounding_tests_GeometrySubscreen_0.9990">GeometrySubscreen_0.9990</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">116.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -37941,7 +37997,7 @@
         <h3 id="Vertex_shader_rounding_tests_GeometrySubscreen_1.0000">GeometrySubscreen_1.0000</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">145.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
