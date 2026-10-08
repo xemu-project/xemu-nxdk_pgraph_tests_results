@@ -75,6 +75,7 @@ jobs:
             ${{ inputs.version != '' && format('--version "{0}"', inputs.version) || '' }} \
             ${{ inputs.dry_run && '--dry-run' || '' }} \
             --golden-dir cache/nxdk_pgraph_tests_golden_results/results \
+            --base-url "https://raw.githubusercontent.com/${{ github.repository }}/github_pages" \
             --site-output-dir site-deployment \
             -v
 

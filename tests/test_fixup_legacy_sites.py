@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import sys
 from pathlib import Path
+from typing import Any
 
 scripts_dir = str(Path(__file__).parent.parent / ".github" / "scripts")
 if scripts_dir not in sys.path:
@@ -21,6 +22,7 @@ from fixup_legacy_sites import (
     discover_comparison_dirs,
     find_matching_results_dir,
     fixup_comparison_dir,
+    fixup_github_pages,
     reconstruct_golden_tests_from_tree,
 )
 from xemu_pgraph_ci_tools.golden_config import GoldenConfig
@@ -303,3 +305,47 @@ def test_fixup_comparison_dir_with_golden_config(tmp_path: Path) -> None:
     assert "SuiteB:DeprecatedTest" not in data["goldens_without_results"]
     assert "SuiteA:Test1" in data["goldens_without_results"]
     assert "SuiteC:ActiveTest" in data["goldens_without_results"]
+
+
+def test_fixup_github_pages_invokes_generator_with_base_url(
+    monkeypatch: Any, tmp_path: Path
+) -> None:
+    calls: list[list[str]] = []
+
+    def mock_run(cmd: list[str], *args: Any, **kwargs: Any) -> Any:
+        calls.append(cmd)
+
+        class Res:
+            returncode = 0
+
+        return Res()
+
+    monkeypatch.setattr("subprocess.run", mock_run)
+    monkeypatch.setattr("fixup_legacy_sites.git", lambda *args, **kwargs: "")
+    monkeypatch.setattr(
+        "fixup_legacy_sites.ensure_remote_fetched", lambda *args, **kwargs: None
+    )
+    monkeypatch.setattr("fixup_legacy_sites.fixup_directory", lambda *args, **kwargs: 1)
+    monkeypatch.setattr("os.getcwd", lambda: str(tmp_path))
+
+    comp_dir = tmp_path / "compare-results"
+    comp_dir.mkdir(parents=True)
+    scripts_dir = tmp_path / ".github" / "scripts"
+    scripts_dir.mkdir(parents=True)
+    (scripts_dir / "generate_results_site.py").touch()
+
+    custom_base_url = (
+        "https://raw.githubusercontent.com/test-org/test-repo/github_pages"
+    )
+    fixup_github_pages(
+        base_url=custom_base_url,
+        dry_run=True,
+    )
+
+    gen_calls = [
+        c for c in calls if any("generate_results_site.py" in str(arg) for arg in c)
+    ]
+    assert len(gen_calls) == 1
+    assert "--base-url" in gen_calls[0]
+    idx = gen_calls[0].index("--base-url")
+    assert gen_calls[0][idx + 1] == custom_base_url

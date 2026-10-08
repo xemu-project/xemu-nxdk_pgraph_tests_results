@@ -473,6 +473,7 @@ def fixup_github_pages(
     golden_dir: str | None = None,
     version_filter: str | None = None,
     site_output_dir: str | None = None,
+    base_url: str = "https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages",
     *,
     dry_run: bool = False,
     push: bool = True,
@@ -552,6 +553,8 @@ def fixup_github_pages(
                     site_target,
                     "--comparison-dir",
                     "compare-results",
+                    "--base-url",
+                    base_url,
                     "-v",
                 ],
                 cwd=worktree_dir,
@@ -659,6 +662,11 @@ def main() -> int:
         help="Optional directory to copy generated .github/site to for GitHub Pages deployment",
     )
     parser.add_argument(
+        "--base-url",
+        default="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages",
+        help="Base URL at which raw images and diffs may be publicly accessed",
+    )
+    parser.add_argument(
         "--verbose",
         "-v",
         action="store_true",
@@ -689,6 +697,7 @@ def main() -> int:
             golden_dir=args.golden_dir,
             version_filter=args.version,
             site_output_dir=args.site_output_dir,
+            base_url=args.base_url,
             dry_run=args.dry_run,
             push=should_push,
         )
@@ -710,6 +719,7 @@ def main() -> int:
             golden_dir=args.golden_dir,
             version_filter=args.version,
             site_output_dir=args.site_output_dir,
+            base_url=args.base_url,
             dry_run=args.dry_run,
             push=should_push,
         )

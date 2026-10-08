@@ -1613,7 +1613,7 @@ def main():
     parser.add_argument(
         "--base-url",
         "-u",
-        default="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/main",
+        default="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages",
         help="Base URL at which the contents of the repository may be publicly accessed",
     )
     parser.add_argument(
