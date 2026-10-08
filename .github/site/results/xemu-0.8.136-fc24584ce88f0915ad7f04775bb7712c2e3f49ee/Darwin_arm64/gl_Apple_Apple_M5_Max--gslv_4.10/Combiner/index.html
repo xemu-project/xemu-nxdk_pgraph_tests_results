@@ -79,6 +79,15 @@
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Darwin_arm64/gl_Apple_Apple_M5_Max/gslv_4.10/Combiner/Independence.png" alt="Test result for Combiner::Independence" class="inline-image">
 </div>
     
+<h2 id="InputMappings">InputMappings</h2>
+        <div class="test-case-description">
+        <p>Tests behavior of each CombinerMapping input modifier (UNSIGNED_IDENTITY, UNSIGNED_INVERT, EXPAND_NORMAL, EXPAND_NEGATE, HALFBIAS_NORMAL, HALFBIAS_NEGATE, SIGNED_IDENTITY, SIGNED_NEGATE) across positive (+0.70) and negative (-0.40) input registers. Output is scaled and biased (0.5 * mapping(x) + 0.5) to keep all results within [0.0, 1.0]. Each quad is split into actual (left) and expected reference (right) halves.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Darwin_arm64/gl_Apple_Apple_M5_Max/gslv_4.10/Combiner/InputMappings.png" alt="Test result for Combiner::InputMappings" class="inline-image">
+</div>
+    
 <h2 id="Mux">Mux</h2>
         <div class="test-case-description">
         <p>Tests behavior of the &#34;MUX&#34; combiner mode, in which R0.a is used to select between the AB and CD outputs.</p>
@@ -88,6 +97,33 @@
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Darwin_arm64/gl_Apple_Apple_M5_Max/gslv_4.10/Combiner/Mux.png" alt="Test result for Combiner::Mux" class="inline-image">
 </div>
     
+<h2 id="ShiftClamping">ShiftClamping</h2>
+        <div class="test-case-description">
+        <p>Validates clamping behavior combined with combiner output shift and bias operations (OP_IDENTITY, OP_SHIFT_RIGHT_1, OP_BIAS, OP_SHIFT_LEFT_1, OP_SHIFT_LEFT_1_BIAS, OP_SHIFT_LEFT_2). Each rectangular quad is split in half: the left half displays the actual tested combiner result, while the right half displays the forced exact expected reference value. Demonstrates post-shift/bias clamping on sums exceeding 1.0 (internal accumulator headroom is preserved before scale/bias) and verifies positive saturation.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Darwin_arm64/gl_Apple_Apple_M5_Max/gslv_4.10/Combiner/ShiftClamping.png" alt="Test result for Combiner::ShiftClamping" class="inline-image">
+</div>
+    
+<h2 id="SignedCombinerOps">SignedCombinerOps</h2>
+        <div class="test-case-description">
+        <p>Tests behavior of combiner output operations (OP_IDENTITY, OP_SHIFT_LEFT_1, OP_SHIFT_LEFT_2, OP_SHIFT_RIGHT_1, OP_BIAS) in conjunction with signed (negative) values. Verifies that negative values are properly scaled and clamped when added to a positive base value in subsequent stages.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Darwin_arm64/gl_Apple_Apple_M5_Max/gslv_4.10/Combiner/SignedCombinerOps.png" alt="Test result for Combiner::SignedCombinerOps" class="inline-image">
+</div>
+    
+<h2 id="SignedToUnsignedMapping">SignedToUnsignedMapping</h2>
+        <div class="test-case-description">
+        <p>Validates behavior when known signed (negative) values are mapped as MAP_UNSIGNED_IDENTITY versus MAP_SIGNED_IDENTITY across intermediate registers, pass-through texture coordinates, and a multi-stage pipeline. Verifies that MAP_UNSIGNED_IDENTITY properly clamps negative values to 0.0 (preserving base colors), while MAP_SIGNED_IDENTITY preserves negative values (allowing subtraction).</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Darwin_arm64/gl_Apple_Apple_M5_Max/gslv_4.10/Combiner/SignedToUnsignedMapping.png" alt="Test result for Combiner::SignedToUnsignedMapping" class="inline-image">
+</div>
+    
 <h2 id="SpecialInputs">SpecialInputs</h2>
         <div class="test-case-description">
         <p>Tests the special input registers in the final combiner.</p>
@@ -95,6 +131,33 @@
     
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Darwin_arm64/gl_Apple_Apple_M5_Max/gslv_4.10/Combiner/SpecialInputs.png" alt="Test result for Combiner::SpecialInputs" class="inline-image">
+</div>
+    
+<h2 id="SpecularR0Sum">SpecularR0Sum</h2>
+        <div class="test-case-description">
+        <p>Validates final combiner SRC_SPEC_R0_SUM (R0 + Specular) across general combiner output operations (IDENTITY, OP_SHIFT_LEFT_1, OP_SHIFT_LEFT_2, OP_SHIFT_RIGHT_1, OP_BIAS, OP_SHIFT_LEFT_1_BIAS) with specular zeroed. Each quad is split into tested (left) and expected reference (right) halves, comparing direct SRC_R0 against SRC_SPEC_R0_SUM to isolate emulator discrepancies under bias operations. </p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Darwin_arm64/gl_Apple_Apple_M5_Max/gslv_4.10/Combiner/SpecularR0Sum.png" alt="Test result for Combiner::SpecularR0Sum" class="inline-image">
+</div>
+    
+<h2 id="SpecularR0SumFlags">SpecularR0SumFlags</h2>
+        <div class="test-case-description">
+        <p>Tests behavior of specular_add_invert_r0, specular_add_invert_v1, and specular_clamp on final combiner sum (SRC_SPEC_R0_SUM). Each quad is split into tested (left) and expected reference (right) halves. Validates positive overflow clamping on sums exceeding 1.0, individual and simultaneous operand inversion (1 - R0, 1 - V1), and clamping behavior with negative/underflowing input registers.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Darwin_arm64/gl_Apple_Apple_M5_Max/gslv_4.10/Combiner/SpecularR0SumFlags.png" alt="Test result for Combiner::SpecularR0SumFlags" class="inline-image">
+</div>
+    
+<h2 id="TextureDestination">TextureDestination</h2>
+        <div class="test-case-description">
+        <p>Demonstrates and validates behavior when general combiner stages write to texture registers (DST_TEX0, DST_TEX1). Tests cross-stage register forwarding, in-place read-modify-write, multi-stage pipeline flow, direct Final Combiner register reads, alpha channel destination writes, and unbound texture registers as general scratch registers.</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.136-fc24584ce88f0915ad7f04775bb7712c2e3f49ee/Darwin_arm64/gl_Apple_Apple_M5_Max/gslv_4.10/Combiner/TextureDestination.png" alt="Test result for Combiner::TextureDestination" class="inline-image">
 </div>
     
 <h2 id="UnboundTexSampler">UnboundTexSampler</h2>
