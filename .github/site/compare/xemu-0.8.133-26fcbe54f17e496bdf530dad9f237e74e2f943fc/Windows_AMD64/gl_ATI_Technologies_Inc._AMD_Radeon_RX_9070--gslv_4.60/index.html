@@ -24140,11 +24140,39 @@
         
             <div class="test-description-line">https://github.com/xemu-project/xemu/issues/1852</div>
         
+            <div class="test-description-line">Observations from HW:</div>
+        
             <div class="test-description-line"></div>
+        
+            <div class="test-description-line">A draw that cannot write anything (color, depth, and stencil all disabled) still updates the carried fog values.</div>
+        
+            <div class="test-description-line"></div>
+        
+            <div class="test-description-line">Carried fog is tracked per vertex rather than as a single value. For vertices submitted inline (immediate mode SET_VERTEX, inline buffers, and inline arrays) a vertex that does not write fog inherits the fog of the vertex six positions earlier in submission order. The association continues across draws and does not depend on whether the primitives are points or triangles. This is consistent with six vertex output buffers used round robin.</div>
+        
+            <div class="test-description-line"></div>
+        
+            <div class="test-description-line">For vertices fetched from memory (draw arrays and inline elements) the inherited values have no stable pattern and differ between runs, presumably depending on the timing of vertex fetch relative to shader execution.</div>
+        
+            <div class="test-description-line"></div>
+        
+            <div class="test-description-line">Waiting for the pushbuffer to become idle between draws changes the association; the six vertex pattern above does not predict the results of CarryoverNopDraw, which waits between its draws.</div>
+        
+            <div class="test-description-line"></div>
+        
+            <div class="test-description-line"></div>
+        
+            <div class="test-description-line">A draw that cannot write anything (color, depth, and stencil all disabled) still updates the carried fog values.</div>
+        
+            <div class="test-description-line">Carried fog is tracked per vertex rather than as a single value. For vertices submitted inline (immediate mode SET_VERTEX, inline buffers, and inline arrays) a vertex that does not write fog inherits the fog of the vertex six positions earlier in submission order. The association continues across draws and does not depend on whether the primitives are points or triangles. This is consistent with six vertex output buffers used round robin.</div>
+        
+            <div class="test-description-line">For vertices fetched from memory (draw arrays and inline elements) the inherited values have no stable pattern and differ between runs, presumably depending on the timing of vertex fetch relative to shader execution.</div>
+        
+            <div class="test-description-line">Waiting for the pushbuffer to become idle between draws changes the association; the six vertex pattern above does not predict the results of CarryoverNopDraw, which waits between its draws.</div>
         </div>
         
         <div class="label">Suite class def</div>
-        <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/fog_carryover_tests.h#L17">src/tests/fog_carryover_tests.h</a></div>
+        <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/fog_carryover_tests.h#L28">src/tests/fog_carryover_tests.h</a></div>
     </div>
 
 
@@ -24287,7 +24315,7 @@
             <div class="value">16384</div>
             <div class="label">Description</div>
             <div class="value">
-                <p>Renders a series of primitives using various draw modes on the left, setting fog coordinates. Then renders a quad using the same draw mode on the right without specifying a fog coordinate at all. The fog mode is set to EXP. </p>
+                <p>Renders a series of primitives using various draw modes on the left, setting fog coordinates. Then renders a quad using the same draw mode on the right without specifying a fog coordinate at all. The fog mode is set to EXP.</p>
             </div>
         </div>
 
