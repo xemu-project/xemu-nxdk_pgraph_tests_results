@@ -31,7 +31,7 @@
     <h3 id="ControlFlags_FF">ControlFlags_FF</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">8065.0</div>
+        <div class="value">8142.0</div>
         <div class="label">Description</div>
         <div class="value">
             <p>Demonstrates that SET_SPECULAR_ENABLE = false forces specular values to {0, 0, 0, 1}. Also demonstrates that failing to set ALPHA_FROM_MATERIAL_SPECULAR will cause the specular alpha to be set to 1 and failing to set SEPARATE_SPECULAR will pass through vertex specular RGB instead of performing the light calculation.</p><p>Renders two groups of two rows of 4 quads each with the fixed function pipeline. The first row is the specular component, the second is the diffuse. Lighting is enabled but with a directional light pointing at {1, 0, 1}.</p><p>Each quad has specular and diffuse colors of: UL = {1.f, 0.f, 0.f, 0.15f}, {0.f, 0.f, 0.5f, 1.f} UR = {1.f, 0.f, 0.f, 0.75f}, {0.f, 0.f, 0.75f, 1.f} LR = {0.f, 1.f, 0.f, 1.f}, {0.f, 0.f, 1.f, 1.f} LL = {0.f, 1.f, 0.f, 0.2f}, {0.f, 0.f, 0.25f, 1.f}</p><p>The upper row has SET_SPECULAR_ENABLE = false. The lower row has it true. The first column has SET_LIGHT_CONTROL = SEPARATE_SPECULAR + ALPHA_FROM_MATERIAL_SPECULAR The second has SET_LIGHT_CONTROL = SEPARATE_SPECULAR The third has SET_LIGHT_CONTROL = ALPHA_FROM_MATERIAL_SPECULAR The fourth has SET_LIGHT_CONTROL = 0</p><p>Because lighting is enabled, the diffuse alpha is entirely dictated by SET_MATERIAL_ALPHA, and RGB is entirely set by the lighting calculations. </p>
@@ -61,7 +61,7 @@
     <h3 id="ControlFlags_VS">ControlFlags_VS</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">82690.0</div>
+        <div class="value">82602.0</div>
         <div class="label">Description</div>
         <div class="value">
             <p>Demonstrates that SET_SPECULAR_ENABLE = false forces specular values to {0, 0, 0, 1}. Also demonstrates that failing to set ALPHA_FROM_MATERIAL_SPECULAR will cause the specular alpha to be set to 1 and failing to set SEPARATE_SPECULAR will pass through vertex specular RGB instead of performing the light calculation.</p><p>Renders two groups of two rows of 4 quads each with the fixed function pipeline. The first row is the specular component, the second is the diffuse. Lighting is enabled but with a directional light pointing at {1, 0, 1}.</p><p>Each quad has specular and diffuse colors of: UL = {1.f, 0.f, 0.f, 0.15f}, {0.f, 0.f, 0.5f, 1.f} UR = {1.f, 0.f, 0.f, 0.75f}, {0.f, 0.f, 0.75f, 1.f} LR = {0.f, 1.f, 0.f, 1.f}, {0.f, 0.f, 1.f, 1.f} LL = {0.f, 1.f, 0.f, 0.2f}, {0.f, 0.f, 0.25f, 1.f}</p><p>The upper row has SET_SPECULAR_ENABLE = false. The lower row has it true. The first column has SET_LIGHT_CONTROL = SEPARATE_SPECULAR + ALPHA_FROM_MATERIAL_SPECULAR The second has SET_LIGHT_CONTROL = SEPARATE_SPECULAR The third has SET_LIGHT_CONTROL = ALPHA_FROM_MATERIAL_SPECULAR The fourth has SET_LIGHT_CONTROL = 0</p><p>Because lighting is enabled, the diffuse alpha is entirely dictated by SET_MATERIAL_ALPHA, and RGB is entirely set by the lighting calculations. </p>
@@ -91,7 +91,7 @@
     <h3 id="ControlFlagsLightDisable_FF">ControlFlagsLightDisable_FF</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">1501.0</div>
+        <div class="value">1758.0</div>
         <div class="label">Description</div>
         <div class="value">
             <p>Demonstrates that SET_SPECULAR_ENABLE = false forces specular values to {0, 0, 0, 1}. Also demonstrates that failing to set ALPHA_FROM_MATERIAL_SPECULAR will cause the specular alpha to be set to 1.</p><p>Renders two groups of two rows of 4 quads each with the fixed function pipeline. The first row is the specular component, the second is the diffuse. Lighting is disabled.</p><p>Each quad has specular and diffuse colors of: UL = {1.f, 0.f, 0.f, 0.15f}, {0.f, 0.f, 0.5f, 1.f} UR = {1.f, 0.f, 0.f, 0.75f}, {0.f, 0.f, 0.75f, 1.f} LR = {0.f, 1.f, 0.f, 1.f}, {0.f, 0.f, 1.f, 1.f} LL = {0.f, 1.f, 0.f, 0.2f}, {0.f, 0.f, 0.25f, 1.f}</p><p>The upper two rows have SET_SPECULAR_ENABLE = false. The lower rows have it true. The first column has SET_LIGHT_CONTROL = SEPARATE_SPECULAR + ALPHA_FROM_MATERIAL_SPECULAR The second has SET_LIGHT_CONTROL = SEPARATE_SPECULAR The third has SET_LIGHT_CONTROL = ALPHA_FROM_MATERIAL_SPECULAR The fourth has SET_LIGHT_CONTROL = 0 </p>
@@ -121,7 +121,7 @@
     <h3 id="ControlFlagsLightDisable_VS">ControlFlagsLightDisable_VS</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">1776.0</div>
+        <div class="value">2007.0</div>
         <div class="label">Description</div>
         <div class="value">
             <p>Demonstrates that SET_SPECULAR_ENABLE = false forces specular values to {0, 0, 0, 1}. Also demonstrates that failing to set ALPHA_FROM_MATERIAL_SPECULAR will cause the specular alpha to be set to 1.</p><p>Renders two groups of two rows of 4 quads each with the fixed function pipeline. The first row is the specular component, the second is the diffuse. Lighting is disabled.</p><p>Each quad has specular and diffuse colors of: UL = {1.f, 0.f, 0.f, 0.15f}, {0.f, 0.f, 0.5f, 1.f} UR = {1.f, 0.f, 0.f, 0.75f}, {0.f, 0.f, 0.75f, 1.f} LR = {0.f, 1.f, 0.f, 1.f}, {0.f, 0.f, 1.f, 1.f} LL = {0.f, 1.f, 0.f, 0.2f}, {0.f, 0.f, 0.25f, 1.f}</p><p>The upper row has SET_SPECULAR_ENABLE = false. The lower row has it true. The first column has SET_LIGHT_CONTROL = SEPARATE_SPECULAR + ALPHA_FROM_MATERIAL_SPECULAR The second has SET_LIGHT_CONTROL = SEPARATE_SPECULAR The third has SET_LIGHT_CONTROL = ALPHA_FROM_MATERIAL_SPECULAR The fourth has SET_LIGHT_CONTROL = 0 </p>
@@ -151,7 +151,7 @@
     <h3 id="ControlFlagsNoLight_FF">ControlFlagsNoLight_FF</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">761.0</div>
+        <div class="value">900.0</div>
         <div class="label">Description</div>
         <div class="value">
             <p>Demonstrates that SET_SPECULAR_ENABLE = false forces specular values to {0, 0, 0, 1}. Also demonstrates that failing to set ALPHA_FROM_MATERIAL_SPECULAR will cause the specular alpha to be set to 1 and failing to set SEPARATE_SPECULAR will pass through vertex specular RGB instead of performing the light calculation.</p><p>Renders two groups of two rows of 4 quads each with the fixed function pipeline. The first row is the specular component, the second is the diffuse. Lighting is enabled but no light exists.</p><p>Each quad has specular and diffuse colors of: UL = {1.f, 0.f, 0.f, 0.15f}, {0.f, 0.f, 0.5f, 1.f} UR = {1.f, 0.f, 0.f, 0.75f}, {0.f, 0.f, 0.75f, 1.f} LR = {0.f, 1.f, 0.f, 1.f}, {0.f, 0.f, 1.f, 1.f} LL = {0.f, 1.f, 0.f, 0.2f}, {0.f, 0.f, 0.25f, 1.f}</p><p>The upper row has SET_SPECULAR_ENABLE = false. The lower row has it true. The first column has SET_LIGHT_CONTROL = SEPARATE_SPECULAR + ALPHA_FROM_MATERIAL_SPECULAR The second has SET_LIGHT_CONTROL = SEPARATE_SPECULAR The third has SET_LIGHT_CONTROL = ALPHA_FROM_MATERIAL_SPECULAR The fourth has SET_LIGHT_CONTROL = 0</p><p>Because lighting is enabled, the diffuse alpha is entirely dictated by SET_MATERIAL_ALPHA, and RGB is entirely set by the lighting calculations. </p>
@@ -181,7 +181,7 @@
     <h3 id="ControlFlagsNoLight_VS">ControlFlagsNoLight_VS</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">83376.0</div>
+        <div class="value">83670.0</div>
         <div class="label">Description</div>
         <div class="value">
             <p>Demonstrates that SET_SPECULAR_ENABLE = false forces specular values to {0, 0, 0, 1}. Also demonstrates that failing to set ALPHA_FROM_MATERIAL_SPECULAR will cause the specular alpha to be set to 1 and failing to set SEPARATE_SPECULAR will pass through vertex specular RGB instead of performing the light calculation.</p><p>Renders two groups of two rows of 4 quads each with the fixed function pipeline. The first row is the specular component, the second is the diffuse. Lighting is enabled but no light exists.</p><p>Each quad has specular and diffuse colors of: UL = {1.f, 0.f, 0.f, 0.15f}, {0.f, 0.f, 0.5f, 1.f} UR = {1.f, 0.f, 0.f, 0.75f}, {0.f, 0.f, 0.75f, 1.f} LR = {0.f, 1.f, 0.f, 1.f}, {0.f, 0.f, 1.f, 1.f} LL = {0.f, 1.f, 0.f, 0.2f}, {0.f, 0.f, 0.25f, 1.f}</p><p>The upper row has SET_SPECULAR_ENABLE = false. The lower row has it true. The first column has SET_LIGHT_CONTROL = SEPARATE_SPECULAR + ALPHA_FROM_MATERIAL_SPECULAR The second has SET_LIGHT_CONTROL = SEPARATE_SPECULAR The third has SET_LIGHT_CONTROL = ALPHA_FROM_MATERIAL_SPECULAR The fourth has SET_LIGHT_CONTROL = 0</p><p>Because lighting is enabled, the diffuse alpha is entirely dictated by SET_MATERIAL_ALPHA, and RGB is entirely set by the lighting calculations. </p>
@@ -211,7 +211,7 @@
     <h3 id="NonUnitNormal_0.972">NonUnitNormal_0.972</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">2161.0</div>
+        <div class="value">2155.0</div>
         <div class="label">Description</div>
         <div class="value">
             <p>Renders a triangle fan with spherical normals that are scaled to be 0.972 in length. 0.972 is small enough that no pixels are illuminated.</p>
@@ -241,7 +241,7 @@
     <h3 id="NonUnitNormal_0.973">NonUnitNormal_0.973</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">2161.0</div>
+        <div class="value">2155.0</div>
         <div class="label">Description</div>
         <div class="value">
             <p>Renders a triangle fan with spherical normals that are scaled to be 0.973 in length. 0.973 is large enough that center pixels are non-0.</p>
@@ -271,7 +271,7 @@
     <h3 id="NonUnitNormal_1.000">NonUnitNormal_1.000</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">2161.0</div>
+        <div class="value">2155.0</div>
         <div class="label">Description</div>
         <div class="value">
             <p>Renders a triangle fan with spherical unit-length normals. This is the control image.</p>
@@ -301,7 +301,7 @@
     <h3 id="NonUnitNormal_1.008">NonUnitNormal_1.008</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">2161.0</div>
+        <div class="value">2155.0</div>
         <div class="label">Description</div>
         <div class="value">
             <p>Renders a triangle fan with spherical normals that are scaled to be 1.008 in length. This is close enough to 1.0 that the color is still applied.</p>
@@ -331,7 +331,7 @@
     <h3 id="NonUnitNormal_1.009">NonUnitNormal_1.009</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">2161.0</div>
+        <div class="value">2155.0</div>
         <div class="label">Description</div>
         <div class="value">
             <p>Renders a triangle fan with spherical normals that are scaled to be 1.009 in length. This demonstrates that specular color is reset to 0 when overflowing ~1.0. </p>
