@@ -26,7 +26,7 @@
     <h3 id="Compositing_-2">Compositing_-2</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">4149.0</div>
+        <div class="value">6855.0</div>
         <div class="label">Description</div>
         <div class="value">
             <p>As Compositing_-4, but the final full screen quad is drawn at z = -2.</p>
@@ -56,7 +56,7 @@
     <h3 id="Compositing_2">Compositing_2</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">1196.0</div>
+        <div class="value">1920.0</div>
         <div class="label">Description</div>
         <div class="value">
             <p>As Compositing_-4, but the final full screen quad is drawn at z = 2.</p>
@@ -109,6 +109,336 @@
         </div>
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_rounding_tests/GeometrySubscreen_0.5625.png" alt="Source image for Vertex_shader_rounding_tests::GeometrySubscreen_0.5625" class="image-comparison" data-state="source">
         <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/GeometrySubscreen_0.5625.png" alt="Golden image for Vertex_shader_rounding_tests::GeometrySubscreen_0.5625" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="OpRounding_ADD">OpRounding_ADD</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">5265.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>As OpRounding_MUL, but measures the rounding of ADD. Each case uses operands a and b whose exact sum lies 0.25 or 0.75 ulp beyond a representable float (for positive and negative sums), or exactly 0.5 ulp above an odd one so that round-to-nearest-even rounds up (&#34;Tie&#34;), with c the IEEE round-to-nearest-even sum. The shader computes d = ADD(a, b) - c. IEEE round to nearest would give d = 0 for every case. Hardware truncates the sum toward zero, giving d = 0, -1, 0, 1 and -1 ulp.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_rounding_tests/OpRounding_ADD-diff.png" alt="Diff result for Vertex_shader_rounding_tests::OpRounding_ADD" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_rounding_tests/OpRounding_ADD.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_ADD.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_rounding_tests/OpRounding_ADD.png" alt="Source image for Vertex_shader_rounding_tests::OpRounding_ADD" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_ADD.png" alt="Golden image for Vertex_shader_rounding_tests::OpRounding_ADD" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="OpRounding_ADDWindow">OpRounding_ADDWindow</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">1878.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>As OpRounding_ADD, but with operands that probe the alignment window of the nv2a adder. Hardware aligns the smaller operand to the larger one and truncates it to a multiple of 2^-28 relative to the larger operand&#39;s leading bit (24 bits of mantissa plus 5 more, with no sticky bit) before summing exactly and truncating the sum toward zero. The cases compute 1 - 2^-28 (&#34;Kept&#34;, inside the window), 1 - 2^-29 (&#34;Lost&#34;, outside it) and 1 - (2^-24 + 2^-29) (&#34;Strad&#34;, whose 2^-29 bit is outside it). Hardware gives depth - offset = -16, 0 and 0 (d = -0.5, 0 and 0 ulp). Round to nearest gives 0, 0 and 0; truncating the exact sum gives -16, -16 and -16.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_rounding_tests/OpRounding_ADDWindow-diff.png" alt="Diff result for Vertex_shader_rounding_tests::OpRounding_ADDWindow" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_rounding_tests/OpRounding_ADDWindow.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_ADDWindow.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_rounding_tests/OpRounding_ADDWindow.png" alt="Source image for Vertex_shader_rounding_tests::OpRounding_ADDWindow" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_ADDWindow.png" alt="Golden image for Vertex_shader_rounding_tests::OpRounding_ADDWindow" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="OpRounding_DP4">OpRounding_DP4</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">5885.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>As OpRounding_MUL, but d is computed by a single DP4 of (a, c, 0, 0) and (b, -1, 0, 2^23). On hardware the product is truncated before it is summed, giving the same results as OpRounding_MUL.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_rounding_tests/OpRounding_DP4-diff.png" alt="Diff result for Vertex_shader_rounding_tests::OpRounding_DP4" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_rounding_tests/OpRounding_DP4.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_DP4.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_rounding_tests/OpRounding_DP4.png" alt="Source image for Vertex_shader_rounding_tests::OpRounding_DP4" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_DP4.png" alt="Golden image for Vertex_shader_rounding_tests::OpRounding_DP4" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="OpRounding_DP4Sum3">OpRounding_DP4Sum3</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">6363.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Computes d = DP4((a, b, t2, 0), (1, 1, 1, 0)) - c with c, the IEEE round-to-nearest-even value of a + b + t2, subtracted by a separate ADD so that it does not take part in the DP4&#39;s accumulation. Hardware truncates each product, aligns all of them to the largest one in the same 2^-28 window as ADD (see OpRounding_ADDWindow), sums the aligned terms exactly and truncates the result toward zero. &#34;+0.75&#34; and &#34;-0.75&#34; sum to 0.75 ulp beyond +1 and -1, &#34;Kept&#34; is 1 + 2^-28 - 1 (scaled by 2^32), &#34;Strad&#34; is 1 - (2^-24 + 2^-29) and &#34;Order&#34; is 2^32 - 2^32 + 2^-32 (scaled by 2^36), whose small term is outside the window anchored to the largest term even though the large terms cancel first. Hardware gives depth - offset = -32, 32, 0, 0 and -16 (d = -1, 1, 0 and 0 ulp, and d = -c for &#34;Order&#34;). Round to nearest gives 0, 0, 0, 0 and 0; truncating the exact sum gives -32, 32, 0, -16 and 0; truncating every partial sum in order gives -32, 32, -16, -16 and 0.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_rounding_tests/OpRounding_DP4Sum3-diff.png" alt="Diff result for Vertex_shader_rounding_tests::OpRounding_DP4Sum3" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_rounding_tests/OpRounding_DP4Sum3.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_DP4Sum3.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_rounding_tests/OpRounding_DP4Sum3.png" alt="Source image for Vertex_shader_rounding_tests::OpRounding_DP4Sum3" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_DP4Sum3.png" alt="Golden image for Vertex_shader_rounding_tests::OpRounding_DP4Sum3" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="OpRounding_DP4SumAB">OpRounding_DP4SumAB</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">7781.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>As OpRounding_ADD, but d is computed by a single DP4 of (a, b, c, 0) and (1, 1, -1, 0), so all products are exact and only the accumulation can round. Summing left to right or pairwise adds a + b first, which would give the OpRounding_ADD results if intermediate sums were rounded. Hardware gives the exact distance between a + b and c, d = 0.25, -0.25, -0.25, 0.25 and -0.5 ulp, so DP4 does not round intermediate sums. The accumulation is only exact within the adder&#39;s alignment window (see OpRounding_DP4Sum3).</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_rounding_tests/OpRounding_DP4SumAB-diff.png" alt="Diff result for Vertex_shader_rounding_tests::OpRounding_DP4SumAB" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_rounding_tests/OpRounding_DP4SumAB.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_DP4SumAB.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_rounding_tests/OpRounding_DP4SumAB.png" alt="Source image for Vertex_shader_rounding_tests::OpRounding_DP4SumAB" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_DP4SumAB.png" alt="Golden image for Vertex_shader_rounding_tests::OpRounding_DP4SumAB" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="OpRounding_DP4SumAC">OpRounding_DP4SumAC</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">7781.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>As OpRounding_DP4SumAB, but with (a, c, b, 0) and (1, -1, 1, 0). Left to right or pairwise summation computes a - c first, which is exact, and then adds b exactly, so d is 0.25, -0.25, -0.25, 0.25 and -0.5 ulp regardless of how additions round; any other result would mean the accumulation adds b before subtracting c. Hardware gives these values.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_rounding_tests/OpRounding_DP4SumAC-diff.png" alt="Diff result for Vertex_shader_rounding_tests::OpRounding_DP4SumAC" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_rounding_tests/OpRounding_DP4SumAC.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_DP4SumAC.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_rounding_tests/OpRounding_DP4SumAC.png" alt="Source image for Vertex_shader_rounding_tests::OpRounding_DP4SumAC" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_DP4SumAC.png" alt="Golden image for Vertex_shader_rounding_tests::OpRounding_DP4SumAC" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="OpRounding_MAD">OpRounding_MAD</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">5885.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>As OpRounding_MUL, but d is computed by a single MAD (a * b - c). On hardware the product is truncated before the addition (the operation is not fused), giving the same results as OpRounding_MUL.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_rounding_tests/OpRounding_MAD-diff.png" alt="Diff result for Vertex_shader_rounding_tests::OpRounding_MAD" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_rounding_tests/OpRounding_MAD.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_MAD.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_rounding_tests/OpRounding_MAD.png" alt="Source image for Vertex_shader_rounding_tests::OpRounding_MAD" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_MAD.png" alt="Golden image for Vertex_shader_rounding_tests::OpRounding_MAD" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="OpRounding_MADExactProduct">OpRounding_MADExactProduct</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">5265.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>As OpRounding_ADD, but d is computed by a single MAD of a * 1 + b, so the product is exact and only MAD&#39;s addition can round. Hardware gives the same results as OpRounding_ADD: MAD&#39;s addition truncates toward zero like ADD.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_rounding_tests/OpRounding_MADExactProduct-diff.png" alt="Diff result for Vertex_shader_rounding_tests::OpRounding_MADExactProduct" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_rounding_tests/OpRounding_MADExactProduct.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_MADExactProduct.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_rounding_tests/OpRounding_MADExactProduct.png" alt="Source image for Vertex_shader_rounding_tests::OpRounding_MADExactProduct" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_MADExactProduct.png" alt="Golden image for Vertex_shader_rounding_tests::OpRounding_MADExactProduct" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="OpRounding_MADExactProductWindow">OpRounding_MADExactProductWindow</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">1878.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>As OpRounding_MADExactProduct, with the OpRounding_ADDWindow operands. MAD&#39;s addition uses the same alignment window as ADD, so hardware gives the OpRounding_ADDWindow results: depth - offset = -16, 0 and 0.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_rounding_tests/OpRounding_MADExactProductWindow-diff.png" alt="Diff result for Vertex_shader_rounding_tests::OpRounding_MADExactProductWindow" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_rounding_tests/OpRounding_MADExactProductWindow.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_MADExactProductWindow.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_rounding_tests/OpRounding_MADExactProductWindow.png" alt="Source image for Vertex_shader_rounding_tests::OpRounding_MADExactProductWindow" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_MADExactProductWindow.png" alt="Golden image for Vertex_shader_rounding_tests::OpRounding_MADExactProductWindow" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="OpRounding_MADInexactBoth">OpRounding_MADInexactBoth</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">3765.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>As OpRounding_MADExactProduct, but with a multiplier m so that both the product and the sum of MAD(a, m, b) are inexact: 0x3F800800 * 0x3F800C00 + 2^-24 (&#34;+both&#34;) and its negation (&#34;-both&#34;), with c the IEEE round-to-nearest-even value of the exact a * m + b. Hardware truncates the product and then the sum, giving depth - offset = -32 and 32 (d = -1 and 1 ulp). A fused MAD rounded to nearest gives 0 and 0, and rounding both steps to nearest gives 32 and -32.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_rounding_tests/OpRounding_MADInexactBoth-diff.png" alt="Diff result for Vertex_shader_rounding_tests::OpRounding_MADInexactBoth" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_rounding_tests/OpRounding_MADInexactBoth.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_MADInexactBoth.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_rounding_tests/OpRounding_MADInexactBoth.png" alt="Source image for Vertex_shader_rounding_tests::OpRounding_MADInexactBoth" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_MADInexactBoth.png" alt="Golden image for Vertex_shader_rounding_tests::OpRounding_MADInexactBoth" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="OpRounding_MUL">OpRounding_MUL</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">5885.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Measures the rounding behavior of the MUL vertex shader instruction. Each case uses operands a and b whose exact product lies 0.25 or 0.75 ulp above a representable float (for positive and negative products), or exactly 0.5 ulp above one (the -1.0014837 * -40 product from Rugby 2005, xemu-project/xemu#2388), along with c, the IEEE round-to-nearest-even value of the product, all passed as shader constants. The shader computes d = MUL(a, b) - c (the subtraction is exact) and writes z = d * 2^28 + 2^23 to a Z24S8 surface, which is read back on the CPU. The screen lists, per case, the depth minus 2^23 and d in ulps of c. IEEE round to nearest would give d = 0 for every case. Hardware truncates the product toward zero, giving d = 0, -1, 0, 1 and -1 ulp. Rows whose depth differs from the hardware result are drawn over a red rectangle.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_rounding_tests/OpRounding_MUL-diff.png" alt="Diff result for Vertex_shader_rounding_tests::OpRounding_MUL" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_rounding_tests/OpRounding_MUL.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_MUL.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_rounding_tests/OpRounding_MUL.png" alt="Source image for Vertex_shader_rounding_tests::OpRounding_MUL" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_MUL.png" alt="Golden image for Vertex_shader_rounding_tests::OpRounding_MUL" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
 
