@@ -26,7 +26,12 @@
     <h3 id="Compositing_-2">Compositing_-2</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">4149.0</div></div>
+        <div class="value">4149.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>As Compositing_-4, but the final full screen quad is drawn at z = -2.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -51,7 +56,12 @@
     <h3 id="Compositing_2">Compositing_2</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">1196.0</div></div>
+        <div class="value">1196.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>As Compositing_-4, but the final full screen quad is drawn at z = 2.</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -76,7 +86,12 @@
     <h3 id="ProjAdjacentGeometry_0.5625">ProjAdjacentGeometry_0.5625</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">498.0</div></div>
+        <div class="value">498.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>As ProjAdjacentGeometry_0.0000 with a bias of 0.5625 (exactly 9/16 of a pixel, a 1/16 subpixel boundary).</p>
+        </div>
+    </div>
 
     <div class="comparison-image-set">
 
@@ -94,6 +109,36 @@
         </div>
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_rounding_tests/ProjAdjacentGeometry_0.5625.png" alt="Source image for Vertex_shader_rounding_tests::ProjAdjacentGeometry_0.5625" class="image-comparison" data-state="source">
         <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/ProjAdjacentGeometry_0.5625.png" alt="Golden image for Vertex_shader_rounding_tests::ProjAdjacentGeometry_0.5625" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="RenderTarget">RenderTarget</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">10830.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Points the color surface at a 128x128 render target that is prefilled with translucent magenta, sets the viewport offset to (320.53125, 240.53125) and the viewport scale to (320, -240, 16777215), and draws a quad from (-1, 1) to (1, -1) with a manually loaded vertex program ending in the XDK screen space epilogue (MUL by c[58], RCC of w, MAD with c[59]). The render target is then drawn to the screen with the fixed function pipeline. Magenta shows texels the quad did not cover.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_rounding_tests/RenderTarget-diff.png" alt="Diff result for Vertex_shader_rounding_tests::RenderTarget" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_rounding_tests/RenderTarget.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/RenderTarget.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_rounding_tests/RenderTarget.png" alt="Source image for Vertex_shader_rounding_tests::RenderTarget" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/RenderTarget.png" alt="Golden image for Vertex_shader_rounding_tests::RenderTarget" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
 

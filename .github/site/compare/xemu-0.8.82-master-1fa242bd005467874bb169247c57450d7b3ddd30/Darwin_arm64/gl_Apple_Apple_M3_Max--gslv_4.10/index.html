@@ -33557,7 +33557,12 @@
         <h3 id="Vertex_shader_rounding_tests_Compositing_-2">Compositing_-2</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">4199</div></div>
+            <div class="value">4199</div>
+            <div class="label">Description</div>
+            <div class="value">
+                <p>As Compositing_-4, but the final full screen quad is drawn at z = -2.</p>
+            </div>
+        </div>
 
         <div class="comparison-image-set">
 
@@ -33585,7 +33590,12 @@
         <h3 id="Vertex_shader_rounding_tests_Compositing_2">Compositing_2</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">1219</div></div>
+            <div class="value">1219</div>
+            <div class="label">Description</div>
+            <div class="value">
+                <p>As Compositing_-4, but the final full screen quad is drawn at z = 2.</p>
+            </div>
+        </div>
 
         <div class="comparison-image-set">
 
@@ -33613,7 +33623,12 @@
         <h3 id="Vertex_shader_rounding_tests_GeometrySubscreen_0.9990">GeometrySubscreen_0.9990</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">113</div></div>
+            <div class="value">113</div>
+            <div class="label">Description</div>
+            <div class="value">
+                <p>As GeometrySubscreen_0.0000 with a bias of 0.9990 (just under one pixel).</p>
+            </div>
+        </div>
 
         <div class="comparison-image-set">
 
@@ -33641,7 +33656,12 @@
         <h3 id="Vertex_shader_rounding_tests_ProjAdjacentGeometry_0.5625">ProjAdjacentGeometry_0.5625</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">498</div></div>
+            <div class="value">498</div>
+            <div class="label">Description</div>
+            <div class="value">
+                <p>As ProjAdjacentGeometry_0.0000 with a bias of 0.5625 (exactly 9/16 of a pixel, a 1/16 subpixel boundary).</p>
+            </div>
+        </div>
 
         <div class="comparison-image-set">
 
@@ -33669,7 +33689,12 @@
         <h3 id="Vertex_shader_rounding_tests_RenderTarget">RenderTarget</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">81225</div></div>
+            <div class="value">81225</div>
+            <div class="label">Description</div>
+            <div class="value">
+                <p>Points the color surface at a 128x128 render target that is prefilled with translucent magenta, sets the viewport offset to (320.53125, 240.53125) and the viewport scale to (320, -240, 16777215), and draws a quad from (-1, 1) to (1, -1) with a manually loaded vertex program ending in the XDK screen space epilogue (MUL by c[58], RCC of w, MAD with c[59]). The render target is then drawn to the screen with the fixed function pipeline. Magenta shows texels the quad did not cover.</p>
+            </div>
+        </div>
 
         <div class="comparison-image-set">
 
@@ -33697,7 +33722,12 @@
         <h3 id="Vertex_shader_rounding_tests_TopLeftRaster">TopLeftRaster</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">inf</div></div>
+            <div class="value">inf</div>
+            <div class="label">Description</div>
+            <div class="value">
+                <p>Tests the rasterizer&#39;s top-left fill rule and 1/16 subpixel snapping through a passthrough vertex shader. Draws thin vertical quads and triangles whose left edges sit at x + 0.5 (or the next float below it) and step by 1/16 pixel, a 0.2 pixel wide quad that should be invisible without multisampling, quads stacked to share edges at x + 0.5625, black to white horizontal gradient quads whose expected interpolated colors are 0x808080, 0x808080 and 0x000000 from top to bottom, and the same edge patterns rotated to horizontal on the right side of the screen.</p>
+            </div>
+        </div>
 
         <div class="comparison-image-set">
 
@@ -33721,7 +33751,12 @@
         <h3 id="Vertex_shader_rounding_tests_TopLeftRaster_Fixed">TopLeftRaster_Fixed</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">inf</div></div>
+            <div class="value">inf</div>
+            <div class="label">Description</div>
+            <div class="value">
+                <p>As TopLeftRaster, but the geometry is drawn through the fixed function pipeline with identity model view and projection matrices and a zero viewport scale and offset. </p>
+            </div>
+        </div>
 
         <div class="comparison-image-set">
 
