@@ -72,6 +72,15 @@
     <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/fog_carryover_tests.h#L28">src/tests/fog_carryover_tests.h</a></div>
 </div>
 
+<h2 id="CarryoverArrayDisabledFogCoord">CarryoverArrayDisabledFogCoord</h2>
+        <div class="test-case-description">
+        <p>Fixed function EXP fog with NV097_SET_FOG_GEN_MODE_V_FOG_X (the fog coordinate is consumed directly), drawn with NV097_DRAW_ARRAYS. A control row of small immediate mode quads is drawn first: one with fog disabled to show the unfogged geometry color, one with the initializer fog coordinate and one with the shared fog coordinate. The initializer quad is drawn last so that the context fog coordinate is left at the initializer value, which is not used by any other draw. Two rows are then drawn, one per variant fog coordinate, each with three quads:</p>
+        </div>
+    
+<div class="image-container">
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Fog_carryover/CarryoverArrayDisabledFogCoord.png" alt="Test result for Fog_carryover::CarryoverArrayDisabledFogCoord" class="inline-image">
+</div>
+    
 <h2 id="CarryoverLineLoop">CarryoverLineLoop</h2>
         <div class="test-case-description">
         <p>Renders a series of primitives using various draw modes on the left, setting fog coordinates. Then renders a quad using the same draw mode on the right without specifying a fog coordinate at all. The fog mode is set to EXP.</p>

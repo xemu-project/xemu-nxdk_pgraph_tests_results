@@ -62,6 +62,36 @@
 
 
 
+    <h3 id="CarryoverArrayDisabledFogCoord">CarryoverArrayDisabledFogCoord</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">38720.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Fixed function EXP fog with NV097_SET_FOG_GEN_MODE_V_FOG_X (the fog coordinate is consumed directly), drawn with NV097_DRAW_ARRAYS. A control row of small immediate mode quads is drawn first: one with fog disabled to show the unfogged geometry color, one with the initializer fog coordinate and one with the shared fog coordinate. The initializer quad is drawn last so that the context fog coordinate is left at the initializer value, which is not used by any other draw. Two rows are then drawn, one per variant fog coordinate, each with three quads:</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Fog_carryover/CarryoverArrayDisabledFogCoord-diff.png" alt="Diff result for Fog_carryover::CarryoverArrayDisabledFogCoord" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Fog_carryover/CarryoverArrayDisabledFogCoord.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_carryover/CarryoverArrayDisabledFogCoord.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Fog_carryover/CarryoverArrayDisabledFogCoord.png" alt="Source image for Fog_carryover::CarryoverArrayDisabledFogCoord" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_carryover/CarryoverArrayDisabledFogCoord.png" alt="Golden image for Fog_carryover::CarryoverArrayDisabledFogCoord" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
     <h3 id="CarryoverLineLoop">CarryoverLineLoop</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>

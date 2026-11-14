@@ -23,6 +23,36 @@
 
 
 
+    <h3 id="CubemapZeroVector">CubemapZeroVector</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">12288.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders screen-space quads point sampling a cubemap with a constant texture coordinate per quad. Every texel has a unique color that encodes its face and position: R = x * 4 + 2, G = y * 4 + 2, B = face * 40 + 20, with faces ordered +X, -X, +Y, -Y, +Z, -Z. The exception is texel (0, 0) of the +X face, which is pure magenta. The large quads use zero length directions: (0, 0, 0, 1), (0, 0, 0, 0), and (-0, -0, -0, 1). The small quads below them are a self check of the texel encoding, sampling the +/-X, +/-Y, and +/-Z axis directions in pairs.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texture_cubemap/CubemapZeroVector-diff.png" alt="Diff result for Texture_cubemap::CubemapZeroVector" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_cubemap/CubemapZeroVector.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_cubemap/CubemapZeroVector.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_cubemap/CubemapZeroVector.png" alt="Source image for Texture_cubemap::CubemapZeroVector" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_cubemap/CubemapZeroVector.png" alt="Golden image for Texture_cubemap::CubemapZeroVector" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
     <h3 id="DotReflectConst_0_-1to1">DotReflectConst_0_-1to1</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
@@ -503,10 +533,115 @@
     
 
     </div>
+    <h3 id="DotReflectDiffuseZeroVector">DotReflectDiffuseZeroVector</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">12288.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders screen-space quads using PS_TEXTUREMODES_DOT_RFLCT_DIFF on stage 2 (stage 0 is 2D projective, stage 1 is PS_TEXTUREMODES_DOT_PRODUCT, stage 3 is PS_TEXTUREMODES_DOT_RFLCT_SPEC), point sampling a cubemap in stage 2 and outputting only stage 2. The cubemap texel encoding is the same as in CubemapZeroVector. The dot RGB mapping, stage 0 texture, large quad texture coordinates, w components, eye vector, and self check quads are the same as in DotSTRCubeZeroVector. The cube direction is the normal N = (dot1, dot2, dot3).</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texture_cubemap/DotReflectDiffuseZeroVector-diff.png" alt="Diff result for Texture_cubemap::DotReflectDiffuseZeroVector" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_cubemap/DotReflectDiffuseZeroVector.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_cubemap/DotReflectDiffuseZeroVector.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_cubemap/DotReflectDiffuseZeroVector.png" alt="Source image for Texture_cubemap::DotReflectDiffuseZeroVector" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_cubemap/DotReflectDiffuseZeroVector.png" alt="Golden image for Texture_cubemap::DotReflectDiffuseZeroVector" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="DotReflectSpec_0_-1to1">DotReflectSpec_0_-1to1</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">147.0</div></div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texture_cubemap/DotReflectSpec_0_-1to1-diff.png" alt="Diff result for Texture_cubemap::DotReflectSpec_0_-1to1" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_cubemap/DotReflectSpec_0_-1to1.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_cubemap/DotReflectSpec_0_-1to1.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_cubemap/DotReflectSpec_0_-1to1.png" alt="Source image for Texture_cubemap::DotReflectSpec_0_-1to1" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_cubemap/DotReflectSpec_0_-1to1.png" alt="Golden image for Texture_cubemap::DotReflectSpec_0_-1to1" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="DotReflectSpec_0_-1to1D3D">DotReflectSpec_0_-1to1D3D</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">133.0</div></div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texture_cubemap/DotReflectSpec_0_-1to1D3D-diff.png" alt="Diff result for Texture_cubemap::DotReflectSpec_0_-1to1D3D" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_cubemap/DotReflectSpec_0_-1to1D3D.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_cubemap/DotReflectSpec_0_-1to1D3D.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_cubemap/DotReflectSpec_0_-1to1D3D.png" alt="Source image for Texture_cubemap::DotReflectSpec_0_-1to1D3D" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_cubemap/DotReflectSpec_0_-1to1D3D.png" alt="Golden image for Texture_cubemap::DotReflectSpec_0_-1to1D3D" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="DotReflectSpec_0_-1to1GL">DotReflectSpec_0_-1to1GL</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">114.0</div></div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texture_cubemap/DotReflectSpec_0_-1to1GL-diff.png" alt="Diff result for Texture_cubemap::DotReflectSpec_0_-1to1GL" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_cubemap/DotReflectSpec_0_-1to1GL.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_cubemap/DotReflectSpec_0_-1to1GL.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_cubemap/DotReflectSpec_0_-1to1GL.png" alt="Source image for Texture_cubemap::DotReflectSpec_0_-1to1GL" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_cubemap/DotReflectSpec_0_-1to1GL.png" alt="Golden image for Texture_cubemap::DotReflectSpec_0_-1to1GL" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
     <h3 id="DotReflectSpec_0_HiLoHemi">DotReflectSpec_0_HiLoHemi</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">37911.0</div></div>
+        <div class="value">48802.0</div></div>
 
     <div class="comparison-image-set">
 
@@ -528,10 +663,35 @@
     
 
     </div>
+    <h3 id="DotReflectSpec_1_-1to1">DotReflectSpec_1_-1to1</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">128.0</div></div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texture_cubemap/DotReflectSpec_1_-1to1-diff.png" alt="Diff result for Texture_cubemap::DotReflectSpec_1_-1to1" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_cubemap/DotReflectSpec_1_-1to1.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_cubemap/DotReflectSpec_1_-1to1.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_cubemap/DotReflectSpec_1_-1to1.png" alt="Source image for Texture_cubemap::DotReflectSpec_1_-1to1" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_cubemap/DotReflectSpec_1_-1to1.png" alt="Golden image for Texture_cubemap::DotReflectSpec_1_-1to1" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
     <h3 id="DotReflectSpec_1_HiLoHemi">DotReflectSpec_1_HiLoHemi</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">34664.0</div></div>
+        <div class="value">46188.0</div></div>
 
     <div class="comparison-image-set">
 
@@ -553,10 +713,35 @@
     
 
     </div>
+    <h3 id="DotReflectSpec_2_-1to1">DotReflectSpec_2_-1to1</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">135.0</div></div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texture_cubemap/DotReflectSpec_2_-1to1-diff.png" alt="Diff result for Texture_cubemap::DotReflectSpec_2_-1to1" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_cubemap/DotReflectSpec_2_-1to1.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_cubemap/DotReflectSpec_2_-1to1.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_cubemap/DotReflectSpec_2_-1to1.png" alt="Source image for Texture_cubemap::DotReflectSpec_2_-1to1" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_cubemap/DotReflectSpec_2_-1to1.png" alt="Golden image for Texture_cubemap::DotReflectSpec_2_-1to1" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
     <h3 id="DotReflectSpec_2_HiLoHemi">DotReflectSpec_2_HiLoHemi</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
-        <div class="value">28228.0</div></div>
+        <div class="value">36391.0</div></div>
 
     <div class="comparison-image-set">
 
@@ -788,6 +973,66 @@
     
 
     </div>
+    <h3 id="DotReflectSpecConstZeroVector">DotReflectSpecConstZeroVector</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">17920.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders screen-space quads using PS_TEXTUREMODES_DOT_RFLCT_SPEC_CONST on stage 3 (stage 0 is 2D projective, stages 1 and 2 are PS_TEXTUREMODES_DOT_PRODUCT), point sampling a cubemap in stage 3. The cubemap texel encoding, dot RGB mapping, stage 0 texture, and quad normals are the same as in DotReflectSpecZeroVector. The eye vector E is provided via NV097_SET_EYE_VECTOR, which is set before each quad, and the w components of stages 1-3 are 1. The large quads and self check quads use the same N and E as in DotReflectSpecZeroVector.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texture_cubemap/DotReflectSpecConstZeroVector-diff.png" alt="Diff result for Texture_cubemap::DotReflectSpecConstZeroVector" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_cubemap/DotReflectSpecConstZeroVector.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_cubemap/DotReflectSpecConstZeroVector.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_cubemap/DotReflectSpecConstZeroVector.png" alt="Source image for Texture_cubemap::DotReflectSpecConstZeroVector" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_cubemap/DotReflectSpecConstZeroVector.png" alt="Golden image for Texture_cubemap::DotReflectSpecConstZeroVector" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="DotReflectSpecZeroVector">DotReflectSpecZeroVector</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">12288.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders screen-space quads using PS_TEXTUREMODES_DOT_RFLCT_SPEC on stage 3 (stage 0 is 2D projective, stages 1 and 2 are PS_TEXTUREMODES_DOT_PRODUCT), point sampling a cubemap in stage 3. The cubemap texel encoding, dot RGB mapping, and stage 0 texture are the same as in DotSTRCubeZeroVector. The normal is N = (dot1, dot2, dot3) and the eye vector is E = (T1.w, T2.w, T3.w). The cube direction is R = 2 * N * dot(N, E) / dot(N, N) - E. NV097_SET_EYE_VECTOR is (0, 0, 0). The large quads, left to right, use N = (0, 0, 0) with E = (0, 0, 0), N = (0, 0, 0) with E = (1, 0, 0), N = (0, 0, 0) with E = (0, 0, 1), and N = (1, 1, 0) with E = (0, 1, 0), which reflects to (1, 0, 0). The small quads below them are a self check of the texel encoding. Each has N = +X, +Y, or +Z and E = +/-N so that R is +/-X, +/-Y, or +/-Z, in pairs.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texture_cubemap/DotReflectSpecZeroVector-diff.png" alt="Diff result for Texture_cubemap::DotReflectSpecZeroVector" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_cubemap/DotReflectSpecZeroVector.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_cubemap/DotReflectSpecZeroVector.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_cubemap/DotReflectSpecZeroVector.png" alt="Source image for Texture_cubemap::DotReflectSpecZeroVector" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_cubemap/DotReflectSpecZeroVector.png" alt="Golden image for Texture_cubemap::DotReflectSpecZeroVector" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
     <h3 id="DotSTR3D_-1to1">DotSTR3D_-1to1</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
@@ -994,6 +1239,36 @@
         </div>
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_cubemap/DotSTRCube_HiLoHemi.png" alt="Source image for Texture_cubemap::DotSTRCube_HiLoHemi" class="image-comparison" data-state="source">
         <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_cubemap/DotSTRCube_HiLoHemi.png" alt="Golden image for Texture_cubemap::DotSTRCube_HiLoHemi" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="DotSTRCubeZeroVector">DotSTRCubeZeroVector</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">12288.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders screen-space quads using PS_TEXTUREMODES_DOT_STR_CUBE on stage 3 (stage 0 is 2D projective, stages 1 and 2 are PS_TEXTUREMODES_DOT_PRODUCT), point sampling a cubemap in stage 3. The cubemap texel encoding is the same as in CubemapZeroVector. NV097_SET_DOT_RGBMAPPING is set to dotmap_zero_to_one for all stages. Stage 0 is a 4x4 texture of constant color 0xFFFFFFFF, so the dot products are dot(Ti.xyz, (1, 1, 1)). Each large quad has constant texture coordinates and the xyz components of stages 1-3 are all 0, so (dot1, dot2, dot3) = (0, 0, 0). The w components of stages 1-3 differ per quad: (0, 0, 0), (1, 1, 1), and (-1, 0.5, 2). NV097_SET_EYE_VECTOR is (0, 0, 0). The small quads below them are a self check of the texel encoding. Each sets a single xyz component of one stage to +/-1 and the rest to 0 so that (dot1, dot2, dot3) is +/-X, +/-Y, or +/-Z, in pairs.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texture_cubemap/DotSTRCubeZeroVector-diff.png" alt="Diff result for Texture_cubemap::DotSTRCubeZeroVector" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_cubemap/DotSTRCubeZeroVector.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_cubemap/DotSTRCubeZeroVector.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_cubemap/DotSTRCubeZeroVector.png" alt="Source image for Texture_cubemap::DotSTRCubeZeroVector" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_cubemap/DotSTRCubeZeroVector.png" alt="Golden image for Texture_cubemap::DotSTRCubeZeroVector" class="image-comparison" data-state="golden" style="display: none;">
     </div>
     
 
