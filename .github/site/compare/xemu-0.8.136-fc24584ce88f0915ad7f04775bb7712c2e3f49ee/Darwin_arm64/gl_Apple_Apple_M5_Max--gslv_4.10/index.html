@@ -25929,7 +25929,12 @@
         <h3 id="Point_sprite_AlphaMask_FF">AlphaMask_FF</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">32687.0</div></div>
+            <div class="value">32687.0</div>
+            <div class="label">Description</div>
+            <div class="value">
+                <p>Tests point sprite alpha masking behavior using the fixed function pipeline matching hardware usage where diffuse RGB (black) is passed through, diffuse alpha is modulated with texture alpha on stage 3, and alpha testing (GREATER than 1) is applied with SRC_ALPHA / ONE_MINUS_SRC_ALPHA blending and point smoothing/scaling.</p>
+            </div>
+        </div>
 
         <div class="comparison-image-set">
 
@@ -25957,7 +25962,12 @@
         <h3 id="Point_sprite_AlphaMask_VS">AlphaMask_VS</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">15147.0</div></div>
+            <div class="value">15147.0</div>
+            <div class="label">Description</div>
+            <div class="value">
+                <p>Tests point sprite alpha masking behavior using a perspective vertex shader (programmable pipeline) matching hardware usage where diffuse RGB (black) is passed through, diffuse alpha is modulated with texture alpha on stage 3, and alpha testing (GREATER than 1) is applied with SRC_ALPHA / ONE_MINUS_SRC_ALPHA blending and point smoothing/scaling.</p>
+            </div>
+        </div>
 
         <div class="comparison-image-set">
 
@@ -25985,7 +25995,12 @@
         <h3 id="Point_sprite_AlphaTest">AlphaTest</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">4536</div></div>
+            <div class="value">4536</div>
+            <div class="label">Description</div>
+            <div class="value">
+                <p>Basic test of POINT_SMOOTH_ENABLE true behavior. Renders a textured point, then the same point with the color combiner set to just diffuse, then the same pair again with point scaling enabled. The second row is the same rendering with alpha testing enabled.</p>
+            </div>
+        </div>
 
         <div class="comparison-image-set">
 

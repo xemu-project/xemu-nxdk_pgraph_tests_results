@@ -39,21 +39,37 @@
 </div>
 
 <h2 id="AlphaMask_FF">AlphaMask_FF</h2>
+        <div class="test-case-description">
+        <p>Tests point sprite alpha masking behavior using the fixed function pipeline matching hardware usage where diffuse RGB (black) is passed through, diffuse alpha is modulated with texture alpha on stage 3, and alpha testing (GREATER than 1) is applied with SRC_ALPHA / ONE_MINUS_SRC_ALPHA blending and point smoothing/scaling.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_sprite/AlphaMask_FF.png" alt="Test result for Point_sprite::AlphaMask_FF" class="inline-image">
 </div>
     
 <h2 id="AlphaMask_VS">AlphaMask_VS</h2>
+        <div class="test-case-description">
+        <p>Tests point sprite alpha masking behavior using a perspective vertex shader (programmable pipeline) matching hardware usage where diffuse RGB (black) is passed through, diffuse alpha is modulated with texture alpha on stage 3, and alpha testing (GREATER than 1) is applied with SRC_ALPHA / ONE_MINUS_SRC_ALPHA blending and point smoothing/scaling.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_sprite/AlphaMask_VS.png" alt="Test result for Point_sprite::AlphaMask_VS" class="inline-image">
 </div>
     
 <h2 id="AlphaTest">AlphaTest</h2>
+        <div class="test-case-description">
+        <p>Basic test of POINT_SMOOTH_ENABLE true behavior. Renders a textured point, then the same point with the color combiner set to just diffuse, then the same pair again with point scaling enabled. The second row is the same rendering with alpha testing enabled.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_sprite/AlphaTest.png" alt="Test result for Point_sprite::AlphaTest" class="inline-image">
 </div>
     
 <h2 id="PolygonMode_Point">PolygonMode_Point</h2>
+        <div class="test-case-description">
+        <p>Demonstrates that setting NV097_SET_FRONT_POLYGON_MODE to NV097_SET_FRONT_POLYGON_MODE_V_POINT produces textured point sprites honoring point smoothing when rendering non-point geometry (e.g. quads/triangles) except for lines.</p>
+        </div>
+    
 <div class="image-container">
         <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/vk_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Point_sprite/PolygonMode_Point.png" alt="Test result for Point_sprite::PolygonMode_Point" class="inline-image">
 </div>

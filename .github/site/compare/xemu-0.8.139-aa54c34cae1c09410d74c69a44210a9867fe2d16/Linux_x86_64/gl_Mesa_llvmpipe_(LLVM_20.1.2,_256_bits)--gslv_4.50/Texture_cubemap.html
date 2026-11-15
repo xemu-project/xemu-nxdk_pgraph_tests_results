@@ -53,6 +53,96 @@
     
 
     </div>
+    <h3 id="CubemapZeroVectorAddressModes">CubemapZeroVectorAddressModes</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">46464.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders 44x44 screen-space quads sampling the 4 level mipmapped cubemap described in CubemapZeroVectorMipmap_Point in stage 3 using PS_TEXTUREMODES_CUBEMAP. Every quad has the texture coordinate (0, 0, 0, 1) at every vertex. For every quad the P wrap mode is WRAP_CLAMP_TO_EDGE, the MIN_LOD_CLAMP raw value is 0, the MAX_LOD_CLAMP raw value is 0xFFF, the MIPMAP_LOD_BIAS is 0, the convolution kernel is K_QUINCUNX, anisotropy is 1, and the border source is NV097_SET_TEXTURE_BORDER_COLOR with the value 0xFFFF0000. The left block of quads uses MIN_TENT_TENT_LOD with MAG_TENT_LOD0. Left to right, its columns use the address mode WRAP_REPEAT (&#34;WRAP&#34;), WRAP_MIRROR (&#34;MIRR&#34;), WRAP_CLAMP_TO_EDGE (&#34;CLMP&#34;), WRAP_BORDER (&#34;BRDR&#34;), and WRAP_CLAMP_TO_EDGE_OGL (&#34;OGL&#34;). The right block of quads uses MIN_BOX_NEARESTLOD with MAG_BOX_LOD0. Left to right, its columns use WRAP_MIRROR (&#34;MIRR&#34;), WRAP_BORDER (&#34;BRDR&#34;), and WRAP_CLAMP_TO_EDGE_OGL (&#34;OGL&#34;). Top to bottom, the rows of both blocks set U to the column&#39;s address mode with V WRAP_CLAMP_TO_EDGE (&#34;U=m&#34;), U WRAP_CLAMP_TO_EDGE with V set to the column&#39;s address mode (&#34;V=m&#34;), and both U and V set to the column&#39;s address mode (&#34;UV=m&#34;).</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texture_cubemap/CubemapZeroVectorAddressModes-diff.png" alt="Diff result for Texture_cubemap::CubemapZeroVectorAddressModes" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_cubemap/CubemapZeroVectorAddressModes.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_cubemap/CubemapZeroVectorAddressModes.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_cubemap/CubemapZeroVectorAddressModes.png" alt="Source image for Texture_cubemap::CubemapZeroVectorAddressModes" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_cubemap/CubemapZeroVectorAddressModes.png" alt="Golden image for Texture_cubemap::CubemapZeroVectorAddressModes" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="CubemapZeroVectorConvolution">CubemapZeroVectorConvolution</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">23232.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders 44x44 screen-space quads sampling the 4 level mipmapped cubemap described in CubemapZeroVectorMipmap_Point in stage 3 using PS_TEXTUREMODES_CUBEMAP. Every quad has the texture coordinate (0, 0, 0, 1) at every vertex. For every quad the MIN_LOD_CLAMP raw value is 0, the MAX_LOD_CLAMP raw value is 0xFFF, the MIPMAP_LOD_BIAS is 0, anisotropy is 1, and the border source is NV097_SET_TEXTURE_BORDER_COLOR with the value 0xFFFF0000. Left to right, the columns use MIN_CONVOLUTION_2D_LOD0 with MAG_CONVOLUTION_2D_LOD0 and the K_QUINCUNX kernel (&#34;CCQ&#34;), MIN_CONVOLUTION_2D_LOD0 with MAG_CONVOLUTION_2D_LOD0 and the K_GAUSSIAN_3 kernel (&#34;CCG&#34;), MIN_CONVOLUTION_2D_LOD0 with MAG_BOX_LOD0 (&#34;CB&#34;), MIN_CONVOLUTION_2D_LOD0 with MAG_TENT_LOD0 (&#34;CT&#34;), MIN_BOX_NEARESTLOD with MAG_CONVOLUTION_2D_LOD0 (&#34;BNC&#34;), and MIN_TENT_TENT_LOD with MAG_CONVOLUTION_2D_LOD0 (&#34;TTC&#34;). The last four use the K_QUINCUNX kernel. The U, V, and P wrap modes of the top row (&#34;WRAP&#34;) are WRAP_REPEAT and of the bottom row (&#34;CLMP&#34;) are WRAP_CLAMP_TO_EDGE.</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texture_cubemap/CubemapZeroVectorConvolution-diff.png" alt="Diff result for Texture_cubemap::CubemapZeroVectorConvolution" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_cubemap/CubemapZeroVectorConvolution.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_cubemap/CubemapZeroVectorConvolution.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_cubemap/CubemapZeroVectorConvolution.png" alt="Source image for Texture_cubemap::CubemapZeroVectorConvolution" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_cubemap/CubemapZeroVectorConvolution.png" alt="Golden image for Texture_cubemap::CubemapZeroVectorConvolution" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="CubemapZeroVectorFilters">CubemapZeroVectorFilters</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">23232.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>Renders 44x44 screen-space quads sampling the 4 level mipmapped cubemap described in CubemapZeroVectorMipmap_Point in stage 3 using PS_TEXTUREMODES_CUBEMAP. Every quad has the texture coordinate (0, 0, 0, 1) at every vertex. For every quad the U, V, and P wrap modes are WRAP_REPEAT, the MIN_LOD_CLAMP raw value is 0, the MAX_LOD_CLAMP raw value is 0xFFF, the MIPMAP_LOD_BIAS is 0, the convolution kernel is K_QUINCUNX, anisotropy is 1, and the border source is NV097_SET_TEXTURE_BORDER_COLOR with the value 0xFFFF0000. The top row of quads uses MAG_BOX_LOD0 (&#34;magB&#34;) and the bottom row uses MAG_TENT_LOD0 (&#34;magT&#34;). Left to right, the min filters are MIN_BOX_LOD0 (&#34;B0&#34;), MIN_TENT_LOD0 (&#34;T0&#34;), MIN_BOX_NEARESTLOD (&#34;BN&#34;), MIN_TENT_NEARESTLOD (&#34;TN&#34;), MIN_BOX_TENT_LOD (&#34;BT&#34;), and MIN_TENT_TENT_LOD (&#34;TT&#34;).</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Texture_cubemap/CubemapZeroVectorFilters-diff.png" alt="Diff result for Texture_cubemap::CubemapZeroVectorFilters" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_cubemap/CubemapZeroVectorFilters.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_cubemap/CubemapZeroVectorFilters.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Texture_cubemap/CubemapZeroVectorFilters.png" alt="Source image for Texture_cubemap::CubemapZeroVectorFilters" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_cubemap/CubemapZeroVectorFilters.png" alt="Golden image for Texture_cubemap::CubemapZeroVectorFilters" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
     <h3 id="CubemapZeroVectorMipmap_Linear">CubemapZeroVectorMipmap_Linear</h3>
     <div class="label-value-grid">
         <div class="label">Difference</div>
