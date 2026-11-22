@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Vertex_shader_exceptional_paths : xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16:Linux_x86_64:gl_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits):gslv_4.50 vs Xbox_Hardware</title>
+    <link rel="stylesheet" href="../../../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    
+      <a href="../../../../results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits)--gslv_4.50/index.html#Xbox_Hardware"><img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Arrow_chevron_up_in_sharp_solid_style.svg" width="32" alt="Navigate up one level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Vertex_shader_exceptional_paths : xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16:Linux_x86_64:gl_Mesa_llvmpipe_(LLVM_20.1.2,_256_bits):gslv_4.50 vs Xbox_Hardware</h1>
+
+<div class="label-value-grid">
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Renders MAC results with operand A from the v1 attribute (Attr_ tests) or a constant (Const_ tests), and the fog distance chain rcp(P.w), P * rcp(P.w), d2 = DP3, rsq(d2), d2 * rsq(d2) with P from v1 or a constant. Hardware gives identical results on both paths. The layout is described in</div>
+    
+        <div class="test-description-line">VertexShaderExceptionalMACTests</div>
+    
+        <div class="test-description-line">.</div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/vertex_shader_exceptional_value_tests.h#L142">src/tests/vertex_shader_exceptional_value_tests.h</a></div>
+    <div class="label">Golden results</div>
+    <div class="value"><a href="https://abaire.github.io/nxdk_pgraph_tests_golden_results/results/Vertex_shader_exceptional_paths/index.html">https://abaire.github.io/nxdk_pgraph_tests_golden_results/results/Vertex_shader_exceptional_paths/index.html</a></div>
+</div>
+
+
+
+    <h3 id="Attr_ADD_AB">Attr_ADD_AB</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">8954.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>attr ADD_AB (12 values). On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): 0+inf.x [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw inf -0+inf.y [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw inf 0+qNaN.z [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw NaN den+inf.w [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw inf inf+0.x [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw inf -inf+-0.y [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw -inf qNaN+0.z [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw NaN 1.5+0.w [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 1.5+2.x [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 3.5 2+0.5.y [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 2.5 -1.5+2.z [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 0.5 3+1.w [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 4</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_exceptional_paths/Attr_ADD_AB-diff.png" alt="Diff result for Vertex_shader_exceptional_paths::Attr_ADD_AB" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Attr_ADD_AB.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_ADD_AB.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Attr_ADD_AB.png" alt="Source image for Vertex_shader_exceptional_paths::Attr_ADD_AB" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_ADD_AB.png" alt="Golden image for Vertex_shader_exceptional_paths::Attr_ADD_AB" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="Attr_Dot">Attr_Dot</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">10914.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>attr Dot (12 values). On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): DP4 case1 [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 DP4 case2 [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 DP4 case3 [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 4 DP3 case1 [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 DP3 case2 [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 DP3 case3 [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 1 DPH case1 [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw inf DPH case2 [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 DPH case3 [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 2 DPHba case1 [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 DPHba case2 [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 DPHba case3 [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 4</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_exceptional_paths/Attr_Dot-diff.png" alt="Diff result for Vertex_shader_exceptional_paths::Attr_Dot" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Attr_Dot.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_Dot.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Attr_Dot.png" alt="Source image for Vertex_shader_exceptional_paths::Attr_Dot" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_Dot.png" alt="Golden image for Vertex_shader_exceptional_paths::Attr_Dot" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="Attr_Fog_P_1">Attr_Fog_P_1</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">9762.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>fog chain attr P. On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): p 1,2,3,1.x [P = (1, 2, 3, 1)]: hw 1 p 1,2,3,1.y [P = (1, 2, 3, 1)]: hw 2 p 1,2,3,1.z [P = (1, 2, 3, 1)]: hw 3 p 1,2,3,1.w [P = (1, 2, 3, 1)]: hw 1 p 1,2,3,0.x [P = (1, 2, 3, +0)]: hw inf p 1,2,3,0.y [P = (1, 2, 3, +0)]: hw inf p 1,2,3,0.z [P = (1, 2, 3, +0)]: hw inf p 1,2,3,0.w [P = (1, 2, 3, +0)]: hw 0 p 1,2,3,-0.x [P = (1, 2, 3, -0)]: hw -inf p 1,2,3,-0.y [P = (1, 2, 3, -0)]: hw -inf p 1,2,3,-0.z [P = (1, 2, 3, -0)]: hw -inf p 1,2,3,-0.w [P = (1, 2, 3, -0)]: hw 0 p -1,2,-3,0.x [P = (-1, 2, -3, +0)]: hw -inf p -1,2,-3,0.y [P = (-1, 2, -3, +0)]: hw inf</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_exceptional_paths/Attr_Fog_P_1-diff.png" alt="Diff result for Vertex_shader_exceptional_paths::Attr_Fog_P_1" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Attr_Fog_P_1.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_Fog_P_1.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Attr_Fog_P_1.png" alt="Source image for Vertex_shader_exceptional_paths::Attr_Fog_P_1" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_Fog_P_1.png" alt="Golden image for Vertex_shader_exceptional_paths::Attr_Fog_P_1" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="Attr_Fog_P_2">Attr_Fog_P_2</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">9762.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>fog chain attr P. On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): p -1,2,-3,0.z [P = (-1, 2, -3, +0)]: hw -inf p -1,2,-3,0.w [P = (-1, 2, -3, +0)]: hw 0 p 0,0,3,0.x [P = (0, 0, 3, +0)]: hw 0 p 0,0,3,0.y [P = (0, 0, 3, +0)]: hw 0 p 0,0,3,0.z [P = (0, 0, 3, +0)]: hw inf p 0,0,3,0.w [P = (0, 0, 3, +0)]: hw 0 p 0,0,0,0.x [P = (0, 0, 0, +0)]: hw 0 p 0,0,0,0.y [P = (0, 0, 0, +0)]: hw 0 p 0,0,0,0.z [P = (0, 0, 0, +0)]: hw 0 p 0,0,0,0.w [P = (0, 0, 0, +0)]: hw 0 p -0,-0,-0,-0.x [P = (-0, -0, -0, -0)]: hw 0 p -0,-0,-0,-0.y [P = (-0, -0, -0, -0)]: hw 0 p -0,-0,-0,-0.z [P = (-0, -0, -0, -0)]: hw 0 p -0,-0,-0,-0.w [P = (-0, -0, -0, -0)]: hw 0 </p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_exceptional_paths/Attr_Fog_P_2-diff.png" alt="Diff result for Vertex_shader_exceptional_paths::Attr_Fog_P_2" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Attr_Fog_P_2.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_Fog_P_2.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Attr_Fog_P_2.png" alt="Source image for Vertex_shader_exceptional_paths::Attr_Fog_P_2" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_Fog_P_2.png" alt="Golden image for Vertex_shader_exceptional_paths::Attr_Fog_P_2" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="Attr_Fog_Scalars_1">Attr_Fog_Scalars_1</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">9762.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>fog chain attr Scalars. On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): rcp 1,2,3,1 [P = (1, 2, 3, 1)]: hw 1 rcp 1,2,3,0 [P = (1, 2, 3, +0)]: hw inf rcp 1,2,3,-0 [P = (1, 2, 3, -0)]: hw -inf rcp -1,2,-3,0 [P = (-1, 2, -3, +0)]: hw inf rcp 0,0,3,0 [P = (0, 0, 3, +0)]: hw inf rcp 0,0,0,0 [P = (0, 0, 0, +0)]: hw inf rcp -0,-0,-0,-0 [P = (-0, -0, -0, -0)]: hw -inf d2 1,2,3,1 [P = (1, 2, 3, 1)]: hw 14 d2 1,2,3,0 [P = (1, 2, 3, +0)]: hw inf d2 1,2,3,-0 [P = (1, 2, 3, -0)]: hw inf d2 -1,2,-3,0 [P = (-1, 2, -3, +0)]: hw inf d2 0,0,3,0 [P = (0, 0, 3, +0)]: hw inf d2 0,0,0,0 [P = (0, 0, 0, +0)]: hw 0 d2 -0,-0,-0,-0 [P = (-0, -0, -0, -0)]: hw 0</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_exceptional_paths/Attr_Fog_Scalars_1-diff.png" alt="Diff result for Vertex_shader_exceptional_paths::Attr_Fog_Scalars_1" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Attr_Fog_Scalars_1.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_Fog_Scalars_1.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Attr_Fog_Scalars_1.png" alt="Source image for Vertex_shader_exceptional_paths::Attr_Fog_Scalars_1" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_Fog_Scalars_1.png" alt="Golden image for Vertex_shader_exceptional_paths::Attr_Fog_Scalars_1" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="Attr_Fog_Scalars_2">Attr_Fog_Scalars_2</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">10338.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>fog chain attr Scalars. On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): rsq 1,2,3,1 [P = (1, 2, 3, 1)]: hw 0x3E88D676 rsq 1,2,3,0 [P = (1, 2, 3, +0)]: hw 0 rsq 1,2,3,-0 [P = (1, 2, 3, -0)]: hw 0 rsq -1,2,-3,0 [P = (-1, 2, -3, +0)]: hw 0 rsq 0,0,3,0 [P = (0, 0, 3, +0)]: hw 0 rsq 0,0,0,0 [P = (0, 0, 0, +0)]: hw inf rsq -0,-0,-0,-0 [P = (-0, -0, -0, -0)]: hw inf d 1,2,3,1 [P = (1, 2, 3, 1)]: hw 0x406F774E d 1,2,3,0 [P = (1, 2, 3, +0)]: hw 0 d 1,2,3,-0 [P = (1, 2, 3, -0)]: hw 0 d -1,2,-3,0 [P = (-1, 2, -3, +0)]: hw 0 d 0,0,3,0 [P = (0, 0, 3, +0)]: hw 0 d 0,0,0,0 [P = (0, 0, 0, +0)]: hw 0 d -0,-0,-0,-0 [P = (-0, -0, -0, -0)]: hw 0</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_exceptional_paths/Attr_Fog_Scalars_2-diff.png" alt="Diff result for Vertex_shader_exceptional_paths::Attr_Fog_Scalars_2" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Attr_Fog_Scalars_2.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_Fog_Scalars_2.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Attr_Fog_Scalars_2.png" alt="Source image for Vertex_shader_exceptional_paths::Attr_Fog_Scalars_2" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_Fog_Scalars_2.png" alt="Golden image for Vertex_shader_exceptional_paths::Attr_Fog_Scalars_2" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="Attr_MAD_AB">Attr_MAD_AB</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">8610.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>attr MAD_AB (12 values). On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): 0*inf+1.5.x [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 1.5 -0*inf+1.5.y [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 1.5 0*qNaN+1.5.z [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 1.5 den*inf+1.5.w [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 1.5 inf*0+1.5.x [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 -inf*-0+1.5.y [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 qNaN*0+1.5.z [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 1.5*0+1.5.w [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 1.5*2+1.5.x [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 4.5 2*0.5+1.5.y [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 2.5 -1.5*2+1.5.z [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw -1.5 3*1+1.5.w [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 4.5</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_exceptional_paths/Attr_MAD_AB-diff.png" alt="Diff result for Vertex_shader_exceptional_paths::Attr_MAD_AB" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Attr_MAD_AB.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_MAD_AB.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Attr_MAD_AB.png" alt="Source image for Vertex_shader_exceptional_paths::Attr_MAD_AB" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_MAD_AB.png" alt="Golden image for Vertex_shader_exceptional_paths::Attr_MAD_AB" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="Attr_MAD_BA">Attr_MAD_BA</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">8610.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>attr MAD_BA (12 values). On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): inf*0+1.5.x [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 1.5 inf*-0+1.5.y [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 1.5 qNaN*0+1.5.z [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 1.5 inf*den+1.5.w [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 1.5 0*inf+1.5.x [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 -0*-inf+1.5.y [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 0*qNaN+1.5.z [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 0*1.5+1.5.w [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 2*1.5+1.5.x [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 4.5 0.5*2+1.5.y [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 2.5 2*-1.5+1.5.z [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw -1.5 1*3+1.5.w [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 4.5</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_exceptional_paths/Attr_MAD_BA-diff.png" alt="Diff result for Vertex_shader_exceptional_paths::Attr_MAD_BA" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Attr_MAD_BA.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_MAD_BA.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Attr_MAD_BA.png" alt="Source image for Vertex_shader_exceptional_paths::Attr_MAD_BA" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_MAD_BA.png" alt="Golden image for Vertex_shader_exceptional_paths::Attr_MAD_BA" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="Attr_MAX_AB">Attr_MAX_AB</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">8954.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>attr MAX_AB (12 values). On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): MAX(0,inf).x [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw inf MAX(-0,inf).y [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw inf MAX(0,qNaN).z [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw qNaN MAX(den,inf).w [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw inf MAX(inf,0).x [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw inf MAX(-inf,-0).y [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw -0 MAX(qNaN,0).z [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw qNaN MAX(1.5,0).w [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 MAX(1.5,2).x [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 2 MAX(2,0.5).y [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 2 MAX(-1.5,2).z [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 2 MAX(3,1).w [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 3</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_exceptional_paths/Attr_MAX_AB-diff.png" alt="Diff result for Vertex_shader_exceptional_paths::Attr_MAX_AB" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Attr_MAX_AB.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_MAX_AB.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Attr_MAX_AB.png" alt="Source image for Vertex_shader_exceptional_paths::Attr_MAX_AB" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_MAX_AB.png" alt="Golden image for Vertex_shader_exceptional_paths::Attr_MAX_AB" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="Attr_MIN_AB">Attr_MIN_AB</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">8610.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>attr MIN_AB (12 values). On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): MIN(0,inf).x [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 MIN(-0,inf).y [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw -0 MIN(0,qNaN).z [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 MIN(den,inf).w [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw den MIN(inf,0).x [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 MIN(-inf,-0).y [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw -inf MIN(qNaN,0).z [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 MIN(1.5,0).w [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 MIN(1.5,2).x [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 1.5 MIN(2,0.5).y [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 0.5 MIN(-1.5,2).z [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw -1.5 MIN(3,1).w [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 1</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_exceptional_paths/Attr_MIN_AB-diff.png" alt="Diff result for Vertex_shader_exceptional_paths::Attr_MIN_AB" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Attr_MIN_AB.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_MIN_AB.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Attr_MIN_AB.png" alt="Source image for Vertex_shader_exceptional_paths::Attr_MIN_AB" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_MIN_AB.png" alt="Golden image for Vertex_shader_exceptional_paths::Attr_MIN_AB" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="Attr_MUL_AB">Attr_MUL_AB</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">8610.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>attr MUL_AB (12 values). On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): 0*inf.x [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 -0*inf.y [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 0*qNaN.z [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 den*inf.w [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 inf*0.x [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 -inf*-0.y [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 qNaN*0.z [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 1.5*0.w [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 1.5*2.x [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 3 2*0.5.y [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 1 -1.5*2.z [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw -3 3*1.w [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 3</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_exceptional_paths/Attr_MUL_AB-diff.png" alt="Diff result for Vertex_shader_exceptional_paths::Attr_MUL_AB" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Attr_MUL_AB.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_MUL_AB.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Attr_MUL_AB.png" alt="Source image for Vertex_shader_exceptional_paths::Attr_MUL_AB" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_MUL_AB.png" alt="Golden image for Vertex_shader_exceptional_paths::Attr_MUL_AB" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="Attr_MUL_BA">Attr_MUL_BA</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">8610.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>attr MUL_BA (12 values). On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): inf*0.x [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 inf*-0.y [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 qNaN*0.z [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 inf*den.w [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 0*inf.x [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 -0*-inf.y [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 0*qNaN.z [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 0*1.5.w [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 2*1.5.x [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 3 0.5*2.y [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 1 2*-1.5.z [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw -3 1*3.w [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 3</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_exceptional_paths/Attr_MUL_BA-diff.png" alt="Diff result for Vertex_shader_exceptional_paths::Attr_MUL_BA" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Attr_MUL_BA.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_MUL_BA.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Attr_MUL_BA.png" alt="Source image for Vertex_shader_exceptional_paths::Attr_MUL_BA" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_MUL_BA.png" alt="Golden image for Vertex_shader_exceptional_paths::Attr_MUL_BA" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="Const_ADD_AB">Const_ADD_AB</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">8954.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>const ADD_AB (12 values). On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): 0+inf.x [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw inf -0+inf.y [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw inf 0+qNaN.z [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw NaN den+inf.w [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw inf inf+0.x [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw inf -inf+-0.y [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw -inf qNaN+0.z [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw NaN 1.5+0.w [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 1.5+2.x [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 3.5 2+0.5.y [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 2.5 -1.5+2.z [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 0.5 3+1.w [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 4</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_exceptional_paths/Const_ADD_AB-diff.png" alt="Diff result for Vertex_shader_exceptional_paths::Const_ADD_AB" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Const_ADD_AB.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_ADD_AB.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Const_ADD_AB.png" alt="Source image for Vertex_shader_exceptional_paths::Const_ADD_AB" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_ADD_AB.png" alt="Golden image for Vertex_shader_exceptional_paths::Const_ADD_AB" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="Const_Dot">Const_Dot</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">10914.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>const Dot (12 values). On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): DP4 case1 [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 DP4 case2 [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 DP4 case3 [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 4 DP3 case1 [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 DP3 case2 [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 DP3 case3 [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 1 DPH case1 [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw inf DPH case2 [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 DPH case3 [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 2 DPHba case1 [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 DPHba case2 [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 DPHba case3 [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 4</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_exceptional_paths/Const_Dot-diff.png" alt="Diff result for Vertex_shader_exceptional_paths::Const_Dot" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Const_Dot.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_Dot.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Const_Dot.png" alt="Source image for Vertex_shader_exceptional_paths::Const_Dot" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_Dot.png" alt="Golden image for Vertex_shader_exceptional_paths::Const_Dot" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="Const_Fog_P_1">Const_Fog_P_1</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">9762.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>fog chain const P. On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): p 1,2,3,1.x [P = (1, 2, 3, 1)]: hw 1 p 1,2,3,1.y [P = (1, 2, 3, 1)]: hw 2 p 1,2,3,1.z [P = (1, 2, 3, 1)]: hw 3 p 1,2,3,1.w [P = (1, 2, 3, 1)]: hw 1 p 1,2,3,0.x [P = (1, 2, 3, +0)]: hw inf p 1,2,3,0.y [P = (1, 2, 3, +0)]: hw inf p 1,2,3,0.z [P = (1, 2, 3, +0)]: hw inf p 1,2,3,0.w [P = (1, 2, 3, +0)]: hw 0 p 1,2,3,-0.x [P = (1, 2, 3, -0)]: hw -inf p 1,2,3,-0.y [P = (1, 2, 3, -0)]: hw -inf p 1,2,3,-0.z [P = (1, 2, 3, -0)]: hw -inf p 1,2,3,-0.w [P = (1, 2, 3, -0)]: hw 0 p -1,2,-3,0.x [P = (-1, 2, -3, +0)]: hw -inf p -1,2,-3,0.y [P = (-1, 2, -3, +0)]: hw inf</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_exceptional_paths/Const_Fog_P_1-diff.png" alt="Diff result for Vertex_shader_exceptional_paths::Const_Fog_P_1" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Const_Fog_P_1.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_Fog_P_1.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Const_Fog_P_1.png" alt="Source image for Vertex_shader_exceptional_paths::Const_Fog_P_1" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_Fog_P_1.png" alt="Golden image for Vertex_shader_exceptional_paths::Const_Fog_P_1" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="Const_Fog_P_2">Const_Fog_P_2</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">9762.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>fog chain const P. On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): p -1,2,-3,0.z [P = (-1, 2, -3, +0)]: hw -inf p -1,2,-3,0.w [P = (-1, 2, -3, +0)]: hw 0 p 0,0,3,0.x [P = (0, 0, 3, +0)]: hw 0 p 0,0,3,0.y [P = (0, 0, 3, +0)]: hw 0 p 0,0,3,0.z [P = (0, 0, 3, +0)]: hw inf p 0,0,3,0.w [P = (0, 0, 3, +0)]: hw 0 p 0,0,0,0.x [P = (0, 0, 0, +0)]: hw 0 p 0,0,0,0.y [P = (0, 0, 0, +0)]: hw 0 p 0,0,0,0.z [P = (0, 0, 0, +0)]: hw 0 p 0,0,0,0.w [P = (0, 0, 0, +0)]: hw 0 p -0,-0,-0,-0.x [P = (-0, -0, -0, -0)]: hw 0 p -0,-0,-0,-0.y [P = (-0, -0, -0, -0)]: hw 0 p -0,-0,-0,-0.z [P = (-0, -0, -0, -0)]: hw 0 p -0,-0,-0,-0.w [P = (-0, -0, -0, -0)]: hw 0</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_exceptional_paths/Const_Fog_P_2-diff.png" alt="Diff result for Vertex_shader_exceptional_paths::Const_Fog_P_2" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Const_Fog_P_2.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_Fog_P_2.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Const_Fog_P_2.png" alt="Source image for Vertex_shader_exceptional_paths::Const_Fog_P_2" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_Fog_P_2.png" alt="Golden image for Vertex_shader_exceptional_paths::Const_Fog_P_2" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="Const_Fog_Scalars_1">Const_Fog_Scalars_1</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">9762.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>fog chain const Scalars. On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): rcp 1,2,3,1 [P = (1, 2, 3, 1)]: hw 1 rcp 1,2,3,0 [P = (1, 2, 3, +0)]: hw inf rcp 1,2,3,-0 [P = (1, 2, 3, -0)]: hw -inf rcp -1,2,-3,0 [P = (-1, 2, -3, +0)]: hw inf rcp 0,0,3,0 [P = (0, 0, 3, +0)]: hw inf rcp 0,0,0,0 [P = (0, 0, 0, +0)]: hw inf rcp -0,-0,-0,-0 [P = (-0, -0, -0, -0)]: hw -inf d2 1,2,3,1 [P = (1, 2, 3, 1)]: hw 14 d2 1,2,3,0 [P = (1, 2, 3, +0)]: hw inf d2 1,2,3,-0 [P = (1, 2, 3, -0)]: hw inf d2 -1,2,-3,0 [P = (-1, 2, -3, +0)]: hw inf d2 0,0,3,0 [P = (0, 0, 3, +0)]: hw inf d2 0,0,0,0 [P = (0, 0, 0, +0)]: hw 0 d2 -0,-0,-0,-0 [P = (-0, -0, -0, -0)]: hw 0</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_exceptional_paths/Const_Fog_Scalars_1-diff.png" alt="Diff result for Vertex_shader_exceptional_paths::Const_Fog_Scalars_1" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Const_Fog_Scalars_1.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_Fog_Scalars_1.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Const_Fog_Scalars_1.png" alt="Source image for Vertex_shader_exceptional_paths::Const_Fog_Scalars_1" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_Fog_Scalars_1.png" alt="Golden image for Vertex_shader_exceptional_paths::Const_Fog_Scalars_1" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="Const_Fog_Scalars_2">Const_Fog_Scalars_2</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">10338.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>fog chain const Scalars. On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): rsq 1,2,3,1 [P = (1, 2, 3, 1)]: hw 0x3E88D676 rsq 1,2,3,0 [P = (1, 2, 3, +0)]: hw 0 rsq 1,2,3,-0 [P = (1, 2, 3, -0)]: hw 0 rsq -1,2,-3,0 [P = (-1, 2, -3, +0)]: hw 0 rsq 0,0,3,0 [P = (0, 0, 3, +0)]: hw 0 rsq 0,0,0,0 [P = (0, 0, 0, +0)]: hw inf rsq -0,-0,-0,-0 [P = (-0, -0, -0, -0)]: hw inf d 1,2,3,1 [P = (1, 2, 3, 1)]: hw 0x406F774E d 1,2,3,0 [P = (1, 2, 3, +0)]: hw 0 d 1,2,3,-0 [P = (1, 2, 3, -0)]: hw 0 d -1,2,-3,0 [P = (-1, 2, -3, +0)]: hw 0 d 0,0,3,0 [P = (0, 0, 3, +0)]: hw 0 d 0,0,0,0 [P = (0, 0, 0, +0)]: hw 0 d -0,-0,-0,-0 [P = (-0, -0, -0, -0)]: hw 0</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_exceptional_paths/Const_Fog_Scalars_2-diff.png" alt="Diff result for Vertex_shader_exceptional_paths::Const_Fog_Scalars_2" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Const_Fog_Scalars_2.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_Fog_Scalars_2.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Const_Fog_Scalars_2.png" alt="Source image for Vertex_shader_exceptional_paths::Const_Fog_Scalars_2" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_Fog_Scalars_2.png" alt="Golden image for Vertex_shader_exceptional_paths::Const_Fog_Scalars_2" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="Const_MAD_AB">Const_MAD_AB</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">8610.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>const MAD_AB (12 values). On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): 0*inf+1.5.x [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 1.5 -0*inf+1.5.y [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 1.5 0*qNaN+1.5.z [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 1.5 den*inf+1.5.w [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 1.5 inf*0+1.5.x [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 -inf*-0+1.5.y [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 qNaN*0+1.5.z [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 1.5*0+1.5.w [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 1.5*2+1.5.x [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 4.5 2*0.5+1.5.y [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 2.5 -1.5*2+1.5.z [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw -1.5 3*1+1.5.w [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 4.5</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_exceptional_paths/Const_MAD_AB-diff.png" alt="Diff result for Vertex_shader_exceptional_paths::Const_MAD_AB" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Const_MAD_AB.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_MAD_AB.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Const_MAD_AB.png" alt="Source image for Vertex_shader_exceptional_paths::Const_MAD_AB" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_MAD_AB.png" alt="Golden image for Vertex_shader_exceptional_paths::Const_MAD_AB" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="Const_MAD_BA">Const_MAD_BA</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">8610.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>const MAD_BA (12 values). On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): inf*0+1.5.x [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 1.5 inf*-0+1.5.y [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 1.5 qNaN*0+1.5.z [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 1.5 inf*den+1.5.w [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 1.5 0*inf+1.5.x [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 -0*-inf+1.5.y [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 0*qNaN+1.5.z [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 0*1.5+1.5.w [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 2*1.5+1.5.x [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 4.5 0.5*2+1.5.y [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 2.5 2*-1.5+1.5.z [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw -1.5 1*3+1.5.w [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 4.5</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_exceptional_paths/Const_MAD_BA-diff.png" alt="Diff result for Vertex_shader_exceptional_paths::Const_MAD_BA" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Const_MAD_BA.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_MAD_BA.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Const_MAD_BA.png" alt="Source image for Vertex_shader_exceptional_paths::Const_MAD_BA" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_MAD_BA.png" alt="Golden image for Vertex_shader_exceptional_paths::Const_MAD_BA" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="Const_MAX_AB">Const_MAX_AB</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">8954.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>const MAX_AB (12 values). On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): MAX(0,inf).x [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw inf MAX(-0,inf).y [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw inf MAX(0,qNaN).z [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw qNaN MAX(den,inf).w [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw inf MAX(inf,0).x [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw inf MAX(-inf,-0).y [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw -0 MAX(qNaN,0).z [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw qNaN MAX(1.5,0).w [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 MAX(1.5,2).x [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 2 MAX(2,0.5).y [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 2 MAX(-1.5,2).z [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 2 MAX(3,1).w [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 3</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_exceptional_paths/Const_MAX_AB-diff.png" alt="Diff result for Vertex_shader_exceptional_paths::Const_MAX_AB" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Const_MAX_AB.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_MAX_AB.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Const_MAX_AB.png" alt="Source image for Vertex_shader_exceptional_paths::Const_MAX_AB" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_MAX_AB.png" alt="Golden image for Vertex_shader_exceptional_paths::Const_MAX_AB" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="Const_MIN_AB">Const_MIN_AB</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">8610.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>const MIN_AB (12 values). On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): MIN(0,inf).x [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 MIN(-0,inf).y [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw -0 MIN(0,qNaN).z [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 MIN(den,inf).w [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw den MIN(inf,0).x [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 MIN(-inf,-0).y [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw -inf MIN(qNaN,0).z [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 MIN(1.5,0).w [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 MIN(1.5,2).x [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 1.5 MIN(2,0.5).y [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 0.5 MIN(-1.5,2).z [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw -1.5 MIN(3,1).w [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 1</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_exceptional_paths/Const_MIN_AB-diff.png" alt="Diff result for Vertex_shader_exceptional_paths::Const_MIN_AB" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Const_MIN_AB.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_MIN_AB.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Const_MIN_AB.png" alt="Source image for Vertex_shader_exceptional_paths::Const_MIN_AB" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_MIN_AB.png" alt="Golden image for Vertex_shader_exceptional_paths::Const_MIN_AB" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="Const_MUL_AB">Const_MUL_AB</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">8610.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>const MUL_AB (12 values). On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): 0*inf.x [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 -0*inf.y [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 0*qNaN.z [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 den*inf.w [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 inf*0.x [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 -inf*-0.y [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 qNaN*0.z [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 1.5*0.w [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 1.5*2.x [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 3 2*0.5.y [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 1 -1.5*2.z [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw -3 3*1.w [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 3</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_exceptional_paths/Const_MUL_AB-diff.png" alt="Diff result for Vertex_shader_exceptional_paths::Const_MUL_AB" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Const_MUL_AB.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_MUL_AB.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Const_MUL_AB.png" alt="Source image for Vertex_shader_exceptional_paths::Const_MUL_AB" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_MUL_AB.png" alt="Golden image for Vertex_shader_exceptional_paths::Const_MUL_AB" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div>
+    <h3 id="Const_MUL_BA">Const_MUL_BA</h3>
+    <div class="label-value-grid">
+        <div class="label">Difference</div>
+        <div class="value">8610.0</div>
+        <div class="label">Description</div>
+        <div class="value">
+            <p>const MUL_BA (12 values). On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): inf*0.x [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 inf*-0.y [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 qNaN*0.z [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 inf*den.w [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 0*inf.x [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 -0*-inf.y [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 0*qNaN.z [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 0*1.5.w [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 2*1.5.x [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 3 0.5*2.y [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 1 2*-1.5.z [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw -3 1*3.w [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 3</p>
+        </div>
+    </div>
+
+    <div class="comparison-image-set">
+
+    <div class="image-container">
+    
+    <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Vertex_shader_exceptional_paths/Const_MUL_BA-diff.png" alt="Diff result for Vertex_shader_exceptional_paths::Const_MUL_BA" class="inline-image">
+    
+    </div>
+
+    
+    <div class="image-pair">
+        <div class="image-pair-title-bar">
+            <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Const_MUL_BA.png">Source</a></div>
+            <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_MUL_BA.png">Golden</a></div>
+        </div>
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Vertex_shader_exceptional_paths/Const_MUL_BA.png" alt="Source image for Vertex_shader_exceptional_paths::Const_MUL_BA" class="image-comparison" data-state="source">
+        <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_MUL_BA.png" alt="Golden image for Vertex_shader_exceptional_paths::Const_MUL_BA" class="image-comparison" data-state="golden" style="display: none;">
+    </div>
+    
+
+    </div></div>
+
+    <script src="../../../../script.js"></script>
+</body>
+</html>
