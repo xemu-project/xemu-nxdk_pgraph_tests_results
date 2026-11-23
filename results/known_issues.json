@@ -1,0 +1,17 @@
+{
+  "known_issues": {
+    "Stencil": {
+      "issues": [
+        {
+          "text": "Known flaky on Apple-silicon macOS. See xemu#2006",
+          "filter": {
+            "platform": [
+              "Darwin_arm64"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+
