@@ -21809,7 +21809,7 @@
         <h3 id="Image_blit_BlitBeyondWidth">BlitBeyondWidth</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">245975.0</div>
+            <div class="value">244803.0</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Demonstrates the interaction between 0x9F image blit operations and assigned GPU tiles. A blit operation is configured with a target smaller than the source. The target address is set within an active GPU tile such that the blit would extend beyond the end of the tile and a guard value is tested to prove that the blit is clipped to stay within the tile. A similar blit is performed outside of the tile, demonstrating that unprotected blits may overdraw the target region.</p>
@@ -21842,7 +21842,7 @@
         <h3 id="Image_blit_BlitRenderBlit">BlitRenderBlit</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">10167.0</div>
+            <div class="value">inf</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Blits an image into a render surface, then performs a 3d render on top of the surface, then another blit on top of the composited two. Finally does a srccopy to blit the finished composition to the framebuffer. Demonstrates apparent incorrect ordering in various versions of xemu.</p>
@@ -21875,7 +21875,7 @@
         <h3 id="Image_blit_DirtyOverlappedDestSurf">DirtyOverlappedDestSurf</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">13312.0</div>
+            <div class="value">inf</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Performs a 3d render into the backbuffer, then a 2D srccopy that completely overwrites it. Finally performs another 3d render, demonstrating incorrect behavior in various versions of xemu.</p>
@@ -21908,7 +21908,7 @@
         <h3 id="Image_blit_ImgBlt_BLENDAND_XRGB_B44400000">ImgBlt_BLENDAND_XRGB_B44400000</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">2947.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -21936,7 +21936,7 @@
         <h3 id="Image_blit_ImgBlt_BLENDAND_XRGB_B444FFFFF">ImgBlt_BLENDAND_XRGB_B444FFFFF</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">2947.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -21964,7 +21964,7 @@
         <h3 id="Image_blit_ImgBlt_BLENDAND_XRGB_B66800000">ImgBlt_BLENDAND_XRGB_B66800000</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">5632.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -21992,7 +21992,7 @@
         <h3 id="Image_blit_ImgBlt_BLENDAND_XRGB_B7F800000">ImgBlt_BLENDAND_XRGB_B7F800000</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">5632.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -22020,7 +22020,7 @@
         <h3 id="Image_blit_ImgBlt_BLENDAND_XRGB_B7FFFFFFF">ImgBlt_BLENDAND_XRGB_B7FFFFFFF</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">5632.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -22048,7 +22048,7 @@
         <h3 id="Image_blit_ImgBlt_BLENDAND_ZRGB_B44400000">ImgBlt_BLENDAND_ZRGB_B44400000</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">2947.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -22076,7 +22076,7 @@
         <h3 id="Image_blit_ImgBlt_BLENDAND_ZRGB_B444FFFFF">ImgBlt_BLENDAND_ZRGB_B444FFFFF</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">2947.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -22104,7 +22104,7 @@
         <h3 id="Image_blit_ImgBlt_BLENDAND_ZRGB_B66800000">ImgBlt_BLENDAND_ZRGB_B66800000</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">5632.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -22132,7 +22132,7 @@
         <h3 id="Image_blit_ImgBlt_BLENDAND_ZRGB_B7F800000">ImgBlt_BLENDAND_ZRGB_B7F800000</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">5632.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -22160,7 +22160,7 @@
         <h3 id="Image_blit_ImgBlt_Clip_0_0_640_480">ImgBlt_Clip_0_0_640_480</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">5632.0</div>
+            <div class="value">inf</div>
             <div class="label">Description</div>
             <div class="value">
                 <p>Demonstrates expected behavior of the contextual clip rectangle (class 0x19) during image blits.</p>
@@ -22193,7 +22193,7 @@
         <h3 id="Image_blit_ImgBlt_Clip_300_200_16_24">ImgBlt_Clip_300_200_16_24</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">14617.0</div></div>
+            <div class="value">13733.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -22221,7 +22221,7 @@
         <h3 id="Image_blit_ImgBlt_Clip_320_240_0_0">ImgBlt_Clip_320_240_0_0</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">14681.0</div></div>
+            <div class="value">14117.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -22249,7 +22249,7 @@
         <h3 id="Image_blit_ImgBlt_Clip_320_240_0_10">ImgBlt_Clip_320_240_0_10</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">14681.0</div></div>
+            <div class="value">14117.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -22277,7 +22277,7 @@
         <h3 id="Image_blit_ImgBlt_Clip_320_240_1_1">ImgBlt_Clip_320_240_1_1</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">14680.0</div></div>
+            <div class="value">14116.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -22305,7 +22305,7 @@
         <h3 id="Image_blit_ImgBlt_Clip_320_240_640_480">ImgBlt_Clip_320_240_640_480</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">11386.0</div></div>
+            <div class="value">10822.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -22333,7 +22333,7 @@
         <h3 id="Image_blit_ImgBlt_Clip_320_240_64_40">ImgBlt_Clip_320_240_64_40</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">12299.0</div></div>
+            <div class="value">11735.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -22361,7 +22361,7 @@
         <h3 id="Image_blit_ImgBlt_SRCCOPY_ARGB_B00000000">ImgBlt_SRCCOPY_ARGB_B00000000</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">5632.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -22389,7 +22389,7 @@
         <h3 id="Image_blit_ImgBlt_SRCCOPY_XRGB_B00000000">ImgBlt_SRCCOPY_XRGB_B00000000</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">5632.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -22417,7 +22417,7 @@
         <h3 id="Image_blit_ImgBlt_SRCCOPY_ZRGB_B00000000">ImgBlt_SRCCOPY_ZRGB_B00000000</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">5632.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -28563,7 +28563,7 @@
         <h3 id="Shade_model_Fixed_TriStrip_Flat_Last">Fixed_TriStrip_Flat_Last</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">77987.0</div></div>
+            <div class="value">78114.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -31358,7 +31358,7 @@
         <h3 id="Stencil_Stencil_REPLACE_DT">Stencil_REPLACE_DT</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">38796.0</div></div>
+            <div class="value">40000.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -31442,7 +31442,7 @@
         <h3 id="Stencil_Stencil_ZERO">Stencil_ZERO</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">40000.0</div></div>
+            <div class="value">38796.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -31470,7 +31470,7 @@
         <h3 id="Stencil_Stencil_ZERO_DT">Stencil_ZERO_DT</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">38796.0</div></div>
+            <div class="value">inf</div></div>
 
         <div class="comparison-image-set">
 
@@ -31498,7 +31498,7 @@
         <h3 id="Stencil_Stencil_ZERO_ST">Stencil_ZERO_ST</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">10000.0</div></div>
+            <div class="value">30000.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -31526,7 +31526,7 @@
         <h3 id="Stencil_Stencil_ZERO_ST_DT">Stencil_ZERO_ST_DT</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">30000.0</div></div>
+            <div class="value">34275.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -31554,7 +31554,7 @@
         <h3 id="Stencil_Stencil_ZERO_ST_DT_ZB">Stencil_ZERO_ST_DT_ZB</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">30000.0</div></div>
+            <div class="value">20000.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -31582,7 +31582,7 @@
         <h3 id="Stencil_Stencil_ZERO_ST_ZB">Stencil_ZERO_ST_ZB</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">10000.0</div></div>
+            <div class="value">30000.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -31907,7 +31907,7 @@
             <div class="value">64000.0</div>
             <div class="label">Description</div>
             <div class="value">
-                <p>Writes red into the first row of a buffer with the CPU and draws the top two quads using it as the diffuse stream. Green pixels written by the CPU into a second buffer are then copied over the first using an NV09F image blit (SRCCOPY), and the bottom two quads are drawn from the same diffuse stream. Expect to see two red quads on top and two green quads on the bottom. On xemu, the blit does not mark the renderer&#39;s copy of VRAM as dirty (the same issue as xemu #859, but not addressed by xemu PR #2800), so the bottom quads are drawn with the stale red vertex colors. </p>
+                <p>Writes red into the first row of a buffer with the CPU and draws the top two quads using it as the diffuse stream. Green pixels written by the CPU into a second buffer are then copied over the first using an NV09F image blit (SRCCOPY), and the bottom two quads are drawn from the same diffuse stream. Expect to see two red quads on top and two green quads on the bottom. On xemu, the blit does not mark the renderer&#39;s copy of VRAM as dirty (the same issue as xemu #859, but not addressed by xemu PR #2800), so the bottom quads are drawn with the stale red vertex colors.</p>
             </div>
         </div>
 
@@ -32000,6 +32000,39 @@
         </div>
 
     
+        <h3 id="Surface_as_vertex_array_RenderOverConsumedVertexArrayDirect">RenderOverConsumedVertexArrayDirect</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">64000.0</div>
+            <div class="label">Description</div>
+            <div class="value">
+                <p>Writes red into the first row of a linear surface with the CPU and draws the top two quads using it as the diffuse stream. Green is then rendered over the same memory, the GPU is idled, and the bottom two quads are drawn from the same diffuse stream without reading the surface with the CPU or sampling it as a texture. Unlike DynamicUpdateLoop, where the memory is a render target before it is ever consumed as a vertex stream, here the render target is created over memory that was CPU-written and already consumed as a vertex stream. This is also the control for DownloadByCPURead, DownloadByTextureRead, and ImageBlitOverVertexArray, which share its setup but add a CPU read, texture sample, or blit before the second draw. Expect to see two red quads on top and two green quads on the bottom.</p>
+            </div>
+        </div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Surface_as_vertex_array/RenderOverConsumedVertexArrayDirect-diff.png" alt="Diff result for Surface_as_vertex_array::RenderOverConsumedVertexArrayDirect" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Surface_as_vertex_array/RenderOverConsumedVertexArrayDirect.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_as_vertex_array/RenderOverConsumedVertexArrayDirect.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Surface_as_vertex_array/RenderOverConsumedVertexArrayDirect.png" alt="Source image for Surface_as_vertex_array::RenderOverConsumedVertexArrayDirect" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_as_vertex_array/RenderOverConsumedVertexArrayDirect.png" alt="Golden image for Surface_as_vertex_array::RenderOverConsumedVertexArrayDirect" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
         <h3 id="Surface_as_vertex_array_RenderScalePattern">RenderScalePattern</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
@@ -32027,6 +32060,39 @@
             </div>
             <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Surface_as_vertex_array/RenderScalePattern.png" alt="Source image for Surface_as_vertex_array::RenderScalePattern" class="image-comparison" data-state="source">
             <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_as_vertex_array/RenderScalePattern.png" alt="Golden image for Surface_as_vertex_array::RenderScalePattern" class="image-comparison" data-state="golden" style="display: none;">
+        </div>
+        
+
+        </div>
+
+    
+        <h3 id="Surface_as_vertex_array_SameSurfaceTwoStreams">SameSurfaceTwoStreams</h3>
+        <div class="label-value-grid">
+            <div class="label">Difference</div>
+            <div class="value">140800.0</div>
+            <div class="label">Description</div>
+            <div class="value">
+                <p>Renders red into pixels 8..15 and blue into pixels 24..31 of the first row of a linear A8R8G8B8 surface that is otherwise black. The diffuse stream is bound at the offset of pixel 8 and the specular stream at the offset of pixel 24 of the same surface (neither at the surface base address, both within the same page). A register combiner outputs the sum of diffuse and specular, and two quads are drawn using 8 vertices. Expect to see two magenta quads (red + blue) on a dark background. </p>
+            </div>
+        </div>
+
+        <div class="comparison-image-set">
+
+        <div class="image-container">
+        
+        <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/compare-results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29--gslv_4.50/Xbox--Xbox--DirectX--nv2a/Surface_as_vertex_array/SameSurfaceTwoStreams-diff.png" alt="Diff result for Surface_as_vertex_array::SameSurfaceTwoStreams" class="inline-image">
+        
+        </div>
+
+
+        
+        <div class="image-pair">
+            <div class="image-pair-title-bar">
+                <div class="image-title" data-state="source"><a href="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Surface_as_vertex_array/SameSurfaceTwoStreams.png">Source</a></div>
+                <div class="image-title" data-state="golden"><a href="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_as_vertex_array/SameSurfaceTwoStreams.png">Golden</a></div>
+            </div>
+            <img src="https://raw.githubusercontent.com/xemu-project/xemu-nxdk_pgraph_tests_results/github_pages/results/xemu-0.8.139-aa54c34cae1c09410d74c69a44210a9867fe2d16/Linux_x86_64/gl_Mesa_llvmpipe_%28LLVM_20.1.2%2C_256_bits%29/gslv_4.50/Surface_as_vertex_array/SameSurfaceTwoStreams.png" alt="Source image for Surface_as_vertex_array::SameSurfaceTwoStreams" class="image-comparison" data-state="source">
+            <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_as_vertex_array/SameSurfaceTwoStreams.png" alt="Golden image for Surface_as_vertex_array::SameSurfaceTwoStreams" class="image-comparison" data-state="golden" style="display: none;">
         </div>
         
 
@@ -33745,7 +33811,7 @@
         <h3 id="Texture_border_2D_BorderTex_SZ">2D_BorderTex_SZ</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">14193.0</div></div>
+            <div class="value">13448.0</div></div>
 
         <div class="comparison-image-set">
 
@@ -39349,7 +39415,7 @@
         <h3 id="Texture_signed_component_tests_txt_A8R8G8B8_SREVSUB">txt_A8R8G8B8_SREVSUB</h3>
         <div class="label-value-grid">
             <div class="label">Difference</div>
-            <div class="value">231665.0</div></div>
+            <div class="value">231840.0</div></div>
 
         <div class="comparison-image-set">
 
